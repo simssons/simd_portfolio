@@ -1,0 +1,32 @@
+{
+  "name": "grunt_templet_setting",
+  "version": "1.0.0",
+  "description": "0501 first trial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simssons/grunt_templet_setting.git"
+  },
+  "author": "simssons",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simssons/grunt_templet_setting/issues"
+  },
+  "homepage": "https://github.com/simssons/grunt_templet_setting#readme",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-serve": "^0.1.6",
+    "serve": "^5.1.4"
+  },
+  "devDependencies": {
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-cssmin": "^2.1.0",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-uglify": "^2.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-includes": "^1.0.0"
+  }
+}
