@@ -1,0 +1,95 @@
+// body{font-family: 'Noto Sans', sans-serif;}
+
+header {
+    height: 90px;
+    font-family: 'Kanit', sans-serif;
+    .gnb-inner{
+        background-color: #CCC;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 400;
+        position: relative;
+        height: 90px;
+        border:1px #FFF solid;
+        a{
+            display: block;
+            height:90px;
+            line-height: 90px;
+            position: relative;
+            z-index: 2;
+            color: #FFF;
+        }
+        div.menu{
+            float:left;
+            display:block;
+            padding-left: 36px;
+            line-height: 90px;
+        }
+        div.share{
+            float:right;
+            display:block;
+            padding-right: 36px;
+            line-height: 90px;
+        }
+        div.h1{
+            text-align: center;
+            h1{
+                display: inline-block;
+                width: 140px;
+                line-height: 90px;
+                font-size: 18px;
+            }
+        }
+
+    }// gnb-inner
+
+    .menu-main-menu-container{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top:0px;
+        padding-top: 90px;
+        z-index: 1;
+        div.menu-main-menu{
+            height: 100%;
+            width: 100%;
+            ul.menu-main-menu-ul{
+                font-size: 0;
+                height: 100%;
+                text-align: center;
+                >li{
+                    padding: 36px;
+                    box-sizing: border-box;
+                    display: inline-block;
+                    width: 33.33%;
+                    height: 50%;
+                    text-transform: uppercase;
+                    border: 0.5px rgba(255, 255, 255, 0.3) solid;
+                    color: #FFF;
+                    >a{ display: block;
+                        position: relative;
+                        color: #FFF;
+                        font-size: 18px;
+                        top:48%;
+                        letter-spacing: 2px;
+                    }
+                    ul{
+                        width: 100%;
+                        li{
+                            width: 100%;
+                            a{
+                                position: absolute;
+                                color: #FFF;
+                                font-size: 10px;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+    }// menu-main-menu-container
+
+
+}
