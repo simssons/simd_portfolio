@@ -1,32 +1,29 @@
 {
-  "name": "grunt_templet_setting",
+  "name": "simd_portfolio",
   "version": "1.0.0",
-  "description": "0501 first trial",
+  "description": "0608 at home",
   "main": "index.js",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-serve": "^0.1.6"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-watch": "^1.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/simssons/grunt_templet_setting.git"
+    "url": "git+https://github.com/simssons/simd_portfolio.git"
   },
-  "author": "simssons",
+  "author": "Jay home",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/simssons/grunt_templet_setting/issues"
+    "url": "https://github.com/simssons/simd_portfolio/issues"
   },
-  "homepage": "https://github.com/simssons/grunt_templet_setting#readme",
-  "dependencies": {
-    "grunt": "^1.0.1",
-    "grunt-serve": "^0.1.6",
-    "serve": "^5.1.4"
-  },
-  "devDependencies": {
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-cssmin": "^2.1.0",
-    "grunt-contrib-less": "^1.4.1",
-    "grunt-contrib-uglify": "^2.3.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-includes": "^1.0.0"
-  }
+  "homepage": "https://github.com/simssons/simd_portfolio#readme"
 }
