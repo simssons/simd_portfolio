@@ -5,7 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="jQuery/dist/jquery.min.js"></script>
     <title>Document</title>
+    <style media="screen">
+        .on{display: block;}
+    </style>
+    <script>
+
+$(function(){
+    var autoHeight = function(){
+        $('.menu-main-menu-container .fifty').height(($('.menu-main-menu-container').height()-90)/2)
+    }
+
+    autoHeight();
+    $(window).resize(function(){
+        autoHeight();
+    })
+
+    $('.menu a').click(function(event){
+        event.preventDefault();
+
+        var menuToggle = $('.menu-main-menu-container')
+
+        if (menuToggle.is('.on')) {
+            menuToggle.removeClass('on')
+            $(this).text('menu')
+        }else{
+            menuToggle.addClass('on')
+            $(this).text('back')
+        }
+    })
+})
+    </script>
 </head>
 <body>
     <header>
@@ -31,27 +62,56 @@
                 <div class="menu-main-menu-container" style="background-image:url(image/main-menu-colored.png); background-size:cover">
                     <div class="menu-main-menu">
                         <ul class="menu-main-menu-ul">
-                            <li class=>
+                            <li class="fifty">
                                 <a href="">about</a>
-                                <ul>
+                                <ul class="sub-menu">
+                                    <li>about</li>
                                     <li><a href="">biography</a></li>
                                 </ul>
                             </li>
-                            <li><a href="">photography</a></li>
-                            <li><a href="">film</a></li>
-                            <li><a href="">behind the scenes</a></li>
-                            <li><a href="">blog</a></li>
-                            <li><a href="">contact</a></li>
+                            <li class="fifty">
+                                <a href="">photography</a>
+                                <ul class="sub-menu">
+                                    <li>photography</li>
+                                    <li><a href="">portraits</a></li>
+                                    <li><a href="">filter</a></li>
+                                    <li><a href="">column grids with filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">film</a>
+                                <ul class="sub-menu">
+                                    <li>film</li>
+                                    <li><a href="">tape</a></li>
+                                    <li><a href="">filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">behind the scenes</a>
+                                <ul class="sub-menu">
+                                    <li>backstory</li>
+                                    <li><a href="">behind the scenes</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">blog</a>
+                                <ul class="sub-menu">
+                                    <li>jay walkers' blog</li>
+                                    <li><a href="">blog</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">contact</a>
+                                <ul class="sub-menu">
+                                    <li>contact me</li>
+                                    <li><a href="">contact</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
-
             </gnb>
         </div>
-
     </header>
-    <div class="sohigh"></div>
-
-
 </body>
 </html>

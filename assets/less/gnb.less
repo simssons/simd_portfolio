@@ -1,8 +1,8 @@
 // body{font-family: 'Noto Sans', sans-serif;}
-.top{height:50%;}
 header {
     height: 90px;
     font-family: 'Kanit', sans-serif;
+}//header
     .gnb-inner{
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -40,10 +40,10 @@ header {
                 font-size: 18px;
             }
         }
-
     }// gnb-inner
 
     .menu-main-menu-container{
+        display: none;
         width: 100%;
         height: 100%;
         position: fixed;
@@ -57,15 +57,14 @@ header {
                 font-size: 0;
                 height: 100%;
                 text-align: center;
-                >li{
-                    padding: 36px;
+                li.fifty{
                     box-sizing: border-box;
                     display: inline-block;
+                    position: relative;
                     width: 33.33%;
-                    height: 50%;
                     text-transform: uppercase;
-                    border: 0.5px rgba(255, 255, 255, 0.3) solid;
-                    color: #FFF;
+                    border-right: 0.5px rgba(255, 255, 255, 0.3) solid;
+                    border-top: 0.5px rgba(255, 255, 255, 0.3) solid;
                     >a{ display: block;
                         position: relative;
                         color: #FFF;
@@ -73,24 +72,53 @@ header {
                         top:48%;
                         letter-spacing: 2px;
                     }
-                    ul{
-                        width: 100%;
-                        li{
-                            width: 100%;
-                            a{
-                                position: absolute;
-                                color: #FFF;
-                                font-size: 10px;
+                    &:hover{
+                        background-color: #FFF;
+                        >a{
+                            opacity:0;
+                            pointer-events: none;
+                        }
+                        ul.sub-menu{
+                            letter-spacing: 0.15em;
+                            li{
+                                a{
+                                    color:#BBB;
+                                    &:hover{
+                                        transition: color 0.2s;
+                                        color:#5b5b5b;
+                                    }
+                                }
+                            }
+                            >li{
+                                font-weight: lighter;
+                                color:#222;
+                                transition:color 0.2s;
                             }
                         }
                     }
-
+                }
+                ul.sub-menu{
+                    position: absolute;
+                    top:40%;
+                    width: 100%;
+                    li:first-child{
+                        letter-spacing: 0.2em;
+                        color: transparent;
+                        font-size: 13px;
+                        margin-bottom: 20px;
+                    }
+                    li{
+                        width: 100%;
+                        padding: 2px;
+                        a{
+                            font-weight: lighter;
+                            letter-spacing: 0.15em;
+                            width: 100%;
+                            font-size: 14px;
+                            color: transparent;
+                        }
+                    }
                 }
             }
         }
-
     }// menu-main-menu-container
-
-
-}
-.sohigh{height:2000px;}//header
