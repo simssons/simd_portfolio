@@ -12,35 +12,35 @@
     </style>
     <script>
 
-$(function(){
-    var autoHeight = function(){
-        $('.menu-main-menu-container .fifty').height(($('.menu-main-menu-container').height()-90)/2)
-    }
+    $(function(){
+        var autoHeight = function(){
+            $('.menu-main-menu-container .fifty').height(($('.menu-main-menu-container').height()-90)/2)
 
-    autoHeight();
-    $(window).resize(function(){
-        autoHeight();
-    })
-
-    $('.menu a').click(function(event){
-        event.preventDefault();
-
-        var menuToggle = $('.menu-main-menu-container')
-
-        if (menuToggle.is('.on')) {
-            menuToggle.removeClass('on')
-            $(this).text('menu')
-        }else{
-            menuToggle.addClass('on')
-            $(this).text('back')
         }
+        $(window).resize(function(){
+            autoHeight();
+                console.log($('.menu-main-menu-container').height());
+        })
+
+        $('.menu a').click(function(event){
+            event.preventDefault();
+
+            var menuToggle = $('.menu-main-menu-container')
+
+            if (menuToggle.is('.on')) {
+                menuToggle.removeClass('on')
+                $(this).text('menu')
+            }else{
+                menuToggle.addClass('on')
+                $(this).text('back')
+            }
+            autoHeight();
+        })
     })
-})
     </script>
 </head>
 <body>
     <header>
-        <div class="gnb-outer">
             <gnb>
                 <div class="gnb-inner">
                     <div class="menu">
@@ -109,7 +109,6 @@ $(function(){
                             </li>
                         </ul>
                     </div>
-                </div>
             </gnb>
         </div>
     </header>

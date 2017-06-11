@@ -4,10 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="jQuery/dist/jquery.min.js"></script>
     <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <style media="screen">
+        .on{display: block;}
+    </style>
+    <script>
+
+    $(function(){
+        var autoHeight = function(){
+            $('.menu-main-menu-container .fifty').height(($('.menu-main-menu-container').height()-90)/2)
+
+        }
+        $(window).resize(function(){
+            autoHeight();
+                console.log($('.menu-main-menu-container').height());
+        })
+
+        $('.menu a').click(function(event){
+            event.preventDefault();
+
+            var menuToggle = $('.menu-main-menu-container')
+
+            if (menuToggle.is('.on')) {
+                menuToggle.removeClass('on')
+                $(this).text('menu')
+            }else{
+                menuToggle.addClass('on')
+                $(this).text('back')
+            }
+            autoHeight();
+        })
+    })
+    </script>
 </head>
 <body>
+    <header>
+            <gnb>
+                <div class="gnb-inner">
+                    <div class="menu">
+                        <a href="">
+                            <span>menu</span>
+                        </a>
+                    </div>
+                    <div class="share">
+                        <a href="">
+                            <span>share</span>
+                        </a>
+                    </div>
+                    <div class="h1">
+                        <h1>
+                            <a href="">jay walkers</a>
+                        </h1>
+                    </div>
+                </div>
+                <div class="menu-main-menu-container" style="background-image:url(image/main-menu-colored.png); background-size:cover">
+                    <div class="menu-main-menu">
+                        <ul class="menu-main-menu-ul">
+                            <li class="fifty">
+                                <a href="">about</a>
+                                <ul class="sub-menu">
+                                    <li>about</li>
+                                    <li><a href="">biography</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">photography</a>
+                                <ul class="sub-menu">
+                                    <li>photography</li>
+                                    <li><a href="">portraits</a></li>
+                                    <li><a href="">filter</a></li>
+                                    <li><a href="">column grids with filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">film</a>
+                                <ul class="sub-menu">
+                                    <li>film</li>
+                                    <li><a href="">tape</a></li>
+                                    <li><a href="">filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">behind the scenes</a>
+                                <ul class="sub-menu">
+                                    <li>backstory</li>
+                                    <li><a href="">behind the scenes</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">blog</a>
+                                <ul class="sub-menu">
+                                    <li>jay walkers' blog</li>
+                                    <li><a href="">blog</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">contact</a>
+                                <ul class="sub-menu">
+                                    <li>contact me</li>
+                                    <li><a href="">contact</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </gnb>
+    </header>
+    <section>
+      <div class="wrapper">
+        <div class="main_slide">
+          <ul>
+            <li>
+              <a href=""><img src="image/main_1.png" alt=""></a>
+            </li>
+            <li>
+              <a href=""><img src="image/main_2.png" alt=""></a>
+            </li>
+            <li>
+              <a href=""><img src="image/main_2.png" alt=""></a>
+            </li>
+            <li>
+              <a href=""><img src="image/main_2.png" alt=""></a>
+            </li>
+            <li>
+              <a href=""><img src="image/main_2.png" alt=""></a>
+            </li>
+          </ul>
+          <div class="slide_contents">
+            <video autoplay loop height="100%">
+      			  <source src="video/main_video_1.webm" type="video/mp4"/>
+      			</video>
+          </div>
+          <div class="title_bar">
+            <h2>
+              <a href="">
+                <span>PORTRAITS</span>
+                <cite>작품명</cite>
+              </a>
+            </h2>
+          </div>
+          <div class="left_area"></div>
+          <div class="right_area"></div>
+        </div><!-- .main_slide -->
+        <div class="scroll_down_arrow_wrapper">
+          <div></div>
+        </div>
 
+
+        <div class="news_feed_wrapper">
+
+        </div>
+      </div> <!-- wrapper -->
+
+
+
+
+    </section>
 </body>
 </html>
