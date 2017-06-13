@@ -26,13 +26,14 @@ footer{
             font-size: 0;
             li{
                 display: inline-block;
+                position: relative;
             }
         }
     }
-    .instar{
+    .instagram{
         display: inline-block;
         width: 222px;
-        height: 222px;
+        height: 223px;
         background-image: url('../../assets/image/surround.svg'),url('../../assets/image/instagram.svg');
         background-color: transparent;
         overflow: hidden;
@@ -40,7 +41,7 @@ footer{
     .facebook{
         display: inline-block;
         width: 222px;
-        height: 222px;
+        height: 223px;
         background-image: url('../../assets/image/surround.svg'),url('../../assets/image/facebook.svg');
         background-color: transparent;
         overflow: hidden;
@@ -48,7 +49,7 @@ footer{
     .twitter{
         display: inline-block;
         width: 222px;
-        height: 222px;
+        height: 223px;
         background-image: url('../../assets/image/surround.svg'),url('../../assets/image/twitter.svg');
         background-color: transparent;
         overflow: hidden;
@@ -56,23 +57,60 @@ footer{
     .youtube{
         display: inline-block;
         width: 222px;
-        height: 222px;
+        height: 223px;
         background-image: url('../../assets/image/surround.svg'),url('../../assets/image/youtube.svg');
         background-color: transparent;
         overflow: hidden;
     }
+}// footer_btn_holder
+.overlay{
+      position: absolute;
+      top:5.5px;
+      left:6.5px;
+      border-radius: 100%;
+      width: 212px;
+      height: 212px;
+      opacity: 0;
+      background-color: black;
+      box-sizing: border-box;
 }
+.bg_sprite{
+  background-image: url('../../assets/image/spritesheet.jpg');
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 100%;
+  opacity: 0.6;
+
+}
+.social_values{
+    top:0;
+    height:100%;
+    position: relative;
+    text-align: center;
+    pointer-events: none;
+    span{
+      font-size: 18px;
+      color: #dddddd;
+      letter-spacing: 1px;
+      line-height: 212px;
+    }
+}
+
+
+
+
 span.spacer{
-    background-color: #FFF;
+  background-color: #FFF;
 	display: inline-block;
 	position: relative;
 	height: 222px;
 	width: 17px;
-    outline: 1px solid white;
+  outline: 1px #FFF solid;;
 
 }
-
-
 
 .footer_bottom{
     width: 100%;
@@ -88,6 +126,7 @@ span.spacer{
         height:100%;
     }
 }
+
 ul.footer_links{
     width: 1150px;
     margin: 0 auto;
