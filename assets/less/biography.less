@@ -1,0 +1,54 @@
+
+
+
+// layout
+
+
+section.bio{
+    border:1px #F00 solid;
+
+}
+
+div.bio_wrapper{
+    height: 100%;
+    width: 100%;
+    border:1px #F0F solid;
+}
+
+div.bio_slide{
+    margin-top:110px;
+    width: 100%;
+    height: 70%;
+    border:1px #00F solid;
+    ul{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        text-align: center;
+        li{
+            border:1px #0F0 solid;
+            display: inline-block;
+            height: 100%;
+            width: 480px;
+            img{
+                height: 100%;
+                cursor: e-resize;
+            }
+        }
+    }
+}
+
+.ab_right{
+    position: absolute;
+    right: -420px;
+    :before{
+        content: "";
+        height: 100%;
+        width: 15vw;
+    }
+
+}
+.ab_left{
+    position: absolute;
+    left: -420px;
+}
