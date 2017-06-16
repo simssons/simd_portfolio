@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../vendor/jQuery/dist/jquery.min.js"></script>
     <title>Document</title>
-    <style media="screen">
+    <style>
         .on{display: block;}
     </style>
     <script>
@@ -23,15 +23,18 @@
 
         $('.menu a').click(function(event){
             event.preventDefault();
+            console.log('ss');
 
             var menuToggle = $('.menu-main-menu-container')
 
             if (menuToggle.is('.on')) {
                 menuToggle.removeClass('on')
                 $(this).text('menu')
+                $('.gnb-inner div a').css('color','black')
             }else{
                 menuToggle.addClass('on')
                 $(this).text('back')
+                $('.gnb-inner div a').css('color','white')
             }
             autoHeight();
         })
@@ -82,7 +85,7 @@
             </div>
         </div><!-- bio_wrapper -->
     </section>
-    <section>        
+    <section>
     </section>
 include "footer.html"
 </body>

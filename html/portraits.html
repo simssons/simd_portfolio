@@ -8,7 +8,7 @@
     <script src="../vendor/jQuery/dist/jquery.min.js"></script>
     <title>Document</title>
     <style>
-        .gnb-inner div a {color:black;}
+        .on{display: block;}
     </style>
     <script>
     $(function(){
@@ -23,15 +23,18 @@
 
         $('.menu a').click(function(event){
             event.preventDefault();
+            console.log('ss');
 
             var menuToggle = $('.menu-main-menu-container')
 
             if (menuToggle.is('.on')) {
                 menuToggle.removeClass('on')
                 $(this).text('menu')
+                $('.gnb-inner div a').css('color','black')
             }else{
                 menuToggle.addClass('on')
                 $(this).text('back')
+                $('.gnb-inner div a').css('color','white')
             }
             autoHeight();
         })
@@ -55,25 +58,25 @@
                         </p>
                       </div>
                     </li>
-                    <li>
+                    <li style="left:60%">
                         <a href=""><img src="../assets/image/bio1.jpg" alt=""></a>
                         <div>
                             <cite>angelina jolie. los angeles. american voggue. 2010</cite>
                         </div>
                     </li>
-                    <li>
+                    <li style="left:120%">
                         <a href=""><img src="../assets/image/bio2.jpg" alt=""></a>
                         <div>
                             <cite>angelina jolie. los angeles. american voggue. 2010</cite>
                         </div>
                     </li>
-                    <li>
+                    <li style="left:180%">
                         <a href=""><img src="../assets/image/bio3.jpg" alt=""></a>
                         <div>
                             <cite>angelina jolie. los angeles. american voggue. 2010</cite>
                         </div>
                     </li>
-                    <li class="second_last_pt">
+                    <li class="second_last_pt" style="left:240%">
                         <div class="next_up">
                             <h3><a href="">next</a></h3>
                             <span><a href="">next art work</a></span>
@@ -106,13 +109,16 @@
                             </div>
                         </div>
                     </li>
+                    <li class="last_pt" style="left:273%"></li>
                 </ul>
             </div>
             <!-- portrait_gallery -->
             <div class="portrait_gallery_thumbnails">
                 <ul>
                     <li>
-                        <a href=""><img src="../assets/image/bio1.jpg" alt=""></a>
+                        <div id="test">
+                            <a href=""><img src="../assets/image/bio1.jpg" alt=""></a>
+                        </div>
                     </li>
                     <li>
                         <a href=""><img src="../assets/image/bio2.jpg" alt=""></a>
