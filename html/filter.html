@@ -38,7 +38,16 @@
             }
             autoHeight();
         })
-    })
+
+
+        $(document).on( "mousemove", function( event ) {
+          var x = event.pageX;
+          x *= 0.3;          
+          $('.filter_select').css('background-position', x );
+        })
+
+});
+
 
     </script>
 </head>
@@ -49,11 +58,14 @@
             <ul class="filter_list">
                 <li>
                     <div class="filter_select">
-                        <div>
-                            
+                        <div class="filter_sr">
                         </div>
                     </div>
                 </li>
+                <li>
+
+                </li>
+
             </ul>
 
         </div>
