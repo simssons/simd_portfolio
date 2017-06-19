@@ -6,45 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../vendor/jQuery/dist/jquery.min.js"></script>
+    <script src="../assets/JavaScript/common.js"></script>
     <title>Document</title>
     <style>
         .on{display: block;}
     </style>
     <script>
     $(function(){
-        var autoHeight = function(){
-            $('.menu-main-menu-container .fifty').height(($('.menu-main-menu-container').height()-90)/2)
 
-        }
-        $(window).resize(function(){
-            autoHeight();
-                console.log($('.menu-main-menu-container').height());
-        })
-
-        $('.menu a').click(function(event){
-            event.preventDefault();
-            console.log('ss');
-
-            var menuToggle = $('.menu-main-menu-container')
-
-            if (menuToggle.is('.on')) {
-                menuToggle.removeClass('on')
-                $(this).text('menu')
-                $('.gnb-inner div a').css('color','black')
-            }else{
-                menuToggle.addClass('on')
-                $(this).text('back')
-                $('.gnb-inner div a').css('color','white')
-            }
-            autoHeight();
-        })
-
-
+        //백그라운드 포지션이동
         $(document).on( "mousemove", function( event ) {
           var x = event.pageX;
-          x *= -0.5;          
+          x *= -1;
           $('.filter_select').css('background-position', x );
         })
+        //메뉴휠
+        var bi = ['LATESTF','PHOTOGRAPHYF','PORTRAITSF','FILMF'];
+
+$('.filter_select').mouseenter(function(){
+    $(this).on('wheel',function(e){
+        event.preventDefault();
+        var e = e.originalEvent;
+        console.log(e.detail);
+
+        var i = 0; i += 1;
+        if (i>2) { i = 0;}
+        $('div.filter_sr').css({
+            // 'background-image':'url(../assets/image/'+bi[0]+'.svg)'
+            'background-image': 'url(../assets/image/150.svg), url(../assets/image/'+bi[i]+'.svg)',
+            'background-repeat': 'no-repeat;',
+            'overflow': 'hidden;',
+            'background-size': 'cover, 61%;',
+            'background-position': '50% 100%, 50% 50%;'
+        })
+
+    })
+})
+
+
+
+        //hover
+        $('.filter_cover').hover(function(){
+            $(this).css('background-color','rgba(255,76,76,.25)').
+            find('img').css({'opacity':'.2','transform': 'scale(.98)'}).
+            parents('.filter_cover').siblings().children().
+            find('cite,span').css('opacity','1');
+        },function(){
+            $(this).css('background-color','transparent').
+            find('img').css({'opacity':'1','transform': 'scale(1)'}).
+            parents('.filter_cover').siblings().children().
+            find('cite,span').css('opacity','0');
+        });
+
+
 
 });
 
@@ -57,17 +71,134 @@
         <div class="filter_wrapper">
             <ul class="filter_list">
                 <li>
+                    <h2 class="ir">sect options</h2>
                     <div class="filter_select">
                         <div class="filter_sr">
                         </div>
                     </div>
                 </li>
                 <li>
-
+                    <div class="filter_description">
+                        <a href="">
+                            <cite>a standing woman</cite>
+                            <span>Jay Walkers Gallery, Chuncheon, 2017</span>
+                        </a>
+                    </div>
+                    <div class="filter_cover">
+                        <a href=""><img src="../assets/image/pf0.png" alt=""></a>
+                    </div>
                 </li>
-
+                <li>
+                    <div class="filter_description">
+                        <a href="">
+                            <cite>a standing woman</cite>
+                            <span>Jay Walkers Gallery, Chuncheon, 2017</span>
+                        </a>
+                    </div>
+                    <div class="filter_cover">
+                        <a href=""><img src="../assets/image/pf1.png" alt=""></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="filter_description">
+                        <a href="">
+                            <cite>a standing woman</cite>
+                            <span>Jay Walkers Gallery, Chuncheon, 2017</span>
+                        </a>
+                    </div>
+                    <div class="filter_cover">
+                        <a href=""><img src="../assets/image/pf2.png" alt=""></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="filter_description">
+                        <a href="">
+                            <cite>a standing woman</cite>
+                            <span>Jay Walkers Gallery, Chuncheon, 2017</span>
+                        </a>
+                    </div>
+                    <div class="filter_cover">
+                        <a href=""><img src="../assets/image/pf3.png" alt=""></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="filter_description">
+                        <a href="">
+                            <cite>a standing woman</cite>
+                            <span>Jay Walkers Gallery, Chuncheon, 2017</span>
+                        </a>
+                    </div>
+                    <div class="filter_cover">
+                        <a href=""><img src="../assets/image/pf4.png" alt=""></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="filter_description">
+                        <a href="">
+                            <cite>a standing woman</cite>
+                            <span>Jay Walkers Gallery, Chuncheon, 2017</span>
+                        </a>
+                    </div>
+                    <div class="filter_cover">
+                        <a href=""><img src="../assets/image/pf5.png" alt=""></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="filter_description">
+                        <a href="">
+                            <cite>a standing woman</cite>
+                            <span>Jay Walkers Gallery, Chuncheon, 2017</span>
+                        </a>
+                    </div>
+                    <div class="filter_cover">
+                        <a href=""><img src="../assets/image/pf6.png" alt=""></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="filter_description">
+                        <a href="">
+                            <cite>a standing woman</cite>
+                            <span>Jay Walkers Gallery, Chuncheon, 2017</span>
+                        </a>
+                    </div>
+                    <div class="filter_cover">
+                        <a href=""><img src="../assets/image/pf7.png" alt=""></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="filter_description">
+                        <a href="">
+                            <cite>a standing woman</cite>
+                            <span>Jay Walkers Gallery, Chuncheon, 2017</span>
+                        </a>
+                    </div>
+                    <div class="filter_cover">
+                        <a href=""><img src="../assets/image/pf8.png" alt=""></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="filter_description">
+                        <a href="">
+                            <cite>a standing woman</cite>
+                            <span>Jay Walkers Gallery, Chuncheon, 2017</span>
+                        </a>
+                    </div>
+                    <div class="filter_cover">
+                        <a href=""><img src="../assets/image/pf9.png" alt=""></a>
+                    </div>
+                </li>
+                <li>
+                    <div class="filter_description">
+                        <a href="">
+                            <cite>a standing woman</cite>
+                            <span>Jay Walkers Gallery, Chuncheon, 2017</span>
+                        </a>
+                    </div>
+                    <div class="filter_cover">
+                        <a href=""><img src="../assets/image/pf10.png" alt=""></a>
+                    </div>
+                </li>
             </ul>
-
         </div>
     </section>
 </body>
