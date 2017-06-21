@@ -8,14 +8,12 @@
     <script src="../vendor/jQuery/dist/jquery.min.js"></script>
     <script src="../assets/JavaScript/common.js"></script>
     <title>Document</title>
-    <style>
-        .on{display: block;}
-    </style>
+
     <script>
     $(function(){
 
 
-        //백그라운드 포지션이동
+    //백그라운드 포지션이동
         $(document).on( "mousemove", function( event ) {
           var x = event.pageX;
           x *= -1;
@@ -23,64 +21,42 @@
         })
 
 
-        //메뉴휠
-        var bi = ['photographyf','latestf','portraitsf','filmf'];
+    //메뉴휠
+        var bi = ['latestf','photographyf','portraitsf','filmf'];
+        //초기에 0이니까........
         var scrollNum = 0;
 
         $('.filter_select').mouseenter(function(){
             $(this).on('wheel',function(e){
                 e.preventDefault();
-
                 scrollNum += 1;
                 // var scrollNumA= Math.floor(scrollNum);
-                console.log(scrollNum);
-
-
                 if (scrollNum > bi.length - 1) { scrollNum = 0;}
                 $('div.filter_sr').css({
                     'background-image': 'url(../assets/image/'+bi[scrollNum]+'.svg)'
                 })
-                // .parents().find('#filter_trigger').text('나와랏');
-                console.log(scrollNum);
-                // console.log(bi[scrollNumA]);
-
             })
         })
 
-        //filter_trigger
+    //필터클릭
         $('a#filter_trigger').on('click',function(event){
             event.preventDefault();
             //배열이 무너져있어서 end로 정리함. end안쓰면 밑에서 li한번 더 선택해야 함.
             $('.filter_list li').filter('.'+bi[scrollNum]).fadeIn().end().
             not('.'+bi[scrollNum]).fadeOut();
-        })
+        });
 
 
-        //뿌려
+    //JSON
       $.getJSON('../assets/javascript/datalist.json',function(fuck){
 
-        /* 뻘짓
-                // each i는 index, e나 다른건 this
-                var ctimeS = [[],[],[],[],[]];
-                var ctimeN = [[],[],[],[],[]];
-
-                //쪼개
-                for (var i = 0; i < fuck.list.length; i++) {
-                    ctimeS[i] = fuck.list[i].ctime.split('.')
-                }
-                //담아
-                for (var i = 0; i < ctimeS.length; i++) {
-                  for (var j = 0; j < ctimeS[i].length; j++) {
-                    ctimeN[i][j] = parseInt(ctimeS[i][j]);
-                  }
-                }
-              // ctimeN.sort();
-        */
-        function sortingByDate(){
-          fuck.list.sort(function(a, b) {
-            return (new Date(b.ctime)) - (new Date(a.ctime))
-          })
-        }
+        //latest
+            function sortingByDate(){
+              fuck.list.sort(function(a, b) {
+                return (new Date(b.ctime)) - (new Date(a.ctime))
+              })
+            }
+            sortingByDate();
 
         //뿌리자.
             var htmlHolder = [];
@@ -94,38 +70,36 @@
                 var jsonFilterValue ='';
                 jsonFilterValue = fuck.list[i].filterValue;
 
-                filterClassesPh = jsonFilterValue.match('photographyf');
-                filterClassesLa = jsonFilterValue.match('latestf');
-                filterClassesPo = jsonFilterValue.match('portraitsf')
-                filterClassesFi = jsonFilterValue.match('filmf')
+                var filterClassesLa = jsonFilterValue.match('latestf');
+                var filterClassesPh = jsonFilterValue.match('photographyf');
+                var filterClassesPo = jsonFilterValue.match('portraitsf')
+                var filterClassesFi = jsonFilterValue.match('filmf')
 
                 // filterClasses += jsonFilterValue.match('latest')
                 // filterClasses += jsonFilterValue.match('portraits')
                 // filterClasses += jsonFilterValue.match('film')
 
-                jsonlist += '<li class="'+filterClassesPh+" "+filterClassesLa+" "+filterClassesPo+" "+filterClassesFi+'">';
+                jsonlist += '<li class="'+filterClassesLa+" "+filterClassesPh+" "+filterClassesPo+" "+filterClassesFi+'">';
                 jsonlist += '<div class="filter_description">';
                 jsonlist += '<span>';
                 jsonlist += '<cite>'+ fuck.list[i].cite +'</cite>';
-                jsonlist += '<span>Jay Walkers Gallery, Chuncheon, 2017</span>';
+                jsonlist += '<span>'+ fuck.list[i].description+'</span>';
                 jsonlist += '</span>';
                 jsonlist += '</div>';
                 jsonlist += '<div class="filter_cover">';
                 jsonlist += '<a href="">';
                 if (fuck.list[i].type == 'video') {
                     jsonlist += '<video autoplay loop width="60%" height="100%" class="hover_vimg">';
-                    jsonlist += '<source src="../assets/video/main_video_1.webm" type="video/mp4"/>';
+                    jsonlist += '<source src="'+fuck.list[i].themeURL+'" type="video/mp4"/>';
                     jsonlist += '</video>';
                 }else if (fuck.list[i].type == 'img') {
-                    jsonlist += '<img src="../assets/image/pf0.png" alt="" class="hover_vimg">';
+                    jsonlist += '<img src="'+ fuck.list[i].themeURL +'" alt="" class="hover_vimg">';
                 }
                 jsonlist += '</a>';
                 jsonlist += '</div>';
                 jsonlist += '</li>';
-
                 htmlHolder.push(jsonlist);
             })
-
 
             for (var i = 0; i < fuck.list.length; i++) {
                 $('.filter_list li:first').after(htmlHolder[order - i]);
@@ -133,26 +107,43 @@
 
         })//getJSON
 
-
         //hover
-        $('body').on({
+        $('body.filter_body').on({
             "mouseenter":function(){
             $(this).css('background-color','rgba(255,76,76,.25)')
-            .find('.hover_vimg').css({'opacity':'.2','transform': 'scale(.98)'})
-            .parents('.photographyf').find('cite,span').css('opacity','1')
+            .find('.hover_vimg').css({'opacity':'.2','transform': 'scale(.95)'})
+            .parents('li').find('cite,span').css('opacity','1')
 
             $(this).parent('li').siblings().find('.filter_cover')
             .css('background-color','').find('.hover_vimg').css({'opacity':'1','transform': 'scale(.98)'})
-            .parents('.photographyf').find('cite,span').css('opacity','0')
+            .parents('li').find('cite,span').css('opacity','0')
             },
             "mouseleave":function(){
-                console.log('나가')
+                console.log('나가');
+                $(this).css('border','1px #F00 solid;');
+                $(this).parent('li').siblings().find('.filter_cover')
+                .css('background-color','').find('.hover_vimg').css({'opacity':'1','transform': ''})
+                .parents('li').find('cite,span').css('opacity','0')
             }
         },'.filter_cover')
+        //
+        // <li class="photographyf">
+        //     <div class="filter_description">
+        //         <a href="">
+        //             <cite>a standing woman</cite>
+        //             <span>Jay Walkers Gallery, Chuncheon, 2017</span>
+        //         </a>
+        //     </div>
+        //     <div class="filter_cover">
+        //         <a href=""><img src="../assets/image/pf0.png" alt="" class="hover_vimg"></a>
+        //     </div>
+        // </li>
+
 
 
 });
     </script>
+
 </head>
 <body class="filter_body">
     include "gnb.html"
@@ -171,35 +162,17 @@
 
                     </div>
                 </li>
-                <!-- <li class="photographyf">
-                    <div class="filter_description">
-                        <a href="">
-                            <cite>a standing woman</cite>
-                            <span>Jay Walkers Gallery, Chuncheon, 2017</span>
-                        </a>
-                    </div>
-                    <div class="filter_cover">
-                        <a href=""><img src="../assets/image/pf0.png" alt="" class="hover_vimg"></a>
-                    </div>
-                </li>
-                <li class="filmf">
-                    <div class="filter_description">
-                        <a href="">
-                            <cite>a standing woman</cite>
-                            <span>Jay Walkers Gallery, Chuncheon, 2017</span>
-                        </a>
-                    </div>
-                    <div class="filter_cover">
-                        <a href="">
-                            <video autoplay loop width="60%" height="100%" class="hover_vimg">
-                                <source src="../assets/video/main_video_1.webm" type="video/mp4"/>
-                            </video>
-                        </a>
-                    </div>
-                </li> -->
-
             </ul>
         </div>
     </section>
 </body>
+<style>
+    .on{display: block;}
+    @media screen and (max-width:800px){
+        li{width:33.33%}
+    }
+    @media screen and (max-width:600px){
+        li{width:50%}
+    }
+</style>
 </html>
