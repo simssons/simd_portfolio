@@ -41,6 +41,7 @@
 
             })
         })
+
         //filter_trigger
         $('a#filter_trigger').on('click',function(event){
             event.preventDefault();
@@ -51,59 +52,94 @@
 
 
         //뿌려
-        $.getJSON('../assets/javascript/datalist.json',function(fuck){
+      $.getJSON('../assets/javascript/datalist.json',function(fuck){
 
-        var a = new Array(new Array('gg','hh'),"2","3")
+        /* 뻘짓
+                // each i는 index, e나 다른건 this
+                var ctimeS = [[],[],[],[],[]];
+                var ctimeN = [[],[],[],[],[]];
 
-        b = [[[[],[],[]],[],[],[]],[],[],[],[]]
+                //쪼개
+                for (var i = 0; i < fuck.list.length; i++) {
+                    ctimeS[i] = fuck.list[i].ctime.split('.')
+                }
+                //담아
+                for (var i = 0; i < ctimeS.length; i++) {
+                  for (var j = 0; j < ctimeS[i].length; j++) {
+                    ctimeN[i][j] = parseInt(ctimeS[i][j]);
+                  }
+                }
+              // ctimeN.sort();
+        */
 
-        console.log(a[0][0])
-
-        // var a[0] = fuck.list[0].ctime.split('.')
-        // console.log(a[0][])
 
 
 
 
+
+
+
+
+        function sortingByDate(){
+          fuck.list.sort(function(a, b) {
+            return (new Date(b.ctime)) - (new Date(a.ctime))
+          })
+        }
+
+        //뿌리자.
             var htmlHolder = [];
             var order = fuck.list.length-1
 
             $.each(fuck.list,function(i,e){
-                var html = '';
-                html += '<li class="filmf">';
-                html += '<div class="filter_description">';
-                html += '<span>';
-                html += '<cite>'+ fuck.list[i].cite +'</cite>';
-                html += '<span>Jay Walkers Gallery, Chuncheon, 2017</span>';
-                html += '</span>';
-                html += '</div>';
-                html += '<div class="filter_cover">';
-                html += '<a href="">';
-                if (fuck.list[i].type == 'video') {
-                    html += '<video autoplay loop width="60%" height="100%" class="hover_vimg">';
-                    html += '<source src="../assets/video/main_video_1.webm" type="video/mp4"/>';
-                    html += '</video>';
-                }else if (fuck.list[i].type == 'img') {
-                    html += '<img src="../assets/image/pf0.png" alt="" class="hover_vimg">';
-                }
-                html += '</a>';
-                html += '</div>';
-                html += '</li>';
+                var jsonlist = '';
+                // var bi = ['photographyf','latestf','portraitsf','filmf'];
 
-                htmlHolder.push(html);
+                var jsonFilterValue = fuck.list[i].filterValue;
+                console.log(jsonFilterValue);
+
+                var filterClasses;
+
+                filterClasses = jsonFilterValue[i].match('photography');
+                console.log(filterClasses);
+                // filterClasses += jsonFilterValue.match('latest')
+                // filterClasses += jsonFilterValue.match('portraits')
+                // filterClasses += jsonFilterValue.match('film')
+
+
+
+
+
+                jsonlist += '<li class="filmf">';
+                jsonlist += '<div class="filter_description">';
+                jsonlist += '<span>';
+                jsonlist += '<cite>'+ fuck.list[i].cite +'</cite>';
+                jsonlist += '<span>Jay Walkers Gallery, Chuncheon, 2017</span>';
+                jsonlist += '</span>';
+                jsonlist += '</div>';
+                jsonlist += '<div class="filter_cover">';
+                jsonlist += '<a href="">';
+                if (fuck.list[i].type == 'video') {
+                    jsonlist += '<video autoplay loop width="60%" height="100%" class="hover_vimg">';
+                    jsonlist += '<source src="../assets/video/main_video_1.webm" type="video/mp4"/>';
+                    jsonlist += '</video>';
+                }else if (fuck.list[i].type == 'img') {
+                    jsonlist += '<img src="../assets/image/pf0.png" alt="" class="hover_vimg">';
+                }
+                jsonlist += '</a>';
+                jsonlist += '</div>';
+                jsonlist += '</li>';
+
+                htmlHolder.push(jsonlist);
             })
+
 
             for (var i = 0; i < fuck.list.length; i++) {
                 $('.filter_list li:first').after(htmlHolder[order - i]);
             }
 
 
+        })//getJSON
 
-
-
-
-
-        })
 
         //hover
         $('body').on({
