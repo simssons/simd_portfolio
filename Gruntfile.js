@@ -39,7 +39,7 @@ module.exports = function(grunt) {
     },
     includes: { //복수로 여러개
       dist:{
-          cwd:'html', //current working directory 현재경로
+          cwd:'html', //current working directory 현재경로,실제인클루드진행할파일위치
           src:['*.html','includes/*.html'], //대상파일들
           dest:'./dist', //destination 만들어진 파일이 들어갈 경로. 목적지
           options:{

@@ -31,13 +31,17 @@
             $(this).on('wheel',function(e){
                 e.preventDefault();
 
-                scrollNum += 1;
-                if (scrollNum > bi.length - 1) { scrollNum = 0;}
+                scrollNum += .5;
+                var scrollNumA= Math.floor(scrollNum);
+
+
+                if (scrollNumA > bi.length - 1) { scrollNum = 0;}
                 $('div.filter_sr').css({
-                    'background-image': 'url(../assets/image/150.svg), url(../assets/image/'+bi[scrollNum]+'.svg)'
+                    'background-image': 'url(../assets/image/150.svg), url(../assets/image/'+bi[scrollNumA]+'.svg)'
                 })
                 // .parents().find('#filter_trigger').text('나와랏');
-                console.log(bi[scrollNum]);
+                console.log(scrollNum);
+                console.log(bi[scrollNumA]);
 
             })
         })
@@ -46,8 +50,8 @@
         $('a#filter_trigger').on('click',function(event){
             event.preventDefault();
             //배열이 무너져있어서 end로 정리함. end안쓰면 밑에서 li한번 더 선택해야 함.
-            $('.filter_list li').filter('.'+bi[scrollNum]).fadeIn().end().
-            not('.'+bi[scrollNum]).fadeOut();
+            $('.filter_list li').filter('.'+bi[scrollNum]).show().end().
+            not('.'+bi[scrollNum]).hide();
         })
 
 
@@ -71,15 +75,6 @@
                 }
               // ctimeN.sort();
         */
-
-
-
-
-
-
-
-
-
         function sortingByDate(){
           fuck.list.sort(function(a, b) {
             return (new Date(b.ctime)) - (new Date(a.ctime))
@@ -88,28 +83,27 @@
 
         //뿌리자.
             var htmlHolder = [];
-            var order = fuck.list.length-1
+            var order = fuck.list.length-1;
+            var filterClasses = '';
 
             $.each(fuck.list,function(i,e){
                 var jsonlist = '';
                 // var bi = ['photographyf','latestf','portraitsf','filmf'];
 
-                var jsonFilterValue = fuck.list[i].filterValue;
-                console.log(jsonFilterValue);
+                var jsonFilterValue ='';
+                jsonFilterValue = fuck.list[i].filterValue;
 
-                var filterClasses;
+                filterClassesPh = jsonFilterValue.match('photographyf');
+                filterClassesLa = jsonFilterValue.match('latestf');
+                filterClassesPo = jsonFilterValue.match('portraitsf')
+                filterClassesFi = jsonFilterValue.match('filmf')
 
-                filterClasses = jsonFilterValue[i].match('photography');
-                console.log(filterClasses);
                 // filterClasses += jsonFilterValue.match('latest')
                 // filterClasses += jsonFilterValue.match('portraits')
                 // filterClasses += jsonFilterValue.match('film')
 
 
-
-
-
-                jsonlist += '<li class="filmf">';
+                jsonlist += '<li class="'+filterClassesPh+" "+filterClassesLa+" "+filterClassesPo+" "+filterClassesFi+'">';
                 jsonlist += '<div class="filter_description">';
                 jsonlist += '<span>';
                 jsonlist += '<cite>'+ fuck.list[i].cite +'</cite>';
@@ -133,10 +127,11 @@
             })
 
 
+
+
             for (var i = 0; i < fuck.list.length; i++) {
                 $('.filter_list li:first').after(htmlHolder[order - i]);
             }
-
 
         })//getJSON
 
