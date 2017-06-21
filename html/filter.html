@@ -31,17 +31,18 @@
             $(this).on('wheel',function(e){
                 e.preventDefault();
 
-                scrollNum += .5;
-                var scrollNumA= Math.floor(scrollNum);
+                scrollNum += 1;
+                // var scrollNumA= Math.floor(scrollNum);
+                console.log(scrollNum);
 
 
-                if (scrollNumA > bi.length - 1) { scrollNum = 0;}
+                if (scrollNum > bi.length - 1) { scrollNum = 0;}
                 $('div.filter_sr').css({
-                    'background-image': 'url(../assets/image/150.svg), url(../assets/image/'+bi[scrollNumA]+'.svg)'
+                    'background-image': 'url(../assets/image/'+bi[scrollNum]+'.svg)'
                 })
                 // .parents().find('#filter_trigger').text('나와랏');
                 console.log(scrollNum);
-                console.log(bi[scrollNumA]);
+                // console.log(bi[scrollNumA]);
 
             })
         })
@@ -50,8 +51,8 @@
         $('a#filter_trigger').on('click',function(event){
             event.preventDefault();
             //배열이 무너져있어서 end로 정리함. end안쓰면 밑에서 li한번 더 선택해야 함.
-            $('.filter_list li').filter('.'+bi[scrollNum]).show().end().
-            not('.'+bi[scrollNum]).hide();
+            $('.filter_list li').filter('.'+bi[scrollNum]).fadeIn().end().
+            not('.'+bi[scrollNum]).fadeOut();
         })
 
 
@@ -102,7 +103,6 @@
                 // filterClasses += jsonFilterValue.match('portraits')
                 // filterClasses += jsonFilterValue.match('film')
 
-
                 jsonlist += '<li class="'+filterClassesPh+" "+filterClassesLa+" "+filterClassesPo+" "+filterClassesFi+'">';
                 jsonlist += '<div class="filter_description">';
                 jsonlist += '<span>';
@@ -125,8 +125,6 @@
 
                 htmlHolder.push(jsonlist);
             })
-
-
 
 
             for (var i = 0; i < fuck.list.length; i++) {
@@ -166,9 +164,11 @@
                     <div class="filter_select">
                         <div class="filter_sr">
                         </div>
+                        <div class="filter_fixed"></div>
                         <div class="filter_click">
                             <a href="" id="filter_trigger"></a>
                         </div>
+
                     </div>
                 </li>
                 <!-- <li class="photographyf">
