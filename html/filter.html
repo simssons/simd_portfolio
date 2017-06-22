@@ -8,6 +8,10 @@
     <script src="../vendor/jQuery/dist/jquery.min.js"></script>
     <script src="../assets/JavaScript/common.js"></script>
     <title>Document</title>
+    <style>
+    header{background-color: white;}
+
+    </style>
 
     <script>
     $(function(){
@@ -29,14 +33,31 @@
         $('.filter_select').mouseenter(function(){
             $(this).on('wheel',function(e){
                 e.preventDefault();
-                scrollNum += 1;
+
+                var wheelEvent = e.originalEvent.wheelDelta;
+
+                if (wheelEvent > 0) {
+                    scrollNum += 1;
+                }else if (wheelEvent < 0) {
+                    scrollNum -= 1;
+                }
                 // var scrollNumA= Math.floor(scrollNum);
-                if (scrollNum > bi.length - 1) { scrollNum = 0;}
+
+                if (scrollNum > bi.length - 1) {
+                     scrollNum = 0;
+                 }else if ( scrollNum < 0 ) {
+                     scrollNum = bi.length - 1;
+                 }
+
                 $('div.filter_sr').css({
                     'background-image': 'url(../assets/image/'+bi[scrollNum]+'.svg)'
                 })
+                console.log(scrollNum);
             })
         })
+        // $(".filter_body").on("mousewheel", function (event) {
+        //
+        //  });
 
     //필터클릭
         $('a#filter_trigger').on('click',function(event){
@@ -110,23 +131,27 @@
         //hover
         $('body.filter_body').on({
             "mouseenter":function(){
-            $(this).css('background-color','rgba(255,76,76,.25)')
-            .find('.hover_vimg').css({'opacity':'.2','transform': 'scale(.95)'})
-            .parents('li').find('cite,span').css('opacity','1')
+                $(this).css('background-color','rgba(255,76,76,.25)')
+                .find('.hover_vimg').css({'opacity':'.2','transform': 'scale(.95)'})
+                .parents('li').find('cite,span').css('opacity','1')
 
-            $(this).parent('li').siblings().find('.filter_cover')
-            .css('background-color','').find('.hover_vimg').css({'opacity':'1','transform': 'scale(.98)'})
-            .parents('li').find('cite,span').css('opacity','0')
-            },
-            "mouseleave":function(){
-                console.log('나가');
-                $(this).css('border','1px #F00 solid;');
                 $(this).parent('li').siblings().find('.filter_cover')
                 .css('background-color','').find('.hover_vimg').css({'opacity':'1','transform': ''})
-                .parents('li').find('cite,span').css('opacity','0')
+                .parents('li').find('cite,span').css('opacity','')
             }
         },'.filter_cover')
-        //
+
+        $('body.filter_body').on({
+            mouseenter:function(){
+                $(this).parent('li').siblings().find('.filter_cover')
+                .css('background-color','').find('.hover_vimg').css({'opacity':'1','transform': ''})
+                .parents('li').find('cite,span').css('opacity','')
+            }
+        },':not(.filter_cover)')
+
+
+        //바디에 걸려있지만 filter_cover 로 가면 작동함.
+
         // <li class="photographyf">
         //     <div class="filter_description">
         //         <a href="">

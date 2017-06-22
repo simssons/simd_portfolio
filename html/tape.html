@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- include "loading.html" -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../vendor/jQuery/dist/jquery.min.js"></script>
+    <script src="../assets/JavaScript/common.js"></script>
+    <script>
+
+$(function(){
+    $('.tape_body').on({
+        "mouseenter":function(){
+            $(this).css('opacity','.55').siblings('.film_description').
+            find('span').css('opacity','1');
+
+            $(this).parents('li').siblings('li').
+            find('.film_opa').css('opacity','0').siblings('.film_description').
+            find('span').css('opacity','0')
+        },
+        "mouseleave":function(){
+            // $(this).css('opacity','0')``
+        }
+    },'.film_opa')
+
+})
+    </script>
+</head>
+<body class="tape_body">
+    include "gnb.html"
+
+    <div class="tape_wapper">
+        <section>
+            <div class="scroll_listener">
+                <div class="film_wrapper">
+                    <ul class="film_container">
+                        <li>
+                            <a href="">
+                                <img src="../assets/image/tape/asset 0.jpeg" alt="">
+                                <div class="film_opa"></div>
+                                <div class="film_description">
+                                    <h2>
+                                        <span>Lorem ipsum dolor</span>
+                                        <span>Chuncheon, 2017</span>
+                                    </h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../assets/image/tape/asset 1.jpeg" alt="">
+                                <div class="film_opa"></div>
+                                <div class="film_description">
+                                    <h2>
+                                        <span>Lorem ipsum dolor</span>
+                                        <span>Chuncheon, 2017</span>
+                                    </h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../assets/image/tape/asset 2.jpeg" alt="">
+                                <div class="film_opa"></div>
+                                <div class="film_description">
+                                    <h2>
+                                        <span>Lorem ipsum dolor</span>
+                                        <span>Chuncheon, 2017</span>
+                                    </h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../assets/image/tape/asset 3.jpeg" alt="">
+                                <div class="film_opa"></div>
+                                <div class="film_description">
+                                    <h2>
+                                        <span>Lorem ipsum dolor</span>
+                                        <span>Chuncheon, 2017</span>
+                                    </h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../assets/image/tape/asset 4.jpeg" alt="">
+                                <div class="film_opa"></div>
+                                <div class="film_description">
+                                    <h2>
+                                        <span>Lorem ipsum dolor</span>
+                                        <span>Chuncheon, 2017</span>
+                                    </h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../assets/image/tape/asset 5.jpeg" alt="">
+                                <div class="film_opa"></div>
+                                <div class="film_description">
+                                    <h2>
+                                        <span>Lorem ipsum dolor</span>
+                                        <span>Chuncheon, 2017</span>
+                                    </h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../assets/image/tape/asset 6.jpeg" alt="">
+                                <div class="film_opa"></div>
+                                <div class="film_description">
+                                    <h2>
+                                        <span>Lorem ipsum dolor</span>
+                                        <span>Chuncheon, 2017</span>
+                                    </h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../assets/image/tape/asset 7.jpeg" alt="">
+                                <div class="film_opa"></div>
+                                <div class="film_description">
+                                    <h2>
+                                        <span>Lorem ipsum dolor</span>
+                                        <span>Chuncheon, 2017</span>
+                                    </h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="../assets/image/tape/asset 4.jpeg" alt="">
+                                <div class="film_opa"></div>
+                                <div class="film_description">
+                                    <h2>
+                                        <span>Lorem ipsum dolor</span>
+                                        <span>Chuncheon, 2017</span>
+                                    </h2>
+                                </div>
+                            </a>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+
+
+            </div>
+        </section>
+    </div><!-- tape_wapper -->
+
+
+</body>
+</html>

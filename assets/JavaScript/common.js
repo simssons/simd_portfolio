@@ -11,9 +11,9 @@ $(function(){
             console.log($('.menu-main-menu-container').height());
     })
 
+
     $('.menu a').click(function(event){
-        event.preventDefault();
-        console.log('ss');
+        event.preventDefault();        
 
         var menuToggle = $('.menu-main-menu-container')
 
