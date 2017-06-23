@@ -141,30 +141,17 @@
             }
         },'.filter_cover')
 
-        $('body.filter_body').on({
-            mouseenter:function(){
-                $(this).parent('li').siblings().find('.filter_cover')
-                .css('background-color','').find('.hover_vimg').css({'opacity':'1','transform': ''})
-                .parents('li').find('cite,span').css('opacity','')
-            }
-        },':not(.filter_cover)')
-
-
-        //바디에 걸려있지만 filter_cover 로 가면 작동함.
-
-        // <li class="photographyf">
-        //     <div class="filter_description">
-        //         <a href="">
-        //             <cite>a standing woman</cite>
-        //             <span>Jay Walkers Gallery, Chuncheon, 2017</span>
-        //         </a>
-        //     </div>
-        //     <div class="filter_cover">
-        //         <a href=""><img src="../assets/image/pf0.png" alt="" class="hover_vimg"></a>
-        //     </div>
-        // </li>
-
-
+        $(':not(.filter_cover)').hover(function(){
+            $('.filter_list li').find('.filter_cover')
+            .css('background-color','').find('.hover_vimg').css({'opacity':'1','transform': ''})
+            .parents('li').find('cite,span').css('opacity','')
+        })
+        $('section').hover(function(){
+            console.log('s');
+            $('.filter_list li').find('.filter_cover')
+            .css('background-color','').find('.hover_vimg').css({'opacity':'1','transform': ''})
+            .parents('li').find('cite,span').css('opacity','')
+        })
 
 });
     </script>
@@ -178,26 +165,15 @@
                 <li class="photographyf latestf portraitsf filmf">
                     <h2 class="ir">sect options</h2>
                     <div class="filter_select">
-                        <div class="filter_sr">
-                        </div>
+                        <div class="filter_sr"></div>
                         <div class="filter_fixed"></div>
                         <div class="filter_click">
                             <a href="" id="filter_trigger"></a>
                         </div>
-
                     </div>
                 </li>
             </ul>
         </div>
     </section>
 </body>
-<style>
-    .on{display: block;}
-    @media screen and (max-width:800px){
-        li{width:33.33%}
-    }
-    @media screen and (max-width:600px){
-        li{width:50%}
-    }
-</style>
 </html>

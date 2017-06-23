@@ -20,11 +20,22 @@ $(function(){
             $(this).parents('li').siblings('li').
             find('.film_opa').css('opacity','0').siblings('.film_description').
             find('span').css('opacity','0')
+
         },
         "mouseleave":function(){
             // $(this).css('opacity','0')``
         }
     },'.film_opa')
+
+    $('.film_container').on({
+        "mouseenter":function(){
+            console.log('ㅇ');
+            $(this).parents('li').siblings('li').
+            find('.film_opa').css('opacity','0').siblings('.film_description').
+            find('span').css('opacity','0')
+        }
+    },':not(.filter_cover)')
+
 
 })
     </script>

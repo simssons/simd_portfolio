@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style media="screen">
+      img{border:0 none;}
+  </style>
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+<style>
+.wrapper{
+    border: 1px #F00 solid;
+    position: relative;
+    width: 360px;
+    overflow: hidden;
+}
+.textHolder{
+    border: 1px #FF0 solid;
+    position: absolute;
+    left: 0;
+    top: 45%;
+    width: 100%;
+}
+h1{
+    text-align: center;
+    opacity: 1;
+}
+.opa{
+    border: 1px #F0F solid;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0;
+}
+</style>
+
+<div class="wrapper">
+    <div class="textHolder">
+        <h1>text</h1>
+    </div>
+    <div class="opa"></div>
+    <img src="../assets/image/v1.png" alt="">
+</div>
+<div class="wrapper">
+    <div class="textHolder">
+        <h1>text</h1>
+    </div>
+    <div class="opa"></div>
+    <img src="../assets/image/v1.png" alt="">
+</div>
+<script>
+$('.wrapper').hover(function(){
+    $(this).css('border','10px #F00 solid').find('.opa').
+    css('opacity','.6').
+    siblings('.textHolder').find('h1').css('opacity','.1')
+},function(){
+    $(this).css('border','').find('.opa').css('opacity','0').
+    siblings('.textHolder').css('opacity','.1')
+})
+</script>
+
+
+
+
+
+
+</body>
+</html>
