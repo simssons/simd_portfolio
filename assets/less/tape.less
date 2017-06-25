@@ -1,9 +1,7 @@
 body.tape_body{
     width: 100%;
     height: 100%;
-    border: 1px #F00 solid;
-    .gnb-inner{border-bottom: 1px solid #e8e8e8;}
-    .gnb-inner div a {color:black;}
+    .gnb-inner div a {color:black; transition: 1s;}
     box-sizing: border-box;
     .on{display: block;}
 }
@@ -16,12 +14,8 @@ div.tape_wapper{
         width: 100%;
         height: 100%;
         position: relative;
-        overflow-x: scroll;
-        white-space:nowrap
-
-
-
-    }
+        white-space:nowrap;
+      }
 
 }
 .scroll_listener{
@@ -43,22 +37,24 @@ div.tape_wapper{
                 position: relative;
                 img{
                     height: 100%;
+                    transition: 0.5s;
                 }
                 .film_description{
                     position: absolute;
-                    top: 50%;
-                    left:50%;
-                    margin-left: -10vh;
+                    top: 45%;
+                    width: 100%;
+                    left:0;
+                    margin:0 auto;
                     h2{
-                        margin:0 auto;
+                      text-align: center;
                         span{
                             display: block;
                             font-weight: 200;
-                            font-size: 16px;
+                            font-size: 13px;
                             letter-spacing: 0.125em;
                             line-height: 1.45em;
                             text-rendering: optimizeLegibility;
-                            color: #515151;
+                            color: #FFF;
                             opacity: 0;
                             transition: 0.5s
                         }
@@ -69,6 +65,7 @@ div.tape_wapper{
                 }
                 .film_opa{
                     position: absolute;
+                    z-index: 1;
                     left:0;
                     top:0;
                     width: 100%;
@@ -77,10 +74,67 @@ div.tape_wapper{
                     opacity: 0;
                     transition: 0.5s ease;
                 }
+                .aClick{
+                  display: block;
+                  height: 100%;
+                  width: 100%;
+                  position: absolute;
+                }
+            }//li
+        }//film_container
+    }
+}
 
-            }
-        }
+.TapeFilmPopUp{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    &:before{
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      z-index: 10;
+      display: block;
+      background-color: #FFF;
+      opacity: .7;
     }
 
+    .TapeIframeWrapper{
+      width: 50%;
+      height: 28vw;
+      margin: 0 auto;
+      margin-top: 10%;
+      position: relative;
+      z-index: 15;
+      iframe{
+        width: 100%;
+        height: 100%;
+      }
 
+      .TapeFilmInfo{
+        margin-top: 15px;
+        cite,span{
+          width: 100%;
+          text-transform: capitalize;
+          font-weight: 200;
+          line-height: 1.45em;
+          letter-spacing: 0.075em;
+          color: #b8b8b8;
+          font-size: 12px;
+          text-overflow: ellipsis;
+          text-align: left;
+          font-style: normal;
+        }
+        span{
+          margin-left: 5px;
+        }
+      }
+
+    }
 }

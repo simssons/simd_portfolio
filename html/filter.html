@@ -108,7 +108,7 @@
                 jsonlist += '</span>';
                 jsonlist += '</div>';
                 jsonlist += '<div class="filter_cover">';
-                jsonlist += '<a href="">';
+                jsonlist += '<a href="" class="filter_cover">';
                 if (fuck.list[i].type == 'video') {
                     jsonlist += '<video autoplay loop width="60%" height="100%" class="hover_vimg">';
                     jsonlist += '<source src="'+fuck.list[i].themeURL+'" type="video/mp4"/>';
@@ -141,17 +141,23 @@
             }
         },'.filter_cover')
 
-        $(':not(.filter_cover)').hover(function(){
+        $('body.filter_body').on({
+            mouseenter:function(){
+                $(this).parent('li').siblings().find('.filter_cover')
+                .css('background-color','').find('.hover_vimg').css({'opacity':'1','transform': ''})
+                .parents('li').find('cite,span').css('opacity','')
+            }
+        },':not(.filter_cover)')
+
+        $(':not(li)').hover(function(){
+            console.log('li');
             $('.filter_list li').find('.filter_cover')
             .css('background-color','').find('.hover_vimg').css({'opacity':'1','transform': ''})
             .parents('li').find('cite,span').css('opacity','')
         })
-        $('section').hover(function(){
-            console.log('s');
-            $('.filter_list li').find('.filter_cover')
-            .css('background-color','').find('.hover_vimg').css({'opacity':'1','transform': ''})
-            .parents('li').find('cite,span').css('opacity','')
-        })
+
+
+
 
 });
     </script>
@@ -176,4 +182,13 @@
         </div>
     </section>
 </body>
+<style>
+    .on{display: block;}
+    @media screen and (max-width:800px){
+        li{width:33.33%}
+    }
+    @media screen and (max-width:600px){
+        li{width:50%}
+    }
+</style>
 </html>

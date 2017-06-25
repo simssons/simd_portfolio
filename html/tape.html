@@ -12,45 +12,89 @@
     <script>
 
 $(function(){
+
+
+    //hover
     $('.tape_body').on({
         "mouseenter":function(){
-            $(this).css('opacity','.55').siblings('.film_description').
+            $(this).css('opacity','.55').siblings('img').css('transform','scale(1.01)').siblings('.film_description').
             find('span').css('opacity','1');
-
-            $(this).parents('li').siblings('li').
-            find('.film_opa').css('opacity','0').siblings('.film_description').
-            find('span').css('opacity','0')
-
         },
         "mouseleave":function(){
-            // $(this).css('opacity','0')``
+            $(this).css('opacity','').siblings('img').css('transform','').siblings('.film_description').
+            find('span').css('opacity','');
         }
-    },'.film_opa')
-
-    $('.film_container').on({
-        "mouseenter":function(){
-            console.log('ㅇ');
-            $(this).parents('li').siblings('li').
-            find('.film_opa').css('opacity','0').siblings('.film_description').
-            find('span').css('opacity','0')
-        }
-    },':not(.filter_cover)')
+    },'.film_opa');
 
 
+    //popup
+
+    var filmDisplay = function(){
+      $('.TapeFilmPopUp').css('display','none')
+    }
+    filmDisplay();
+
+
+
+    $('.aClick').click(function(event){
+         event.preventDefault();
+         $('.gnb-inner div a span').css('display','none').
+         parents('div.menu a').text('BACK');
+         var filmCode = $(this).attr('href');
+         videoPaly(filmCode);
+         $('.TapeFilmPopUp').fadeIn(300);
+    });
+
+    function videoPaly(code){
+        var filmUrl = "https://www.youtube.com/embed/"+code+"?rel=0&amp;showinfo=0"
+        $('.TapeIframeWrapper iframe').attr('src',filmUrl);
+    }
+
+    //팝업나가기
+    $(document).mouseup(function(e){
+      var container = $('.TapeFilmPopUp');
+      if (container.has(e.target).length === 0) {
+        container.fadeOut(500);
+        // var videoIframe = $("#tapeIframe").attr("src");
+        $("#tapeIframe").attr("src","");
+        // $("#tapeIframe").attr("src",videoIframe);
+      }
+    })
+
+    //가로스크롤
+
+    $('html, body').on('wheel',function(event){
+
+      var filmeWheelEvent = event.originalEvent.wheelDelta;
+      $(this).animate({scrollLeft:filmeWheelEvent},100)
+
+    })
 })
     </script>
 </head>
 <body class="tape_body">
     include "gnb.html"
-
     <div class="tape_wapper">
         <section>
             <div class="scroll_listener">
                 <div class="film_wrapper">
                     <ul class="film_container">
                         <li>
-                            <a href="">
-                                <img src="../assets/image/tape/asset 0.jpeg" alt="">
+                            <a href="ioRVkYfRoAI" class="aClick">
+                                <img src="../assets/image/tape/asset_0.jpeg" alt="">
+                                <div class="film_opa"></div>
+                                <div class="film_description">
+                                    <h2>
+                                        <span>Lorem ipsum dolor</span>
+                                        <span>Chuncheon, 2017</span>
+                                    </h2>
+                                </div>
+                            </a>
+                        </li>
+                        <!-- 2번사진은 제외 -->
+                        <li>
+                            <a href="LnxTpT3Ie9M" class="aClick">
+                                <img src="../assets/image/tape/asset_1.jpeg" alt="">
                                 <div class="film_opa"></div>
                                 <div class="film_description">
                                     <h2>
@@ -61,8 +105,8 @@ $(function(){
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="../assets/image/tape/asset 1.jpeg" alt="">
+                            <a href="H1-DElJ9ql8" class="aClick">
+                                <img src="../assets/image/tape/asset_2.jpeg" alt="">
                                 <div class="film_opa"></div>
                                 <div class="film_description">
                                     <h2>
@@ -73,8 +117,8 @@ $(function(){
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="../assets/image/tape/asset 2.jpeg" alt="">
+                            <a href="4VIxhcHqsdI" class="aClick">
+                                <img src="../assets/image/tape/asset_3.jpeg" alt="">
                                 <div class="film_opa"></div>
                                 <div class="film_description">
                                     <h2>
@@ -85,8 +129,8 @@ $(function(){
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="../assets/image/tape/asset 3.jpeg" alt="">
+                            <a href="cAhfvbOwymM" class="aClick">
+                                <img src="../assets/image/tape/asset_4.jpeg" alt="">
                                 <div class="film_opa"></div>
                                 <div class="film_description">
                                     <h2>
@@ -97,8 +141,8 @@ $(function(){
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="../assets/image/tape/asset 4.jpeg" alt="">
+                            <a href="OTUZZk2X8II" class="aClick">
+                                <img src="../assets/image/tape/asset_5.jpeg" alt="">
                                 <div class="film_opa"></div>
                                 <div class="film_description">
                                     <h2>
@@ -109,8 +153,8 @@ $(function(){
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="../assets/image/tape/asset 5.jpeg" alt="">
+                            <a href="IvjYG5EePcM" class="aClick">
+                                <img src="../assets/image/tape/asset_6.jpeg" alt="">
                                 <div class="film_opa"></div>
                                 <div class="film_description">
                                     <h2>
@@ -121,8 +165,8 @@ $(function(){
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="../assets/image/tape/asset 6.jpeg" alt="">
+                            <a href="hYRbWLMGOQk" class="aClick">
+                                <img src="../assets/image/tape/asset_7.jpeg" alt="">
                                 <div class="film_opa"></div>
                                 <div class="film_description">
                                     <h2>
@@ -133,8 +177,8 @@ $(function(){
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="../assets/image/tape/asset 7.jpeg" alt="">
+                            <a href="6bPD3gV0sq4" class="aClick">
+                                <img src="../assets/image/tape/asset_8.jpeg" alt="">
                                 <div class="film_opa"></div>
                                 <div class="film_description">
                                     <h2>
@@ -145,8 +189,8 @@ $(function(){
                             </a>
                         </li>
                         <li>
-                            <a href="">
-                                <img src="../assets/image/tape/asset 4.jpeg" alt="">
+                            <a href="fXeA3Kjq4-0" class="aClick">
+                                <img src="../assets/image/tape/asset_9.jpeg" alt="">
                                 <div class="film_opa"></div>
                                 <div class="film_description">
                                     <h2>
@@ -156,13 +200,41 @@ $(function(){
                                 </div>
                             </a>
                         </li>
-
-
-
+                        <li>
+                            <a href="KZzaMx6JkiU" class="aClick">
+                                <img src="../assets/image/tape/asset_10.jpeg" alt="">
+                                <div class="film_opa"></div>
+                                <div class="film_description">
+                                    <h2>
+                                        <span>Lorem ipsum dolor</span>
+                                        <span>Chuncheon, 2017</span>
+                                    </h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li><!-- 12 번제외 -->
+                            <a href="D-OGQMUG5fo" class="aClick">
+                                <img src="../assets/image/tape/asset_11.jpeg" alt="">
+                                <div class="film_opa"></div>
+                                <div class="film_description">
+                                    <h2>
+                                        <span>Lorem ipsum dolor</span>
+                                        <span>Chuncheon, 2017</span>
+                                    </h2>
+                                </div>
+                            </a>
+                        </li>
                     </ul>
+                    <!--ul.film_container -->
+                    <div class="TapeFilmPopUp">
+                      <div class="TapeIframeWrapper">
+                        <iframe id="tapeIframe" width="768" height="432" src="" frameborder="0" allowfullscreen class="tapeIframe"></iframe>
+                        <div class="TapeFilmInfo">
+                          <cite>Lorem ipsum,</cite><span>June 2017</span>
+                        </div>
+                      </div>
+                    </div>
                 </div>
-
-
             </div>
         </section>
     </div><!-- tape_wapper -->
