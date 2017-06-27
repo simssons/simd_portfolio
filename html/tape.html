@@ -38,10 +38,8 @@ $(function(){
 
     $('.aClick').click(function(event){
          event.preventDefault();
-
          $('.gnb-inner div a span').css('display','none').
          parents('div.menu a').text('BACK');
-
          var filmCode = $(this).attr('href');
          videoPaly(filmCode);
          $('.TapeFilmPopUp').fadeIn(300);
@@ -63,19 +61,17 @@ $(function(){
       }
     })
 
-    //가로스크롤
-      var filmAcc = 0;
-    $('html, body').on('mousewheel',function(event){
-      event.preventDefault();
+    //가로스크롤 선택자 중요.
+    $('div.tape_wapper section').on('wheel',function(event){
+        event.preventDefault();
       var filmWheelEvent = event.originalEvent.wheelDelta;
-      filmAcc += filmWheelEvent
-      console.log(filmWheelEvent);
-      console.log(filmAcc);
-      $('html, body').stop().animate( { scrollleft: filmAcc } );
-      
+      if (filmWheelEvent > 0) {
+          $(this).stop().animate({scrollLeft:'-=800px'})
+      }else{
+          $(this).stop().animate({scrollLeft:'+=800px'})
+      }
+
     })
-
-
 })
     </script>
 </head>
