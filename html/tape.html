@@ -38,8 +38,10 @@ $(function(){
 
     $('.aClick').click(function(event){
          event.preventDefault();
+
          $('.gnb-inner div a span').css('display','none').
          parents('div.menu a').text('BACK');
+
          var filmCode = $(this).attr('href');
          videoPaly(filmCode);
          $('.TapeFilmPopUp').fadeIn(300);
@@ -62,13 +64,18 @@ $(function(){
     })
 
     //가로스크롤
-
-    $('html, body').on('wheel',function(event){
-
-      var filmeWheelEvent = event.originalEvent.wheelDelta;
-      $(this).animate({scrollLeft:filmeWheelEvent},100)
-
+      var filmAcc = 0;
+    $('html, body').on('mousewheel',function(event){
+      event.preventDefault();
+      var filmWheelEvent = event.originalEvent.wheelDelta;
+      filmAcc += filmWheelEvent
+      console.log(filmWheelEvent);
+      console.log(filmAcc);
+      $('html, body').stop().animate( { scrollleft: filmAcc } );
+      
     })
+
+
 })
     </script>
 </head>
