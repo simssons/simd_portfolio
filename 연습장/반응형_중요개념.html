@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{margin:0; padding: 0;}
+    /*아래 두개 비교*/
+    /*div{border: 1px #f00 solid; margin-left: auto; width:500px;}*/
+    /*div{border: 1px #f00 solid; margin: 500px; width:auto;}*/
+    /* 반응형할때 max,min, -width*/
+    /*박스가 900이하가 되면 박스사이즈 줄어듦*/
+    div.a{border: 1px #f00 solid; margin: auto; max-width: 900px; }
+
+    div.a div.b{border: 1px #FF0 solid; width: 900px;}
+
+    </style>
+</head>
+<body>
+    <div class="a">
+        <div class="b">
+        </div>
+    </div>
+</body>
+</html>

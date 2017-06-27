@@ -1,0 +1,138 @@
+// options
+.clear{clear: both;}
+//Layout
+
+html,body{
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+body.bts_body{
+    .gnb-inner div a {color:white;}
+    overflow: auto;
+    .on{display: block;}
+
+    section.BehindTheScenes00{
+          height: 100%;
+          width: 100%;
+
+
+        .slide_wrapper{
+          width: 100%;
+          height: 100%;
+        }
+        .main_slide{
+          position: relative;
+          width: 100%;
+          height:100%;
+          text-align: center;
+          overflow: hidden;
+        }
+        .main_slide .slide_contents{
+          position: fixed;
+          z-index: -1;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url('../image/bts_main.png');
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        .bts_title{
+            position: fixed;
+            margin-top: 25%;
+            width: 100%;
+            z-index: -1;
+            h2{
+                letter-spacing: .225em;
+                font-size: 44px;
+                color: #FFF;
+                text-transform: uppercase;
+                font-weight: bolder;
+            }
+        }
+
+        .left_area{
+            position: absolute;
+            left:0;
+            top:0;
+            background: transparent;
+            width: 25%;
+            height: 100%;
+            cursor: w-resize;
+        }
+        .right_area{
+          position: absolute;
+          right:0;
+          top:0;
+          background: transparent;
+          width: 25%;
+          height: 100%;
+          cursor: w-resize;
+        }
+        .scroll_down_arrow_wrapper{
+          position: relative;
+          width: 100%;
+          height: 55px;
+          margin-top: -55px;
+          background-color: #FFF;
+          z-index: 2;
+          div{
+            width: 80px;
+            height: 55px;
+            background-image: url('../image/down_arrow.svg');
+            background-position: 50% 50%;
+            background-size: 40%;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 7px;
+            left: 50%;
+            margin-left: -40px;
+            opacity: 0.8;
+            cursor: pointer;
+          }
+        }
+
+    }// section ends
+
+    section.BehindTheScenes01{
+        height: 100%;        
+        box-sizing: border-box;
+        position: relative;
+        background-image: url('../image/footerBackgroundSmall.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        .bts_wrapper{
+            height: 100%;
+            // margin-top:-50px;
+            // padding: 75px 0 75px 0;
+
+            // height: ~"calc(100% + 90px)";
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+    }
+
+    section.BehindTheScenes02{
+        height: 100%;
+        border:10px #FF0 solid;
+        box-sizing: border-box;
+        position: relative;
+
+
+        .bts_wrapper{
+            height: 100%;
+            // margin-top:-50px;
+            // padding: 75px 0 75px 0;
+            background-color: #FFF;
+            // height: ~"calc(100% + 90px)";
+
+            z-index: 1;
+            text-align: center;
+        }
+}
+
+}// bts_body

@@ -61,12 +61,15 @@ $(function(){
       }
     })
 
-    //가로스크롤
-
-    $('html, body').on('wheel',function(event){
-
-      var filmeWheelEvent = event.originalEvent.wheelDelta;
-      $(this).animate({scrollLeft:filmeWheelEvent},100)
+    //가로스크롤 선택자 중요.
+    $('div.tape_wapper section').on('wheel',function(event){
+        event.preventDefault();
+      var filmWheelEvent = event.originalEvent.wheelDelta;
+      if (filmWheelEvent > 0) {
+          $(this).stop().animate({scrollLeft:'-=800px'})
+      }else{
+          $(this).stop().animate({scrollLeft:'+=800px'})
+      }
 
     })
 })
