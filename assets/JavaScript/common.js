@@ -13,18 +13,23 @@ $(function(){
 
 
     $('.menu a').click(function(event){
-        event.preventDefault();        
+        event.preventDefault();
 
-        var menuToggle = $('.menu-main-menu-container')
+        var menuToggle = $('.menu-main-menu-container');
+        var blogList = $('body.blog_list');
 
         if (menuToggle.is('.on')) {
-            menuToggle.removeClass('on')
-            $(this).text('menu')
-            $('.gnb-inner div a').css('color','black')
+            menuToggle.removeClass('on');
+            $(this).text('menu');
+            if (true) {
+
+            }
+
+            $('.gnb-inner div a').css('color','black');
         }else{
-            menuToggle.addClass('on')
-            $(this).text('back')
-            $('.gnb-inner div a').css('color','white')
+            menuToggle.addClass('on');
+            $(this).text('back');
+            $('.gnb-inner div a').css('color','white');
         }
         autoHeight();
     })

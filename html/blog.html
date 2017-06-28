@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../vendor/jQuery/dist/jquery.min.js"></script>
+    <script src="../assets/JavaScript/common.js"></script>
+    <title>Blog</title>
+    <script>
+
+
+    $(window).on('mousewheel',function(e){
+        e.preventDefault();
+        var blogWheel = e.originalEvent.wheelDelta;
+
+        if (blogWheel > 0) {
+            $('#text_move').stop().animate({'top': '+=150px'})
+            console.log(blogWheel);
+        }else if (blogWheel < 0) {
+            $('#text_move').stop().animate({'top': '-=150px'})
+            console.log(blogWheel);
+
+        }
+
+    });
+
+    </script>
+</head>
+<body class="blog">
+    include "gnb.html"
+    <article class="blog_article">
+        <section>
+            <div class="contents_wrapper">
+                <div class="blog_left">
+                    <div class="text_contents">
+                        <div id="text_move">
+                            <h2>Lorem ipsum</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget mi sodales, ultricies eros id, scelerisque mauris. Maecenas bibendum diam sed massa lacinia porta. Nam pulvinar mollis tempus. Sed egestas, eros sed laoreet tempor, nibh felis faucibus est, vel pulvinar urna enim id felis. </p>
+                            <p>Aenean id faucibus tellus. In vel tellus quis dolor congue fringilla. In hac habitasse platea dictumst. Morbi nisl nulla, fringilla quis vulputate et, bibendum non tellus. Morbi dapibus ipsum vitae odio interdum vestibulum. Sed tincidunt risus quis odio ornare, nec maximus sapien ullamcorper. Phasellus non velit nulla. Vestibulum ut maximus nisl. Donec pretium finibus lacus sed auctor. Aenean egestas rhoncus tristique. Sed eu venenatis dolor, eu tristique sem. Morbi mollis enim ut mi euismod, vitae tempus metus ullamcorper.</p>
+                            <p>Duis luctus augue a mi lobortis, vel condimentum enim elementum. Praesent mauris lectus, efficitur eget felis eu, tempus mollis justo. Duis consectetur quam dapibus, elementum nulla nec, pharetra purus. Donec id eros at nibh pretium aliquet non id justo. Vivamus blandit faucibus turpis, vel tempor nisi ullamcorper nec. Etiam accumsan est lectus, ut rhoncus nibh volutpat eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam lacinia purus interdum, pretium lacus nec, suscipit elit. Nunc rhoncus est ac suscipit imperdiet. Vestibulum malesuada iaculis erat, at tempus tortor placerat at.</p>
+                            <p>Vestibulum lobortis sagittis elit, sed pulvinar augue tincidunt non. Fusce dapibus leo quis ipsum vulputate convallis. Curabitur a lacus vestibulum, sodales nisl non, eleifend eros. Suspendisse quis nunc sem. Mauris fringilla nibh vitae felis rutrum, in accumsan est lobortis. Praesent ut auctor ex, vitae cursus purus. Duis tincidunt sodales est, et feugiat nulla aliquam sed. Etiam at congue elit.</p>
+                            <p>Cras dolor arcu, molestie a ex et, placerat sodales ante. Curabitur sit amet turpis viverra, imperdiet justo non, venenatis elit. Sed porta placerat ex a bibendum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In ut pellentesque nisi. Etiam elementum gravida interdum. Phasellus sagittis sem ipsum, in gravida risus accumsan sed. </p>
+                            <p>Etiam ligula turpis, placerat non diam vitae, cursus semper mauris. Sed auctor pulvinar ipsum, vel vulputate enim sodales in.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog_right">
+                    <div class="photo_contents">
+                        <a href="">
+                            <img src="../assets/image/blog_00.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <a href="" class="ir">d</a>
+                <a href="" class="ir">d</a>
+                <a href="" class="ir">d</a>
+            </div>
+        </section>
+    </article>
+
+</body>
+</html>
