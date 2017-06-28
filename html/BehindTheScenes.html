@@ -8,6 +8,53 @@
     <script src="../vendor/jQuery/dist/jquery.min.js"></script>
     <script src="../assets/JavaScript/common.js"></script>
     <title>BehindTheScenes</title>
+    <script>
+    $(document).ready(function(){
+
+
+      var spot = [];
+
+      $('.bts_body section').each(function(i){
+        spot.push($(this).offset().top)
+      })
+        console.log(spot);
+
+
+      var scrollspy = function(){
+
+          var sct = $(window).scrollTop();
+          console.log(sct);
+
+          $('.bts_body section').each(function(i){
+            var a  = sct > spot[i];
+            var b = sct < spot[i] + $(this).height();
+
+            if( a && b && !$(this).is('.on')){
+              $(this).addClass('on').siblings().removeClass('on')
+              $('nav ul li').eq(i).addClass('on').siblings().removeClass('on')
+              animation(i);
+            }
+          })
+      }
+
+      $(window).scroll(scrollspy);
+
+      // var secScroll = function(e){
+      //     e.preventDefault();
+      //     var idx = $(this).index();
+      //     $('html,body').animate({
+      //         'scrollTop':spot[idx]+1 //body에 에니메이션 스크롤값 spot의 위치 반영 1넣은 이유는 선에 딱 거려서 조건에 안맞아 안움직임.
+      //     })
+      // }
+      //
+      // $('nav li').click(secScroll);
+
+
+    })
+
+
+    </script>
+
 </head>
 <body class="bts_body">
     include "gnb.html"
@@ -23,7 +70,7 @@
               <div class="right_area"></div>
             </div><!-- .main_slide -->
             <div class="scroll_down_arrow_wrapper">
-              <div></div>
+              <a href=""></a>
             </div>
         </div> <!-- slide_wrapper -->
         <!-- slide_wrapper -->
@@ -41,7 +88,7 @@
             <!-- news_feed_contents_wrapper -->
             <!-- <div class="clear"></div> -->
         </div>
-    </section>
+    </section>   
 
 </body>
 </html>

@@ -3,18 +3,15 @@
 //Layout
 
 html,body{
-  overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
 }
 body.bts_body{
     .gnb-inner div a {color:white;}
-    overflow: auto;
     .on{display: block;}
 
     section.BehindTheScenes00{
           height: 100%;
           width: 100%;
-
 
         .slide_wrapper{
           width: 100%;
@@ -77,26 +74,24 @@ body.bts_body{
           margin-top: -55px;
           background-color: #FFF;
           z-index: 2;
-          div{
+          text-align: center;
+          a{
             width: 80px;
             height: 55px;
-            background-image: url('../image/down_arrow.svg');
-            background-position: 50% 50%;
+            background-image: url(../image/down_arrow.svg);
+            background-position: center;
             background-size: 40%;
             background-repeat: no-repeat;
-            position: absolute;
-            top: 7px;
-            left: 50%;
-            margin-left: -40px;
-            opacity: 0.8;
+            opacity: .8;
             cursor: pointer;
+            display: inline-block;
           }
         }
 
     }// section ends
 
     section.BehindTheScenes01{
-        height: 100%;        
+        height: 100%;
         box-sizing: border-box;
         position: relative;
         background-image: url('../image/footerBackgroundSmall.jpg');

@@ -38,8 +38,10 @@ $(function(){
 
     $('.aClick').click(function(event){
          event.preventDefault();
+
          $('.gnb-inner div a span').css('display','none').
          parents('div.menu a').text('BACK');
+
          var filmCode = $(this).attr('href');
          videoPaly(filmCode);
          $('.TapeFilmPopUp').fadeIn(300);
