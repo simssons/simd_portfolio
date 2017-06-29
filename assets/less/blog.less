@@ -1,5 +1,6 @@
 
 body.blog{
+    .gnb-inner{background-color: #FFF;}
     .gnb-inner div a {color:black;}
     .on{display: block;}
     width: 100%;
@@ -11,6 +12,8 @@ body.blog{
         box-sizing: border-box;
         section{
             height: ~"calc( 100% - 110px)";
+            padding-bottom: 80px;
+            box-sizing: border-box;
         }
     }
 
@@ -19,9 +22,9 @@ body.blog{
         margin: 110px auto 0;
         box-sizing: border-box;
         height: ~"calc( 100% - 80px)";
-
+        overflow: hidden;
         .blog_left{
-            max-width: 640px;
+            width: 50%;
             height: 100%;
             float: left;
             .text_contents{
@@ -45,12 +48,16 @@ body.blog{
                     text-align: left;
                 }
                 #text_move{
+                    width: 100%;
                     position: relative;
+                    overflow: scroll;
+                    padding-right: 100%;
                 }
             }
         }
         .blog_right{
-            max-width: 640px;
+            width: 50%;
+            height: 100%;
             float: right;
             .photo_contents{
 
@@ -58,4 +65,151 @@ body.blog{
         }
 
     }
+    .blog_page_button{
+        margin-top: 60px;
+        text-align: center;
+        a{
+            height: 30px;
+            width: 20px;
+            display: inline-block;
+            margin: 0 10px;
+        }
+        a.left_chevron{
+            background-image: url(../image/left-chevron.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        a.down_chevron{
+            background-image: url(../image/up-arrow.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        a.up_chevron{
+            background-image: url(../image/down-arrow.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        a.right_chevron{
+            background-image: url(../image/right-chevron.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+
+    article.blog_comments{
+
+        section{
+            padding-top: 110px;
+
+        }
+        .comments_wrapper{
+            width: 1280px;
+            margin: 0 auto;
+
+            .comments_list{
+                margin:65px 290px 200px;
+
+                h2{
+                    margin-top: 70px;
+                    span{
+                        font-size:25px;
+                        text-transform: uppercase;
+                        letter-spacing: .1em;
+                    }
+                }
+                ol{
+                    margin-top: 50px;
+                    li{
+                        margin-top:30px;
+                        .writer_info{
+                            font-size: 18px;
+                            margin-bottom: 10px;
+                            text-transform: uppercase;
+                            letter-spacing: .08em;
+                        }
+                        .date_info_control{
+                            color: #515151;
+                            font-size: 12px;
+                            text-transform: uppercase;
+                        }
+                        .comment_content{
+                            margin-top: 45px;
+                            p{
+                                padding-bottom: 22px;
+                                border-bottom: 1px #515151 solid;
+                            }
+                        }
+                        .scd_comment{
+                            margin-left: 60px;
+                        }
+
+                    }
+                }
+                .blog_post_reply{
+                    padding: 80px 0 50px;
+                    i{
+                        font-size:15px;
+                        text-transform: uppercase;
+                        letter-spacing: .08em;
+                    }
+                }
+                form.blog_form{
+                    fieldset{
+                        border-style: none;
+                        p{
+                            input[type="text"]{
+                                width: 45%;
+                                height: 40px;
+                                border-style: none;
+                                margin-right: 30px;
+                                border-bottom: 1px #515151 solid;
+                            }
+                            input[type="email"]{
+                                width: 45%;
+                                height: 40px;
+                                float: right;
+                                border-style: none;
+                                border-bottom: 1px #515151 solid;
+                            }
+
+                        }
+                        textarea{
+                            width: 100%;
+                            display: block;
+                            border-style: none;
+                            border-bottom: 1px #515151 solid;
+                            margin-top: 10px;
+                        }
+                        input[type="button"]{
+                            width: 20%;
+                            height: 40px;
+                            margin-top: 45px;
+                            border:1px #515151 solid;
+                            background-color: #FFF;
+                            font-size: 15px;
+                            letter-spacing: 0.15em;
+                            float: right;
+                        }
+                        input[value="SEND MESSAGE"]{
+                            width: 40%;
+                            height: 40px;
+                            margin-top: 45px;
+                            border:1px #515151 solid;
+                            background-color: #FFF;
+                            font-size: 15px;
+                            letter-spacing: 0.15em;
+                            float: left;
+                        }
+                    }
+
+
+                }
+            } // comments_list
+        }
+    }
+
+
+
+
+
 }

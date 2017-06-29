@@ -10,21 +10,31 @@
     <title>Blog</title>
     <script>
 
+    var blogWheelAc = 0 ;
 
-    $(window).on('mousewheel',function(e){
-        e.preventDefault();
-        var blogWheel = e.originalEvent.wheelDelta;
-
-        if (blogWheel > 0) {
-            $('#text_move').stop().animate({'top': '+=150px'})
-            console.log(blogWheel);
-        }else if (blogWheel < 0) {
-            $('#text_move').stop().animate({'top': '-=150px'})
-            console.log(blogWheel);
-
-        }
-
-    });
+// $(window).on('mousewheel',function(e){
+    //     e.preventDefault();
+    //     console.log('ss');
+    //     var blogWheel = e.originalEvent.wheelDelta;
+    //
+    //
+    //     if (blogWheel > 0) {
+    //         $('#text_move').stop().animate({'top': '+=150px'})
+    //         blogWheelAc += blogWheel ;
+    //         console.log(blogWheelAc);
+    //
+    //     }else if (blogWheel < 0) {
+    //         if (blogWheelAc<-1080) {
+    //             console.log('Do not move');
+    //         }else {
+    //             $('#text_move').stop().animate({'top': '-=150px'})
+    //             blogWheelAc += blogWheel ;
+    //             console.log(blogWheelAc);
+    //         }
+    //
+    //     }
+    //
+    // });
 
     </script>
 </head>
@@ -38,8 +48,10 @@
                         <div id="text_move">
                             <h2>Lorem ipsum</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget mi sodales, ultricies eros id, scelerisque mauris. Maecenas bibendum diam sed massa lacinia porta. Nam pulvinar mollis tempus. Sed egestas, eros sed laoreet tempor, nibh felis faucibus est, vel pulvinar urna enim id felis. </p>
-                            <p>Aenean id faucibus tellus. In vel tellus quis dolor congue fringilla. In hac habitasse platea dictumst. Morbi nisl nulla, fringilla quis vulputate et, bibendum non tellus. Morbi dapibus ipsum vitae odio interdum vestibulum. Sed tincidunt risus quis odio ornare, nec maximus sapien ullamcorper. Phasellus non velit nulla. Vestibulum ut maximus nisl. Donec pretium finibus lacus sed auctor. Aenean egestas rhoncus tristique. Sed eu venenatis dolor, eu tristique sem. Morbi mollis enim ut mi euismod, vitae tempus metus ullamcorper.</p>
-                            <p>Duis luctus augue a mi lobortis, vel condimentum enim elementum. Praesent mauris lectus, efficitur eget felis eu, tempus mollis justo. Duis consectetur quam dapibus, elementum nulla nec, pharetra purus. Donec id eros at nibh pretium aliquet non id justo. Vivamus blandit faucibus turpis, vel tempor nisi ullamcorper nec. Etiam accumsan est lectus, ut rhoncus nibh volutpat eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam lacinia purus interdum, pretium lacus nec, suscipit elit. Nunc rhoncus est ac suscipit imperdiet. Vestibulum malesuada iaculis erat, at tempus tortor placerat at.</p>
+                            <p>Aenean id faucibus tellus. In vel tellus quis dolor congue fringilla. In hac habitasse platea dictumst. Morbi nisl nulla, fringilla quis vulputate et, bibendum non tellus. Morbi dapibus ipsum vitae odio interdum vestibulum. Sed tincidunt risus quis odio ornare, nec maximus sapien ullamcorper. Phasellus non velit nulla. Vestibulum ut maximus nisl. Donec pretium finibus lacus sed auctor. Aenean egestas rhoncus tristique. </p>
+                            <p>Sed eu venenatis dolor, eu tristique sem. Morbi mollis enim ut mi euismod, vitae tempus metus ullamcorper.</p>
+                            <p>Duis luctus augue a mi lobortis, vel condimentum enim elementum. Praesent mauris lectus, efficitur eget felis eu, tempus mollis justo. Duis consectetur quam dapibus, elementum nulla nec, pharetra purus. Donec id eros at nibh pretium aliquet non id justo. Vivamus blandit faucibus turpis, vel tempor nisi ullamcorper nec. Etiam accumsan est lectus, ut rhoncus nibh volutpat eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            <p>Nam lacinia purus interdum, pretium lacus nec, suscipit elit. Nunc rhoncus est ac suscipit imperdiet. Vestibulum malesuada iaculis erat, at tempus tortor placerat at.</p></p>
                             <p>Vestibulum lobortis sagittis elit, sed pulvinar augue tincidunt non. Fusce dapibus leo quis ipsum vulputate convallis. Curabitur a lacus vestibulum, sodales nisl non, eleifend eros. Suspendisse quis nunc sem. Mauris fringilla nibh vitae felis rutrum, in accumsan est lobortis. Praesent ut auctor ex, vitae cursus purus. Duis tincidunt sodales est, et feugiat nulla aliquam sed. Etiam at congue elit.</p>
                             <p>Cras dolor arcu, molestie a ex et, placerat sodales ante. Curabitur sit amet turpis viverra, imperdiet justo non, venenatis elit. Sed porta placerat ex a bibendum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In ut pellentesque nisi. Etiam elementum gravida interdum. Phasellus sagittis sem ipsum, in gravida risus accumsan sed. </p>
                             <p>Etiam ligula turpis, placerat non diam vitae, cursus semper mauris. Sed auctor pulvinar ipsum, vel vulputate enim sodales in.</p>
@@ -54,13 +66,86 @@
                     </div>
                 </div>
             </div>
-            <div class="">
-                <a href="" class="ir">d</a>
-                <a href="" class="ir">d</a>
-                <a href="" class="ir">d</a>
+            <div class="blog_page_button">
+                <a href="" class="left_chevron"></a>
+                <a href="" class="up_chevron"></a>
+                <a href="" class="down_chevron"></a>
+                <a href="" class="right_chevron"></a>
             </div>
         </section>
     </article>
+    <article class="blog_comments">
+        <section>
+            <div class="comments_wrapper">
+                <div class="comments_list">
+                    <h2>
+                        <span>9 comments</span>
+                    </h2>
+                    <ol>
+                        <li>
+                            <div class="writer_info">
+                                <span>jaywalkers</span>
+                            </div>
+                            <div class="date_info_control">
+                                <span>MARCH 19, 2017, 4:52 PM</span>
+                                <a href=""><span>reply</span></a>
+                            </div>
+                            <div class="comment_content">
+                                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="writer_info">
+                                <span>williams</span>
+                            </div>
+                            <div class="date_info_control">
+                                <span>MARCH 19, 2017, 7:52 PM</span>
+                                <a href=""><span>reply</span></a>
+                            </div>
+                            <div class="comment_content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget mi sodales, ultricies eros id, scelerisque mauris. Maecenas bibendum diam sed massa lacinia porta. Nam pulvinar mollis tempus. Sed egestas, eros sed laoreet tempor, nibh felis faucibus est, vel pulvinar urna enim id felis. </p>
+                            </div>
+                            <ol class="scd_comment">
+                                <li>
+                                    <div class="writer_info">
+                                        <span>jaywalkers</span>
+                                    </div>
+                                    <div class="date_info_control">
+                                        <span>MARCH 19, 2017, 8:13 PM</span>
+                                        <a href=""><span>reply</span></a>
+                                    </div>
+                                    <div class="comment_content">
+                                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <div class="blog_post_reply">
+                        <i>post a reply</i>
+                    </div>
+                    <form class="blog_form">
+                        <fieldset>
+                            <legend class="ir">posting a reply</legend>
+                            <p>
+                                <label for="text" class="ir">username</label>
+                                <input type="text" name="username" placeholder="Name" required="true"/>
+                                <label for="email" class="ir">email</label>
+                                <input type="email" name="e-mail" placeholder="E-mail">
+                            </p>
+                            <label for="message" class="ir">Type your message</label>
+                            <textarea name="" cols="30" rows="10" placeholder="Type your message"></textarea>
+                            <input type="submit" value="SEND MESSAGE">
+                            <input type="button" value="PREV">
+                            <input type="button" value="NEXT">
+                        </fieldset>
+                    </form>
+                </div>
+            </div><!-- comments_wrapper -->
+        </section>
+    </article>
+
+    include "footer.html"
 
 </body>
 </html>
