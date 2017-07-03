@@ -9,34 +9,51 @@
     <script src="../assets/JavaScript/common.js"></script>
     <title>Blog</title>
     <script>
+    $(function(){
 
-    var blogWheelAc = 0 ;
+        var articleHeight = window.innerHeight;
 
-// $(window).on('mousewheel',function(e){
-    //     e.preventDefault();
-    //     console.log('ss');
-    //     var blogWheel = e.originalEvent.wheelDelta;
-    //
-    //
-    //     if (blogWheel > 0) {
-    //         $('#text_move').stop().animate({'top': '+=150px'})
-    //         blogWheelAc += blogWheel ;
-    //         console.log(blogWheelAc);
-    //
-    //     }else if (blogWheel < 0) {
-    //         if (blogWheelAc<-1080) {
-    //             console.log('Do not move');
-    //         }else {
-    //             $('#text_move').stop().animate({'top': '-=150px'})
-    //             blogWheelAc += blogWheel ;
-    //             console.log(blogWheelAc);
-    //         }
-    //
-    //     }
-    //
-    // });
+        $('article.blog_article').css('height',articleHeight);
+
+        // var blogWheelAc = 0 ;
+        //
+        // $(window).on('mousewheel',function(e){
+        //         e.preventDefault();
+        //         console.log('ss');
+        //         var blogWheel = e.originalEvent.wheelDelta;
+        //
+        //
+        //         if (blogWheel > 0) {
+        //             $('#text_move').stop().animate({'top': '+=150px'})
+        //             blogWheelAc += blogWheel ;
+        //             console.log(blogWheelAc);
+        //
+        //         }else if (blogWheel < 0) {
+        //
+        //             if (blogWheelAc<-1080) {
+        //                 console.log('Do not move');
+        //             }else {
+        //                 $('#text_move').stop().animate({'top': '-=150px'})
+        //                 blogWheelAc += blogWheel ;
+        //                 console.log(blogWheelAc);
+        //             }
+        //         }
+        //
+        // });
+
+        $('a.down_chevron').on('click',function(e){            
+            var blog_comments = $('.blog_comments').offset().top;
+            console.log(blog_comments);
+            $('html,body').animate({'scrollTop':blog_comments});
+            return false
+        });
+
+
+    })
+
 
     </script>
+
 </head>
 <body class="blog">
     include "gnb.html"
@@ -61,6 +78,7 @@
                 <div class="blog_right">
                     <div class="photo_contents">
                         <a href="">
+                            <img src="../assets/image/blog_01.png" alt="">
                             <img src="../assets/image/blog_00.png" alt="">
                         </a>
                     </div>
@@ -136,8 +154,8 @@
                             <label for="message" class="ir">Type your message</label>
                             <textarea name="" cols="30" rows="10" placeholder="Type your message"></textarea>
                             <input type="submit" value="SEND MESSAGE">
-                            <input type="button" value="PREV">
                             <input type="button" value="NEXT">
+                            <input type="button" value="PREV">
                         </fieldset>
                     </form>
                 </div>
