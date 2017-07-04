@@ -1,70 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bioHtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../vendor/jQuery/dist/jquery.min.js"></script>
+    <script src="../assets/JavaScript/common.js"></script>
+    <script src="../vendor/jQuery/dist/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Abril+Fatface" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../assets/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="../assets/css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="../assets/css/pater.css" />
-    <link rel="stylesheet" type="text/css" href="../assets/css/component.css" />
     <script src="../vendor/TiltHoverEffects-master/imagesloaded.pkgd.min.js"></script>
-		<script src="../vendor/TiltHoverEffects-master/anime.min.js"></script>
-		<script src="../vendor/TiltHoverEffects-master/main.js"></script>
-    <title>Document</title>
-    <script>
+	<script src="../vendor/TiltHoverEffects-master/anime.min.js"></script>
+	<script src="../vendor/TiltHoverEffects-master/main.js"></script>
+    <title>Biography</title>
+    <!-- <script>
 			document.documentElement.className = 'js';
-		</script>
-    <style>
-        .on{display: block;}
-    </style>
+	</script> -->
     <script>
     $(function(){
-        var autoHeight = function(){
-            $('.menu-main-menu-container .fifty').height(($('.menu-main-menu-container').height()-90)/2)
-
-        }
-        $(window).resize(function(){
-            autoHeight();
-                console.log($('.menu-main-menu-container').height());
+        //slide hover
+        $('.ab_right_before').hover(function(ev){
+            $(this).siblings('.ab_right_after').css('background','rgba(0, 0, 0, .5)')
+        },function(){
+            $(this).siblings('.ab_right_after').css('background','')
+        });
+        $('.ab_left_before').hover(function(ev){
+            $(this).siblings('.ab_left_after').css('background','rgba(0, 0, 0, .5)')
+        },function(){
+            $(this).siblings('.ab_left_after').css('background','')
         })
 
-        $('.menu a').click(function(event){
-            event.preventDefault();
-            console.log('ss');
-
-            var menuToggle = $('.menu-main-menu-container')
-
-            if (menuToggle.is('.on')) {
-                menuToggle.removeClass('on')
-                $(this).text('menu')
-                $('.gnb-inner div a').css('color','black')
-            }else{
-                menuToggle.addClass('on')
-                $(this).text('back')
-                $('.gnb-inner div a').css('color','white')
-            }
-            autoHeight();
-        })
     })
+
     </script>
+
 </head>
-<body>
+<body class="bioBody">
     include "gnb.html"
 <main>
     <section class="bio content content--c1">
-
-
         <div class="bio_wrapper">
             <div class="bio_slide">
                 <ul>
                     <li class="ab_left">
+                        <div class="ab_left_before"></div>
                         <a href="">
                             <img src="../assets/image/bio1.png" alt="">
                         </a>
+                        <div class="ab_left_after"></div>
                     </li>
                     <li>
                       <a href="#" class="tilter tilter--1">
@@ -72,8 +56,8 @@
                           <img class="tilter__image" src="../assets/image/bio2.png" alt="img01" />
                           <div class="tilter__deco tilter__deco--shine"><div></div></div>
                           <figcaption class="tilter__caption">
-                            <h3 class="tilter__title">Tanya Bondesta</h3>
-                            <p class="tilter__description">Toronto</p>
+                            <h3 class="tilter__title">Jaywalkers</h3>
+                            <p class="tilter__description">Chuncheon</p>
                           </figcaption>
                           <svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
                             <path d="M20.5,20.5h260v375h-260V20.5z" />
@@ -82,9 +66,11 @@
                       </a>
                     </li>
                     <li class="ab_right">
+                        <div class="ab_right_before"></div>
                         <a href="">
                             <img src="../assets/image/bio3.png" alt="">
                         </a>
+                        <div class="ab_right_after"></div>
                     </li>
                 </ul>
             </div>
@@ -156,36 +142,6 @@
 				init();
 			});
 
-			// REMOVE THIS!
-			// For Demo purposes only. Prevent the click event.
-			[].slice.call(document.querySelectorAll('a[href="#"]')).forEach(function(el) {
-				el.addEventListener('click', function(ev) { ev.preventDefault(); });
-			});
-
-			var pater = document.querySelector('.pater'),
-				paterSVG = pater.querySelector('.pater__svg'),
-				pathEl = paterSVG.querySelector('path'),
-				paths = {default: pathEl.getAttribute('d'), active: paterSVG.getAttribute('data-path-hover')};
-
-			pater.addEventListener('mouseenter', function() {
-				anime.remove(pathEl);
-				anime({
-					targets: pathEl,
-					d: paths.active,
-					duration: 400,
-					easing: 'easeOutQuad'
-				});
-			});
-
-			pater.addEventListener('mouseleave', function() {
-				anime.remove(pathEl);
-				anime({
-					targets: pathEl,
-					d: paths.default,
-					duration: 400,
-					easing: 'easeOutExpo'
-				});
-			});
 		})();
 		</script>
 include "footer.html"
