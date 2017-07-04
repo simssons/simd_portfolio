@@ -20,16 +20,83 @@
     <script>
     $(function(){
         //slide hover
-        $('.ab_right_before').hover(function(ev){
-            $(this).siblings('.ab_right_after').css('background','rgba(0, 0, 0, .5)')
+        $('.ab_right').hover(function(ev){
+            $(this).find('.ab_right_after').css('background','rgba(0, 0, 0, .5)')
         },function(){
-            $(this).siblings('.ab_right_after').css('background','')
+            $(this).find('.ab_right_after').css('background','')
         });
-        $('.ab_left_before').hover(function(ev){
-            $(this).siblings('.ab_left_after').css('background','rgba(0, 0, 0, .5)')
+        $('.ab_left').hover(function(ev){
+            $(this).find('.ab_left_after').css('background','rgba(0, 0, 0, .5)')
         },function(){
-            $(this).siblings('.ab_left_after').css('background','')
+            $(this).find('.ab_left_after').css('background','')
         })
+
+
+
+        //bio-slide
+        //a의 기능을 막아주세요. index()로 번호찾아.
+        //클릭한 엘리먼트의 위치번호를 뽑아 idx변수에 대입해주세요.
+        //li에 on class의 위치를 번호를 찾아 hisnum 변수에 대입해주세요,
+        //hisnum에 해당하는 엘리먼트의 자식요소 div가 0지점에서 -500지점으로
+        //idx에 해당하는 엘리먼트의 div left:500지점에서 0으로 이동하세요
+        //이동했으면 idx에 해당하는 엘리먼트에는 on class를 추가하며 idx가 아닌 다른 형제 자매 요소는 on class를 제거해라.
+
+        var bioSlideArray = ['../assets/image/bio0.png','../assets/image/bio1.png','../assets/image/bio2.png','../assets/image/bio3.png','../assets/image/bio4.png'];
+        bioSlideArray.length;
+        // 필요한것 현재상태를 알려주는 변수
+        //초기상태 필요. 4 0 1 순서가 되야 함.
+        $('.bio_slide ul li').each(function(i,e){
+            $(this).find('img').attr('src',bioSlideArray[i])
+            console.log(bioSlideArray[i]);
+        })
+
+
+        var statusIdx = 0;
+        $('.bio_slide ul li').click(function(){
+            var idx = $(this).index();
+            if (idx==0) {
+                console.log(statusIdx);
+                if () {
+
+                }
+                statusIdx++;
+                $('.bio_slide ul li').each(function(i,e){
+                    if ((i+statusIdx)>4) {statusIdx=0, i=0}
+                    console.log(i+statusIdx);
+                    $(this).find('img').attr('src',bioSlideArray[i+statusIdx])
+                    i++;
+                })
+
+                console.log(statusIdx);
+
+
+                // statusIdx++;
+                // if (idx + statusIdx > 4) { statusIdx = 0; }
+                // $(this).find('img').attr('src',bioSlideArray[idx+statusIdx]);
+                //
+                // statusIdx++;
+                // if (idx + statusIdx > 4) { statusIdx = 0; }
+                // $('.bio_slide ul li').eq(idx+1).find('img').attr('src',bioSlideArray[idx+statusIdx]);
+                //
+                // statusIdx++;
+                // if (idx + statusIdx > 4) { statusIdx = 0; }
+                // $('.bio_slide ul li').eq(idx+2).find('img').attr('src',bioSlideArray[idx+statusIdx]);
+                // console.log(statusIdx);
+
+            }else if (idx==1) {
+
+            }else if (idx==2) {
+
+            }
+            // // season 더 좋은 방법
+            //
+            //     $('#nav > ul > li').click(function(){
+            //         var aa = $(this).index()
+            //         $('#image img').attr('src',url[aa])
+            //     })
+
+        })
+
 
     })
 
@@ -46,14 +113,14 @@
                     <li class="ab_left">
                         <div class="ab_left_before"></div>
                         <a href="">
-                            <img src="../assets/image/bio1.png" alt="">
+                            <img src="" alt="">
                         </a>
                         <div class="ab_left_after"></div>
                     </li>
                     <li>
                       <a href="#" class="tilter tilter--1">
                         <figure class="tilter__figure">
-                          <img class="tilter__image" src="../assets/image/bio2.png" alt="img01" />
+                          <img class="tilter__image" src="" alt="" />
                           <div class="tilter__deco tilter__deco--shine"><div></div></div>
                           <figcaption class="tilter__caption">
                             <h3 class="tilter__title">Jaywalkers</h3>
@@ -68,7 +135,7 @@
                     <li class="ab_right">
                         <div class="ab_right_before"></div>
                         <a href="">
-                            <img src="../assets/image/bio3.png" alt="">
+                            <img src="" alt="">
                         </a>
                         <div class="ab_right_after"></div>
                     </li>
