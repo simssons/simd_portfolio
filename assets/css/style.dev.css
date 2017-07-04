@@ -1,0 +1,1968 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Kanit');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+/* line 1, assets\less\common.less */
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+ol,
+p {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+/* line 2, assets\less\common.less */
+ul,
+ol {
+  list-style: none;
+}
+/* line 3, assets\less\common.less */
+a {
+  text-decoration: none;
+  color: #000;
+}
+/* line 4, assets\less\common.less */
+img {
+  vertical-align: top;
+}
+/* line 5, assets\less\common.less */
+html,
+body {
+  height: 100%;
+}
+/* line 7, assets\less\common.less */
+.on {
+  display: block;
+}
+/* line 8, assets\less\common.less */
+.ir {
+  font-size: 0;
+  text-indent: -9999px;
+  position: absolute;
+  top: -9999px;
+}
+/* line 2, assets\less\gnb.less */
+header {
+  height: 90px;
+  font-family: 'Montserrat', sans-serif;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+/* line 9, assets\less\gnb.less */
+.gnb-inner {
+  text-transform: uppercase;
+  display: block;
+  width: 100%;
+  height: 90px;
+  position: relative;
+  color: #FFF;
+  font-weight: 900;
+  letter-spacing: 0.20em;
+  font-size: 15px;
+  z-index: 2;
+}
+/* line 21, assets\less\gnb.less */
+.gnb-inner a {
+  display: block;
+  z-index: 2;
+  color: #FFF;
+}
+/* line 26, assets\less\gnb.less */
+.gnb-inner div.menu {
+  float: left;
+  display: block;
+  padding-left: 36px;
+  line-height: 90px;
+}
+/* line 32, assets\less\gnb.less */
+.gnb-inner div.share {
+  float: right;
+  display: block;
+  padding-right: 36px;
+  line-height: 90px;
+}
+/* line 38, assets\less\gnb.less */
+.gnb-inner div.h1 {
+  text-align: center;
+}
+/* line 40, assets\less\gnb.less */
+.gnb-inner div.h1 h1 {
+  display: inline-block;
+  width: auto;
+  line-height: 90px;
+  font-size: 15px;
+  font-weight: 900;
+}
+/* line 50, assets\less\gnb.less */
+.menu-main-menu-container {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  padding-top: 90px;
+  z-index: 1;
+}
+/* line 58, assets\less\gnb.less */
+.menu-main-menu-container div.menu-main-menu {
+  height: 100%;
+  width: 100%;
+}
+/* line 61, assets\less\gnb.less */
+.menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul {
+  font-size: 0;
+  height: 100%;
+  text-align: center;
+}
+/* line 65, assets\less\gnb.less */
+.menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  width: 33.33%;
+  text-transform: uppercase;
+  border-right: 0.5px rgba(255, 255, 255, 0.3) solid;
+  border-top: 0.5px rgba(255, 255, 255, 0.3) solid;
+}
+/* line 73, assets\less\gnb.less */
+.menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty > a {
+  display: block;
+  position: relative;
+  color: #FFF;
+  font-size: 18px;
+  top: 48%;
+  letter-spacing: 2px;
+}
+/* line 80, assets\less\gnb.less */
+.menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty:hover {
+  background-color: #FFF;
+}
+/* line 82, assets\less\gnb.less */
+.menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty:hover > a {
+  opacity: 0;
+  pointer-events: none;
+}
+/* line 86, assets\less\gnb.less */
+.menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty:hover ul.sub-menu {
+  letter-spacing: 0.15em;
+}
+/* line 89, assets\less\gnb.less */
+.menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty:hover ul.sub-menu li a {
+  color: #BBB;
+}
+/* line 91, assets\less\gnb.less */
+.menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty:hover ul.sub-menu li a:hover {
+  transition: color 0.2s;
+  color: #5b5b5b;
+}
+/* line 97, assets\less\gnb.less */
+.menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty:hover ul.sub-menu > li {
+  font-weight: lighter;
+  color: #222;
+  transition: color 0.2s;
+}
+/* line 105, assets\less\gnb.less */
+.menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul ul.sub-menu {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+/* line 109, assets\less\gnb.less */
+.menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul ul.sub-menu li:first-child {
+  letter-spacing: 0.2em;
+  color: transparent;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+/* line 115, assets\less\gnb.less */
+.menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul ul.sub-menu li {
+  width: 100%;
+  padding: 2px;
+}
+/* line 118, assets\less\gnb.less */
+.menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul ul.sub-menu li a {
+  font-weight: lighter;
+  letter-spacing: 0.15em;
+  width: 100%;
+  font-size: 14px;
+  color: transparent;
+}
+/* line 2, assets\less\index.less */
+.clear {
+  clear: both;
+}
+/* line 7, assets\less\index.less */
+html,
+body {
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+/* line 11, assets\less\index.less */
+section {
+  height: 100%;
+  width: 100%;
+}
+/* line 16, assets\less\index.less */
+.slide_wrapper {
+  width: 100%;
+  height: 100%;
+}
+/* line 20, assets\less\index.less */
+.main_slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+/* line 27, assets\less\index.less */
+.main_slide ul {
+  font-size: 0;
+  text-align: center;
+  height: 100%;
+  position: relative;
+  z-index: 20;
+}
+/* line 35, assets\less\index.less */
+.main_slide li {
+  display: inline-block;
+  position: relative;
+  bottom: calc( -100% + 240px);
+  cursor: pointer;
+}
+/* line 42, assets\less\index.less */
+.main_slide .slide_contents li > a {
+  z-index: 2;
+  display: inline-block;
+  max-height: 50px;
+  position: relative;
+  background-color: #FFF;
+}
+/* line 48, assets\less\index.less */
+.main_slide .slide_contents li > a img {
+  position: relative;
+  height: 50px;
+  z-index: 1;
+}
+/* line 55, assets\less\index.less */
+.main_slide .slide_contents {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../image/main_1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 67, assets\less\index.less */
+.title_bar {
+  box-sizing: border-box;
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  bottom: 50px;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0.92);
+}
+/* line 75, assets\less\index.less */
+.title_bar h2 {
+  position: relative;
+  z-index: -1;
+  line-height: 90px;
+  letter-spacing: 0.2em;
+  font-weight: 900;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+/* line 84, assets\less\index.less */
+.title_bar span {
+  color: #0a0a0a;
+}
+/* line 87, assets\less\index.less */
+.title_bar cite {
+  color: #afafaf;
+  font-style: normal;
+}
+/* line 93, assets\less\index.less */
+.left_area {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: transparent;
+  width: 25%;
+  height: 100%;
+  cursor: w-resize;
+}
+/* line 102, assets\less\index.less */
+.right_area {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: transparent;
+  width: 25%;
+  height: 100%;
+  cursor: w-resize;
+}
+/* line 111, assets\less\index.less */
+.scroll_down_arrow_wrapper {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  margin-top: -55px;
+  background-color: #FFF;
+  z-index: 2;
+}
+/* line 118, assets\less\index.less */
+.scroll_down_arrow_wrapper div {
+  width: 80px;
+  height: 55px;
+  background-image: url('../image/down_arrow.svg');
+  background-position: 50% 50%;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  margin-left: -40px;
+  opacity: 0.8;
+}
+/* line 135, assets\less\index.less */
+.news_feed_wrapper {
+  margin-top: -50px;
+  padding: 75px 0 75px 0;
+  background-color: #FFF;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+/* line 143, assets\less\index.less */
+.news_feed_wrapper h2 {
+  margin-bottom: 70px;
+  font-size: 12px;
+  color: #515151;
+  text-transform: uppercase;
+  letter-spacing: 0.225em;
+}
+/* line 152, assets\less\index.less */
+.news_feed_contents_wrapper {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+}
+/* line 157, assets\less\index.less */
+.news_feed_contents_wrapper .news_feed_vertical_line {
+  position: absolute;
+  top: 19px;
+  height: calc(100% - 19px);
+  background: #6b6b6b;
+  opacity: 1;
+  left: 50%;
+  width: 1px;
+  margin-left: -1px;
+  bottom: 10px;
+  z-index: 0;
+}
+/* line 171, assets\less\index.less */
+.column_wrapper {
+  height: 100%;
+}
+/* line 174, assets\less\index.less */
+.column_wrapper .column_left {
+  width: 600px;
+  height: 100%;
+  float: left;
+  box-sizing: border-box;
+  text-align: right;
+}
+/* line 181, assets\less\index.less */
+.column_wrapper .column_right {
+  width: 600px;
+  height: 100%;
+  float: right;
+  box-sizing: border-box;
+  text-align: left;
+}
+/* line 190, assets\less\index.less */
+.column_news_box_left {
+  padding-bottom: 50px;
+  margin-bottom: 85px;
+  margin-right: 60px;
+}
+/* line 195, assets\less\index.less */
+.column_news_box_right {
+  padding-bottom: 50px;
+  margin-bottom: 85px;
+  margin-left: 60px;
+}
+/* line 201, assets\less\index.less */
+.column_left_image img {
+  max-width: 540px;
+  width: 95%;
+}
+/* line 207, assets\less\index.less */
+.column_right_image img {
+  max-width: 540px;
+  width: 95%;
+}
+/* line 213, assets\less\index.less */
+.column_left_text {
+  margin-top: 25px;
+  margin-left: 20px;
+  letter-spacing: 0.125em;
+}
+/* line 217, assets\less\index.less */
+.column_left_text .column_upper_text {
+  color: #878787;
+  font-size: 11px;
+}
+/* line 220, assets\less\index.less */
+.column_left_text .column_upper_text a {
+  text-transform: capitalize;
+  color: #878787;
+}
+/* line 225, assets\less\index.less */
+.column_left_text .column_hashtag {
+  margin-top: 10px;
+}
+/* line 227, assets\less\index.less */
+.column_left_text .column_hashtag p {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #757575;
+  line-height: 1.45em;
+}
+/* line 236, assets\less\index.less */
+.column_right_text {
+  margin-top: 25px;
+  margin-right: 20px;
+  letter-spacing: 0.125em;
+}
+/* line 240, assets\less\index.less */
+.column_right_text .column_upper_text {
+  color: #878787;
+  font-size: 11px;
+}
+/* line 243, assets\less\index.less */
+.column_right_text .column_upper_text a {
+  text-transform: capitalize;
+  color: #878787;
+}
+/* line 248, assets\less\index.less */
+.column_right_text .column_hashtag {
+  margin-top: 10px;
+}
+/* line 250, assets\less\index.less */
+.column_right_text .column_hashtag p {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #757575;
+  line-height: 1.45em;
+}
+/* line 260, assets\less\index.less */
+.load_more {
+  width: 140px;
+  height: 50px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #6b6b6b;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+/* line 271, assets\less\index.less */
+.load_more h3 {
+  line-height: 50px;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+/* line 3, assets\less\footer.less */
+footer {
+  width: 100%;
+  height: 370px;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #FFF;
+}
+/* line 11, assets\less\footer.less */
+.footer_btn_holder {
+  width: 100%;
+  padding: 40px 0 100px 0;
+  text-align: center;
+}
+/* line 16, assets\less\footer.less */
+.footer_btn_holder .footer_btn_bg {
+  background-image: url('../../assets/image/footerBackgroundSmall.jpg');
+  background-repeat: repeat ;
+  width: 956px;
+  margin: 0 auto;
+  transition-duration: 1s;
+}
+/* line 22, assets\less\footer.less */
+.footer_btn_holder .footer_btn_bg ul {
+  font-size: 0;
+}
+/* line 24, assets\less\footer.less */
+.footer_btn_holder .footer_btn_bg ul li {
+  display: inline-block;
+  position: relative;
+}
+/* line 30, assets\less\footer.less */
+.footer_btn_holder .instagram {
+  display: inline-block;
+  width: 222px;
+  height: 223px;
+  background-image: url('../../assets/image/instagram.svg');
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+/* line 39, assets\less\footer.less */
+.footer_btn_holder .instagram > a {
+  width: 222px;
+  height: 223px;
+  display: block;
+  background-image: url('../../assets/image/surround_footer.svg');
+}
+/* line 46, assets\less\footer.less */
+.footer_btn_holder .facebook {
+  display: inline-block;
+  width: 222px;
+  height: 223px;
+  background-image: url('../../assets/image/facebook.svg');
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+/* line 55, assets\less\footer.less */
+.footer_btn_holder .facebook > a {
+  width: 222px;
+  height: 223px;
+  display: block;
+  background-image: url('../../assets/image/surround_footer.svg');
+}
+/* line 62, assets\less\footer.less */
+.footer_btn_holder .twitter {
+  display: inline-block;
+  width: 222px;
+  height: 223px;
+  background-image: url('../../assets/image/twitter.svg');
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+/* line 71, assets\less\footer.less */
+.footer_btn_holder .twitter > a {
+  width: 222px;
+  height: 223px;
+  display: block;
+  background-image: url('../../assets/image/surround_footer.svg');
+}
+/* line 78, assets\less\footer.less */
+.footer_btn_holder .youtube {
+  display: inline-block;
+  width: 222px;
+  height: 223px;
+  background-image: url('../../assets/image/youtube.svg');
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+/* line 87, assets\less\footer.less */
+.footer_btn_holder .youtube > a {
+  width: 222px;
+  height: 223px;
+  display: block;
+  background-image: url('../../assets/image/surround_footer.svg');
+}
+/* line 95, assets\less\footer.less */
+.overlay {
+  position: absolute;
+  top: 5.5px;
+  left: 6.5px;
+  border-radius: 100%;
+  width: 212px;
+  height: 212px;
+  opacity: 0;
+  background-color: black;
+  box-sizing: border-box;
+}
+/* line 107, assets\less\footer.less */
+.bg_sprite {
+  background-image: url('../../assets/image/spritesheet.jpg');
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 100%;
+  opacity: 0.6;
+  animation-duration: .8s;
+  animation-timing-function: step-start;
+  animation-iteration-count: infinite;
+}
+/* line 121, assets\less\footer.less */
+.social_values {
+  top: 0;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  pointer-events: none;
+}
+/* line 127, assets\less\footer.less */
+.social_values span {
+  font-size: 15px;
+  color: #dddddd;
+  letter-spacing: .15em;
+  line-height: 212px;
+  text-transform: capitalize;
+}
+/* line 139, assets\less\footer.less */
+span.spacer {
+  background-color: #FFF;
+  display: inline-block;
+  position: relative;
+  height: 222px;
+  width: 17px;
+  outline: 1px #FFF solid;
+}
+/* line 149, assets\less\footer.less */
+.footer_bottom {
+  width: 100%;
+  height: 90px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+/* line 156, assets\less\footer.less */
+.footer_bottom::before {
+  content: "";
+  vertical-align: middle;
+  display: inline-block;
+  height: 100%;
+}
+/* line 164, assets\less\footer.less */
+ul.footer_links {
+  width: 1150px;
+  margin: 0 auto;
+  display: inline-block;
+}
+/* line 168, assets\less\footer.less */
+ul.footer_links li {
+  display: inline-block;
+  padding: 0 21px;
+  vertical-align: middle;
+}
+/* line 172, assets\less\footer.less */
+ul.footer_links li a {
+  text-transform: capitalize;
+  font-size: 11px;
+  color: #9b9b9b;
+  white-space: nowrap;
+  letter-spacing: 0.15em;
+}
+@keyframes runningSprite {
+  /* line 185, assets\less\footer.less */
+  0% {
+    background-position-x: 0;
+  }
+  /* line 186, assets\less\footer.less */
+  10% {
+    background-position-x: -222px;
+  }
+  /* line 187, assets\less\footer.less */
+  20% {
+    background-position-x: -444px;
+  }
+  /* line 188, assets\less\footer.less */
+  30% {
+    background-position-x: -666px;
+  }
+  /* line 189, assets\less\footer.less */
+  40% {
+    background-position-x: -888px;
+  }
+  /* line 190, assets\less\footer.less */
+  50% {
+    background-position-x: -1110px;
+  }
+  /* line 191, assets\less\footer.less */
+  60% {
+    background-position-x: -1332px;
+  }
+  /* line 192, assets\less\footer.less */
+  70% {
+    background-position-x: -1554px;
+  }
+  /* line 193, assets\less\footer.less */
+  80% {
+    background-position-x: -1776px;
+  }
+  /* line 194, assets\less\footer.less */
+  90% {
+    background-position-x: -1998px;
+  }
+  /* line 195, assets\less\footer.less */
+  100% {
+    background-position-x: -2220px;
+  }
+}
+/* line 5, assets\less\biography.less */
+html.bioHtml,
+body.bioBody {
+  height: 100%;
+}
+/* line 9, assets\less\biography.less */
+.on {
+  display: block;
+}
+/* line 10, assets\less\biography.less */
+section.bio {
+  height: 100%;
+}
+/* line 14, assets\less\biography.less */
+div.bio_wrapper {
+  height: 100%;
+  width: 100%;
+}
+/* line 19, assets\less\biography.less */
+div.bio_slide {
+  margin-top: 110px;
+  width: 100%;
+  height: 70%;
+}
+/* line 23, assets\less\biography.less */
+div.bio_slide ul {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+/* line 28, assets\less\biography.less */
+div.bio_slide ul li {
+  display: inline-block;
+  width: 25%;
+  height: 100%;
+}
+/* line 32, assets\less\biography.less */
+div.bio_slide ul li img {
+  height: 100%;
+}
+/* line 40, assets\less\biography.less */
+.ab_right {
+  position: absolute;
+  right: -22%;
+  text-align: left;
+}
+/* line 44, assets\less\biography.less */
+.ab_right .ab_right_before {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: -100%;
+  cursor: e-resize;
+}
+/* line 51, assets\less\biography.less */
+.ab_right .ab_right_after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  cursor: e-resize;
+  transition: .5s ease;
+}
+/* line 59, assets\less\biography.less */
+.ab_right .ab_right_after:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 65, assets\less\biography.less */
+.ab_left {
+  position: absolute;
+  left: -22%;
+  text-align: right;
+}
+/* line 69, assets\less\biography.less */
+.ab_left .ab_left_before {
+  height: 100%;
+  width: 500px;
+  position: absolute;
+  right: -100%;
+  cursor: e-resize;
+}
+/* line 76, assets\less\biography.less */
+.ab_left .ab_left_after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  cursor: e-resize;
+  transition: .5s ease;
+}
+/* line 84, assets\less\biography.less */
+.ab_left .ab_left_after:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 90, assets\less\biography.less */
+.bio_article {
+  padding-top: 65px;
+  height: 100%;
+  display: block;
+  margin-bottom: 65px;
+}
+/* line 95, assets\less\biography.less */
+.bio_article h2 {
+  text-align: center;
+  margin: 8px auto 64.8px auto;
+  max-width: 85%;
+}
+/* line 99, assets\less\biography.less */
+.bio_article h2 span {
+  font-size: 12px;
+  letter-spacing: 0.225em;
+  color: 515151px;
+  text-transform: uppercase;
+}
+/* line 106, assets\less\biography.less */
+.bio_article p {
+  margin-bottom: 20px;
+  text-align: left;
+  letter-spacing: 0.125em;
+  font-size: 12px;
+  line-height: 1.45em;
+  color: #666666;
+}
+/* line 117, assets\less\biography.less */
+.bio_article_text {
+  width: 750px;
+  margin: 0 auto;
+}
+/* line 132, assets\less\biography.less */
+.tilter {
+  display: block;
+  position: relative;
+  /*width: 300px;
+	height: 415px;
+	margin: 1.5em 2.5em;*/
+  width: 100%;
+  color: #fff;
+  flex: none;
+  perspective: 1000px;
+}
+/* line 144, assets\less\biography.less */
+.tilter * {
+  pointer-events: none;
+}
+/* line 148, assets\less\biography.less */
+.tilter:hover,
+.tilter:focus {
+  color: #fff;
+  outline: none;
+}
+/*
+.tilter__figure,
+.tilter__deco,
+.tilter__caption {
+	will-change: transform;
+}*/
+/* line 161, assets\less\biography.less */
+.tilter__figure,
+.tilter__image {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/* line 169, assets\less\biography.less */
+.tilter__figure > * {
+  transform: translateZ(0px);
+  /* Force correct stacking order */
+}
+/* line 172, assets\less\biography.less */
+.tilter__figure {
+  position: relative;
+}
+/* line 175, assets\less\biography.less */
+.tilter__figure::before {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  box-shadow: 0 30px 20px rgba(35, 32, 39, 0.5);
+}
+/* line 185, assets\less\biography.less */
+.tilter__deco {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+/* line 194, assets\less\biography.less */
+.tilter__deco--overlay {
+  background-image: linear-gradient(45deg, rgba(226, 60, 99, 0.4), rgba(145, 58, 252, 0.4), rgba(16, 11, 192, 0.4));
+}
+/* line 198, assets\less\biography.less */
+.tilter__deco--shine div {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0.25) 50%, transparent 100%);
+}
+/* line 207, assets\less\biography.less */
+.tilter__deco--lines {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+/* line 213, assets\less\biography.less */
+.tilter__caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 4em;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 221, assets\less\biography.less */
+.tilter__title {
+  margin: 0;
+  font-weight: normal;
+  font-size: 1.5vw;
+  /*font-family: 'Abril Fatface', serif;*/
+  letter-spacing: .15em;
+  line-height: 1;
+}
+/* line 230, assets\less\biography.less */
+.tilter__description {
+  margin: 1em 0 0 0;
+  font-size: 0.85vw;
+  letter-spacing: 0.15em;
+}
+/* Individual styles */
+/* Example 1 (Default) */
+/* line 239, assets\less\biography.less */
+.tilter--1 .tilter__figure::before {
+  box-shadow: 0 30px 20px rgba(0, 0, 0, 0.5);
+}
+/* line 2, assets\less\portraits.less */
+body.portrait_body {
+  box-sizing: border-box;
+  background-image: url('../image/next_img.jpg');
+  position: relative;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* line 11, assets\less\portraits.less */
+body.portrait_body .gnb-inner div a {
+  color: black;
+}
+/* line 14, assets\less\portraits.less */
+.portrait_section {
+  overflow-x: scroll;
+  width: 100%;
+  position: relative;
+}
+/* line 19, assets\less\portraits.less */
+.portrait_wrapper {
+  height: 100%;
+}
+/* line 22, assets\less\portraits.less */
+.portrait_gallery {
+  height: 100%;
+  position: relative;
+}
+/* line 26, assets\less\portraits.less */
+.portrait_gallery div.portrait_description {
+  position: absolute;
+  bottom: 110px;
+  word-wrap: normal;
+  padding: 0 90px 0 50px;
+  max-width: 700px;
+}
+/* line 33, assets\less\portraits.less */
+.portrait_gallery div.portrait_description h2 span {
+  font-size: 13px;
+  letter-spacing: 0.225em;
+  color: #515151;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+/* line 41, assets\less\portraits.less */
+.portrait_gallery div.portrait_description p {
+  white-space: normal;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  color: #959595;
+  margin-top: 60px;
+  line-height: 1.7em;
+}
+/* line 54, assets\less\portraits.less */
+ul.portrait_list {
+  height: 100%;
+  font-size: 0;
+}
+/* line 57, assets\less\portraits.less */
+ul.portrait_list li {
+  background-color: #FFF;
+}
+/* line 58, assets\less\portraits.less */
+ul.portrait_list > li:first-child {
+  padding: 110px 0 110px 10px;
+  box-sizing: border-box;
+}
+/* line 62, assets\less\portraits.less */
+ul.portrait_list > li {
+  padding: 110px 0;
+  position: absolute;
+  top: 0;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 60%;
+  height: 100%;
+}
+/* line 70, assets\less\portraits.less */
+ul.portrait_list > li img {
+  height: 100%;
+}
+/* line 73, assets\less\portraits.less */
+ul.portrait_list > li div {
+  margin-top: 10px;
+}
+/* line 77, assets\less\portraits.less */
+ul.portrait_list > li cite {
+  margin-top: 10px;
+  font-style: normal;
+  font-size: 12px;
+  color: #878787;
+  letter-spacing: 0.125em;
+  text-transform: capitalize;
+}
+/* line 86, assets\less\portraits.less */
+ul.portrait_list li.second_last_pt {
+  background-color: #f7f7f9;
+  width: 33%;
+}
+/* line 89, assets\less\portraits.less */
+ul.portrait_list li.second_last_pt div.next_up {
+  display: block;
+  line-height: 12px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 90px;
+  margin-top: 220px;
+}
+/* line 96, assets\less\portraits.less */
+ul.portrait_list li.second_last_pt div.next_up span,
+ul.portrait_list li.second_last_pt div.next_up a {
+  color: unset;
+  font-size: 10px;
+  color: #878787;
+  letter-spacing: 0.125em;
+  height: 20px;
+  display: block;
+  margin-top: 5px;
+}
+/* line 106, assets\less\portraits.less */
+ul.portrait_list li.second_last_pt li {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5em;
+  background-color: #f7f7f9;
+}
+/* line 114, assets\less\portraits.less */
+ul.portrait_list li.last_pt {
+  background-color: rgba(156, 156, 156, 0.65);
+  width: 33%;
+}
+/* line 121, assets\less\portraits.less */
+.portrait_gallery_thumbnails {
+  opacity: 0;
+  width: 100%;
+  position: fixed;
+  bottom: -50px;
+  border: 1px #F00 solid;
+  height: 150px;
+  text-align: center;
+  transition: 1s ease;
+}
+/* line 130, assets\less\portraits.less */
+.portrait_gallery_thumbnails:hover {
+  opacity: 1;
+  bottom: 4px;
+}
+/* line 134, assets\less\portraits.less */
+.portrait_gallery_thumbnails ul {
+  font-size: 0;
+  margin-top: 100px;
+}
+/* line 137, assets\less\portraits.less */
+.portrait_gallery_thumbnails ul li {
+  display: inline-block;
+  height: 50px;
+  width: auto;
+}
+/* line 141, assets\less\portraits.less */
+.portrait_gallery_thumbnails ul li a {
+  position: relative;
+}
+/* line 146, assets\less\portraits.less */
+.portrait_gallery_thumbnails ul li a img {
+  height: 100%;
+}
+/* line 162, assets\less\portraits.less */
+.portrait_gallery_thumbnails #test {
+  display: inline-block;
+  height: 100%;
+  background-color: #fff;
+}
+/* line 1, assets\less\filter.less */
+body.filter_body {
+  overflow: auto;
+}
+/* line 2, assets\less\filter.less */
+body.filter_body .gnb-inner {
+  border-bottom: 1px solid #e8e8e8;
+}
+/* line 3, assets\less\filter.less */
+body.filter_body .gnb-inner div a {
+  color: black;
+}
+/* line 5, assets\less\filter.less */
+body.filter_body .on {
+  display: block;
+}
+/* line 8, assets\less\filter.less */
+div.filter_wrapper {
+  padding-top: 90px;
+  box-sizing: border-box;
+  width: 100%;
+}
+/* line 14, assets\less\filter.less */
+ul.filter_list {
+  width: 100%;
+  font-size: 0;
+}
+/* line 17, assets\less\filter.less */
+ul.filter_list li {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 25%;
+  padding-bottom: 25%;
+  position: relative;
+}
+/* line 26, assets\less\filter.less */
+div.filter_select {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(../../assets/image/footerBackgroundSmall.jpg);
+  top: 0;
+  left: 0 ;
+  text-align: center;
+  background-position: -200px center;
+  cursor: all-scroll;
+}
+/* line 36, assets\less\filter.less */
+div.filter_select div.filter_sr {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: url('../../assets/image/latestf.svg');
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-size: 61%;
+  background-position: 50% 50%;
+}
+/* line 47, assets\less\filter.less */
+div.filter_select .filter_fixed {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('../../assets/image/surround.svg');
+  background-repeat: no-repeat;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 50% 100%;
+}
+/* line 60, assets\less\filter.less */
+div.filter_select .filter_click {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 66, assets\less\filter.less */
+div.filter_select .filter_click a#filter_trigger {
+  display: inline-block;
+  width: 60%;
+  height: 60%;
+  border: 1px transparent solid;
+  border-radius: 50%;
+  margin-top: 19.5%;
+}
+/* line 77, assets\less\filter.less */
+.filter_description {
+  position: absolute;
+  z-index: 15;
+  top: 46%;
+  width: 100%;
+}
+/* line 82, assets\less\filter.less */
+.filter_description cite,
+.filter_description span {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 15px !important;
+  font-weight: bolder;
+  letter-spacing: .2em;
+  color: #FFF;
+  display: block;
+  font-style: normal;
+  opacity: 0;
+  transition: 1s ease;
+}
+/* line 94, assets\less\filter.less */
+.filter_description span {
+  margin-top: 10px;
+  font-size: 13px !important;
+}
+/* line 100, assets\less\filter.less */
+.filter_cover {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  z-index: 10;
+  text-align: center;
+  opacity: 1;
+  transition: 1s ease;
+}
+/* line 109, assets\less\filter.less */
+.filter_cover .filter_a {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 117, assets\less\filter.less */
+.filter_cover img {
+  max-height: 55%;
+  opacity: 1;
+  transition: 1s ease;
+  margin-top: 22.5%;
+}
+/* line 123, assets\less\filter.less */
+.filter_cover video {
+  opacity: 1;
+  transition: 1s ease;
+}
+/* line 1, assets\less\tape.less */
+body.tape_body {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+/* line 4, assets\less\tape.less */
+body.tape_body .gnb-inner div a {
+  color: black;
+}
+/* line 6, assets\less\tape.less */
+body.tape_body .on {
+  display: block;
+}
+/* line 8, assets\less\tape.less */
+div.tape_wapper {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+/* line 12, assets\less\tape.less */
+div.tape_wapper section {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+/* line 23, assets\less\tape.less */
+.scroll_listener {
+  width: 100%;
+  height: 100%;
+}
+/* line 27, assets\less\tape.less */
+.scroll_listener .film_wrapper {
+  padding-top: 90px;
+}
+/* line 29, assets\less\tape.less */
+.scroll_listener .film_wrapper ul.film_container {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  font-size: 0;
+}
+/* line 34, assets\less\tape.less */
+.scroll_listener .film_wrapper ul.film_container li {
+  overflow: hidden;
+  height: 33vh;
+  width: 50vh;
+  display: inline-block;
+  position: relative;
+}
+/* line 40, assets\less\tape.less */
+.scroll_listener .film_wrapper ul.film_container li img {
+  height: 100%;
+  transition: 0.5s;
+}
+/* line 44, assets\less\tape.less */
+.scroll_listener .film_wrapper ul.film_container li .film_description {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+  left: 0;
+  margin: 0 auto;
+}
+/* line 50, assets\less\tape.less */
+.scroll_listener .film_wrapper ul.film_container li .film_description h2 {
+  text-align: center;
+}
+/* line 52, assets\less\tape.less */
+.scroll_listener .film_wrapper ul.film_container li .film_description h2 span {
+  display: block;
+  font-weight: 200;
+  font-size: 13px;
+  letter-spacing: 0.125em;
+  line-height: 1.45em;
+  text-rendering: optimizeLegibility;
+  color: #FFF;
+  opacity: 0;
+  transition: 0.5s;
+}
+/* line 63, assets\less\tape.less */
+.scroll_listener .film_wrapper ul.film_container li .film_description h2 span + span {
+  font-size: 13px;
+}
+/* line 68, assets\less\tape.less */
+.scroll_listener .film_wrapper ul.film_container li .film_opa {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+/* line 79, assets\less\tape.less */
+.scroll_listener .film_wrapper ul.film_container li .aClick {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+/* line 90, assets\less\tape.less */
+.TapeFilmPopUp {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* line 98, assets\less\tape.less */
+.TapeFilmPopUp:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  display: block;
+  background-color: #FFF;
+  opacity: .7;
+}
+/* line 110, assets\less\tape.less */
+.TapeFilmPopUp .TapeIframeWrapper {
+  width: 50%;
+  height: 28vw;
+  margin: 0 auto;
+  margin-top: 10%;
+  position: relative;
+  z-index: 15;
+}
+/* line 117, assets\less\tape.less */
+.TapeFilmPopUp .TapeIframeWrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+/* line 122, assets\less\tape.less */
+.TapeFilmPopUp .TapeIframeWrapper .TapeFilmInfo {
+  margin-top: 15px;
+}
+/* line 124, assets\less\tape.less */
+.TapeFilmPopUp .TapeIframeWrapper .TapeFilmInfo cite,
+.TapeFilmPopUp .TapeIframeWrapper .TapeFilmInfo span {
+  width: 100%;
+  text-transform: capitalize;
+  font-weight: 200;
+  line-height: 1.45em;
+  letter-spacing: 0.075em;
+  color: #b8b8b8;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  text-align: left;
+  font-style: normal;
+}
+/* line 136, assets\less\tape.less */
+.TapeFilmPopUp .TapeIframeWrapper .TapeFilmInfo span {
+  margin-left: 5px;
+}
+/* line 2, assets\less\BehindTheScenes.less */
+.clear {
+  clear: both;
+}
+/* line 5, assets\less\BehindTheScenes.less */
+html,
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+/* line 9, assets\less\BehindTheScenes.less */
+body.bts_body .gnb-inner div a {
+  color: white;
+}
+/* line 10, assets\less\BehindTheScenes.less */
+body.bts_body .on {
+  display: block;
+}
+/* line 12, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes00 {
+  height: 100%;
+  width: 100%;
+}
+/* line 16, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes00 .slide_wrapper {
+  width: 100%;
+  height: 100%;
+}
+/* line 20, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes00 .main_slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+/* line 27, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes00 .main_slide .slide_contents {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../image/bts_main.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 38, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes00 .bts_title {
+  position: fixed;
+  margin-top: 25%;
+  width: 100%;
+  z-index: -1;
+}
+/* line 43, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes00 .bts_title h2 {
+  letter-spacing: .225em;
+  font-size: 44px;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+/* line 52, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes00 .scroll_down_arrow_wrapper {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  margin-top: -55px;
+  background-color: #FFF;
+  z-index: 2;
+  text-align: center;
+}
+/* line 60, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes00 .scroll_down_arrow_wrapper a {
+  width: 80px;
+  height: 55px;
+  background-image: url(../image/down_arrow.svg);
+  background-position: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  opacity: .8;
+  cursor: pointer;
+  display: inline-block;
+}
+/* line 75, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes01 {
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  background-image: url('../image/footerBackgroundSmall.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 84, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes01 .bts_wrapper {
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+/* line 96, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes02 {
+  height: 100%;
+  border: 10px #FF0 solid;
+  box-sizing: border-box;
+  position: relative;
+}
+/* line 103, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes02 .bts_wrapper {
+  height: 100%;
+  background-color: #FFF;
+  z-index: 1;
+  text-align: center;
+}
+/* line 7, assets\less\blogList.less */
+body.blog_list .fl {
+  float: left;
+}
+/* line 8, assets\less\blogList.less */
+body.blog_list .fr {
+  float: right;
+}
+/* line 9, assets\less\blogList.less */
+body.blog_list .on {
+  display: block;
+}
+/* line 12, assets\less\blogList.less */
+body.blog_list section.blog_list_sction00 {
+  height: 100%;
+  width: 100%;
+}
+/* line 16, assets\less\blogList.less */
+body.blog_list section.blog_list_sction00 .slide_wrapper {
+  width: 100%;
+  height: 100%;
+}
+/* line 20, assets\less\blogList.less */
+body.blog_list section.blog_list_sction00 .main_slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+/* line 27, assets\less\blogList.less */
+body.blog_list section.blog_list_sction00 .slide_contents {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../image/blog_list_main.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 38, assets\less\blogList.less */
+body.blog_list section.blog_list_sction00 .blog_title {
+  position: fixed;
+  margin-top: 25%;
+  width: 100%;
+  z-index: -1;
+}
+/* line 43, assets\less\blogList.less */
+body.blog_list section.blog_list_sction00 .blog_title h2 {
+  letter-spacing: .225em;
+  font-size: 44px;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+/* line 52, assets\less\blogList.less */
+body.blog_list section.blog_list_sction00 .title_bar {
+  width: 100%;
+  height: 90px;
+  position: fixed;
+  bottom: 50px;
+  text-align: center;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0.92);
+}
+/* line 60, assets\less\blogList.less */
+body.blog_list section.blog_list_sction00 .title_bar h2 {
+  position: relative;
+  z-index: -1;
+  line-height: 90px;
+  letter-spacing: 0.2em;
+  font-weight: 900;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+/* line 69, assets\less\blogList.less */
+body.blog_list section.blog_list_sction00 .title_bar cite {
+  color: #afafaf;
+  font-style: normal;
+}
+/* line 75, assets\less\blogList.less */
+body.blog_list section.blog_list_sction00 .scroll_down_arrow_wrapper {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  margin-top: -55px;
+  background-color: #FFF;
+  z-index: 2;
+  text-align: center;
+}
+/* line 83, assets\less\blogList.less */
+body.blog_list section.blog_list_sction00 .scroll_down_arrow_wrapper a {
+  width: 80px;
+  height: 55px;
+  background-image: url(../image/down_arrow.svg);
+  background-position: center;
+  background-size: 40%;
+  background-repeat: no-repeat;
+  opacity: .8;
+  cursor: pointer;
+  display: inline-block;
+}
+/* line 96, assets\less\blogList.less */
+body.blog_list section.blog_list_sction01 {
+  height: auto;
+  width: 100%;
+  background-color: #FFF;
+}
+/* line 100, assets\less\blogList.less */
+body.blog_list section.blog_list_sction01 .blog_list_contents_holder {
+  margin: 0 auto;
+  padding-bottom: 150px;
+  max-width: 1280px;
+}
+/* line 104, assets\less\blogList.less */
+body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul {
+  overflow: hidden;
+  width: 1280px;
+}
+/* line 107, assets\less\blogList.less */
+body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li.small_list {
+  margin-top: 125px;
+}
+/* line 110, assets\less\blogList.less */
+body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li {
+  margin-top: 80px;
+}
+/* line 112, assets\less\blogList.less */
+body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li div {
+  margin-top: 25px;
+}
+/* line 114, assets\less\blogList.less */
+body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li div cite,
+body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li div span {
+  font-size: 12px;
+  font-style: normal;
+  color: #757575;
+  text-transform: uppercase;
+  font-weight: lighter;
+  letter-spacing: .125em;
+}
+/* line 125, assets\less\blogList.less */
+body.blog_list section.blog_list_sction01 .blog_list_contents_holder .blog_paging {
+  margin-top: 100px;
+  text-align: center;
+}
+/* line 128, assets\less\blogList.less */
+body.blog_list section.blog_list_sction01 .blog_list_contents_holder .blog_paging li {
+  display: inline-block;
+  font-size: 0;
+  width: 60px;
+  height: 15px;
+  margin: 0 12.5px;
+  outline: 1px #333333 solid;
+}
+/* line 135, assets\less\blogList.less */
+body.blog_list section.blog_list_sction01 .blog_list_contents_holder .blog_paging li a {
+  width: 100%;
+  display: block;
+  vertical-align: middle;
+  font-weight: lighter;
+  font-size: 12px;
+}
+/* line 1, assets\less\blog.less */
+html,
+body {
+  height: auto;
+}
+/* line 4, assets\less\blog.less */
+body.blog {
+  width: 100%;
+}
+/* line 5, assets\less\blog.less */
+body.blog .gnb-inner {
+  background-color: #FFF;
+}
+/* line 6, assets\less\blog.less */
+body.blog .gnb-inner div a {
+  color: black;
+}
+/* line 7, assets\less\blog.less */
+body.blog .on {
+  display: block;
+}
+/* line 10, assets\less\blog.less */
+body.blog article.blog_article {
+  border: 1px #F00 solid;
+  box-sizing: border-box;
+}
+/* line 13, assets\less\blog.less */
+body.blog article.blog_article section {
+  height: calc( 100% - 110px);
+  padding-bottom: 80px;
+  box-sizing: border-box;
+}
+/* line 20, assets\less\blog.less */
+body.blog .contents_wrapper {
+  max-width: 1280px;
+  margin: 110px auto 0;
+  box-sizing: border-box;
+  height: calc( 100% - 80px);
+  overflow: hidden;
+}
+/* line 26, assets\less\blog.less */
+body.blog .contents_wrapper .blog_left {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+/* line 30, assets\less\blog.less */
+body.blog .contents_wrapper .blog_left .text_contents {
+  height: calc( 100% - 167px);
+  padding: 117px 60px 0 50px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+/* line 36, assets\less\blog.less */
+body.blog .contents_wrapper .blog_left .text_contents h2 {
+  text-align: center;
+  margin-bottom: 80px;
+}
+/* line 40, assets\less\blog.less */
+body.blog .contents_wrapper .blog_left .text_contents p {
+  margin: 15px 0;
+  font-weight: 200;
+  font-size: 14px;
+  letter-spacing: .1em;
+  line-height: 1.45em;
+  text-rendering: optimizeLegibility;
+  color: #515151;
+  text-align: left;
+}
+/* line 50, assets\less\blog.less */
+body.blog .contents_wrapper .blog_left .text_contents #text_move {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-right: 30%;
+  overflow-y: scroll;
+}
+/* line 59, assets\less\blog.less */
+body.blog .contents_wrapper .blog_right {
+  width: 50%;
+  height: 100%;
+  float: right;
+}
+/* line 69, assets\less\blog.less */
+body.blog .blog_page_button {
+  margin-top: 60px;
+  text-align: center;
+}
+/* line 72, assets\less\blog.less */
+body.blog .blog_page_button a {
+  height: 30px;
+  width: 20px;
+  display: inline-block;
+  margin: 0 10px;
+}
+/* line 78, assets\less\blog.less */
+body.blog .blog_page_button a.left_chevron {
+  background-image: url(../image/left-chevron.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* line 83, assets\less\blog.less */
+body.blog .blog_page_button a.down_chevron {
+  background-image: url(../image/down-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* line 88, assets\less\blog.less */
+body.blog .blog_page_button a.up_chevron {
+  background-image: url(../image/up-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* line 93, assets\less\blog.less */
+body.blog .blog_page_button a.right_chevron {
+  background-image: url(../image/right-chevron.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* line 102, assets\less\blog.less */
+body.blog article.blog_comments section {
+  padding-top: 110px;
+}
+/* line 106, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper {
+  width: 1280px;
+  margin: 0 auto;
+}
+/* line 110, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list {
+  margin: 65px 290px 200px;
+}
+/* line 113, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list h2 {
+  margin-top: 70px;
+}
+/* line 115, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list h2 span {
+  font-size: 25px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+/* line 121, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list ol {
+  margin-top: 50px;
+}
+/* line 123, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list ol li {
+  margin-top: 30px;
+}
+/* line 125, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list ol li .writer_info {
+  font-size: 18px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+/* line 131, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list ol li .date_info_control {
+  color: #515151;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+/* line 136, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list ol li .comment_content {
+  margin-top: 45px;
+}
+/* line 138, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list ol li .comment_content p {
+  padding-bottom: 22px;
+  border-bottom: 1px #515151 solid;
+}
+/* line 143, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list ol li .scd_comment {
+  margin-left: 60px;
+}
+/* line 149, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list .blog_post_reply {
+  padding: 80px 0 50px;
+}
+/* line 151, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list .blog_post_reply i {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+/* line 158, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list form.blog_form fieldset {
+  border-style: none;
+}
+/* line 161, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list form.blog_form fieldset p input[type="text"] {
+  width: 45%;
+  height: 40px;
+  border-style: none;
+  margin-right: 30px;
+  border-bottom: 1px #515151 solid;
+}
+/* line 168, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list form.blog_form fieldset p input[type="email"] {
+  width: 45%;
+  height: 40px;
+  float: right;
+  border-style: none;
+  border-bottom: 1px #515151 solid;
+}
+/* line 177, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list form.blog_form fieldset textarea {
+  width: 100%;
+  display: block;
+  border-style: none;
+  border-bottom: 1px #515151 solid;
+  margin-top: 10px;
+}
+/* line 184, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list form.blog_form fieldset input[type="button"] {
+  width: 20%;
+  height: 40px;
+  margin-top: 45px;
+  border: 1px #515151 solid;
+  background-color: #FFF;
+  font-size: 15px;
+  letter-spacing: 0.15em;
+  float: right;
+  cursor: pointer;
+}
+/* line 195, assets\less\blog.less */
+body.blog article.blog_comments .comments_wrapper .comments_list form.blog_form fieldset input[value="SEND MESSAGE"] {
+  width: 40%;
+  height: 40px;
+  margin-top: 45px;
+  border: 1px #515151 solid;
+  background-color: #FFF;
+  font-size: 15px;
+  letter-spacing: 0.15em;
+  float: left;
+  cursor: pointer;
+}

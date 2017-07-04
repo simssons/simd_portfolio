@@ -9,8 +9,8 @@ dist/
 # Grunt usually preprocesses files such as coffeescript, compass... inside the .tmp directory
 .tmp/
 
-### Less ###
-*.css
+### Less *.css 우선 포암###
+
 
 ### Node ###
 # Logs
