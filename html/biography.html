@@ -52,10 +52,12 @@
 
         // 동작
         var statusIdx = 0;
+        var backwards= 0;
         $('.bio_slide ul li').click(function(){
             var idx = $(this).index();
             if (idx==0) {
-                statusIdx++;
+              console.log(statusIdx);
+                statusIdx--;
                 console.log(statusIdx);
                 $('.bio_slide ul li').each(function(i,e){
                     if (statusIdx==4) {
@@ -68,46 +70,47 @@
                       }
                     }else if (statusIdx==5) {
                       $(this).find('img').attr('src',bioSlideArray[i])
+                    }else if (statusIdx < 0) {
+                      backwards = 5;
+                      if ((i+backwards)==5) {
+                        $(this).find('img').attr('src',bioSlideArray[4])
+                      }else if ((i+backwards)== 6) {
+                        $(this).find('img').attr('src',bioSlideArray[0])
+                      }else{
+                        $(this).find('img').attr('src',bioSlideArray[1])
+                      };
+                      if (i==2) {
+                        statusIdx = 4;
+                      }
+                    }
+                    else{
+                      $(this).find('img').attr('src',bioSlideArray[i+statusIdx])
+                    }
+                    i++;
+                })
+          }else if  (idx==2) {
+                statusIdx++;
+                $('.bio_slide ul li').each(function(i,e){
+                    if (statusIdx==4) {
+                      if ((i+statusIdx)==5) {
+                        $(this).find('img').attr('src',bioSlideArray[0])
+                      }else if ((i+statusIdx)== 6) {
+                        $(this).find('img').attr('src',bioSlideArray[1])
+                      }else{
+                        $(this).find('img').attr('src',bioSlideArray[statusIdx])
+                      }
+                    }else if (statusIdx > 4 ) {
+                      $(this).find('img').attr('src',bioSlideArray[i])
                       statusIdx = 0;
                     }else{
                       $(this).find('img').attr('src',bioSlideArray[i+statusIdx])
                     }
                     i++;
                 })
-            }else if (idx==2) {
-              statusIdx--;
-              console.log(statusIdx);
-              if (statusIdx<0) {
-                
-              }
-              $('.bio_slide ul li').each(function(i,e){
-                  if (statusIdx==4) {
-                    if ((i+statusIdx)==5) {
-                      $(this).find('img').attr('src',bioSlideArray[0])
-                    }else if ((i+statusIdx)== 6) {
-                      $(this).find('img').attr('src',bioSlideArray[1])
-                    }else{
-                      $(this).find('img').attr('src',bioSlideArray[statusIdx])
-                    }
-                  }else if (statusIdx==5) {
-                    $(this).find('img').attr('src',bioSlideArray[i])
-                    statusIdx = 0;
-                  }else{
-                    $(this).find('img').attr('src',bioSlideArray[i+statusIdx])
-                  }
-                  i++;
-              })
+                console.log(statusIdx);
             }else if (idx==1) {
               console.log('사진보여줘');
-
             }
-            // // season 더 좋은 방법
-            //
-            //     $('#nav > ul > li').click(function(){
-            //         var aa = $(this).index()
-            //         $('#image img').attr('src',url[aa])
-            //     })
-
         })
 
 
