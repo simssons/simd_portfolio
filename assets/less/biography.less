@@ -29,6 +29,7 @@ div.bio_slide{
             display: inline-block;
             width: 25%;
             height: 100%;
+
             img{
                 height: 100%;
             }
@@ -66,9 +67,10 @@ div.bio_slide{
     text-align: right;
     .ab_left_before{
         height: 100%;
-        width: 500px;
+        width: 100%;
         position: absolute;
-        right: -93%;
+        right: -87%;
+        z-index: 2;
         cursor: e-resize;
     }
     .ab_left_after{
@@ -78,7 +80,9 @@ div.bio_slide{
         right: 0;
         top: 0;
         cursor: e-resize;
+        overflow: hidden;
         transition: .3s ease;
+        z-index: 1;
         background: rgba(255, 255, 255, 0.5);
 
     }

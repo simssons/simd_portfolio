@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class=blogHtml>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@
         //
         // });
 
-        $('a.down_chevron').on('click',function(e){            
+        $('a.down_chevron').on('click',function(e){
             var blog_comments = $('.blog_comments').offset().top;
             console.log(blog_comments);
             $('html,body').animate({'scrollTop':blog_comments});
@@ -55,7 +55,7 @@
     </script>
 
 </head>
-<body class="blog">
+<body class="blogBody">
     include "gnb.html"
     <article class="blog_article">
         <section>

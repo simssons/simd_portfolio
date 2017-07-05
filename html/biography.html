@@ -25,10 +25,11 @@
         },function(){
             $(this).find('.ab_right_after').css('background','')
         });
-        $('.ab_left').hover(function(ev){
-            $(this).find('.ab_left_after').css('background','rgba(0, 0, 0, .5)')
+        $('.ab_left_before').hover(function(ev){
+            console.log('ㅇ');
+            $(this).siblings('.ab_left_after').css('background','rgba(0, 0, 0, .5)')
         },function(){
-            $(this).find('.ab_left_after').css('background','')
+            $(this).siblings('.ab_left_after').css('background','')
         })
 
 
@@ -47,7 +48,6 @@
         //초기상태
         $('.bio_slide ul li').each(function(i,e){
             $(this).find('img').attr('src',bioSlideArray[i])
-            console.log(bioSlideArray[i]);
         })
 
         // 동작
@@ -56,64 +56,56 @@
         $('.bio_slide ul li').click(function(){
             var idx = $(this).index();
             if (idx==0) {
-              console.log(statusIdx);
                 statusIdx--;
-                console.log(statusIdx);
                 $('.bio_slide ul li').each(function(i,e){
                     if (statusIdx==4) {
-                      if ((i+statusIdx)==5) {
-                        $(this).find('img').attr('src',bioSlideArray[0])
-                      }else if ((i+statusIdx)== 6) {
-                        $(this).find('img').attr('src',bioSlideArray[1])
-                      }else{
-                        $(this).find('img').attr('src',bioSlideArray[statusIdx])
-                      }
+                        if ((i+statusIdx)==5) {
+                            $(this).find('img').attr('src',bioSlideArray[0])
+                        }else if ((i+statusIdx)== 6) {
+                            $(this).find('img').attr('src',bioSlideArray[1])
+                        }else{
+                            $(this).find('img').attr('src',bioSlideArray[statusIdx])
+                        }
                     }else if (statusIdx==5) {
-                      $(this).find('img').attr('src',bioSlideArray[i])
+                        $(this).find('img').attr('src',bioSlideArray[i])
                     }else if (statusIdx < 0) {
-                      backwards = 5;
-                      if ((i+backwards)==5) {
-                        $(this).find('img').attr('src',bioSlideArray[4])
-                      }else if ((i+backwards)== 6) {
-                        $(this).find('img').attr('src',bioSlideArray[0])
-                      }else{
-                        $(this).find('img').attr('src',bioSlideArray[1])
-                      };
-                      if (i==2) {
-                        statusIdx = 4;
-                      }
-                    }
-                    else{
-                      $(this).find('img').attr('src',bioSlideArray[i+statusIdx])
-                    }
-                    i++;
-                })
-          }else if  (idx==2) {
-                statusIdx++;
-                $('.bio_slide ul li').each(function(i,e){
-                    if (statusIdx==4) {
-                      if ((i+statusIdx)==5) {
-                        $(this).find('img').attr('src',bioSlideArray[0])
-                      }else if ((i+statusIdx)== 6) {
-                        $(this).find('img').attr('src',bioSlideArray[1])
-                      }else{
-                        $(this).find('img').attr('src',bioSlideArray[statusIdx])
-                      }
-                    }else if (statusIdx > 4 ) {
-                      $(this).find('img').attr('src',bioSlideArray[i])
-                      statusIdx = 0;
+                        backwards = 5;
+                        if ((i+backwards)==5) {
+                            $(this).find('img').attr('src',bioSlideArray[4])
+                        }else if ((i+backwards)== 6) {
+                            $(this).find('img').attr('src',bioSlideArray[0])
+                        }else{
+                            $(this).find('img').attr('src',bioSlideArray[1])
+                        };
+                        if (i==2) { statusIdx = 4;}
                     }else{
                       $(this).find('img').attr('src',bioSlideArray[i+statusIdx])
                     }
                     i++;
                 })
-                console.log(statusIdx);
+          }else if (idx==2) {
+                statusIdx++;
+                $('.bio_slide ul li').each(function(i,e){
+                    if (statusIdx==4) {
+                        if ((i+statusIdx)==5) {
+                            $(this).find('img').attr('src',bioSlideArray[0])
+                        }else if ((i+statusIdx)== 6) {
+                            $(this).find('img').attr('src',bioSlideArray[1])
+                        }else{
+                            $(this).find('img').attr('src',bioSlideArray[statusIdx])
+                        }
+                    }else if (statusIdx > 4 ) {
+                        $(this).find('img').attr('src',bioSlideArray[i])
+                        statusIdx = 0;
+                    }else{
+                        $(this).find('img').attr('src',bioSlideArray[i+statusIdx])
+                    }
+                    i++;
+                })
             }else if (idx==1) {
               console.log('사진보여줘');
             }
         })
-
-
     })
 
     </script>
@@ -128,10 +120,11 @@
                 <ul>
                     <li class="ab_left">
                         <div class="ab_left_before"></div>
-                        <a href="">
-                            <img src="" alt="">
-                        </a>
-                        <div class="ab_left_after"></div>
+                        <div class="ab_left_after">
+                            <a href="">
+                                <img src="" alt="">
+                            </a>
+                        </div>
                     </li>
                     <li>
                       <a href="#" class="tilter tilter--1">
@@ -215,6 +208,11 @@
 				var idx = 0;
 				[].slice.call(document.querySelectorAll('a.tilter')).forEach(function(el, pos) {
 					idx = pos%2 === 0 ? idx+1 : idx;
+                    /*
+                    idx = pos%2 === 0 ? idx+1 : idx;
+                    idx에 pox를 2로 나눈 값이 0이 참이면 idx+1, 거짓이면 idx 대입
+                    줄여 쓴것.
+                    */
 					new TiltFx(el, tiltSettings[idx-1]);
 				});
 			}
