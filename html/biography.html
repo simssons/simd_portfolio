@@ -43,49 +43,62 @@
 
         var bioSlideArray = ['../assets/image/bio0.png','../assets/image/bio1.png','../assets/image/bio2.png','../assets/image/bio3.png','../assets/image/bio4.png'];
         bioSlideArray.length;
-        // 필요한것 현재상태를 알려주는 변수
-        //초기상태 필요. 4 0 1 순서가 되야 함.
+
+        //초기상태
         $('.bio_slide ul li').each(function(i,e){
             $(this).find('img').attr('src',bioSlideArray[i])
             console.log(bioSlideArray[i]);
         })
 
-
+        // 동작
         var statusIdx = 0;
         $('.bio_slide ul li').click(function(){
             var idx = $(this).index();
             if (idx==0) {
-                console.log(statusIdx);
-                if () {
-
-                }
                 statusIdx++;
+                console.log(statusIdx);
                 $('.bio_slide ul li').each(function(i,e){
-                    if ((i+statusIdx)>4) {statusIdx=0, i=0}
-                    console.log(i+statusIdx);
-                    $(this).find('img').attr('src',bioSlideArray[i+statusIdx])
+                    if (statusIdx==4) {
+                      if ((i+statusIdx)==5) {
+                        $(this).find('img').attr('src',bioSlideArray[0])
+                      }else if ((i+statusIdx)== 6) {
+                        $(this).find('img').attr('src',bioSlideArray[1])
+                      }else{
+                        $(this).find('img').attr('src',bioSlideArray[statusIdx])
+                      }
+                    }else if (statusIdx==5) {
+                      $(this).find('img').attr('src',bioSlideArray[i])
+                      statusIdx = 0;
+                    }else{
+                      $(this).find('img').attr('src',bioSlideArray[i+statusIdx])
+                    }
                     i++;
                 })
-
-                console.log(statusIdx);
-
-
-                // statusIdx++;
-                // if (idx + statusIdx > 4) { statusIdx = 0; }
-                // $(this).find('img').attr('src',bioSlideArray[idx+statusIdx]);
-                //
-                // statusIdx++;
-                // if (idx + statusIdx > 4) { statusIdx = 0; }
-                // $('.bio_slide ul li').eq(idx+1).find('img').attr('src',bioSlideArray[idx+statusIdx]);
-                //
-                // statusIdx++;
-                // if (idx + statusIdx > 4) { statusIdx = 0; }
-                // $('.bio_slide ul li').eq(idx+2).find('img').attr('src',bioSlideArray[idx+statusIdx]);
-                // console.log(statusIdx);
-
-            }else if (idx==1) {
-
             }else if (idx==2) {
+              statusIdx--;
+              console.log(statusIdx);
+              if (statusIdx<0) {
+                
+              }
+              $('.bio_slide ul li').each(function(i,e){
+                  if (statusIdx==4) {
+                    if ((i+statusIdx)==5) {
+                      $(this).find('img').attr('src',bioSlideArray[0])
+                    }else if ((i+statusIdx)== 6) {
+                      $(this).find('img').attr('src',bioSlideArray[1])
+                    }else{
+                      $(this).find('img').attr('src',bioSlideArray[statusIdx])
+                    }
+                  }else if (statusIdx==5) {
+                    $(this).find('img').attr('src',bioSlideArray[i])
+                    statusIdx = 0;
+                  }else{
+                    $(this).find('img').attr('src',bioSlideArray[i+statusIdx])
+                  }
+                  i++;
+              })
+            }else if (idx==1) {
+              console.log('사진보여줘');
 
             }
             // // season 더 좋은 방법
