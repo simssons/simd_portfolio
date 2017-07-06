@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="blog_list">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,56 @@
     <script src="../assets/JavaScript/common.js"></script>
     <title>Blog List</title>
 </head>
+<script>
+
+$(function(){
+
+    //높이
+    // var bioInnerHeight;
+    // var resizeBio = function(){
+    //   bioInnerHeight = $('.bioBody').height();
+    // }
+    // resizeBio();
+    // $(window).resize(function(){
+    //   resizeBio();
+    // })
+
+    var windowInnerHeight = function(){
+         $('section.blog_list_sction00').css('height',window.innerHeight)
+    }
+    windowInnerHeight()
+    $(window).resize(function(){ windowInnerHeight();})
+
+
+
+    //
+    //
+    // $(window).on('scroll',function(){
+    //   var sct = $(this).scrollTop();
+    //   console.log(aa);
+    //
+    //   var aa = 45
+    //   aa += sct
+    //   $('li').css({
+    //     'transform':'rotate('+aa+'deg)',
+    //     'left':sct,
+    //     'top':function(){
+    //
+    //       if(sct  < 500){
+    //         return sct /2
+    //       }else if(sct > 500){
+    //         return -(sct /2 )
+    //       }
+    //
+    //     }
+    //   })
+    // })
+
+})
+
+
+
+</script>
 <body class="blog_list">
     include "gnb.html"
         <section class="blog_list_sction00">
@@ -32,7 +82,7 @@
         <section class="blog_list_sction01">
             <div class="blog_list_contents_holder">
                 <ul>
-                    <li class="fl">
+                    <li class="fl big_list">
                         <a href="">
                             <img src="../assets/image/blog_list_00.png" alt="">
                         </a>
@@ -67,7 +117,7 @@
                             </a>
                         </div>
                     </li>
-                    <li class="fr">
+                    <li class="fr big_list">
                         <a href="">
                             <img src="../assets/image/blog_list_03.png" alt="">
                         </a>
@@ -79,7 +129,7 @@
                         </div>
                     </li>
                     <div class="clear"></div>
-                    <li class="fl">
+                    <li class="fl big_list">
                         <a href="">
                             <img src="../assets/image/blog_list_04.png" alt="">
                         </a>

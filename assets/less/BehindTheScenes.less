@@ -2,17 +2,20 @@
 .clear{clear: both;}
 //Layout
 
-html,body{
-  font-family: 'Montserrat', sans-serif;
-}
+
 body.bts_body{
     .gnb-inner div a {color:white;}
+    .gnb-inner div.h1 h1 li{display: inline-block;}
     .on{display: block;}
 
-    section.BehindTheScenes00{
-          height: 100%;
-          width: 100%;
 
+
+    .bts_wrapper{
+        height:100%;
+    }
+
+    section.BehindTheScenes00{
+          width: 100%;
         .slide_wrapper{
           width: 100%;
           height: 100%;
@@ -42,7 +45,7 @@ body.bts_body{
             z-index: -1;
             h2{
                 letter-spacing: .225em;
-                font-size: 44px;
+                font-size: 3vw;
                 color: #FFF;
                 text-transform: uppercase;
                 font-weight: bolder;
@@ -76,10 +79,11 @@ body.bts_body{
         height: 100%;
         box-sizing: border-box;
         position: relative;
-        background-image: url('../image/footerBackgroundSmall.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+        background-color: #FFF;
+
+        // background-size: cover;
+        // background-repeat: no-repeat;
+        // background-position: center;
 
         .bts_wrapper{
             height: 100%;
@@ -90,6 +94,58 @@ body.bts_body{
             position: relative;
             z-index: 1;
             text-align: center;
+        }
+        .contents_wrapper{
+            max-width: 1280px;
+            margin: 0 auto;
+            padding-top: 110px;
+            box-sizing: border-box;
+            height: ~"calc( 100% - 80px)";
+            overflow: hidden;
+            .bts_left{
+                width: 50%;
+                height: 100%;
+                float: left;
+                .text_contents{
+                    height: ~"calc( 100% - 167px)";
+                    padding: 0 60px 0 50px;
+                    margin-bottom: 50px;
+                    overflow: hidden;
+
+                    h2{
+                        text-align: center;
+                        margin-bottom: 80px;
+                    }
+                    p{
+                        margin: 15px 0;
+                        font-weight: 200;
+                        font-size: 14px;
+                        letter-spacing: .1em;
+                        line-height: 1.45em;
+                        text-rendering: optimizeLegibility;
+                        color: #515151;
+                        text-align: left;
+                    }
+                    #text_move{
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        padding-right: 30%;
+                        overflow-y: scroll;
+                    }
+                }
+            }
+            .bts_right{
+                width: 50%;
+                height: 100%;
+                float: right;
+                .photo_contents{
+                    height: 100%;
+                    position: relative;
+                    text-align: center;
+                }
+            }
+
         }
     }
 
@@ -110,6 +166,6 @@ body.bts_body{
             z-index: 1;
             text-align: center;
         }
-}
+    }
 
 }// bts_body

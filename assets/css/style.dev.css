@@ -28,16 +28,11 @@ a {
 img {
   vertical-align: top;
 }
-/* line 5, assets\less\common.less */
-html,
-body {
-  height: 100%;
-}
-/* line 7, assets\less\common.less */
+/* line 6, assets\less\common.less */
 .on {
   display: block;
 }
-/* line 8, assets\less\common.less */
+/* line 7, assets\less\common.less */
 .ir {
   font-size: 0;
   text-indent: -9999px;
@@ -196,13 +191,13 @@ header {
   clear: both;
 }
 /* line 7, assets\less\index.less */
-html,
-body {
+html.indexHtml,
+body.indexBody {
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
 }
 /* line 11, assets\less\index.less */
-section {
+section.indexSection {
   height: 100%;
   width: 100%;
 }
@@ -502,20 +497,21 @@ footer {
 .footer_btn_holder .footer_btn_bg {
   background-image: url('../../assets/image/footerBackgroundSmall.jpg');
   background-repeat: repeat ;
-  width: 956px;
+  width: auto;
   margin: 0 auto;
   transition-duration: 1s;
+  display: inline-block;
 }
-/* line 22, assets\less\footer.less */
+/* line 23, assets\less\footer.less */
 .footer_btn_holder .footer_btn_bg ul {
   font-size: 0;
 }
-/* line 24, assets\less\footer.less */
+/* line 25, assets\less\footer.less */
 .footer_btn_holder .footer_btn_bg ul li {
   display: inline-block;
   position: relative;
 }
-/* line 30, assets\less\footer.less */
+/* line 31, assets\less\footer.less */
 .footer_btn_holder .instagram {
   display: inline-block;
   width: 222px;
@@ -526,14 +522,14 @@ footer {
   position: relative;
   z-index: 10;
 }
-/* line 39, assets\less\footer.less */
+/* line 40, assets\less\footer.less */
 .footer_btn_holder .instagram > a {
   width: 222px;
   height: 223px;
   display: block;
   background-image: url('../../assets/image/surround_footer.svg');
 }
-/* line 46, assets\less\footer.less */
+/* line 47, assets\less\footer.less */
 .footer_btn_holder .facebook {
   display: inline-block;
   width: 222px;
@@ -544,14 +540,14 @@ footer {
   position: relative;
   z-index: 10;
 }
-/* line 55, assets\less\footer.less */
+/* line 56, assets\less\footer.less */
 .footer_btn_holder .facebook > a {
   width: 222px;
   height: 223px;
   display: block;
   background-image: url('../../assets/image/surround_footer.svg');
 }
-/* line 62, assets\less\footer.less */
+/* line 63, assets\less\footer.less */
 .footer_btn_holder .twitter {
   display: inline-block;
   width: 222px;
@@ -562,14 +558,14 @@ footer {
   position: relative;
   z-index: 10;
 }
-/* line 71, assets\less\footer.less */
+/* line 72, assets\less\footer.less */
 .footer_btn_holder .twitter > a {
   width: 222px;
   height: 223px;
   display: block;
   background-image: url('../../assets/image/surround_footer.svg');
 }
-/* line 78, assets\less\footer.less */
+/* line 79, assets\less\footer.less */
 .footer_btn_holder .youtube {
   display: inline-block;
   width: 222px;
@@ -580,14 +576,14 @@ footer {
   position: relative;
   z-index: 10;
 }
-/* line 87, assets\less\footer.less */
+/* line 88, assets\less\footer.less */
 .footer_btn_holder .youtube > a {
   width: 222px;
   height: 223px;
   display: block;
   background-image: url('../../assets/image/surround_footer.svg');
 }
-/* line 95, assets\less\footer.less */
+/* line 96, assets\less\footer.less */
 .overlay {
   position: absolute;
   top: 5.5px;
@@ -599,7 +595,7 @@ footer {
   background-color: black;
   box-sizing: border-box;
 }
-/* line 107, assets\less\footer.less */
+/* line 108, assets\less\footer.less */
 .bg_sprite {
   background-image: url('../../assets/image/spritesheet.jpg');
   width: 100%;
@@ -613,7 +609,7 @@ footer {
   animation-timing-function: step-start;
   animation-iteration-count: infinite;
 }
-/* line 121, assets\less\footer.less */
+/* line 122, assets\less\footer.less */
 .social_values {
   top: 0;
   height: 100%;
@@ -621,7 +617,7 @@ footer {
   text-align: center;
   pointer-events: none;
 }
-/* line 127, assets\less\footer.less */
+/* line 128, assets\less\footer.less */
 .social_values span {
   font-size: 15px;
   color: #dddddd;
@@ -629,7 +625,7 @@ footer {
   line-height: 212px;
   text-transform: capitalize;
 }
-/* line 139, assets\less\footer.less */
+/* line 140, assets\less\footer.less */
 span.spacer {
   background-color: #FFF;
   display: inline-block;
@@ -638,7 +634,7 @@ span.spacer {
   width: 17px;
   outline: 1px #FFF solid;
 }
-/* line 149, assets\less\footer.less */
+/* line 150, assets\less\footer.less */
 .footer_bottom {
   width: 100%;
   height: 90px;
@@ -647,16 +643,15 @@ span.spacer {
   bottom: 0;
   text-align: center;
 }
-/* line 156, assets\less\footer.less */
+/* line 157, assets\less\footer.less */
 .footer_bottom::before {
   content: "";
   vertical-align: middle;
   display: inline-block;
-  height: 100%;
 }
 /* line 164, assets\less\footer.less */
 ul.footer_links {
-  width: 1150px;
+  width: 100%;
   margin: 0 auto;
   display: inline-block;
 }
@@ -1510,30 +1505,32 @@ div.tape_wapper section {
 .clear {
   clear: both;
 }
-/* line 5, assets\less\BehindTheScenes.less */
-html,
-body {
-  font-family: 'Montserrat', sans-serif;
-}
-/* line 9, assets\less\BehindTheScenes.less */
+/* line 7, assets\less\BehindTheScenes.less */
 body.bts_body .gnb-inner div a {
   color: white;
 }
-/* line 10, assets\less\BehindTheScenes.less */
+/* line 8, assets\less\BehindTheScenes.less */
+body.bts_body .gnb-inner div.h1 h1 li {
+  display: inline-block;
+}
+/* line 9, assets\less\BehindTheScenes.less */
 body.bts_body .on {
   display: block;
 }
-/* line 12, assets\less\BehindTheScenes.less */
-body.bts_body section.BehindTheScenes00 {
+/* line 13, assets\less\BehindTheScenes.less */
+body.bts_body .bts_wrapper {
   height: 100%;
+}
+/* line 17, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes00 {
   width: 100%;
 }
-/* line 16, assets\less\BehindTheScenes.less */
+/* line 19, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 .slide_wrapper {
   width: 100%;
   height: 100%;
 }
-/* line 20, assets\less\BehindTheScenes.less */
+/* line 23, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 .main_slide {
   position: relative;
   width: 100%;
@@ -1541,7 +1538,7 @@ body.bts_body section.BehindTheScenes00 .main_slide {
   text-align: center;
   overflow: hidden;
 }
-/* line 27, assets\less\BehindTheScenes.less */
+/* line 30, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 .main_slide .slide_contents {
   position: fixed;
   z-index: -1;
@@ -1553,22 +1550,22 @@ body.bts_body section.BehindTheScenes00 .main_slide .slide_contents {
   background-repeat: no-repeat;
   background-position: center;
 }
-/* line 38, assets\less\BehindTheScenes.less */
+/* line 41, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 .bts_title {
   position: fixed;
   margin-top: 25%;
   width: 100%;
   z-index: -1;
 }
-/* line 43, assets\less\BehindTheScenes.less */
+/* line 46, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 .bts_title h2 {
   letter-spacing: .225em;
-  font-size: 44px;
+  font-size: 3vw;
   color: #FFF;
   text-transform: uppercase;
   font-weight: bolder;
 }
-/* line 52, assets\less\BehindTheScenes.less */
+/* line 55, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 .scroll_down_arrow_wrapper {
   position: relative;
   width: 100%;
@@ -1578,7 +1575,7 @@ body.bts_body section.BehindTheScenes00 .scroll_down_arrow_wrapper {
   z-index: 2;
   text-align: center;
 }
-/* line 60, assets\less\BehindTheScenes.less */
+/* line 63, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 .scroll_down_arrow_wrapper a {
   width: 80px;
   height: 55px;
@@ -1590,60 +1587,120 @@ body.bts_body section.BehindTheScenes00 .scroll_down_arrow_wrapper a {
   cursor: pointer;
   display: inline-block;
 }
-/* line 75, assets\less\BehindTheScenes.less */
+/* line 78, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes01 {
   height: 100%;
   box-sizing: border-box;
   position: relative;
-  background-image: url('../image/footerBackgroundSmall.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: #FFF;
 }
-/* line 84, assets\less\BehindTheScenes.less */
+/* line 88, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes01 .bts_wrapper {
   height: 100%;
   position: relative;
   z-index: 1;
   text-align: center;
 }
-/* line 96, assets\less\BehindTheScenes.less */
+/* line 98, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes01 .contents_wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 110px;
+  box-sizing: border-box;
+  height: calc( 100% - 80px);
+  overflow: hidden;
+}
+/* line 105, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_left {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+/* line 109, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_left .text_contents {
+  height: calc( 100% - 167px);
+  padding: 0 60px 0 50px;
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+/* line 115, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_left .text_contents h2 {
+  text-align: center;
+  margin-bottom: 80px;
+}
+/* line 119, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_left .text_contents p {
+  margin: 15px 0;
+  font-weight: 200;
+  font-size: 14px;
+  letter-spacing: .1em;
+  line-height: 1.45em;
+  text-rendering: optimizeLegibility;
+  color: #515151;
+  text-align: left;
+}
+/* line 129, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_left .text_contents #text_move {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding-right: 30%;
+  overflow-y: scroll;
+}
+/* line 138, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_right {
+  width: 50%;
+  height: 100%;
+  float: right;
+}
+/* line 142, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_right .photo_contents {
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+/* line 152, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes02 {
   height: 100%;
   border: 10px #FF0 solid;
   box-sizing: border-box;
   position: relative;
 }
-/* line 103, assets\less\BehindTheScenes.less */
+/* line 159, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes02 .bts_wrapper {
   height: 100%;
   background-color: #FFF;
   z-index: 1;
   text-align: center;
 }
-/* line 7, assets\less\blogList.less */
+/* line 5, assets\less\blogList.less */
+html.blog_list .fl,
 body.blog_list .fl {
   float: left;
 }
-/* line 8, assets\less\blogList.less */
+/* line 6, assets\less\blogList.less */
+html.blog_list .fr,
 body.blog_list .fr {
   float: right;
 }
-/* line 9, assets\less\blogList.less */
+/* line 7, assets\less\blogList.less */
+html.blog_list .on,
 body.blog_list .on {
   display: block;
 }
-/* line 12, assets\less\blogList.less */
+/* line 9, assets\less\blogList.less */
+html.blog_list section.blog_list_sction00,
 body.blog_list section.blog_list_sction00 {
-  height: 100%;
   width: 100%;
 }
-/* line 16, assets\less\blogList.less */
+/* line 12, assets\less\blogList.less */
+html.blog_list section.blog_list_sction00 .slide_wrapper,
 body.blog_list section.blog_list_sction00 .slide_wrapper {
   width: 100%;
   height: 100%;
 }
-/* line 20, assets\less\blogList.less */
+/* line 16, assets\less\blogList.less */
+html.blog_list section.blog_list_sction00 .main_slide,
 body.blog_list section.blog_list_sction00 .main_slide {
   position: relative;
   width: 100%;
@@ -1651,7 +1708,8 @@ body.blog_list section.blog_list_sction00 .main_slide {
   text-align: center;
   overflow: hidden;
 }
-/* line 27, assets\less\blogList.less */
+/* line 23, assets\less\blogList.less */
+html.blog_list section.blog_list_sction00 .slide_contents,
 body.blog_list section.blog_list_sction00 .slide_contents {
   position: fixed;
   z-index: -1;
@@ -1663,22 +1721,26 @@ body.blog_list section.blog_list_sction00 .slide_contents {
   background-repeat: no-repeat;
   background-position: center;
 }
-/* line 38, assets\less\blogList.less */
+/* line 34, assets\less\blogList.less */
+html.blog_list section.blog_list_sction00 .blog_title,
 body.blog_list section.blog_list_sction00 .blog_title {
   position: fixed;
   margin-top: 25%;
   width: 100%;
   z-index: -1;
 }
-/* line 43, assets\less\blogList.less */
+/* line 39, assets\less\blogList.less */
+html.blog_list section.blog_list_sction00 .blog_title h2,
 body.blog_list section.blog_list_sction00 .blog_title h2 {
+  width: 100%;
   letter-spacing: .225em;
   font-size: 44px;
   color: #FFF;
   text-transform: uppercase;
   font-weight: bolder;
 }
-/* line 52, assets\less\blogList.less */
+/* line 49, assets\less\blogList.less */
+html.blog_list section.blog_list_sction00 .title_bar,
 body.blog_list section.blog_list_sction00 .title_bar {
   width: 100%;
   height: 90px;
@@ -1688,7 +1750,8 @@ body.blog_list section.blog_list_sction00 .title_bar {
   z-index: -1;
   background-color: rgba(255, 255, 255, 0.92);
 }
-/* line 60, assets\less\blogList.less */
+/* line 57, assets\less\blogList.less */
+html.blog_list section.blog_list_sction00 .title_bar h2,
 body.blog_list section.blog_list_sction00 .title_bar h2 {
   position: relative;
   z-index: -1;
@@ -1698,12 +1761,14 @@ body.blog_list section.blog_list_sction00 .title_bar h2 {
   font-size: 15px;
   text-transform: uppercase;
 }
-/* line 69, assets\less\blogList.less */
+/* line 66, assets\less\blogList.less */
+html.blog_list section.blog_list_sction00 .title_bar cite,
 body.blog_list section.blog_list_sction00 .title_bar cite {
   color: #afafaf;
   font-style: normal;
 }
-/* line 75, assets\less\blogList.less */
+/* line 72, assets\less\blogList.less */
+html.blog_list section.blog_list_sction00 .scroll_down_arrow_wrapper,
 body.blog_list section.blog_list_sction00 .scroll_down_arrow_wrapper {
   position: relative;
   width: 100%;
@@ -1713,7 +1778,8 @@ body.blog_list section.blog_list_sction00 .scroll_down_arrow_wrapper {
   z-index: 2;
   text-align: center;
 }
-/* line 83, assets\less\blogList.less */
+/* line 80, assets\less\blogList.less */
+html.blog_list section.blog_list_sction00 .scroll_down_arrow_wrapper a,
 body.blog_list section.blog_list_sction00 .scroll_down_arrow_wrapper a {
   width: 80px;
   height: 55px;
@@ -1725,51 +1791,77 @@ body.blog_list section.blog_list_sction00 .scroll_down_arrow_wrapper a {
   cursor: pointer;
   display: inline-block;
 }
-/* line 96, assets\less\blogList.less */
+/* line 93, assets\less\blogList.less */
+html.blog_list section.blog_list_sction01,
 body.blog_list section.blog_list_sction01 {
   height: auto;
   width: 100%;
   background-color: #FFF;
 }
-/* line 100, assets\less\blogList.less */
+/* line 97, assets\less\blogList.less */
+html.blog_list section.blog_list_sction01 .blog_list_contents_holder,
 body.blog_list section.blog_list_sction01 .blog_list_contents_holder {
   margin: 0 auto;
   padding-bottom: 150px;
-  max-width: 1280px;
+  max-width: 1024px;
 }
-/* line 104, assets\less\blogList.less */
+/* line 101, assets\less\blogList.less */
+html.blog_list section.blog_list_sction01 .blog_list_contents_holder ul,
 body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul {
   overflow: hidden;
-  width: 1280px;
+  width: 100%;
 }
-/* line 107, assets\less\blogList.less */
+/* line 104, assets\less\blogList.less */
+html.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li.small_list,
 body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li.small_list {
   margin-top: 125px;
+  width: 33%;
 }
-/* line 110, assets\less\blogList.less */
+/* line 108, assets\less\blogList.less */
+html.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li.big_list,
+body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li.big_list {
+  width: 63%;
+}
+/* line 111, assets\less\blogList.less */
+html.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li,
 body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li {
   margin-top: 80px;
 }
-/* line 112, assets\less\blogList.less */
+/* line 113, assets\less\blogList.less */
+html.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li div,
 body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li div {
   margin-top: 25px;
 }
-/* line 114, assets\less\blogList.less */
+/* line 115, assets\less\blogList.less */
+html.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li div cite,
 body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li div cite,
+html.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li div span,
 body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li div span {
-  font-size: 12px;
+  font-size: 0.7vw;
   font-style: normal;
   color: #757575;
   text-transform: uppercase;
   font-weight: lighter;
   letter-spacing: .125em;
 }
-/* line 125, assets\less\blogList.less */
+/* line 124, assets\less\blogList.less */
+html.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li a,
+body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li a {
+  width: 100%;
+}
+/* line 126, assets\less\blogList.less */
+html.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li a img,
+body.blog_list section.blog_list_sction01 .blog_list_contents_holder ul li a img {
+  width: 100%;
+}
+/* line 133, assets\less\blogList.less */
+html.blog_list section.blog_list_sction01 .blog_list_contents_holder .blog_paging,
 body.blog_list section.blog_list_sction01 .blog_list_contents_holder .blog_paging {
   margin-top: 100px;
   text-align: center;
 }
-/* line 128, assets\less\blogList.less */
+/* line 136, assets\less\blogList.less */
+html.blog_list section.blog_list_sction01 .blog_list_contents_holder .blog_paging li,
 body.blog_list section.blog_list_sction01 .blog_list_contents_holder .blog_paging li {
   display: inline-block;
   font-size: 0;
@@ -1778,7 +1870,8 @@ body.blog_list section.blog_list_sction01 .blog_list_contents_holder .blog_pagin
   margin: 0 12.5px;
   outline: 1px #333333 solid;
 }
-/* line 135, assets\less\blogList.less */
+/* line 143, assets\less\blogList.less */
+html.blog_list section.blog_list_sction01 .blog_list_contents_holder .blog_paging li a,
 body.blog_list section.blog_list_sction01 .blog_list_contents_holder .blog_paging li a {
   width: 100%;
   display: block;
