@@ -757,42 +757,26 @@ div.bio_slide ul li {
   width: 25%;
   height: 100%;
 }
-/* line 33, assets\less\biography.less */
-div.bio_slide ul li img {
-  height: 100%;
-}
-/* line 41, assets\less\biography.less */
-.ab_right {
-  position: absolute;
-  right: -22%;
-  text-align: left;
-}
-/* line 45, assets\less\biography.less */
-.ab_right .ab_right_before {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: -88%;
-  cursor: e-resize;
-}
-/* line 52, assets\less\biography.less */
-.ab_right .ab_right_after {
-  position: absolute;
+/* line 32, assets\less\biography.less */
+div.bio_slide ul li a {
   width: 100%;
   height: 100%;
+  display: inline-block;
+  position: relative;
   left: 0;
-  top: 0;
-  cursor: e-resize;
-  transition: .3s ease;
-  background: rgba(255, 255, 255, 0.5);
 }
-/* line 64, assets\less\biography.less */
+/* line 38, assets\less\biography.less */
+div.bio_slide ul li a img {
+  width: 100%;
+  height: 100%;
+}
+/* line 46, assets\less\biography.less */
 .ab_left {
   position: absolute;
   left: -22%;
   text-align: right;
 }
-/* line 68, assets\less\biography.less */
+/* line 50, assets\less\biography.less */
 .ab_left .ab_left_before {
   height: 100%;
   width: 100%;
@@ -801,7 +785,11 @@ div.bio_slide ul li img {
   z-index: 2;
   cursor: e-resize;
 }
-/* line 76, assets\less\biography.less */
+/* line 57, assets\less\biography.less */
+.ab_left .ab_left_before:hover + div {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* line 61, assets\less\biography.less */
 .ab_left .ab_left_after {
   position: absolute;
   width: 100%;
@@ -814,27 +802,97 @@ div.bio_slide ul li img {
   z-index: 1;
   background: rgba(255, 255, 255, 0.5);
 }
-/* line 91, assets\less\biography.less */
+/* line 75, assets\less\biography.less */
+.ab_right {
+  position: absolute;
+  right: -22%;
+  text-align: left;
+}
+/* line 79, assets\less\biography.less */
+.ab_right .ab_right_before {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: -88%;
+  cursor: e-resize;
+}
+/* line 85, assets\less\biography.less */
+.ab_right .ab_right_before:hover + div {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* line 89, assets\less\biography.less */
+.ab_right .ab_right_after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  cursor: e-resize;
+  overflow: hidden;
+  transition: .3s ease;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.5);
+}
+/* line 104, assets\less\biography.less */
+#bidPopUpLayer {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+/* line 113, assets\less\biography.less */
+#bidPopUpLayer:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background-color: #161616;
+}
+/* line 123, assets\less\biography.less */
+#bidPopUpLayer .bio_popup_pic_wrapper {
+  display: inline-block;
+  position: relative;
+  max-width: 70%;
+  margin: 0 auto;
+}
+/* line 128, assets\less\biography.less */
+#bidPopUpLayer .bio_popup_pic_wrapper a {
+  width: auto;
+  cursor: default;
+}
+/* line 132, assets\less\biography.less */
+#bidPopUpLayer .bio_popup_pic_wrapper img {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+/* line 143, assets\less\biography.less */
 .bio_article {
   padding-top: 65px;
   height: 100%;
   display: block;
   margin-bottom: 65px;
 }
-/* line 96, assets\less\biography.less */
+/* line 148, assets\less\biography.less */
 .bio_article h2 {
   text-align: center;
   margin: 8px auto 64.8px auto;
   max-width: 85%;
 }
-/* line 100, assets\less\biography.less */
+/* line 152, assets\less\biography.less */
 .bio_article h2 span {
   font-size: 12px;
   letter-spacing: 0.225em;
   color: 515151px;
   text-transform: uppercase;
 }
-/* line 107, assets\less\biography.less */
+/* line 159, assets\less\biography.less */
 .bio_article p {
   margin-bottom: 20px;
   text-align: left;
@@ -843,12 +901,12 @@ div.bio_slide ul li img {
   line-height: 1.45em;
   color: #666666;
 }
-/* line 118, assets\less\biography.less */
+/* line 170, assets\less\biography.less */
 .bio_article_text {
   width: 750px;
   margin: 0 auto;
 }
-/* line 133, assets\less\biography.less */
+/* line 185, assets\less\biography.less */
 .tilter {
   display: block;
   position: relative;
@@ -860,11 +918,11 @@ div.bio_slide ul li img {
   flex: none;
   perspective: 1000px;
 }
-/* line 145, assets\less\biography.less */
+/* line 197, assets\less\biography.less */
 .tilter * {
   pointer-events: none;
 }
-/* line 149, assets\less\biography.less */
+/* line 201, assets\less\biography.less */
 .tilter:hover,
 .tilter:focus {
   color: #fff;
@@ -876,7 +934,7 @@ div.bio_slide ul li img {
 .tilter__caption {
 	will-change: transform;
 }*/
-/* line 162, assets\less\biography.less */
+/* line 214, assets\less\biography.less */
 .tilter__figure,
 .tilter__image {
   margin: 0;
@@ -884,16 +942,16 @@ div.bio_slide ul li img {
   height: 100%;
   display: block;
 }
-/* line 170, assets\less\biography.less */
+/* line 222, assets\less\biography.less */
 .tilter__figure > * {
   transform: translateZ(0px);
   /* Force correct stacking order */
 }
-/* line 173, assets\less\biography.less */
+/* line 225, assets\less\biography.less */
 .tilter__figure {
   position: relative;
 }
-/* line 176, assets\less\biography.less */
+/* line 228, assets\less\biography.less */
 .tilter__figure::before {
   content: '';
   position: absolute;
@@ -903,7 +961,7 @@ div.bio_slide ul li img {
   left: 5%;
   box-shadow: 0 30px 20px rgba(35, 32, 39, 0.5);
 }
-/* line 186, assets\less\biography.less */
+/* line 238, assets\less\biography.less */
 .tilter__deco {
   position: absolute;
   top: 0;
@@ -912,11 +970,11 @@ div.bio_slide ul li img {
   height: 100%;
   overflow: hidden;
 }
-/* line 195, assets\less\biography.less */
+/* line 247, assets\less\biography.less */
 .tilter__deco--overlay {
   background-image: linear-gradient(45deg, rgba(226, 60, 99, 0.4), rgba(145, 58, 252, 0.4), rgba(16, 11, 192, 0.4));
 }
-/* line 199, assets\less\biography.less */
+/* line 251, assets\less\biography.less */
 .tilter__deco--shine div {
   position: absolute;
   width: 200%;
@@ -925,13 +983,13 @@ div.bio_slide ul li img {
   left: -50%;
   background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0.25) 50%, transparent 100%);
 }
-/* line 208, assets\less\biography.less */
+/* line 260, assets\less\biography.less */
 .tilter__deco--lines {
   fill: none;
   stroke: #fff;
   stroke-width: 1.5px;
 }
-/* line 214, assets\less\biography.less */
+/* line 266, assets\less\biography.less */
 .tilter__caption {
   position: absolute;
   bottom: 0;
@@ -940,7 +998,7 @@ div.bio_slide ul li img {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 222, assets\less\biography.less */
+/* line 274, assets\less\biography.less */
 .tilter__title {
   margin: 0;
   font-weight: normal;
@@ -949,7 +1007,7 @@ div.bio_slide ul li img {
   letter-spacing: .15em;
   line-height: 1;
 }
-/* line 231, assets\less\biography.less */
+/* line 283, assets\less\biography.less */
 .tilter__description {
   margin: 1em 0 0 0;
   font-size: 0.85vw;
@@ -957,7 +1015,7 @@ div.bio_slide ul li img {
 }
 /* Individual styles */
 /* Example 1 (Default) */
-/* line 240, assets\less\biography.less */
+/* line 292, assets\less\biography.less */
 .tilter--1 .tilter__figure::before {
   box-shadow: 0 30px 20px rgba(0, 0, 0, 0.5);
 }

@@ -40,13 +40,12 @@
         //li에 on class의 위치를 번호를 찾아 hisnum 변수에 대입해주세요,
         //hisnum에 해당하는 엘리먼트의 자식요소 div가 0지점에서 -500지점으로
         //idx에 해당하는 엘리먼트의 div left:500지점에서 0으로 이동하세요
-        //이동했으면 idx에 해당하는 엘리먼트에는 on class를 추가하며 idx가 아닌 다른 형제 자매 요소는 on class를 제거해라.
+        //이동했으면 idx에 해당하는 엘리먼트에는 on class를 추가하며 idx가 아닌 다른 형제 자매 요소는 on class를 제거해라.-
 
         var bioSlideArray = ['../assets/image/bio0.png','../assets/image/bio1.png','../assets/image/bio2.png','../assets/image/bio3.png','../assets/image/bio4.png'];
-        bioSlideArray.length;
 
         //초기상태
-        $('.bio_slide ul li').each(function(i,e){
+        $('.bio_slide ul li:not(#bidPopUpLayer)').each(function(i,e){
             $(this).find('img').attr('src',bioSlideArray[i])
         })
 
@@ -102,10 +101,39 @@
                     }
                     i++;
                 })
-            }else if (idx==1) {
-              console.log('사진보여줘');
             }
         })
+
+
+        //bioPopUp
+        var bioInnerHeight;
+        var resizeBio = function(){
+          bioInnerHeight = $('.bioBody').height();
+        }
+        resizeBio();
+        $(window).resize(function(){
+          resizeBio();
+        })
+
+        $('#bioPopUp').on('click',function(){
+          $('#bidPopUpLayer').css('display','block')
+          .find('img').css('max-height', bioInnerHeight );
+          var thisPic = $('#bioPopUp').find('img').attr('src')
+          console.log(thisPic);
+          $('#bidPopUpLayer').find('img').attr('src',thisPic)
+        })
+
+        //팝업나가기
+        $(document).mouseup(function(e){
+          var container = $('#bidPopUpLayer');
+          if (container.has(e.target).length === 0) {
+            container.fadeOut(500);
+          }
+        })
+        $(".bio_popup_pic_wrapper a").css({ 'pointer-events': 'none' });
+
+
+
     })
 
     </script>
@@ -121,12 +149,12 @@
                     <li class="ab_left">
                         <div class="ab_left_before"></div>
                         <div class="ab_left_after">
-                            <a href="">
-                                <img src="" alt="">
-                            </a>
                         </div>
+                        <a href="">
+                            <img src="" alt="">
+                        </a>
                     </li>
-                    <li>
+                    <li id="bioPopUp">
                       <a href="#" class="tilter tilter--1">
                         <figure class="tilter__figure">
                           <img class="tilter__image" src="" alt="" />
@@ -143,10 +171,18 @@
                     </li>
                     <li class="ab_right">
                         <div class="ab_right_before"></div>
+                        <div class="ab_right_after"></div>
                         <a href="">
                             <img src="" alt="">
                         </a>
-                        <div class="ab_right_after"></div>
+                    </li>
+                    <li id="bidPopUpLayer">
+                      <div class="bio_popup_pic_wrapper">
+                        <a href="">
+                          <!-- <img class="tilter__image" src="" alt="" /> -->
+                          <img src="../assets/image/bio4.png" alt="">
+                        </a>
+                      </div>
                     </li>
                 </ul>
             </div>

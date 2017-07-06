@@ -29,37 +29,19 @@ div.bio_slide{
             display: inline-block;
             width: 25%;
             height: 100%;
-
-            img{
-                height: 100%;
+            a{
+              width: 100%;
+              height: 100%;
+              display: inline-block;
+              position: relative;
+              left: 0;
+              img{
+                  width: 100%;
+                  height: 100%;
+              }
             }
         }
     }
-}
-
-
-.ab_right{
-    position: absolute;
-    right: -22%;
-    text-align: left;
-    .ab_right_before{
-        height: 100%;
-        width:  100%;
-        position: absolute;
-        left: -88%;
-        cursor: e-resize;
-    }
-    .ab_right_after{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        cursor: e-resize;
-        transition: .3s ease;
-        background: rgba(255, 255, 255, 0.5);
-    }
-
 }
 .ab_left{
     position: absolute;
@@ -72,6 +54,9 @@ div.bio_slide{
         right: -87%;
         z-index: 2;
         cursor: e-resize;
+        &:hover + div{
+          background-color: rgba(0, 0, 0, .5);
+        }
     }
     .ab_left_after{
         position: absolute;
@@ -84,9 +69,76 @@ div.bio_slide{
         transition: .3s ease;
         z-index: 1;
         background: rgba(255, 255, 255, 0.5);
-
     }
 }
+
+.ab_right{
+    position: absolute;
+    right: -22%;
+    text-align: left;
+    .ab_right_before{
+        height: 100%;
+        width:  100%;
+        position: absolute;
+        left: -88%;
+        cursor: e-resize;
+        &:hover + div{
+          background-color: rgba(0, 0, 0, .5);
+        }
+    }
+    .ab_right_after{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        cursor: e-resize;
+        overflow: hidden;
+        transition: .3s ease;
+        z-index: 1;
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+}
+
+#bidPopUpLayer{
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+
+  &:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background-color: #161616;
+  }
+  .bio_popup_pic_wrapper{
+    display: inline-block;
+    position: relative;
+    max-width: 70%;
+    margin: 0 auto;
+    a{
+      width: auto;
+      cursor: default;
+    }
+    img{
+      height: auto;
+      width: auto;
+      max-width: 100%;
+    }
+  }
+
+}
+
+
 
 .bio_article{
     padding-top: 65px;
