@@ -46,7 +46,7 @@
         //      })
 
 
-        var scrollspy = function(){
+        var scrollspy = function(event){
             var sct = $(this).scrollTop();
             console.log(sct);
             //내려가면
@@ -79,6 +79,7 @@
             })
 
         }
+
         $(window).scroll(scrollspy);
         //초기에 메인하나만뜨게
         $(window).trigger( "scroll" );
@@ -95,11 +96,24 @@
         )
 
 
-        // $('#downward_arrow').on('click',function(event){
-        //     $('html,body').stop().animate({
-        //         'scrollTop':btsSpot[1]
-        //     },400)}
-        // })
+        $('#downward_arrow').on('click',function(event){
+            event.preventDefault();
+            $('html,body').stop().animate({ 'scrollTop':btsSpot[1]},400)
+        })
+
+
+        //text스크롤 시 사진변경
+        $('#text_move').on('mousewheel',function(){
+            var sct = $(this).scrollTop();
+            if (sct < $(this).height()/2 ) {
+                $('.bts_right').find('img:eq(0)').css('display','inline-block')
+                $('.bts_right').find('img:eq(1)').css('display','none')
+            }else if (sct > $(this).height()/2 ) {
+                $('.bts_right').find('img:eq(0)').css('display','none')
+                $('.bts_right').find('img:eq(1)').css('display','inline-block')
+            }
+        })
+
 
 
     })
@@ -119,7 +133,7 @@
               <div class="right_area"></div>
             </div><!-- .main_slide -->
             <div class="scroll_down_arrow_wrapper">
-              <a href=""></a>
+              <a href="" id="downward_arrow"></a>
             </div>
         </div> <!-- slide_wrapper -->
         <!-- slide_wrapper -->
@@ -156,12 +170,12 @@
     </section>
     <section class="BehindTheScenes02">
         <div class="bts_wrapper">
-            <div class="bts_contents_wrapper">dd</div>
+            <div class="bts_contents_wrapper"></div>
         </div>
     </section>
     <section class="BehindTheScenes03">
         <div class="bts_wrapper">
-            <div class="bts_contents_wrapper">dd</div>
+            <div class="bts_contents_wrapper"></div>
         </div>
     </section>
 

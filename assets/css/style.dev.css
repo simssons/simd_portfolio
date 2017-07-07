@@ -1678,19 +1678,36 @@ body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_right .photo_cont
   position: relative;
   text-align: center;
 }
-/* line 170, assets\less\BehindTheScenes.less */
-body.bts_body section.BehindTheScenes02 {
-  height: 100%;
-  border: 10px #FF0 solid;
-  box-sizing: border-box;
-  position: relative;
+/* line 164, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_right .photo_contents a {
+  display: inline-block;
+  width: 90%;
+}
+/* line 168, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_right .photo_contents img:last-child {
+  display: none;
 }
 /* line 177, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes02 {
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  background-image: url(../image/bts_sec01.png);
+  background-size: cover;
+}
+/* line 183, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes02 .bts_wrapper {
   height: 100%;
-  background-color: #FFF;
   z-index: 1;
   text-align: center;
+}
+/* line 193, assets\less\BehindTheScenes.less */
+body.bts_body section.BehindTheScenes03 {
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  background-image: url(../image/bts_sec02.png);
+  background-size: cover;
 }
 /* line 5, assets\less\blogList.less */
 html.blog_list .fl,

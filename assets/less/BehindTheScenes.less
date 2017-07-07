@@ -161,6 +161,13 @@ body.bts_body{
                     height: 100%;
                     position: relative;
                     text-align: center;
+                    a{
+                        display: inline-block;
+                        width: 90%;
+                    }
+                    img:last-child{
+                        display: none;
+                    }
                 }
             }
 
@@ -169,21 +176,26 @@ body.bts_body{
 
     section.BehindTheScenes02{
         height: 100%;
-        border:10px #FF0 solid;
         box-sizing: border-box;
         position: relative;
-
-
+        background-image:  url(../image/bts_sec01.png);
+        background-size: cover;
         .bts_wrapper{
             height: 100%;
             // margin-top:-50px;
             // padding: 75px 0 75px 0;
-            background-color: #FFF;
             // height: ~"calc(100% + 90px)";
 
             z-index: 1;
             text-align: center;
         }
+    }
+    section.BehindTheScenes03{
+        height: 100%;
+        box-sizing: border-box;
+        position: relative;
+        background-image:  url(../image/bts_sec02.png);
+        background-size: cover;
     }
 
 }// bts_body
