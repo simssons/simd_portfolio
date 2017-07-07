@@ -1513,37 +1513,43 @@ div.tape_wapper section {
 /* line 7, assets\less\BehindTheScenes.less */
 body.bts_body .gnb-inner div a {
   color: white;
+  position: relative;
+  z-index: 10;
 }
-/* line 8, assets\less\BehindTheScenes.less */
+/* line 12, assets\less\BehindTheScenes.less */
 body.bts_body .gnb-inner div.h1 h1 li {
   display: inline-block;
 }
-/* line 9, assets\less\BehindTheScenes.less */
+/* line 13, assets\less\BehindTheScenes.less */
 body.bts_body .on {
   display: block;
 }
-/* line 12, assets\less\BehindTheScenes.less */
+/* line 15, assets\less\BehindTheScenes.less */
+body.bts_body li.onColor a {
+  color: #000;
+}
+/* line 20, assets\less\BehindTheScenes.less */
 body.bts_body #btsH01 li {
   margin: 0 5px;
 }
-/* line 14, assets\less\BehindTheScenes.less */
+/* line 22, assets\less\BehindTheScenes.less */
 body.bts_body #btsH01 li a {
   text-transform: capitalize;
 }
-/* line 23, assets\less\BehindTheScenes.less */
+/* line 31, assets\less\BehindTheScenes.less */
 body.bts_body .bts_wrapper {
   height: 100%;
 }
-/* line 27, assets\less\BehindTheScenes.less */
+/* line 35, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 {
   width: 100%;
 }
-/* line 29, assets\less\BehindTheScenes.less */
+/* line 37, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 .slide_wrapper {
   width: 100%;
   height: 100%;
 }
-/* line 33, assets\less\BehindTheScenes.less */
+/* line 41, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 .main_slide {
   position: relative;
   width: 100%;
@@ -1551,7 +1557,7 @@ body.bts_body section.BehindTheScenes00 .main_slide {
   text-align: center;
   overflow: hidden;
 }
-/* line 40, assets\less\BehindTheScenes.less */
+/* line 48, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 .main_slide .slide_contents {
   position: fixed;
   z-index: -1;
@@ -1563,14 +1569,14 @@ body.bts_body section.BehindTheScenes00 .main_slide .slide_contents {
   background-repeat: no-repeat;
   background-position: center;
 }
-/* line 51, assets\less\BehindTheScenes.less */
+/* line 59, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 .bts_title {
   position: fixed;
   margin-top: 25%;
   width: 100%;
   z-index: -1;
 }
-/* line 56, assets\less\BehindTheScenes.less */
+/* line 64, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 .bts_title h2 {
   letter-spacing: .225em;
   font-size: 3vw;
@@ -1578,7 +1584,7 @@ body.bts_body section.BehindTheScenes00 .bts_title h2 {
   text-transform: uppercase;
   font-weight: bolder;
 }
-/* line 65, assets\less\BehindTheScenes.less */
+/* line 73, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 .scroll_down_arrow_wrapper {
   position: relative;
   width: 100%;
@@ -1588,7 +1594,7 @@ body.bts_body section.BehindTheScenes00 .scroll_down_arrow_wrapper {
   z-index: 2;
   text-align: center;
 }
-/* line 73, assets\less\BehindTheScenes.less */
+/* line 81, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes00 .scroll_down_arrow_wrapper a {
   width: 80px;
   height: 55px;
@@ -1600,21 +1606,21 @@ body.bts_body section.BehindTheScenes00 .scroll_down_arrow_wrapper a {
   cursor: pointer;
   display: inline-block;
 }
-/* line 88, assets\less\BehindTheScenes.less */
+/* line 96, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes01 {
   height: 100%;
   box-sizing: border-box;
   position: relative;
   background-color: #FFF;
 }
-/* line 98, assets\less\BehindTheScenes.less */
+/* line 106, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes01 .bts_wrapper {
   height: 100%;
   position: relative;
   z-index: 1;
   text-align: center;
 }
-/* line 108, assets\less\BehindTheScenes.less */
+/* line 116, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes01 .contents_wrapper {
   max-width: 1280px;
   margin: 0 auto;
@@ -1623,25 +1629,25 @@ body.bts_body section.BehindTheScenes01 .contents_wrapper {
   height: calc( 100% - 80px);
   overflow: hidden;
 }
-/* line 115, assets\less\BehindTheScenes.less */
+/* line 123, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_left {
   width: 50%;
   height: 100%;
   float: left;
 }
-/* line 119, assets\less\BehindTheScenes.less */
+/* line 127, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_left .text_contents {
   height: calc( 100% - 167px);
   padding: 0 60px 0 50px;
   margin-bottom: 50px;
   overflow: hidden;
 }
-/* line 125, assets\less\BehindTheScenes.less */
+/* line 133, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_left .text_contents h2 {
   text-align: center;
   margin-bottom: 80px;
 }
-/* line 129, assets\less\BehindTheScenes.less */
+/* line 137, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_left .text_contents p {
   margin: 15px 0;
   font-weight: 200;
@@ -1652,7 +1658,7 @@ body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_left .text_conten
   color: #515151;
   text-align: left;
 }
-/* line 139, assets\less\BehindTheScenes.less */
+/* line 147, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_left .text_contents #text_move {
   width: 100%;
   height: 100%;
@@ -1660,26 +1666,26 @@ body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_left .text_conten
   padding-right: 30%;
   overflow-y: scroll;
 }
-/* line 148, assets\less\BehindTheScenes.less */
+/* line 156, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_right {
   width: 50%;
   height: 100%;
   float: right;
 }
-/* line 152, assets\less\BehindTheScenes.less */
+/* line 160, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes01 .contents_wrapper .bts_right .photo_contents {
   height: 100%;
   position: relative;
   text-align: center;
 }
-/* line 162, assets\less\BehindTheScenes.less */
+/* line 170, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes02 {
   height: 100%;
   border: 10px #FF0 solid;
   box-sizing: border-box;
   position: relative;
 }
-/* line 169, assets\less\BehindTheScenes.less */
+/* line 177, assets\less\BehindTheScenes.less */
 body.bts_body section.BehindTheScenes02 .bts_wrapper {
   height: 100%;
   background-color: #FFF;

@@ -30,11 +30,11 @@
       })
 
       //스크롤 시 변화할 텍스트 복사해두기
-        $('body.bts_body .gnb-inner .h1').append('<h1 id="btsH01"><ul><li><a href="">intro</a></li><li><a href="">section1</a></li><<li><a href="">section2</a></li><li><a href="">section3</a></li></ul></h1>')
+        $('body.bts_body .gnb-inner .h1').append('<h1 id="btsH01"><ul><li><a href="">intro</a></li><li><a href="">section1</a></li><li><a href="">section2</a></li><li><a href="">section3</a></li></ul></h1>')
         var gnbH00 = $('body.bts_body .gnb-inner #btsH00').clone();
         var gnbH01 = $('body.bts_body .gnb-inner #btsH01').clone();
-        $('body.bts_body .gnb-inner #btsH00').remove();
-        $('body.bts_body .gnb-inner #btsH01').remove();
+        $('body.bts_body .gnb-inner #btsH00').detach();
+        $('body.bts_body .gnb-inner #btsH01').detach();
 
         // append를 이용해서 생긴 html요소에는 바로 이벤트를 줄 수 없으므로
         // body를 다시 타고 들어가면 된다.
@@ -50,54 +50,56 @@
             var sct = $(this).scrollTop();
             console.log(sct);
             //내려가면
-            if (sct > (window.innerHeight-90)) {
-                $('body.bts_body .gnb-inner #btsH00').remove();
+            if (sct > (window.innerHeight-125)) {
+                $('body.bts_body .gnb-inner #btsH00').detach();
                 $('body.bts_body .gnb-inner div.h1').append(gnbH01);
-                $('body.bts_body header').css('background-color','#FFF');
-                $('body.bts_body .gnb-inner div a').css('color','#000');
+                $('body.bts_body header').css('background-color','#FFF').find('.gnb-inner div a').css('color','#000');
                 $('body.bts_body .gnb-inner div.h1 li a').css('color','#b8b8b8');
+                $('body.bts_body .gnb-inner div.h1 li.onColor a').css('color','#000')
+
             }//올라오면
-            else if (sct < (window.innerHeight-90)) {
-                $('body.bts_body .gnb-inner #btsH01').remove();
+            else if (sct < (window.innerHeight-125)) {
+                $('body.bts_body .gnb-inner #btsH01').detach();
                 $('.gnb-inner div.h1').append(gnbH00);
-                $('body.bts_body header').css('background-color','');
-                $('body.bts_body .gnb-inner div.h1 li a').css('color','');
-                $('body.bts_body .gnb-inner div a').css('color','');
+                $('body.bts_body header').css('background-color','').find('.gnb-inner div a').css('color','');
+                $('body.bts_body .gnb-inner div.h1 li.onColor a').css('color','')
+
             }
+
             //매번 위치 비교해서  gnb텍스트에 해당 위치 표시하기
             $('.bts_body section').each(function(i){
-              var a  = sct > btsSpot[i]; //초과
-              var b = sct < btsSpot[i] + $(this).height(); //미만
-              //그 사이에 있고 on 이 없으면
-              if( a && b && !$(this).is('.on')){
-                $(this).addClass('on').siblings().removeClass('on')
-                $('nav ul li').eq(i).addClass('on').siblings().removeClass('on')
-                // animation(i);
-              }
+              var a  = sct > btsSpot[i]-90; //초과
+              var b = sct < btsSpot[i] + $(this).height()-90; //미만
+                  //그 사이에 있고 on 이 없으면
+                  if( a && b && !$(this).is('.onColor')){
+                    $(this).addClass('onColor').siblings().removeClass('onColor');
+                    $(this).parent('.bts_wrapper').siblings('header').find('#btsH01 li')
+                    .eq(i).addClass('onColor').siblings().removeClass('onColor');
+                  }
             })
+
         }
-
-
-        //스크롤할 때마다 작동하도록
         $(window).scroll(scrollspy);
         //초기에 메인하나만뜨게
         $(window).trigger( "scroll" );
 
-        $(window).on('hover','#btsH01',function(){
+        //스크롤할 때마다 안달아 주면, intro눌러서 맨 위로 간뒤 remove()되면 걸렸던 이벤트가 풀림.
+        //그러면 detach()를 쓰면 된다. 이벤트 여전히 남아있음.
+        $('body.bts_body #btsH01 li a').on('click', function(event){
+            event.preventDefault();
+            var idx = $(this).parent('li').index();
+            console.log(idx);
+            $('html,body').stop().animate({
+                'scrollTop':btsSpot[idx]+1
+            },400)}
+        )
 
-             console.log('ㅇㅇ');
-        })
 
-
-      var secScroll = function(e){
-          e.preventDefault();
-          var idx = $(this).index();
-          $('html,body').animate({
-              'scrollTop':btsSpot[idx]+1 //body에 에니메이션 스크롤값 btsSpot의 위치 반영 1넣은 이유는 선에 딱 거려서 조건에 안맞아 안움직임.
-          })
-      }
-
-      $('nav li').click(secScroll);
+        // $('#downward_arrow').on('click',function(event){
+        //     $('html,body').stop().animate({
+        //         'scrollTop':btsSpot[1]
+        //     },400)}
+        // })
 
 
     })
@@ -155,8 +157,11 @@
     <section class="BehindTheScenes02">
         <div class="bts_wrapper">
             <div class="bts_contents_wrapper">dd</div>
-
-
+        </div>
+    </section>
+    <section class="BehindTheScenes03">
+        <div class="bts_wrapper">
+            <div class="bts_contents_wrapper">dd</div>
         </div>
     </section>
 

@@ -4,9 +4,17 @@
 
 
 body.bts_body{
-    .gnb-inner div a {color:white;}
+    .gnb-inner div a {
+        color:white;
+        position: relative;
+        z-index: 10;
+    }
     .gnb-inner div.h1 h1 li{display: inline-block;}
     .on{display: block;}
+
+    li.onColor a{
+        color: #000;
+    }
 
     #btsH01{
       li{
