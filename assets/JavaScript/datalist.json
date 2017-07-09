@@ -45,7 +45,7 @@
 			"description":"Jay Walkers Gallery, Chuncheon, 2017",
 			"ctime":"2017.12.25",
 			"type":"img",
-			"themeURL":"../assets/image/bio1.png",
+			"themeURL":"../assets/image/bio0.png",
 			"filterValue":"latestf photographyf portraitsf"
 
 		},{
@@ -61,7 +61,7 @@
 			"description":"Jay Walkers Gallery, Chuncheon, 2017",
 			"ctime":"2015.12.14",
 			"type":"img",
-			"themeURL":"../assets/image/bio2.png",
+			"themeURL":"../assets/image/bio1.png",
 			"filterValue":"latestf photographyf portraitsf"
 		},{
 			"cite":"Lorem ipsum dolor sit amet",
@@ -83,7 +83,7 @@
 			"description":"Jay Walkers Gallery, Chuncheon, 2017",
 			"ctime":"2015.12.14",
 			"type":"img",
-			"themeURL":"../assets/image/bio3.png",
+			"themeURL":"../assets/image/bio2.png",
 			"filterValue":"latestf photographyf portraitsf"
 
 		},{
@@ -115,7 +115,7 @@
 			"description":"Jay Walkers Gallery, Chuncheon, 2017",
 			"ctime":"2015.12.14",
 			"type":"img",
-			"themeURL":"../assets/image/bio4.png",
+			"themeURL":"../assets/image/bio3.png",
 			"filterValue":"latestf photographyf portraitsf"
 
 		},{
@@ -147,7 +147,7 @@
 			"description":"Jay Walkers Gallery, Chuncheon, 2017",
 			"ctime":"2015.12.14",
 			"type":"img",
-			"themeURL":"../assets/image/bio5.png",
+			"themeURL":"../assets/image/bio4.png",
 			"filterValue":"latestf photographyf portraits"
 
 		}

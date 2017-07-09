@@ -31,6 +31,7 @@
         var scrollNum = 0;
 
         $('.filter_select').mouseenter(function(){
+          console.log(scrollNum);
             $(this).on('wheel',function(e){
                 e.preventDefault();
 
@@ -50,7 +51,9 @@
                  }
 
                 $('div.filter_sr').css({
+                    'background-image': 'transform:rotateY(30deg)',                  
                     'background-image': 'url(../assets/image/'+bi[scrollNum]+'.svg)'
+
                 })
                 console.log(scrollNum);
             })
