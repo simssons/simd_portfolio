@@ -35,9 +35,17 @@
         // })
 
         var mainSlideArray = [];
+        var img_video_src;
 
+        $('.slide_contents li').each(function(i){
 
+          img_video_src += $('.slide_contents li').eq(i).find('.img_video').attr('src')
 
+          mainSlideArray.push(img_video_src)
+
+        })
+        console.log(img_video_src);
+        console.log(mainSlideArray);
 
     })
 
@@ -52,22 +60,22 @@
                     <li>
                         <a href="">
                             <video autoplay loop height="100%">
-                      			  <source src="../assets/video/video_shadow.webm" type="video/mp4"/>
+                      			  <source src="../assets/video/video_shadow.webm" class="img_video" type="video/mp4"/>
                       		</video>
                         </a>
                     </li>
                     <li>
-                        <a href=""><img src="../assets/image/main_1.png" alt=""></a>
+                        <a href=""><img src="../assets/image/main_1.png" class="img_video" alt=""></a>
                     </li>
                     <li>
                         <a href="">
                             <video autoplay loop height="100%">
-                      			  <source src="../assets/video/video_staring.webm" type="video/mp4"/>
+                      			  <source src="../assets/video/video_staring.webm" class="img_video" type="video/mp4"/>
                       		</video>
                         </a>
                     </li>
                     <li>
-                        <a href=""><img src="../assets/image/main_2.png" alt=""></a>
+                        <a href=""><img src="../assets/image/main_2.png" class="img_video" alt=""></a>
                     </li>
                 </ul>
               </div>
