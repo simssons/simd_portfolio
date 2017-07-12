@@ -11,25 +11,28 @@ $(function(){
             console.log($('.menu-main-menu-container').height());
     })
 
-
     $('.menu a').click(function(event){
         event.preventDefault();
 
-        var menuToggle = $('.menu-main-menu-container');
-        var blogList = $('body.blog_list');
+        var $menuToggle = $('.menu-main-menu-container');
+        var $blogList = $('body.blog_list');
+        var $aColor = $('.gnb-inner div a');
 
-        if (menuToggle.is('.on')) {
-            menuToggle.removeClass('on');
+
+        if ($menuToggle.is('.on')) {
+            $menuToggle.removeClass('on');
             $(this).text('menu');
-            if (true) {
-
+            if ($('html').has('.menuColor')) {
+                $aColor.css('color','');
+                console.log('흰');
+            }else {
+                $aColor.css('color','black');
+                console.log('검');
             }
-
-            $('.gnb-inner div a').css('color','black');
         }else{
-            menuToggle.addClass('on');
+            $menuToggle.addClass('on');
             $(this).text('back');
-            $('.gnb-inner div a').css('color','white');
+            $aColor.css('color','white');
         }
         autoHeight();
     })

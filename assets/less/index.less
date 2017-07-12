@@ -8,6 +8,13 @@ html.indexHtml,body.indexBody{
   overflow-x: hidden;
   height: 100%;
   font-family: 'Montserrat', sans-serif;
+  .on{
+      display: block;
+  }
+}
+//공통js에서 써
+html.menuColor{
+    color:#FFF;
 }
 section.indexSection{
   height: 100%;
@@ -26,18 +33,28 @@ section.indexSection{
   overflow: hidden;
 }
 .main_slide ul{
-  font-size: 0;
-  text-align: center;
-  height: 100%;
-  position: relative;
-  z-index: 20;
+    // position: relative;
+    // bottom: ~"calc( -100% + 340px)";
+    // height: 100px;
+    // padding-top: 100px;
+    // z-index: 20;
+    // text-align: center;
+    // font-size: 0;
+    width: 100%;
+    position: fixed;
+    bottom: 145px;
+    height: 100px;
+    padding-top: 100px;
+    z-index: 1;
+    text-align: center;
+    font-size: 0;
 }
 
 .main_slide li{
-  display: inline-block;
-  position: relative;
-  bottom: ~"calc( -100% + 240px)";
-  cursor: pointer;
+    display: none;
+    background-color: #FFF;
+    cursor: pointer;
+  // display: inline-block;
 }
 
 .main_slide .slide_contents li>a{
@@ -45,24 +62,33 @@ section.indexSection{
   display: inline-block;
   max-height: 50px;
   position: relative;
-  background-color: #FFF;
   img{
     position: relative;
     height: 50px;
     z-index: 1;
+    opacity: .6;
+    transition: .5s ease;
+  }
+  video{
+      position: relative;
+      height: 50px;
+      z-index: 1;
+      vertical-align: top;
+      opacity: .6;
+      transition: .5s ease;
   }
 }
 
 .main_slide .slide_contents{
-  position: fixed;
-  z-index: -1;
+  position: relative;
   top: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../image/main_1.png');
+  background-image: url('../image/main_2.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .title_bar{
@@ -71,7 +97,6 @@ section.indexSection{
     height: 90px;
     position:fixed;
     bottom:50px;
-    z-index: -1;
     background-color: rgba(255, 255, 255, 0.92);
   h2{
     position: relative;
