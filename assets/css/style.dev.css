@@ -930,7 +930,7 @@ div.bio_slide ul li a img {
 .bio_article h2 span {
   font-size: 12px;
   letter-spacing: 0.225em;
-  color: 515151px;
+  color: #515151;
   text-transform: uppercase;
 }
 /* line 163, assets\less\biography.less */
@@ -1177,7 +1177,6 @@ ul.portrait_list li.second_last_pt div.next_up {
 /* line 99, assets\less\portraits.less */
 ul.portrait_list li.second_last_pt div.next_up span,
 ul.portrait_list li.second_last_pt div.next_up a {
-  color: unset;
   font-size: 10px;
   color: #878787;
   letter-spacing: 0.125em;
@@ -1185,19 +1184,19 @@ ul.portrait_list li.second_last_pt div.next_up a {
   display: block;
   margin-top: 5px;
 }
-/* line 109, assets\less\portraits.less */
+/* line 108, assets\less\portraits.less */
 ul.portrait_list li.second_last_pt li {
   margin: 0;
   font-size: 15px;
   line-height: 1.5em;
   background-color: #f7f7f9;
 }
-/* line 117, assets\less\portraits.less */
+/* line 116, assets\less\portraits.less */
 ul.portrait_list li.last_pt {
   background-color: rgba(156, 156, 156, 0.65);
   width: 33%;
 }
-/* line 124, assets\less\portraits.less */
+/* line 123, assets\less\portraits.less */
 .portrait_gallery_thumbnails {
   opacity: 0;
   width: 100%;
@@ -1208,31 +1207,31 @@ ul.portrait_list li.last_pt {
   text-align: center;
   transition: 1s ease;
 }
-/* line 133, assets\less\portraits.less */
+/* line 132, assets\less\portraits.less */
 .portrait_gallery_thumbnails:hover {
   opacity: 1;
   bottom: 4px;
 }
-/* line 137, assets\less\portraits.less */
+/* line 136, assets\less\portraits.less */
 .portrait_gallery_thumbnails ul {
   font-size: 0;
   margin-top: 100px;
 }
-/* line 140, assets\less\portraits.less */
+/* line 139, assets\less\portraits.less */
 .portrait_gallery_thumbnails ul li {
   display: inline-block;
   height: 50px;
   width: auto;
 }
-/* line 144, assets\less\portraits.less */
+/* line 143, assets\less\portraits.less */
 .portrait_gallery_thumbnails ul li a {
   position: relative;
 }
-/* line 149, assets\less\portraits.less */
+/* line 148, assets\less\portraits.less */
 .portrait_gallery_thumbnails ul li a img {
   height: 100%;
 }
-/* line 165, assets\less\portraits.less */
+/* line 164, assets\less\portraits.less */
 .portrait_gallery_thumbnails #test {
   display: inline-block;
   height: 100%;
