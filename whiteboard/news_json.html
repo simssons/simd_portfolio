@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="guide.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        var data = {
+            newsList:[{
+                tt:"what"
+            },{
+                ta:["yahoo",'2017'],
+                tb:{
+                    id:"4"
+                }
+            }]
+        };
+        console.log(data.newsList[1].tb.id);
+
+
+    </script>
+
+    <style>
+       body{
+           background-image: url(http://static.naver.net/newsstand/img/20121231/bg_bd.png);
+       }
+       header.layout{
+           border:1px #F00 solid;
+           height:56px;
+           background-image: url(http://static.naver.net/newsstand/img/20121231/bg_hd.png);
+           background-repeat:repeat-x;
+       }
+       header .newslogan{border:1px #F00 solid; width:100px;height:50px; float:left;}
+       header .site_option{border:1px #F00 solid; width:100px;height:50px; float:right;}
+       header .section_menu{border:1px #F00 solid; }
+
+       .wrapper{
+           width:936px;
+           height:540px;
+           margin:auto;
+           position:relative;
+
+       }
+       .controller-btn-group{
+           position:absolute;
+           width:100%;
+           border:1px #F00 solid;
+           top:50%;
+       }
+       .controller-btn-group button{
+           position:absolute;
+           top:-22px;
+       }
+       .controller-btn-group .icon-big-arrowL{
+           right:-22px;
+       }
+       .controller-btn-group .icon-big-arrowR{
+           left:-22px;
+       }
+       .news{
+           width:900px;
+           height:inherit;
+           border:1px #F00 solid;
+           background-image: url(http://static.naver.net/newsstand/img/20121231/bg_panel.png);
+           padding:0 18px;
+           background-repeat: no-repeat;
+       }
+
+       .news header{
+           height:111px;
+           outline:1px #F00 solid;
+           margin-bottom:20px;
+       }
+       .news section{
+           height:380px;
+           outline:1px #F00 solid;
+       }
+
+       section.layout{
+           border:1px #F00 solid;
+           min-height:500px;
+       }
+       footer{
+           background: #000;
+           border:1px #F00 solid;
+           position:absolute;
+           width:100%;
+           bottom:0;
+           height:81px;
+       }
+
+
+    </style>
+
+</head>
+<body>
+
+    <header class="layout">
+        <div class="newslogan">
+
+        </div>
+
+        <div class="site_option">
+
+        </div>
+
+        <div class="section_menu">
+             <div class="btn-group txt-c">
+                <button class="icon-mynews active">마이뉴스</button>
+                <button class="icon-allnews">전체언론사</button>
+            </div>
+        </div>
+
+    </header>
+
+    <section id="daily" class="layout">
+
+
+        <div class="wrapper">
+
+            <div class="controller-btn-group">
+                <button class="icon-big-arrowL">다음</button>
+                <button class="icon-big-arrowR">이전</button>
+            </div>
+
+            <!--컨텐츠-->
+            <div class="news">
+
+                <header>
+
+                </header>
+
+                <section>
+
+
+                </section>
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <footer>
+
+    </footer>
+
+
+</body>
+</html>

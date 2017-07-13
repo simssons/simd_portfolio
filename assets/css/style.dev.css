@@ -224,31 +224,31 @@ section.indexSection {
   text-align: center;
   overflow: hidden;
 }
-/* line 35, assets\less\index.less */
+/* line 38, assets\less\index.less */
 .main_slide ul {
   width: 100%;
   position: fixed;
-  bottom: 145px;
+  bottom: 140px;
   height: 100px;
   padding-top: 100px;
   z-index: 1;
   text-align: center;
   font-size: 0;
 }
-/* line 53, assets\less\index.less */
+/* line 56, assets\less\index.less */
 .main_slide li {
   display: none;
   background-color: #FFF;
   cursor: pointer;
 }
-/* line 60, assets\less\index.less */
+/* line 63, assets\less\index.less */
 .main_slide .slide_contents li > a {
   z-index: 2;
   display: inline-block;
   max-height: 50px;
   position: relative;
 }
-/* line 65, assets\less\index.less */
+/* line 68, assets\less\index.less */
 .main_slide .slide_contents li > a img {
   position: relative;
   height: 50px;
@@ -256,7 +256,7 @@ section.indexSection {
   opacity: .6;
   transition: .5s ease;
 }
-/* line 72, assets\less\index.less */
+/* line 75, assets\less\index.less */
 .main_slide .slide_contents li > a video {
   position: relative;
   height: 50px;
@@ -265,7 +265,7 @@ section.indexSection {
   opacity: .6;
   transition: .5s ease;
 }
-/* line 82, assets\less\index.less */
+/* line 85, assets\less\index.less */
 .main_slide .slide_contents {
   position: relative;
   top: 0;
@@ -277,7 +277,7 @@ section.indexSection {
   background-position: center;
   background-attachment: fixed;
 }
-/* line 94, assets\less\index.less */
+/* line 97, assets\less\index.less */
 .title_bar {
   box-sizing: border-box;
   width: 100%;
@@ -286,26 +286,24 @@ section.indexSection {
   bottom: 50px;
   background-color: rgba(255, 255, 255, 0.92);
 }
-/* line 101, assets\less\index.less */
+/* line 104, assets\less\index.less */
 .title_bar h2 {
-  position: relative;
-  z-index: -1;
   line-height: 90px;
   letter-spacing: 0.2em;
   font-weight: 900;
   font-size: 15px;
   text-transform: uppercase;
 }
-/* line 110, assets\less\index.less */
+/* line 111, assets\less\index.less */
 .title_bar span {
   color: #0a0a0a;
 }
-/* line 113, assets\less\index.less */
+/* line 114, assets\less\index.less */
 .title_bar cite {
   color: #afafaf;
   font-style: normal;
 }
-/* line 119, assets\less\index.less */
+/* line 120, assets\less\index.less */
 .left_area {
   position: absolute;
   left: 0;
@@ -315,7 +313,7 @@ section.indexSection {
   height: 100%;
   cursor: w-resize;
 }
-/* line 128, assets\less\index.less */
+/* line 129, assets\less\index.less */
 .right_area {
   position: absolute;
   right: 0;
@@ -325,7 +323,7 @@ section.indexSection {
   height: 100%;
   cursor: w-resize;
 }
-/* line 137, assets\less\index.less */
+/* line 138, assets\less\index.less */
 .scroll_down_arrow_wrapper {
   position: relative;
   width: 100%;
@@ -334,7 +332,7 @@ section.indexSection {
   background-color: #FFF;
   z-index: 2;
 }
-/* line 144, assets\less\index.less */
+/* line 145, assets\less\index.less */
 .scroll_down_arrow_wrapper div {
   width: 80px;
   height: 55px;
@@ -348,7 +346,7 @@ section.indexSection {
   margin-left: -40px;
   opacity: 0.8;
 }
-/* line 161, assets\less\index.less */
+/* line 162, assets\less\index.less */
 .news_feed_wrapper {
   margin-top: -50px;
   padding: 75px 0 75px 0;
@@ -357,7 +355,7 @@ section.indexSection {
   z-index: 1;
   text-align: center;
 }
-/* line 169, assets\less\index.less */
+/* line 170, assets\less\index.less */
 .news_feed_wrapper h2 {
   margin-bottom: 70px;
   font-size: 12px;
@@ -365,14 +363,14 @@ section.indexSection {
   text-transform: uppercase;
   letter-spacing: 0.225em;
 }
-/* line 178, assets\less\index.less */
+/* line 179, assets\less\index.less */
 .news_feed_contents_wrapper {
   width: 1200px;
   margin: 0 auto;
   position: relative;
   height: 100%;
 }
-/* line 183, assets\less\index.less */
+/* line 184, assets\less\index.less */
 .news_feed_contents_wrapper .news_feed_vertical_line {
   position: absolute;
   top: 19px;
@@ -385,11 +383,11 @@ section.indexSection {
   bottom: 10px;
   z-index: 0;
 }
-/* line 197, assets\less\index.less */
+/* line 198, assets\less\index.less */
 .column_wrapper {
   height: 100%;
 }
-/* line 200, assets\less\index.less */
+/* line 201, assets\less\index.less */
 .column_wrapper .column_left {
   width: 600px;
   height: 100%;
@@ -397,7 +395,7 @@ section.indexSection {
   box-sizing: border-box;
   text-align: right;
 }
-/* line 207, assets\less\index.less */
+/* line 208, assets\less\index.less */
 .column_wrapper .column_right {
   width: 600px;
   height: 100%;
@@ -405,83 +403,83 @@ section.indexSection {
   box-sizing: border-box;
   text-align: left;
 }
-/* line 216, assets\less\index.less */
+/* line 217, assets\less\index.less */
 .column_news_box_left {
   padding-bottom: 50px;
   margin-bottom: 85px;
   margin-right: 60px;
 }
-/* line 221, assets\less\index.less */
+/* line 222, assets\less\index.less */
 .column_news_box_right {
   padding-bottom: 50px;
   margin-bottom: 85px;
   margin-left: 60px;
 }
-/* line 227, assets\less\index.less */
+/* line 228, assets\less\index.less */
 .column_left_image img {
   max-width: 540px;
   width: 95%;
 }
-/* line 233, assets\less\index.less */
+/* line 234, assets\less\index.less */
 .column_right_image img {
   max-width: 540px;
   width: 95%;
 }
-/* line 239, assets\less\index.less */
+/* line 240, assets\less\index.less */
 .column_left_text {
   margin-top: 25px;
   margin-left: 20px;
   letter-spacing: 0.125em;
 }
-/* line 243, assets\less\index.less */
+/* line 244, assets\less\index.less */
 .column_left_text .column_upper_text {
   color: #878787;
   font-size: 11px;
 }
-/* line 246, assets\less\index.less */
+/* line 247, assets\less\index.less */
 .column_left_text .column_upper_text a {
   text-transform: capitalize;
   color: #878787;
 }
-/* line 251, assets\less\index.less */
+/* line 252, assets\less\index.less */
 .column_left_text .column_hashtag {
   margin-top: 10px;
 }
-/* line 253, assets\less\index.less */
+/* line 254, assets\less\index.less */
 .column_left_text .column_hashtag p {
   text-transform: uppercase;
   font-size: 12px;
   color: #757575;
   line-height: 1.45em;
 }
-/* line 262, assets\less\index.less */
+/* line 263, assets\less\index.less */
 .column_right_text {
   margin-top: 25px;
   margin-right: 20px;
   letter-spacing: 0.125em;
 }
-/* line 266, assets\less\index.less */
+/* line 267, assets\less\index.less */
 .column_right_text .column_upper_text {
   color: #878787;
   font-size: 11px;
 }
-/* line 269, assets\less\index.less */
+/* line 270, assets\less\index.less */
 .column_right_text .column_upper_text a {
   text-transform: capitalize;
   color: #878787;
 }
-/* line 274, assets\less\index.less */
+/* line 275, assets\less\index.less */
 .column_right_text .column_hashtag {
   margin-top: 10px;
 }
-/* line 276, assets\less\index.less */
+/* line 277, assets\less\index.less */
 .column_right_text .column_hashtag p {
   text-transform: uppercase;
   font-size: 12px;
   color: #757575;
   line-height: 1.45em;
 }
-/* line 286, assets\less\index.less */
+/* line 287, assets\less\index.less */
 .load_more {
   width: 140px;
   height: 50px;
@@ -494,7 +492,7 @@ section.indexSection {
   overflow: hidden;
   box-sizing: border-box;
 }
-/* line 297, assets\less\index.less */
+/* line 298, assets\less\index.less */
 .load_more h3 {
   line-height: 50px;
   text-transform: uppercase;
