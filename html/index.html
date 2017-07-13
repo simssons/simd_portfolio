@@ -35,9 +35,17 @@
         // })
 
         var mainSlideArray = [];
+        var img_video_src;
 
+        $('.slide_contents li').each(function(i){
 
+          img_video_src += $('.slide_contents li').eq(i).find('.img_video').attr('src')
 
+          mainSlideArray.push(img_video_src)
+
+        })
+        console.log(img_video_src);
+        console.log(mainSlideArray);
 
     })
 
@@ -48,6 +56,7 @@
         <div class="slide_wrapper">
             <div class="main_slide">
               <div class="slide_contents">
+<<<<<<< HEAD
                   <div class="">
                       <ul>
                           <li>
@@ -72,6 +81,30 @@
                           </li>
                       </ul>
                   </div>
+=======
+                <ul>
+                    <li>
+                        <a href="">
+                            <video autoplay loop height="100%">
+                      			  <source src="../assets/video/video_shadow.webm" class="img_video" type="video/mp4"/>
+                      		</video>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/main_1.png" class="img_video" alt=""></a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <video autoplay loop height="100%">
+                      			  <source src="../assets/video/video_staring.webm" class="img_video" type="video/mp4"/>
+                      		</video>
+                        </a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/main_2.png" class="img_video" alt=""></a>
+                    </li>
+                </ul>
+>>>>>>> 2a16876e893f8e03ec7b54faeb3c5f991829276d
               </div>
               <div class="title_bar">
                 <h2>

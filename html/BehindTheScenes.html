@@ -88,7 +88,6 @@ var twoToOne = 2;
 
             scdLastOffSet += btsSpot[btsSpot.length-2];
             scdLastOffSet += $('section:eq(3)').height()/3*2;
-            console.log(event.originalEvent.wheeldelta);
 
             if (sct>btsSpot[btsSpot.length-2] && sct<scdLastOffSet ) {
                 if (twoToOne != 1) {
@@ -118,6 +117,7 @@ var twoToOne = 2;
             event.preventDefault();
             var idx = $(this).parent('li').index();
             console.log(idx);
+            console.log('ㅇㅇ');
             $('html,body').stop().animate({
                 'scrollTop':btsSpot[idx]+1
             },400)}
