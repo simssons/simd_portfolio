@@ -194,7 +194,6 @@ header {
 html.indexHtml,
 body.indexBody {
   overflow-x: hidden;
-  height: 100%;
   font-family: 'Montserrat', sans-serif;
 }
 /* line 11, assets\less\index.less */

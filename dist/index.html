@@ -12,6 +12,9 @@
 <script>
     $(function(){
 
+        var innerHeight = window.innerHeight;
+        $('.main_slide').height(innerHeight)
+
 
         var mainSlideArray = [];
         var img_video_src;
@@ -23,8 +26,14 @@
           mainSlideArray.push(img_video_src)
 
         })
-        console.log(img_video_src);
-        console.log(mainSlideArray);
+        console.log( $('.news_feed_wrapper').outerHeight());
+        $(window).scroll(function(){
+
+            console.log("sdf");
+
+        })
+
+
 
     })
 
