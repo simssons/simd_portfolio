@@ -33,32 +33,45 @@ section.indexSection{
   overflow: hidden;
 }
 
-
-
-
-.main_slide ul{
-    // position: relative;
-    // bottom: ~"calc( -100% + 340px)";
-    // height: 100px;
-    // padding-top: 100px;
-    // z-index: 20;
-    // text-align: center;
-    // font-size: 0;
+.main_slide .slide_contents{
+    position: relative;
+    top: 0;
     width: 100%;
+    height: 100%;
+    background-image: url('../image/main_2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.mouseListener{
+    width: 100%;
+    height: 50px;
+    margin-bottom:50px;
+    overflow:hidden;
     position: fixed;
-    bottom: 140px;
-    height: 100px;
-    padding-top: 100px;
+    bottom:140px;    
+    &:hover ul{
+        transform: translateY(-51px);
+    }
+}
+.main_slide ul{
+    width: 100%;
+    position: relative;
+    bottom: -50px;
+    height: 50px;
     z-index: 1;
     text-align: center;
     font-size: 0;
+    transition: .5s ease;
 }
 
 .main_slide li{
-    display: none;
+    // display: none;
     background-color: #FFF;
     cursor: pointer;
-  // display: inline-block;
+    display: inline-block;
 }
 
 .main_slide .slide_contents li>a{
@@ -66,12 +79,16 @@ section.indexSection{
   display: inline-block;
   max-height: 50px;
   position: relative;
+
   img{
     position: relative;
     height: 50px;
     z-index: 1;
     opacity: .4;
     transition: .5s ease;
+    &:hover{
+      opacity: 1;
+    }
   }
   video{
       position: relative;
@@ -80,20 +97,13 @@ section.indexSection{
       vertical-align: top;
       opacity: .4;
       transition: .5s ease;
+      &:hover{
+        opacity: 1;
+      }
   }
 }
 
-.main_slide .slide_contents{
-  position: relative;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('../image/main_2.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-}
+
 
 .title_bar{
     box-sizing: border-box;

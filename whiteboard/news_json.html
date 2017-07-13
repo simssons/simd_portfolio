@@ -6,25 +6,47 @@
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" href="common.css">
     <link rel="stylesheet" href="guide.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
     <script>
         var data = {
-            newsList:[{
-                tt:"what"
-            },{
-                ta:["yahoo",'2017'],
-                tb:{
-                    id:"4"
-                }
-            }]
-        };
-        console.log(data.newsList[1].tb.id);
+                list:[
+                    {
+                    name:'김보민',
+                    address:'신이문동'
+                    },{
+                    name:'권서정',
+                    address:'안양'
+                    },{
+                    name:'조국희',
+                    address:'부천'
+                    },{
+                    name:'김수인',
+                    address:'모리셔스'
+                    }
+                    ]
+            }
+
+
+        $(function(){
+
+            var url = location.href;
+            var urls = url.split("?");
+            urls = urls[1].split("=");
+            var sqe = Number(urls[1])
+
+            $('h2').text(data.list[sqe].name);
+            $('p').text(data.list[sqe].address);
+
+        })
 
 
     </script>
+
+
+
 
     <style>
        body{
@@ -137,7 +159,8 @@
                 </header>
 
                 <section>
-
+                    <h2></h2>
+                    <p></p>
 
                 </section>
 
