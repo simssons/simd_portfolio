@@ -708,6 +708,52 @@ ul.footer_links li a {
   white-space: nowrap;
   letter-spacing: 0.15em;
 }
+@keyframes runningSprite {
+  /* line 184, assets\less\footer.less */
+  0% {
+    background-position-x: 0;
+  }
+  /* line 185, assets\less\footer.less */
+  10% {
+    background-position-x: -222px;
+  }
+  /* line 186, assets\less\footer.less */
+  20% {
+    background-position-x: -444px;
+  }
+  /* line 187, assets\less\footer.less */
+  30% {
+    background-position-x: -666px;
+  }
+  /* line 188, assets\less\footer.less */
+  40% {
+    background-position-x: -888px;
+  }
+  /* line 189, assets\less\footer.less */
+  50% {
+    background-position-x: -1110px;
+  }
+  /* line 190, assets\less\footer.less */
+  60% {
+    background-position-x: -1332px;
+  }
+  /* line 191, assets\less\footer.less */
+  70% {
+    background-position-x: -1554px;
+  }
+  /* line 192, assets\less\footer.less */
+  80% {
+    background-position-x: -1776px;
+  }
+  /* line 193, assets\less\footer.less */
+  90% {
+    background-position-x: -1998px;
+  }
+  /* line 194, assets\less\footer.less */
+  100% {
+    background-position-x: -2220px;
+  }
+}
 /* line 5, assets\less\biography.less */
 html.bioHtml,
 body.bioBody {
