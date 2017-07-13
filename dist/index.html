@@ -11,25 +11,37 @@
 </head>
 <script>
     $(function(){
+        //높이조정
+        var heightFunction = function(){
+                var innerHeight = window.innerHeight;
+                $('.main_slide').height(innerHeight);
+            }
+        heightFunction();
+        $(window).resize(function(){
+            heightFunction();
+        })
 
-        var innerHeight = window.innerHeight;
-        $('.main_slide').height(innerHeight)
 
-
+        //slide
         var mainSlideArray = [];
         var img_video_src;
 
         $('.slide_contents li').each(function(i){
-
-          img_video_src += $('.slide_contents li').eq(i).find('.img_video').attr('src')
-
-          mainSlideArray.push(img_video_src)
-
+          img_video_src += $('.slide_contents li').eq(i).find('.img_video').attr('src');
+          mainSlideArray.push(img_video_src);
         })
-        console.log( $('.news_feed_wrapper').outerHeight());
-        $(window).scroll(function(){
 
-            console.log("sdf");
+        $(window).scroll(function(){
+            var innerHeight = window.innerHeight;
+            var sct = $(this).scrollTop();
+            var totallheight = $('body.indexBody').height();
+            console.log(sct);
+            console.log(totallheight);
+            if ((totallheight-sct)==innerHeight) {
+                console.log('ㅇ');
+                // 인스타를부르자
+
+            }
 
         })
 
