@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="bioHtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../vendor/jQuery/dist/jquery.min.js"></script>
+    <script src="../assets/JavaScript/common.js"></script>
+    <script src="../vendor/jQuery/dist/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Abril+Fatface" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/normalize.css" />
+    <script src="../vendor/TiltHoverEffects-master/imagesloaded.pkgd.min.js"></script>
+	<script src="../vendor/TiltHoverEffects-master/anime.min.js"></script>
+	<script src="../vendor/TiltHoverEffects-master/main.js"></script>
+    <title>Biography</title>
+    <!-- <script>
+			document.documentElement.className = 'js';
+	</script> -->
+    <script>
+    $(function(){
+        //slide hover
+        $('.ab_right').hover(function(ev){
+            $(this).find('.ab_right_after').css('background','rgba(0, 0, 0, .5)')
+        },function(){
+            $(this).find('.ab_right_after').css('background','')
+        });
+        $('.ab_left_before').hover(function(ev){
+            console.log('ㅇ');
+            $(this).siblings('.ab_left_after').css('background','rgba(0, 0, 0, .5)')
+        },function(){
+            $(this).siblings('.ab_left_after').css('background','')
+        })
+
+
+
+        //bio-slide
+        //a의 기능을 막아주세요. index()로 번호찾아.
+        //클릭한 엘리먼트의 위치번호를 뽑아 idx변수에 대입해주세요.
+        //li에 on class의 위치를 번호를 찾아 hisnum 변수에 대입해주세요,
+        //hisnum에 해당하는 엘리먼트의 자식요소 div가 0지점에서 -500지점으로
+        //idx에 해당하는 엘리먼트의 div left:500지점에서 0으로 이동하세요
+        //이동했으면 idx에 해당하는 엘리먼트에는 on class를 추가하며 idx가 아닌 다른 형제 자매 요소는 on class를 제거해라.-
+
+        var bioSlideArray = ['../assets/image/bio0.png','../assets/image/bio1.png','../assets/image/bio2.png','../assets/image/bio3.png','../assets/image/bio4.png'];
+
+        //초기상태
+        $('.bio_slide ul li:not(#bidPopUpLayer)').each(function(i,e){
+            $(this).find('img').attr('src',bioSlideArray[i])
+        })
+
+        // 동작
+        var statusIdx = 0;
+        var backwards= 0;
+        $('.bio_slide ul li').click(function(){
+            var idx = $(this).index();
+            if (idx==0) {
+                statusIdx--;
+                $('.bio_slide ul li').each(function(i,e){
+                    if (statusIdx==4) {
+                        if ((i+statusIdx)==5) {
+                            $(this).find('img').attr('src',bioSlideArray[0])
+                        }else if ((i+statusIdx)== 6) {
+                            $(this).find('img').attr('src',bioSlideArray[1])
+                        }else{
+                            $(this).find('img').attr('src',bioSlideArray[statusIdx])
+                        }
+                    }else if (statusIdx==5) {
+                        $(this).find('img').attr('src',bioSlideArray[i])
+                    }else if (statusIdx < 0) {
+                        backwards = 5;
+                        if ((i+backwards)==5) {
+                            $(this).find('img').attr('src',bioSlideArray[4])
+                        }else if ((i+backwards)== 6) {
+                            $(this).find('img').attr('src',bioSlideArray[0])
+                        }else{
+                            $(this).find('img').attr('src',bioSlideArray[1])
+                        };
+                        if (i==2) { statusIdx = 4;}
+                    }else{
+                      $(this).find('img').attr('src',bioSlideArray[i+statusIdx])
+                    }
+                    i++;
+                })
+          }else if (idx==2) {
+                statusIdx++;
+                $('.bio_slide ul li').each(function(i,e){
+                    if (statusIdx==4) {
+                        if ((i+statusIdx)==5) {
+                            $(this).find('img').attr('src',bioSlideArray[0])
+                        }else if ((i+statusIdx)== 6) {
+                            $(this).find('img').attr('src',bioSlideArray[1])
+                        }else{
+                            $(this).find('img').attr('src',bioSlideArray[statusIdx])
+                        }
+                    }else if (statusIdx > 4 ) {
+                        $(this).find('img').attr('src',bioSlideArray[i])
+                        statusIdx = 0;
+                    }else{
+                        $(this).find('img').attr('src',bioSlideArray[i+statusIdx])
+                    }
+                    i++;
+                })
+            }
+        })
+
+
+        //bioPopUp
+        var bioInnerHeight;
+        var resizeBio = function(){
+          bioInnerHeight = $('.bioBody').height();
+        }
+        resizeBio();
+        $(window).resize(function(){
+          resizeBio();
+        })
+
+        $('#bioPopUp').on('click',function(){
+          $('#bidPopUpLayer').css('display','block')
+          .find('img').css('max-height', bioInnerHeight );
+          var thisPic = $('#bioPopUp').find('img').attr('src')
+          console.log(thisPic);
+          $('#bidPopUpLayer').find('img').attr('src',thisPic)
+        })
+
+        //팝업나가기
+        $(document).mouseup(function(e){
+          var container = $('#bidPopUpLayer');
+          if (container.has(e.target).length === 0) {
+            container.fadeOut(500);
+          }
+        })
+
+        //a멈추기
+        $(".bio_popup_pic_wrapper a").css({ 'pointer-events': 'none' });
+
+    })
+
+    </script>
+
+</head>
+<body class="bioBody">
+    <header>
+            <gnb>
+                <div class="gnb-inner">
+                    <div class="menu">
+                        <a href="">
+                            <span>menu</span>
+                        </a>
+                    </div>
+                    <div class="share">
+                        <a href="">
+                            <span>share</span>
+                        </a>
+                    </div>
+                    <div class="h1">
+                        <h1 id="btsH00">
+                            <a href="">
+                              <span>jaywalkers</span>
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+                <div class="menu-main-menu-container" style="background-image:url(../assets/image/main-menu-colored.png); background-size:cover">
+                    <!-- includes할 때, gnb,footer 등에서의 html 경로 설정은 index파일을 기준으로 함.  -->
+                    <div class="menu-main-menu">
+                        <ul class="menu-main-menu-ul">
+                            <li class="fifty">
+                                <a href="">about</a>
+                                <ul class="sub-menu">
+                                    <li>about</li>
+                                    <li><a href="">biography</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">photography</a>
+                                <ul class="sub-menu">
+                                    <li>photography</li>
+                                    <li><a href="">portraits</a></li>
+                                    <li><a href="">filter</a></li>
+                                    <li><a href="">column grids with filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">film</a>
+                                <ul class="sub-menu">
+                                    <li>film</li>
+                                    <li><a href="">tape</a></li>
+                                    <li><a href="">filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">behind the scenes</a>
+                                <ul class="sub-menu">
+                                    <li>backstory</li>
+                                    <li><a href="">behind the scenes</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">blog</a>
+                                <ul class="sub-menu">
+                                    <li>jay walkers' blog</li>
+                                    <li><a href="">blog</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">contact</a>
+                                <ul class="sub-menu">
+                                    <li>contact me</li>
+                                    <li><a href="">contact</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </gnb>
+    </header>
+
+<main>
+    <section class="bio content content--c1">
+        <div class="bio_wrapper">
+            <div class="bio_slide">
+                <ul>
+                    <li class="ab_left">
+                        <div class="ab_left_before"></div>
+                        <div class="ab_left_after">
+                        </div>
+                        <a href="">
+                            <img src="" alt="">
+                        </a>
+                    </li>
+                    <li id="bioPopUp">
+                      <a href="#" class="tilter tilter--1">
+                        <figure class="tilter__figure">
+                          <img class="tilter__image" src="" alt="" />
+                          <div class="tilter__deco tilter__deco--shine"><div></div></div>
+                          <figcaption class="tilter__caption">
+                            <h3 class="tilter__title">Jaywalkers</h3>
+                            <p class="tilter__description">Chuncheon</p>
+                          </figcaption>
+                          <svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
+                            <path d="M20.5,20.5h260v375h-260V20.5z" />
+                          </svg>
+                        </figure>
+                      </a>
+                    </li>
+                    <li class="ab_right">
+                        <div class="ab_right_before"></div>
+                        <div class="ab_right_after"></div>
+                        <a href="">
+                            <img src="" alt="">
+                        </a>
+                    </li>
+                    <li id="bidPopUpLayer">
+                      <div class="bio_popup_pic_wrapper">
+                        <a href="">
+                          <!-- <img class="tilter__image" src="" alt="" /> -->
+                          <img src="../assets/image/bio4.png" alt="">
+                        </a>
+                      </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="bio_article">
+                <h2>
+                    <span>biography</span>
+                </h2>
+                <div class="bio_article_text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lobortis non dolor ultrices semper. Vestibulum quis orci augue. Phasellus molestie suscipit mauris, tempus ornare massa euismod eu. Vestibulum blandit malesuada aliquet. Cras gravida tellus id tristique dapibus. Praesent quis tempor eros. Phasellus a ornare elit, sit amet rutrum metus. Fusce eu fringilla libero, vitae vestibulum nisl.
+                    </p>
+                    <p>Aenean in orci commodo, dignissim elit non, aliquet est. Pellentesque bibendum suscipit mi, finibus malesuada nulla. Donec consequat nunc eget consequat viverra. Nulla elit nisl, ultrices mollis blandit et, consectetur vel quam. Maecenas in sem sit amet libero ornare dapibus ut nec urna. Sed sollicitudin lectus nibh, vitae tempor lacus fringilla eget. Suspendisse sagittis dui turpis, nec pharetra neque luctus eget.
+                    </p>
+                    <p>Praesent molestie aliquet nibh non consectetur. Ut sed tincidunt augue. Nulla non felis libero. Praesent molestie nec velit ornare ornare. Nullam nec pulvinar mi. Quisque sollicitudin eleifend arcu non bibendum. Fusce euismod velit sit amet orci pharetra, ut interdum leo imperdiet. Suspendisse ac elit ac est interdum vulputate. Quisque vestibulum lacinia facilisis. Proin feugiat viverra massa. Pellentesque vehicula lorem id velit tempor, a eleifend sem luctus. Mauris sed molestie odio, in mattis purus. Suspendisse iaculis nunc sit amet elit auctor sollicitudin. Phasellus eu dui eu massa sodales vehicula sit amet a dui. Quisque cursus, lacus ac tristique accumsan, metus odio commodo libero, et convallis erat odio a tellus.
+                    </p>
+                    <p>Praesent molestie aliquet nibh non consectetur. Ut sed tincidunt augue. Nulla non felis libero. Praesent molestie nec velit ornare ornare. Nullam nec pulvinar mi. Quisque sollicitudin eleifend arcu non bibendum. Fusce euismod velit sit amet orci pharetra, ut interdum leo imperdiet. Suspendisse ac elit ac est interdum vulputate. Quisque vestibulum lacinia facilisis. Proin feugiat viverra massa. Pellentesque vehicula lorem id velit tempor, a eleifend sem luctus. Mauris sed molestie odio, in mattis purus. Suspendisse iaculis nunc sit amet elit auctor sollicitudin. Phasellus eu dui eu massa sodales vehicula sit amet a dui. Quisque cursus, lacus ac tristique accumsan, metus odio commodo libero, et convallis erat odio a tellus.
+                    </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lobortis non dolor ultrices semper. Vestibulum quis orci augue. Phasellus molestie suscipit mauris, tempus ornare massa euismod eu. Vestibulum blandit malesuada aliquet. Cras gravida tellus id tristique dapibus. Praesent quis tempor eros. Phasellus a ornare elit, sit amet rutrum metus. Fusce eu fringilla libero, vitae vestibulum nisl.
+                    </p>
+                    <p>Aenean in orci commodo, dignissim elit non, aliquet est. Pellentesque bibendum suscipit mi, finibus malesuada nulla. Donec consequat nunc eget consequat viverra. Nulla elit nisl, ultrices mollis blandit et, consectetur vel quam. Maecenas in sem sit amet libero ornare dapibus ut nec urna. Sed sollicitudin lectus nibh, vitae tempor lacus fringilla eget. Suspendisse sagittis dui turpis, nec pharetra neque luctus eget.
+                    </p>
+                </div>
+            </div>
+        </div><!-- bio_wrapper -->
+    </section>
+</main>
+    <script>
+		(function() {
+			var tiltSettings = [
+			{},
+			{
+				movement: {
+					imgWrapper : {
+						translation : {x: 10, y: 10, z: 30},
+						rotation : {x: 0, y: -10, z: 0},
+						reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+					},
+					lines : {
+						translation : {x: 10, y: 10, z: [0,70]},
+						rotation : {x: 0, y: 0, z: -2},
+						reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
+					},
+					caption : {
+						rotation : {x: 0, y: 0, z: 2},
+						reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+					},
+					overlay : {
+						translation : {x: 10, y: -10, z: 0},
+						rotation : {x: 0, y: 0, z: 2},
+						reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
+					},
+					shine : {
+						translation : {x: 100, y: 100, z: 0},
+						reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+					}
+				}
+			}];
+
+			function init() {
+				var idx = 0;
+				[].slice.call(document.querySelectorAll('a.tilter')).forEach(function(el, pos) {
+					idx = pos%2 === 0 ? idx+1 : idx;
+                    /*
+                    idx = pos%2 === 0 ? idx+1 : idx;
+                    idx에 pox를 2로 나눈 값이 0이 참이면 idx+1, 거짓이면 idx 대입
+                    줄여 쓴것.
+                    */
+					new TiltFx(el, tiltSettings[idx-1]);
+				});
+			}
+
+			// Preload all images.
+			imagesLoaded(document.querySelector('main'), function() {
+				document.body.classList.remove('loading');
+				init();
+			});
+
+		})();
+		</script>
+  <script>
+    $(function(){
+
+          //백그라운드 포지션
+        $(document).on( "mousemove", function( event ) {
+            var x = event.pageX;
+            var y = event.pageY;
+            x *= -1;
+            y *= -1;
+            $('.footer_btn_bg').stop().css({
+             'background-position-x': x,
+             'background-position-y': y
+            });
+        })
+
+
+        var ulWidth = $('.footer_btn_bg ul').width();
+        $('.footer_btn_bg').css('width',ulWidth)
+
+        //hover&sprite
+
+        $('.footer_btn_bg li>div').hover(function(){
+            $(this).css('background-image', 'none');
+            $(this).siblings('.overlay').css('opacity', 1);
+            $('.bg_sprite').css('animation-name','runningSprite')
+
+        },function(){
+            $(this).css('background-image', '');
+            $(this).siblings('.overlay').css('opacity', '');
+        })
+
+    })
+  </script>
+      <footer>
+          <div class="footer_btn_holder">
+              <div class="footer_btn_bg">
+                  <ul>
+                      <li>
+                          <div class="instagram">
+                              <a href=""></a>
+                          </div>
+                          <div class="overlay">
+                            <div class="bg_sprite"></div>
+                            <div class="social_values">
+                              <span>follow jay</span>
+                            </div>
+                          </div>
+                          <span class="spacer"></span>
+                      </li>
+                      <li>
+                          <div class="facebook">
+                              <a href=""></a>
+                          </div>
+                          <div class="overlay">
+                            <div class="bg_sprite"></div>
+                            <div class="social_values">
+                              <span>follow jay</span>
+                            </div>
+                          </div>
+                          <span class="spacer"></span>
+                      </li>
+                      <li>
+                          <div class="twitter">
+                              <a href=""></a>
+                          </div>
+                          <div class="overlay">
+                            <div class="bg_sprite"></div>
+                            <div class="social_values">
+                              <span>follow jay</span>
+                            </div>
+                          </div>
+                          <span class="spacer"></span>
+                      </li>
+                      <li>
+                          <div class="youtube">
+                              <a href=""></a>
+                          </div>
+                          <div class="overlay">
+                            <div class="bg_sprite"></div>
+                            <div class="social_values">
+                              <span>follow jay</span>
+                            </div>
+                          </div>
+                          <span class="spacer"></span>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="footer_bottom">
+              <ul class="footer_links">
+                  <li>
+                      <a href="">&#169; jay walkers</a>
+                  </li>
+                  <li>
+                      <a href="">contact</a>
+                  </li>
+                  <li>
+                      <a href="">about</a>
+                  </li>
+                  <li>
+                      <a href="">blog</a>
+                  </li>
+                  <li>
+                      <a href="">terms &#38; conditions</a>
+                  </li>
+                  <li>
+                      <a href="">top</a>
+                  </li>
+              </ul>
+          </div>
+      </footer>
+
+</body>
+</html>

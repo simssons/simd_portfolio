@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../vendor/jQuery/dist/jquery.min.js"></script>
+    <script src="../assets/JavaScript/common.js"></script>
+    <title>Document</title>
+    <style>
+    header{background-color: white;}
+
+    </style>
+
+    <script>
+    $(function(){
+
+
+    //백그라운드 포지션이동
+        $(document).on( "mousemove", function( event ) {
+          var x = event.pageX;
+          x *= -1;
+          $('.filter_select').css('background-position', x );
+        })
+
+
+    //메뉴휠
+        var bi = ['latestf','photographyf','portraitsf','filmf'];
+        //초기에 0이니까........
+        var scrollNum = 0;
+
+        $('.filter_select').mouseenter(function(){
+          console.log(scrollNum);
+            $(this).on('wheel',function(e){
+                e.preventDefault();
+
+                var wheelEvent = e.originalEvent.wheelDelta;
+
+                if (wheelEvent > 0) {
+                    scrollNum += 1;
+                }else if (wheelEvent < 0) {
+                    scrollNum -= 1;
+                }
+                // var scrollNumA= Math.floor(scrollNum);
+
+                if (scrollNum > bi.length - 1) {
+                     scrollNum = 0;
+                 }else if ( scrollNum < 0 ) {
+                     scrollNum = bi.length - 1;
+                 }
+
+                $('div.filter_sr').css({
+                    'background-image': 'transform:rotateY(30deg)',
+                    'background-image': 'url(../assets/image/'+bi[scrollNum]+'.svg)'
+
+                })
+                console.log(scrollNum);
+            })
+        })
+        // $(".filter_body").on("mousewheel", function (event) {
+        //
+        //  });
+
+    //필터클릭
+        $('a#filter_trigger').on('click',function(event){
+            event.preventDefault();
+            //배열이 무너져있어서 end로 정리함. end안쓰면 밑에서 li한번 더 선택해야 함.
+            $('.filter_list li').filter('.'+bi[scrollNum]).fadeIn().end().
+            not('.'+bi[scrollNum]).fadeOut();
+        });
+
+
+    //JSON
+      $.getJSON('../assets/javascript/datalist.json',function(fuck){
+
+        //latest
+            function sortingByDate(){
+              fuck.list.sort(function(a, b) {
+                return (new Date(b.ctime)) - (new Date(a.ctime))
+              })
+            }
+            sortingByDate();
+
+        //뿌리자.
+            var htmlHolder = [];
+            var order = fuck.list.length-1;
+            var filterClasses = '';
+
+            $.each(fuck.list,function(i,e){
+                var jsonlist = '';
+                // var bi = ['photographyf','latestf','portraitsf','filmf'];
+
+                var jsonFilterValue ='';
+                jsonFilterValue = fuck.list[i].filterValue;
+
+                var filterClassesLa = jsonFilterValue.match('latestf');
+                var filterClassesPh = jsonFilterValue.match('photographyf');
+                var filterClassesPo = jsonFilterValue.match('portraitsf')
+                var filterClassesFi = jsonFilterValue.match('filmf')
+
+                // filterClasses += jsonFilterValue.match('latest')
+                // filterClasses += jsonFilterValue.match('portraits')
+                // filterClasses += jsonFilterValue.match('film')
+
+                jsonlist += '<li class="'+filterClassesLa+" "+filterClassesPh+" "+filterClassesPo+" "+filterClassesFi+'">';
+                jsonlist += '<div class="filter_description">';
+                jsonlist += '<span>';
+                jsonlist += '<cite>'+ fuck.list[i].cite +'</cite>';
+                jsonlist += '<span>'+ fuck.list[i].description+'</span>';
+                jsonlist += '</span>';
+                jsonlist += '</div>';
+                jsonlist += '<div class="filter_cover">';
+                jsonlist += '<a href="" class="filter_cover">';
+                if (fuck.list[i].type == 'video') {
+                    jsonlist += '<video autoplay loop width="60%" height="100%" class="hover_vimg">';
+                    jsonlist += '<source src="'+fuck.list[i].themeURL+'" type="video/mp4"/>';
+                    jsonlist += '</video>';
+                }else if (fuck.list[i].type == 'img') {
+                    jsonlist += '<img src="'+ fuck.list[i].themeURL +'" alt="" class="hover_vimg">';
+                }
+                jsonlist += '</a>';
+                jsonlist += '</div>';
+                jsonlist += '</li>';
+                htmlHolder.push(jsonlist);
+            })
+
+            for (var i = 0; i < fuck.list.length; i++) {
+                $('.filter_list li:first').after(htmlHolder[order - i]);
+            }
+
+        })//getJSON
+
+        //hover
+        $('body.filter_body').on({
+            "mouseenter":function(){
+                $(this).css('background-color','rgba(255,76,76,.25)')
+                .find('.hover_vimg').css({'opacity':'.2','transform': 'scale(.95)'})
+                .parents('li').find('cite,span').css('opacity','1')
+
+                $(this).parent('li').siblings().find('.filter_cover')
+                .css('background-color','').find('.hover_vimg').css({'opacity':'1','transform': ''})
+                .parents('li').find('cite,span').css('opacity','')
+            }
+        },'.filter_cover')
+
+        $('body.filter_body').on({
+            mouseenter:function(){
+                $(this).parent('li').siblings().find('.filter_cover')
+                .css('background-color','').find('.hover_vimg').css({'opacity':'1','transform': ''})
+                .parents('li').find('cite,span').css('opacity','')
+            }
+        },':not(.filter_cover)')
+
+        $(':not(li)').hover(function(){
+            console.log('li');
+            $('.filter_list li').find('.filter_cover')
+            .css('background-color','').find('.hover_vimg').css({'opacity':'1','transform': ''})
+            .parents('li').find('cite,span').css('opacity','')
+        })
+
+
+
+
+});
+    </script>
+
+</head>
+<body class="filter_body">
+    <header>
+            <gnb>
+                <div class="gnb-inner">
+                    <div class="menu">
+                        <a href="">
+                            <span>menu</span>
+                        </a>
+                    </div>
+                    <div class="share">
+                        <a href="">
+                            <span>share</span>
+                        </a>
+                    </div>
+                    <div class="h1">
+                        <h1 id="btsH00">
+                            <a href="">
+                              <span>jaywalkers</span>
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+                <div class="menu-main-menu-container" style="background-image:url(../assets/image/main-menu-colored.png); background-size:cover">
+                    <!-- includes할 때, gnb,footer 등에서의 html 경로 설정은 index파일을 기준으로 함.  -->
+                    <div class="menu-main-menu">
+                        <ul class="menu-main-menu-ul">
+                            <li class="fifty">
+                                <a href="">about</a>
+                                <ul class="sub-menu">
+                                    <li>about</li>
+                                    <li><a href="">biography</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">photography</a>
+                                <ul class="sub-menu">
+                                    <li>photography</li>
+                                    <li><a href="">portraits</a></li>
+                                    <li><a href="">filter</a></li>
+                                    <li><a href="">column grids with filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">film</a>
+                                <ul class="sub-menu">
+                                    <li>film</li>
+                                    <li><a href="">tape</a></li>
+                                    <li><a href="">filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">behind the scenes</a>
+                                <ul class="sub-menu">
+                                    <li>backstory</li>
+                                    <li><a href="">behind the scenes</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">blog</a>
+                                <ul class="sub-menu">
+                                    <li>jay walkers' blog</li>
+                                    <li><a href="">blog</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">contact</a>
+                                <ul class="sub-menu">
+                                    <li>contact me</li>
+                                    <li><a href="">contact</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </gnb>
+    </header>
+
+    <section>
+        <div class="filter_wrapper">
+            <ul class="filter_list">
+                <li class="photographyf latestf portraitsf filmf">
+                    <h2 class="ir">sect options</h2>
+                    <div class="filter_select">
+                        <div class="filter_sr"></div>
+                        <div class="filter_fixed"></div>
+                        <div class="filter_click">
+                            <a href="" id="filter_trigger"></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</body>
+<style>
+    .on{display: block;}
+    @media screen and (max-width:800px){
+        li{width:33.33%}
+    }
+    @media screen and (max-width:600px){
+        li{width:50%}
+    }
+</style>
+</html>

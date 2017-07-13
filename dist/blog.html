@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" class=blogHtml>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../vendor/jQuery/dist/jquery.min.js"></script>
+    <script src="../assets/JavaScript/common.js"></script>
+    <title>Blog</title>
+    <script>
+    $(function(){
+
+        var articleHeight = window.innerHeight;
+
+        $('article.blog_article').css('height',articleHeight);
+
+        // var blogWheelAc = 0 ;
+        //
+        // $(window).on('mousewheel',function(e){
+        //         e.preventDefault();
+        //         console.log('ss');
+        //         var blogWheel = e.originalEvent.wheelDelta;
+        //
+        //
+        //         if (blogWheel > 0) {
+        //             $('#text_move').stop().animate({'top': '+=150px'})
+        //             blogWheelAc += blogWheel ;
+        //             console.log(blogWheelAc);
+        //
+        //         }else if (blogWheel < 0) {
+        //
+        //             if (blogWheelAc<-1080) {
+        //                 console.log('Do not move');
+        //             }else {
+        //                 $('#text_move').stop().animate({'top': '-=150px'})
+        //                 blogWheelAc += blogWheel ;
+        //                 console.log(blogWheelAc);
+        //             }
+        //         }
+        //
+        // });
+
+        $('a.down_chevron').on('click',function(e){
+            var blog_comments = $('.blog_comments').offset().top;
+            console.log(blog_comments);
+            $('html,body').animate({'scrollTop':blog_comments});
+            return false
+        });
+
+
+    })
+
+
+    </script>
+
+</head>
+<body class="blogBody">
+    <header>
+            <gnb>
+                <div class="gnb-inner">
+                    <div class="menu">
+                        <a href="">
+                            <span>menu</span>
+                        </a>
+                    </div>
+                    <div class="share">
+                        <a href="">
+                            <span>share</span>
+                        </a>
+                    </div>
+                    <div class="h1">
+                        <h1 id="btsH00">
+                            <a href="">
+                              <span>jaywalkers</span>
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+                <div class="menu-main-menu-container" style="background-image:url(../assets/image/main-menu-colored.png); background-size:cover">
+                    <!-- includes할 때, gnb,footer 등에서의 html 경로 설정은 index파일을 기준으로 함.  -->
+                    <div class="menu-main-menu">
+                        <ul class="menu-main-menu-ul">
+                            <li class="fifty">
+                                <a href="">about</a>
+                                <ul class="sub-menu">
+                                    <li>about</li>
+                                    <li><a href="">biography</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">photography</a>
+                                <ul class="sub-menu">
+                                    <li>photography</li>
+                                    <li><a href="">portraits</a></li>
+                                    <li><a href="">filter</a></li>
+                                    <li><a href="">column grids with filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">film</a>
+                                <ul class="sub-menu">
+                                    <li>film</li>
+                                    <li><a href="">tape</a></li>
+                                    <li><a href="">filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">behind the scenes</a>
+                                <ul class="sub-menu">
+                                    <li>backstory</li>
+                                    <li><a href="">behind the scenes</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">blog</a>
+                                <ul class="sub-menu">
+                                    <li>jay walkers' blog</li>
+                                    <li><a href="">blog</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">contact</a>
+                                <ul class="sub-menu">
+                                    <li>contact me</li>
+                                    <li><a href="">contact</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </gnb>
+    </header>
+
+    <article class="blog_article">
+        <section>
+            <div class="contents_wrapper">
+                <div class="blog_left">
+                    <div class="text_contents">
+                        <div id="text_move">
+                            <h2>Lorem ipsum</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget mi sodales, ultricies eros id, scelerisque mauris. Maecenas bibendum diam sed massa lacinia porta. Nam pulvinar mollis tempus. Sed egestas, eros sed laoreet tempor, nibh felis faucibus est, vel pulvinar urna enim id felis. </p>
+                            <p>Aenean id faucibus tellus. In vel tellus quis dolor congue fringilla. In hac habitasse platea dictumst. Morbi nisl nulla, fringilla quis vulputate et, bibendum non tellus. Morbi dapibus ipsum vitae odio interdum vestibulum. Sed tincidunt risus quis odio ornare, nec maximus sapien ullamcorper. Phasellus non velit nulla. Vestibulum ut maximus nisl. Donec pretium finibus lacus sed auctor. Aenean egestas rhoncus tristique. </p>
+                            <p>Sed eu venenatis dolor, eu tristique sem. Morbi mollis enim ut mi euismod, vitae tempus metus ullamcorper.</p>
+                            <p>Duis luctus augue a mi lobortis, vel condimentum enim elementum. Praesent mauris lectus, efficitur eget felis eu, tempus mollis justo. Duis consectetur quam dapibus, elementum nulla nec, pharetra purus. Donec id eros at nibh pretium aliquet non id justo. Vivamus blandit faucibus turpis, vel tempor nisi ullamcorper nec. Etiam accumsan est lectus, ut rhoncus nibh volutpat eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                            <p>Nam lacinia purus interdum, pretium lacus nec, suscipit elit. Nunc rhoncus est ac suscipit imperdiet. Vestibulum malesuada iaculis erat, at tempus tortor placerat at.</p></p>
+                            <p>Vestibulum lobortis sagittis elit, sed pulvinar augue tincidunt non. Fusce dapibus leo quis ipsum vulputate convallis. Curabitur a lacus vestibulum, sodales nisl non, eleifend eros. Suspendisse quis nunc sem. Mauris fringilla nibh vitae felis rutrum, in accumsan est lobortis. Praesent ut auctor ex, vitae cursus purus. Duis tincidunt sodales est, et feugiat nulla aliquam sed. Etiam at congue elit.</p>
+                            <p>Cras dolor arcu, molestie a ex et, placerat sodales ante. Curabitur sit amet turpis viverra, imperdiet justo non, venenatis elit. Sed porta placerat ex a bibendum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In ut pellentesque nisi. Etiam elementum gravida interdum. Phasellus sagittis sem ipsum, in gravida risus accumsan sed. </p>
+                            <p>Etiam ligula turpis, placerat non diam vitae, cursus semper mauris. Sed auctor pulvinar ipsum, vel vulputate enim sodales in.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog_right">
+                    <div class="photo_contents">
+                        <a href="">
+                            <img src="../assets/image/blog_01.png" alt="">
+                            <img src="../assets/image/blog_00.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="blog_page_button">
+                <a href="" class="left_chevron"></a>
+                <a href="" class="up_chevron"></a>
+                <a href="" class="down_chevron"></a>
+                <a href="" class="right_chevron"></a>
+            </div>
+        </section>
+    </article>
+    <article class="blog_comments">
+        <section>
+            <div class="comments_wrapper">
+                <div class="comments_list">
+                    <h2>
+                        <span>9 comments</span>
+                    </h2>
+                    <ol>
+                        <li>
+                            <div class="writer_info">
+                                <span>jaywalkers</span>
+                            </div>
+                            <div class="date_info_control">
+                                <span>MARCH 19, 2017, 4:52 PM</span>
+                                <a href=""><span>reply</span></a>
+                            </div>
+                            <div class="comment_content">
+                                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="writer_info">
+                                <span>williams</span>
+                            </div>
+                            <div class="date_info_control">
+                                <span>MARCH 19, 2017, 7:52 PM</span>
+                                <a href=""><span>reply</span></a>
+                            </div>
+                            <div class="comment_content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget mi sodales, ultricies eros id, scelerisque mauris. Maecenas bibendum diam sed massa lacinia porta. Nam pulvinar mollis tempus. Sed egestas, eros sed laoreet tempor, nibh felis faucibus est, vel pulvinar urna enim id felis. </p>
+                            </div>
+                            <ol class="scd_comment">
+                                <li>
+                                    <div class="writer_info">
+                                        <span>jaywalkers</span>
+                                    </div>
+                                    <div class="date_info_control">
+                                        <span>MARCH 19, 2017, 8:13 PM</span>
+                                        <a href=""><span>reply</span></a>
+                                    </div>
+                                    <div class="comment_content">
+                                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                    <div class="blog_post_reply">
+                        <i>post a reply</i>
+                    </div>
+                    <form class="blog_form">
+                        <fieldset>
+                            <legend class="ir">posting a reply</legend>
+                            <p>
+                                <label for="text" class="ir">username</label>
+                                <input type="text" name="username" placeholder="Name" required="true"/>
+                                <label for="email" class="ir">email</label>
+                                <input type="email" name="e-mail" placeholder="E-mail">
+                            </p>
+                            <label for="message" class="ir">Type your message</label>
+                            <textarea name="" cols="30" rows="10" placeholder="Type your message"></textarea>
+                            <input type="submit" value="SEND MESSAGE">
+                            <input type="button" value="NEXT">
+                            <input type="button" value="PREV">
+                        </fieldset>
+                    </form>
+                </div>
+            </div><!-- comments_wrapper -->
+        </section>
+    </article>
+
+      <script>
+        $(function(){
+
+              //백그라운드 포지션
+            $(document).on( "mousemove", function( event ) {
+                var x = event.pageX;
+                var y = event.pageY;
+                x *= -1;
+                y *= -1;
+                $('.footer_btn_bg').stop().css({
+                 'background-position-x': x,
+                 'background-position-y': y
+                });
+            })
+
+
+            var ulWidth = $('.footer_btn_bg ul').width();
+            $('.footer_btn_bg').css('width',ulWidth)
+
+            //hover&sprite
+
+            $('.footer_btn_bg li>div').hover(function(){
+                $(this).css('background-image', 'none');
+                $(this).siblings('.overlay').css('opacity', 1);
+                $('.bg_sprite').css('animation-name','runningSprite')
+
+            },function(){
+                $(this).css('background-image', '');
+                $(this).siblings('.overlay').css('opacity', '');
+            })
+
+        })
+      </script>
+          <footer>
+              <div class="footer_btn_holder">
+                  <div class="footer_btn_bg">
+                      <ul>
+                          <li>
+                              <div class="instagram">
+                                  <a href=""></a>
+                              </div>
+                              <div class="overlay">
+                                <div class="bg_sprite"></div>
+                                <div class="social_values">
+                                  <span>follow jay</span>
+                                </div>
+                              </div>
+                              <span class="spacer"></span>
+                          </li>
+                          <li>
+                              <div class="facebook">
+                                  <a href=""></a>
+                              </div>
+                              <div class="overlay">
+                                <div class="bg_sprite"></div>
+                                <div class="social_values">
+                                  <span>follow jay</span>
+                                </div>
+                              </div>
+                              <span class="spacer"></span>
+                          </li>
+                          <li>
+                              <div class="twitter">
+                                  <a href=""></a>
+                              </div>
+                              <div class="overlay">
+                                <div class="bg_sprite"></div>
+                                <div class="social_values">
+                                  <span>follow jay</span>
+                                </div>
+                              </div>
+                              <span class="spacer"></span>
+                          </li>
+                          <li>
+                              <div class="youtube">
+                                  <a href=""></a>
+                              </div>
+                              <div class="overlay">
+                                <div class="bg_sprite"></div>
+                                <div class="social_values">
+                                  <span>follow jay</span>
+                                </div>
+                              </div>
+                              <span class="spacer"></span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="footer_bottom">
+                  <ul class="footer_links">
+                      <li>
+                          <a href="">&#169; jay walkers</a>
+                      </li>
+                      <li>
+                          <a href="">contact</a>
+                      </li>
+                      <li>
+                          <a href="">about</a>
+                      </li>
+                      <li>
+                          <a href="">blog</a>
+                      </li>
+                      <li>
+                          <a href="">terms &#38; conditions</a>
+                      </li>
+                      <li>
+                          <a href="">top</a>
+                      </li>
+                  </ul>
+              </div>
+          </footer>
+
+
+</body>
+</html>

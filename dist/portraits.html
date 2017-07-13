@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" class="portraitsHtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../vendor/jQuery/dist/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .on{display: block;}
+    </style>
+    <script>
+    $(function(){
+        var autoHeight = function(){
+            $('.menu-main-menu-container .fifty').height(($('.menu-main-menu-container').height()-90)/2)
+
+        }
+        $(window).resize(function(){
+            autoHeight();
+                console.log($('.menu-main-menu-container').height());
+        })
+
+        $('.menu a').click(function(event){
+            event.preventDefault();
+            console.log('ss');
+
+            var menuToggle = $('.menu-main-menu-container')
+
+            if (menuToggle.is('.on')) {
+                menuToggle.removeClass('on')
+                $(this).text('menu')
+                $('.gnb-inner div a').css('color','black')
+            }else{
+                menuToggle.addClass('on')
+                $(this).text('back')
+                $('.gnb-inner div a').css('color','white')
+            }
+            autoHeight();
+        })
+    })
+    </script>
+</head>
+<body class="portrait_body">
+    <header>
+            <gnb>
+                <div class="gnb-inner">
+                    <div class="menu">
+                        <a href="">
+                            <span>menu</span>
+                        </a>
+                    </div>
+                    <div class="share">
+                        <a href="">
+                            <span>share</span>
+                        </a>
+                    </div>
+                    <div class="h1">
+                        <h1 id="btsH00">
+                            <a href="">
+                              <span>jaywalkers</span>
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+                <div class="menu-main-menu-container" style="background-image:url(../assets/image/main-menu-colored.png); background-size:cover">
+                    <!-- includes할 때, gnb,footer 등에서의 html 경로 설정은 index파일을 기준으로 함.  -->
+                    <div class="menu-main-menu">
+                        <ul class="menu-main-menu-ul">
+                            <li class="fifty">
+                                <a href="">about</a>
+                                <ul class="sub-menu">
+                                    <li>about</li>
+                                    <li><a href="">biography</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">photography</a>
+                                <ul class="sub-menu">
+                                    <li>photography</li>
+                                    <li><a href="">portraits</a></li>
+                                    <li><a href="">filter</a></li>
+                                    <li><a href="">column grids with filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">film</a>
+                                <ul class="sub-menu">
+                                    <li>film</li>
+                                    <li><a href="">tape</a></li>
+                                    <li><a href="">filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">behind the scenes</a>
+                                <ul class="sub-menu">
+                                    <li>backstory</li>
+                                    <li><a href="">behind the scenes</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">blog</a>
+                                <ul class="sub-menu">
+                                    <li>jay walkers' blog</li>
+                                    <li><a href="">blog</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">contact</a>
+                                <ul class="sub-menu">
+                                    <li>contact me</li>
+                                    <li><a href="">contact</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </gnb>
+    </header>
+
+    <section class="portrait_section">
+        <div class="portrait_wrapper">
+            <div class="portrait_gallery">
+                <ul class="portrait_list">
+                    <li>
+                      <div class="portrait_description">
+                        <h2>
+                            <span>portraits</span>
+                        </h2>
+                        <p>
+                          Sed tincidunt sed urna in rutrum. Phasellus magna metus, aliquam eget vulputate non, dictum eu nisl. Nullam dignissim magna sit amet diam consequat, at efficitur nulla porta. Donec nec metus blandit, vulputate ex vel, consectetur erat. Quisque libero metus, euismod id dapibus a, convallis id quam
+                          Donec nec metus blandit, vulputate ex vel, consectetur erat. Quisque libero metus, euismod id dapibus a, convallis id quam
+                        </p>
+                      </div>
+                    </li>
+                    <li style="left:60%">
+                        <a href=""><img src="../assets/image/bio1.png" alt=""></a>
+                        <div>
+                            <cite>angelina jolie. los angeles. american voggue. 2010</cite>
+                        </div>
+                    </li>
+                    <li style="left:120%">
+                        <a href=""><img src="../assets/image/bio2.png" alt=""></a>
+                        <div>
+                            <cite>angelina jolie. los angeles. american voggue. 2010</cite>
+                        </div>
+                    </li>
+                    <li style="left:180%">
+                        <a href=""><img src="../assets/image/bio3.png" alt=""></a>
+                        <div>
+                            <cite>angelina jolie. los angeles. american voggue. 2010</cite>
+                        </div>
+                    </li>
+                    <li class="second_last_pt" style="left:240%">
+                        <div class="next_up">
+                            <h3><a href="">next</a></h3>
+                            <span><a href="">next art work</a></span>
+                            <div class="social_text_list">
+                                <ul>
+                                    <li>
+                                        <span>follow jay walkers</span>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <span>instagram</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <span>facebook</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <span>twitter</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <span>youtube</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="last_pt" style="left:273%"></li>
+                </ul>
+            </div>
+            <!-- portrait_gallery -->
+            <div class="portrait_gallery_thumbnails">
+                <ul>
+                    <li>
+                        <div id="test">
+                            <a href=""><img src="../assets/image/bio1.png" alt=""></a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio2.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio3.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio4.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio5.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio4.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio3.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio2.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio1.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio1.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio2.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio3.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio4.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio5.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio4.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio3.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio2.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio1.png" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="../assets/image/bio1.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

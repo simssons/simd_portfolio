@@ -1,0 +1,111 @@
+  <script>
+    $(function(){
+
+          //백그라운드 포지션
+        $(document).on( "mousemove", function( event ) {
+            var x = event.pageX;
+            var y = event.pageY;
+            x *= -1;
+            y *= -1;
+            $('.footer_btn_bg').stop().css({
+             'background-position-x': x,
+             'background-position-y': y
+            });
+        })
+
+
+        var ulWidth = $('.footer_btn_bg ul').width();
+        $('.footer_btn_bg').css('width',ulWidth)
+
+        //hover&sprite
+
+        $('.footer_btn_bg li>div').hover(function(){
+            $(this).css('background-image', 'none');
+            $(this).siblings('.overlay').css('opacity', 1);
+            $('.bg_sprite').css('animation-name','runningSprite')
+
+        },function(){
+            $(this).css('background-image', '');
+            $(this).siblings('.overlay').css('opacity', '');
+        })
+
+    })
+  </script>
+      <footer>
+          <div class="footer_btn_holder">
+              <div class="footer_btn_bg">
+                  <ul>
+                      <li>
+                          <div class="instagram">
+                              <a href=""></a>
+                          </div>
+                          <div class="overlay">
+                            <div class="bg_sprite"></div>
+                            <div class="social_values">
+                              <span>follow jay</span>
+                            </div>
+                          </div>
+                          <span class="spacer"></span>
+                      </li>
+                      <li>
+                          <div class="facebook">
+                              <a href=""></a>
+                          </div>
+                          <div class="overlay">
+                            <div class="bg_sprite"></div>
+                            <div class="social_values">
+                              <span>follow jay</span>
+                            </div>
+                          </div>
+                          <span class="spacer"></span>
+                      </li>
+                      <li>
+                          <div class="twitter">
+                              <a href=""></a>
+                          </div>
+                          <div class="overlay">
+                            <div class="bg_sprite"></div>
+                            <div class="social_values">
+                              <span>follow jay</span>
+                            </div>
+                          </div>
+                          <span class="spacer"></span>
+                      </li>
+                      <li>
+                          <div class="youtube">
+                              <a href=""></a>
+                          </div>
+                          <div class="overlay">
+                            <div class="bg_sprite"></div>
+                            <div class="social_values">
+                              <span>follow jay</span>
+                            </div>
+                          </div>
+                          <span class="spacer"></span>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="footer_bottom">
+              <ul class="footer_links">
+                  <li>
+                      <a href="">&#169; jay walkers</a>
+                  </li>
+                  <li>
+                      <a href="">contact</a>
+                  </li>
+                  <li>
+                      <a href="">about</a>
+                  </li>
+                  <li>
+                      <a href="">blog</a>
+                  </li>
+                  <li>
+                      <a href="">terms &#38; conditions</a>
+                  </li>
+                  <li>
+                      <a href="">top</a>
+                  </li>
+              </ul>
+          </div>
+      </footer>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" class="indexHtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../vendor/jQuery/dist/jquery.min.js"></script>
+    <script src="../assets/JavaScript/common.js"></script>
+    <title>Document</title>
+</head>
+<script>
+    $(function(){
+
+
+        var mainSlideArray = [];
+        var img_video_src;
+
+        $('.slide_contents li').each(function(i){
+
+          img_video_src += $('.slide_contents li').eq(i).find('.img_video').attr('src')
+
+          mainSlideArray.push(img_video_src)
+
+        })
+        console.log(img_video_src);
+        console.log(mainSlideArray);
+
+    })
+
+</script>
+<body class="indexBody">
+    <header>
+            <gnb>
+                <div class="gnb-inner">
+                    <div class="menu">
+                        <a href="">
+                            <span>menu</span>
+                        </a>
+                    </div>
+                    <div class="share">
+                        <a href="">
+                            <span>share</span>
+                        </a>
+                    </div>
+                    <div class="h1">
+                        <h1 id="btsH00">
+                            <a href="">
+                              <span>jaywalkers</span>
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+                <div class="menu-main-menu-container" style="background-image:url(../assets/image/main-menu-colored.png); background-size:cover">
+                    <!-- includes할 때, gnb,footer 등에서의 html 경로 설정은 index파일을 기준으로 함.  -->
+                    <div class="menu-main-menu">
+                        <ul class="menu-main-menu-ul">
+                            <li class="fifty">
+                                <a href="">about</a>
+                                <ul class="sub-menu">
+                                    <li>about</li>
+                                    <li><a href="">biography</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">photography</a>
+                                <ul class="sub-menu">
+                                    <li>photography</li>
+                                    <li><a href="">portraits</a></li>
+                                    <li><a href="">filter</a></li>
+                                    <li><a href="">column grids with filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">film</a>
+                                <ul class="sub-menu">
+                                    <li>film</li>
+                                    <li><a href="">tape</a></li>
+                                    <li><a href="">filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">behind the scenes</a>
+                                <ul class="sub-menu">
+                                    <li>backstory</li>
+                                    <li><a href="">behind the scenes</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">blog</a>
+                                <ul class="sub-menu">
+                                    <li>jay walkers' blog</li>
+                                    <li><a href="">blog</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">contact</a>
+                                <ul class="sub-menu">
+                                    <li>contact me</li>
+                                    <li><a href="">contact</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </gnb>
+    </header>
+
+    <section class="indexSection">
+        <div class="slide_wrapper">
+            <div class="main_slide">
+              <div class="slide_contents">
+                  <div class="mouseListener">
+                      <ul>
+                          <li>
+                              <a href="">
+                                  <video autoplay loop height="100%">
+                                      <source src="../assets/video/video_shadow.webm" type="video/mp4"/>
+                                  </video>
+                              </a>
+                          </li>
+                          <li>
+                              <a href=""><img src="../assets/image/main_1.png" alt=""></a>
+                          </li>
+                          <li>
+                              <a href="">
+                                  <video autoplay loop height="100%">
+                                      <source src="../assets/video/video_staring.webm" type="video/mp4"/>
+                                  </video>
+                              </a>
+                          </li>
+                          <li>
+                              <a href=""><img src="../assets/image/main_2.png" alt=""></a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="title_bar">
+                <h2>
+                  <a href="">
+                    <span>PORTRAITS</span>
+                    <cite>kendall jenner limited edition print</cite>
+                  </a>
+                </h2>
+              </div>
+              <div class="left_area"></div>
+              <div class="right_area"></div>
+            </div><!-- .main_slide -->
+            <div class="scroll_down_arrow_wrapper">
+              <div></div>
+            </div>
+        </div> <!-- slide_wrapper -->
+        <!-- slide_wrapper -->
+
+        <div class="news_feed_wrapper">
+            <h2>news feed</h2>
+            <div class="news_feed_contents_wrapper">
+                <div class="news_feed_dot">•</div>
+                <div class="news_feed_vertical_line"></div>
+                <div class="column_wrapper">
+                    <div class="column_left">
+                        <ul>
+                            <li>
+                                <div class="column_news_box_left">
+                                    <div class="column_left_image">
+                                        <a href="">
+                                            <img src="../assets/image/v1.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="column_left_text">
+                                        <div class="column_upper_text">
+                                            <a href="">
+                                                instagram
+                                            </a>
+                                            ,a month ago
+                                        </div>
+                                        <div class="column_hashtag">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Morbi faucibus tristique porttitor.
+                                                #jaywalkers @jawalkers
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="column_news_box_left">
+                                    <div class="column_left_image">
+                                        <a href="">
+                                            <img src="../assets/image/h1.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="column_left_text">
+                                        <div class="column_upper_text">
+                                            <a href="">
+                                                instagram
+                                            </a>
+                                            ,a month ago
+                                        </div>
+                                        <div class="column_hashtag">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Morbi faucibus tristique porttitor.
+                                                #jaywalkers @jawalkers
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!-- column_left -->
+                    <div class="column_right">
+                        <ul>
+                            <li>
+                                <div class="column_news_box_right">
+                                    <div class="column_right_image">
+                                        <a href="">
+                                            <img src="../assets/image/v2.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="column_right_text">
+                                        <div class="column_upper_text">
+                                            <a href="">
+                                                instagram
+                                            </a>
+                                            ,a month ago
+                                        </div>
+                                        <div class="column_hashtag">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Morbi faucibus tristique porttitor.
+                                                #jaywalkers @jawalkers
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="column_news_box_right">
+                                    <div class="column_right_image">
+                                        <a href="">
+                                            <img src="../assets/image/h2.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="column_right_text">
+                                        <div class="column_upper_text">
+                                            <a href="">
+                                                instagram
+                                            </a>
+                                            ,a month ago
+                                        </div>
+                                        <div class="column_hashtag">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Morbi faucibus tristique porttitor.
+                                                #jaywalkers @jawalkers
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!-- column_wrapper -->
+            </div>
+            <!-- news_feed_contents_wrapper -->
+            <div class="clear"></div>
+            <div class="load_more">
+                <h3>
+                    <a href="">load more</a>
+                </h3>
+            </div>
+        </div>
+        <!-- news_feed_wrapper -->
+    </section>
+</body>
+</html>

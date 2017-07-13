@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../vendor/jQuery/dist/jquery.min.js"></script>
+    <script src="../assets/JavaScript/common.js"></script>
+    <title>BehindTheScenes</title>
+    <script>
+    // window.addEventListener("beforeunload", function (event) {
+    //   event.returnValue = "\o/";
+    // });
+    //
+    // // is equivalent to
+    // window.addEventListener("beforeunload", function (event) {
+    //   event.preventDefault();
+    // });
+
+    $(document).ready(function(){
+
+        // 기본 height
+        var windowInnerHeight = function(){
+            $('section').each(function(){
+                 $(this).css('height',window.innerHeight)
+            })
+        }
+        windowInnerHeight()
+        $(window).resize(function(){ windowInnerHeight();})
+
+
+    //스크롤
+      var btsSpot = [];
+
+      $('.bts_body section').each(function(i){
+        btsSpot.push($(this).offset().top)
+        console.log(btsSpot);
+      })
+
+      //스크롤 시 변화할 텍스트 복사해두기
+        $('body.bts_body .gnb-inner .h1').append('<h1 id="btsH01"><ul><li><a href="">intro</a></li><li><a href="">section1</a></li><li><a href="">section2</a></li><li><a href="">section3</a></li></ul></h1>')
+        var gnbH00 = $('body.bts_body .gnb-inner #btsH00').clone();
+        var gnbH01 = $('body.bts_body .gnb-inner #btsH01').clone();
+        $('body.bts_body .gnb-inner #btsH00').detach();
+        $('body.bts_body .gnb-inner #btsH01').detach();
+
+        // append를 이용해서 생긴 html요소에는 바로 이벤트를 줄 수 없으므로
+        // body를 다시 타고 들어가면 된다.
+        // $('body').on('click','.close',function(){
+        //      $('.blind').fadeOut(function(){
+        //          $(this).remove();
+        //      });
+        //      $('.popwrap').fadeOut();
+        //      })
+var twoToOne = 2;
+        var scrollspy = function(event){
+            var sct = $(this).scrollTop();
+            console.log(sct);
+            //내려가면
+            if (sct > (window.innerHeight-125)) {
+                $('body.bts_body .gnb-inner #btsH00').detach();
+                $('body.bts_body .gnb-inner div.h1').append(gnbH01);
+                $('body.bts_body header').css('background-color','#FFF').find('.gnb-inner div a').css('color','#000');
+                $('body.bts_body .gnb-inner div.h1 li a').css('color','#b8b8b8');
+                $('body.bts_body .gnb-inner div.h1 li.onColor a').css('color','#000')
+            }//올라오면
+            else if (sct < (window.innerHeight-125)) {
+                $('body.bts_body .gnb-inner #btsH01').detach();
+                $('.gnb-inner div.h1').append(gnbH00);
+                $('body.bts_body header').css('background-color','').find('.gnb-inner div a').css('color','');
+                $('body.bts_body .gnb-inner div.h1 li.onColor a').css('color','')
+            }
+
+            //매번 위치 비교해서  gnb텍스트에 해당 위치 표시하기
+            $('.bts_body section').each(function(i){
+              var a  = sct > btsSpot[i]-90; //초과
+              var b = sct < btsSpot[i] + $(this).height()-90; //미만
+                  //그 사이에 있고 on 이 없으면
+                  if( a && b && !$(this).is('.onColor')){
+                    $(this).addClass('onColor').siblings().removeClass('onColor');
+                    $(this).parent('.bts_wrapper').siblings('header').find('#btsH01 li')
+                    .eq(i).addClass('onColor').siblings().removeClass('onColor');
+                  }
+            })
+
+            var scdLastOffSet = 0;
+
+            scdLastOffSet += btsSpot[btsSpot.length-2];
+            scdLastOffSet += $('section:eq(3)').height()/3*2;
+
+            if (sct>btsSpot[btsSpot.length-2] && sct<scdLastOffSet ) {
+                if (twoToOne != 1) {
+                    twoToOne -= 0.25;
+                    $('.bts_contents_img img').css('transform','scale('+twoToOne+')')
+                }
+            }else if (sct>scdLastOffSet ){
+              twoToOne = 1;
+              $('.bts_contents_img img').css('transform','scale('+twoToOne+')')
+            }else if (sct<btsSpot[btsSpot.length-2]) {
+              twoToOne = 2;
+              $('.bts_contents_img img').css('transform','scale('+twoToOne+')')
+            }
+
+        }
+
+        $(window).on('mousewheel DOMMouseScroll',function(e){
+            scrollspy(e)
+        })
+
+        //초기에 메인하나만뜨게
+        $(window).trigger( "scroll" );
+
+        //스크롤할 때마다 안달아 주면, intro눌러서 맨 위로 간뒤 remove()되면 걸렸던 이벤트가 풀림.
+        //그러면 detach()를 쓰면 된다. 이벤트 여전히 남아있음.
+        $('body.bts_body #btsH01 li a').on('click', function(event){
+            event.preventDefault();
+            var idx = $(this).parent('li').index();
+            console.log(idx);
+            console.log('ㅇㅇ');
+            $('html,body').stop().animate({
+                'scrollTop':btsSpot[idx]+1
+            },400)}
+        )
+
+        $('#downward_arrow').on('click',function(event){
+            event.preventDefault();
+            $('html,body').stop().animate({ 'scrollTop':btsSpot[1]},400)
+        })
+
+
+        //text스크롤 시 사진변경
+        var textHeight = $('#text_move').height();
+
+        var textWheelF = function(st,th){
+            var $div = $('.photo_contents>div');
+
+            var condition = function(a,b){
+              if (a==b) {
+                $div.eq(a).css('display','inline-block')
+                $div.eq(a).siblings().css('display','none')
+              }
+            }
+            $div.each(function(i,e){
+            if (st <= th/4 ) {
+                condition(i,0);
+            }else if (st >= th/4 && st <= th/4*2) {
+                condition(i,1);
+            }else if (st >= th/4*2 ) {
+                condition(i,2);
+              }
+            })
+        }
+        //DOMMouseScroll fire fox
+
+        $('#text_move').on('mousewheel DOMMouseScroll',function(e){
+            var sct = $(this).scrollTop();
+            $('#text_move').css('height','100%');
+            textWheelF(sct,textHeight)
+        })
+    })
+    </script>
+</head>
+<body class="bts_body">
+    <header>
+            <gnb>
+                <div class="gnb-inner">
+                    <div class="menu">
+                        <a href="">
+                            <span>menu</span>
+                        </a>
+                    </div>
+                    <div class="share">
+                        <a href="">
+                            <span>share</span>
+                        </a>
+                    </div>
+                    <div class="h1">
+                        <h1 id="btsH00">
+                            <a href="">
+                              <span>jaywalkers</span>
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+                <div class="menu-main-menu-container" style="background-image:url(../assets/image/main-menu-colored.png); background-size:cover">
+                    <!-- includes할 때, gnb,footer 등에서의 html 경로 설정은 index파일을 기준으로 함.  -->
+                    <div class="menu-main-menu">
+                        <ul class="menu-main-menu-ul">
+                            <li class="fifty">
+                                <a href="">about</a>
+                                <ul class="sub-menu">
+                                    <li>about</li>
+                                    <li><a href="">biography</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">photography</a>
+                                <ul class="sub-menu">
+                                    <li>photography</li>
+                                    <li><a href="">portraits</a></li>
+                                    <li><a href="">filter</a></li>
+                                    <li><a href="">column grids with filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">film</a>
+                                <ul class="sub-menu">
+                                    <li>film</li>
+                                    <li><a href="">tape</a></li>
+                                    <li><a href="">filter</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">behind the scenes</a>
+                                <ul class="sub-menu">
+                                    <li>backstory</li>
+                                    <li><a href="">behind the scenes</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">blog</a>
+                                <ul class="sub-menu">
+                                    <li>jay walkers' blog</li>
+                                    <li><a href="">blog</a></li>
+                                </ul>
+                            </li>
+                            <li class="fifty">
+                                <a href="">contact</a>
+                                <ul class="sub-menu">
+                                    <li>contact me</li>
+                                    <li><a href="">contact</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </gnb>
+    </header>
+
+<div class="bts_wrapper">
+    <section class="BehindTheScenes00">
+        <div class="slide_wrapper">
+            <div class="main_slide">
+              <div class="slide_contents"></div>
+              <div class="bts_title">
+                  <h2>Gateway to Egypt</h2>
+              </div>
+              <div class="left_area"></div>
+              <div class="right_area"></div>
+            </div><!-- .main_slide -->
+            <div class="scroll_down_arrow_wrapper">
+              <a href="" id="downward_arrow"></a>
+            </div>
+        </div> <!-- slide_wrapper -->
+        <!-- slide_wrapper -->
+    </section>
+    <section class="BehindTheScenes01">
+        <div class="contents_wrapper">
+            <div class="bts_left">
+                <div class="text_contents">
+                    <div id="text_move">
+                        <h3>Lorem ipsum</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget mi sodales, ultricies eros id, scelerisque mauris. Maecenas bibendum diam sed massa lacinia porta. Nam pulvinar mollis tempus. Sed egestas, eros sed laoreet tempor, nibh felis faucibus est, vel pulvinar urna enim id felis. </p>
+                        <p>Aenean id faucibus tellus. In vel tellus quis dolor congue fringilla. In hac habitasse platea dictumst. Morbi nisl nulla, fringilla quis vulputate et, bibendum non tellus. Morbi dapibus ipsum vitae odio interdum vestibulum. Sed tincidunt risus quis odio ornare, nec maximus sapien ullamcorper. Phasellus non velit nulla. Vestibulum ut maximus nisl. Donec pretium finibus lacus sed auctor. Aenean egestas rhoncus tristique. </p>
+                        <p>Sed eu venenatis dolor, eu tristique sem. Morbi mollis enim ut mi euismod, vitae tempus metus ullamcorper.</p>
+                        <p>Duis luctus augue a mi lobortis, vel condimentum enim elementum. Praesent mauris lectus, efficitur eget felis eu, tempus mollis justo. Duis consectetur quam dapibus, elementum nulla nec, pharetra purus. Donec id eros at nibh pretium aliquet non id justo. Vivamus blandit faucibus turpis, vel tempor nisi ullamcorper nec. Etiam accumsan est lectus, ut rhoncus nibh volutpat eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        <p>Nam lacinia purus interdum, pretium lacus nec, suscipit elit. Nunc rhoncus est ac suscipit imperdiet. Vestibulum malesuada iaculis erat, at tempus tortor placerat at.</p></p>
+                        <p>Vestibulum lobortis sagittis elit, sed pulvinar augue tincidunt non. Fusce dapibus leo quis ipsum vulputate convallis. Curabitur a lacus vestibulum, sodales nisl non, eleifend eros. Suspendisse quis nunc sem. Mauris fringilla nibh vitae felis rutrum, in accumsan est lobortis. Praesent ut auctor ex, vitae cursus purus. Duis tincidunt sodales est, et feugiat nulla aliquam sed. Etiam at congue elit.</p>
+                        <p>Cras dolor arcu, molestie a ex et, placerat sodales ante. Curabitur sit amet turpis viverra, imperdiet justo non, venenatis elit. Sed porta placerat ex a bibendum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In ut pellentesque nisi. Etiam elementum gravida interdum. Phasellus sagittis sem ipsum, in gravida risus accumsan sed. </p>
+                        <p>Etiam ligula turpis, placerat non diam vitae, cursus semper mauris. Sed auctor pulvinar ipsum, vel vulputate enim sodales in.</p>
+                        <p>Aenean id faucibus tellus. In vel tellus quis dolor congue fringilla. In hac habitasse platea dictumst. Morbi nisl nulla, fringilla quis vulputate et, bibendum non tellus. Morbi dapibus ipsum vitae odio interdum vestibulum. Sed tincidunt risus quis odio ornare, nec maximus sapien ullamcorper. Phasellus non velit nulla. Vestibulum ut maximus nisl. Donec pretium finibus lacus sed auctor. Aenean egestas rhoncus tristique. </p>
+                        <p>Sed eu venenatis dolor, eu tristique sem. Morbi mollis enim ut mi euismod, vitae tempus metus ullamcorper.</p>
+                        <p>Duis luctus augue a mi lobortis, vel condimentum enim elementum. Praesent mauris lectus, efficitur eget felis eu, tempus mollis justo. Duis consectetur quam dapibus, elementum nulla nec, pharetra purus. Donec id eros at nibh pretium aliquet non id justo. Vivamus blandit faucibus turpis, vel tempor nisi ullamcorper nec. Etiam accumsan est lectus, ut rhoncus nibh volutpat eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        <p>Nam lacinia purus interdum, pretium lacus nec, suscipit elit. Nunc rhoncus est ac suscipit imperdiet. Vestibulum malesuada iaculis erat, at tempus tortor placerat at.</p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="bts_right">
+                <div class="photo_contents">
+                  <div class="photo_1">
+                    <a href="">
+                      <img src="../assets/image/bts_article00.png" alt="">
+                      <cite>an elder egyptian</cite>
+                    </a>
+                  </div>
+                  <div class="photo_2">
+                    <a href="">
+                      <img src="../assets/image/bts_article01.png" alt="">
+                      <cite>hope in the darkness</cite>
+                    </a>
+                  </div>
+                  <div class="photo_2">
+                    <a href="">
+                        <img src="../assets/image/bts_article02.png" alt="">
+                        <cite>leaving egypt</cite>
+                    </a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="BehindTheScenes02">
+        <div class="contents_wrapper">
+          <div class="bts_title">
+            <h2>heritage of egypt</h2>
+          </div>
+        </div>
+    </section>
+    <section class="BehindTheScenes03">
+        <div class="contents_wrapper">
+          <div class="bts_title">
+              <h2>Symbol of a nation</h2>
+          </div>
+        </div>
+        <div class="bts_contents_img">
+          <img src="../assets/image/bts_sec04.png" alt="">
+        </div>
+    </section>
+
+</div><!-- bts_wrapper -->
+  <script>
+    $(function(){
+
+          //백그라운드 포지션
+        $(document).on( "mousemove", function( event ) {
+            var x = event.pageX;
+            var y = event.pageY;
+            x *= -1;
+            y *= -1;
+            $('.footer_btn_bg').stop().css({
+             'background-position-x': x,
+             'background-position-y': y
+            });
+        })
+
+
+        var ulWidth = $('.footer_btn_bg ul').width();
+        $('.footer_btn_bg').css('width',ulWidth)
+
+        //hover&sprite
+
+        $('.footer_btn_bg li>div').hover(function(){
+            $(this).css('background-image', 'none');
+            $(this).siblings('.overlay').css('opacity', 1);
+            $('.bg_sprite').css('animation-name','runningSprite')
+
+        },function(){
+            $(this).css('background-image', '');
+            $(this).siblings('.overlay').css('opacity', '');
+        })
+
+    })
+  </script>
+      <footer>
+          <div class="footer_btn_holder">
+              <div class="footer_btn_bg">
+                  <ul>
+                      <li>
+                          <div class="instagram">
+                              <a href=""></a>
+                          </div>
+                          <div class="overlay">
+                            <div class="bg_sprite"></div>
+                            <div class="social_values">
+                              <span>follow jay</span>
+                            </div>
+                          </div>
+                          <span class="spacer"></span>
+                      </li>
+                      <li>
+                          <div class="facebook">
+                              <a href=""></a>
+                          </div>
+                          <div class="overlay">
+                            <div class="bg_sprite"></div>
+                            <div class="social_values">
+                              <span>follow jay</span>
+                            </div>
+                          </div>
+                          <span class="spacer"></span>
+                      </li>
+                      <li>
+                          <div class="twitter">
+                              <a href=""></a>
+                          </div>
+                          <div class="overlay">
+                            <div class="bg_sprite"></div>
+                            <div class="social_values">
+                              <span>follow jay</span>
+                            </div>
+                          </div>
+                          <span class="spacer"></span>
+                      </li>
+                      <li>
+                          <div class="youtube">
+                              <a href=""></a>
+                          </div>
+                          <div class="overlay">
+                            <div class="bg_sprite"></div>
+                            <div class="social_values">
+                              <span>follow jay</span>
+                            </div>
+                          </div>
+                          <span class="spacer"></span>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="footer_bottom">
+              <ul class="footer_links">
+                  <li>
+                      <a href="">&#169; jay walkers</a>
+                  </li>
+                  <li>
+                      <a href="">contact</a>
+                  </li>
+                  <li>
+                      <a href="">about</a>
+                  </li>
+                  <li>
+                      <a href="">blog</a>
+                  </li>
+                  <li>
+                      <a href="">terms &#38; conditions</a>
+                  </li>
+                  <li>
+                      <a href="">top</a>
+                  </li>
+              </ul>
+          </div>
+      </footer>
+
+
+</body>
+</html>
