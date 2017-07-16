@@ -38,11 +38,38 @@ section.indexSection{
     top: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../image/main_2.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    // background-image: url('../image/main_2.png');
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // background-position: center;
+    // background-attachment: fixed;
+    .visualOn{
+      display: block !important;
+    }
+    .slideDisplay00, .slideDisplay01{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      a{
+        display: block;
+        border: 0px #F00 solid;
+        height: 100%;
+        width: 100%;
+      }
+      img{
+        width: 100%;
+        position: fixed;
+        top:0;
+        left:0;
+      }
+      video{
+        position: fixed;
+        top:0;
+        left:0;
+      }
+    }
 }
 
 .mouseListener{

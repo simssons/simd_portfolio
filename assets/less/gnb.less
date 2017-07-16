@@ -34,6 +34,49 @@ header {
             display:block;
             padding-right: 36px;
             line-height: 90px;
+            position: relative;
+            ul{
+              height: 100%;
+              width: 100px;
+              visibility: hidden;
+              position: absolute;
+              top: 0;
+              right: 10px;
+              .share_facebook{
+                background-image: url(../image/facebook-icon-white.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+              }
+              .share_twitter{
+                background-image: url(../image/twitter-icon-white.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+              }
+              .share_google_plus{
+                background-image: url(../image/g-plus-icon-white.svg);
+                background-repeat: no-repeat;
+                background-position: center;
+              }
+              li{
+                height: 100%;
+                width: 26px;
+                float: left;
+                &:hover{
+                  opacity: 0.5;
+                }
+                a{
+                  display: block;
+                  height: 100%;
+                  width: auto;
+                }
+              }
+            }
+            &:hover .share_letter{
+              visibility: hidden;
+            }
+            &:hover .social_media_share{
+              visibility: visible;
+            }
         }
         div.h1{
             text-align: center;
@@ -42,7 +85,7 @@ header {
                 width: auto;
                 line-height: 90px;
                 font-size: 15px;
-                font-weight: 900;               
+                font-weight: 900;
             }
         }
     }// gnb-inner

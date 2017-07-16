@@ -22,33 +22,53 @@
         })
 
 
-        //slide
+        //slide setup
         var mainSlideArray = [];
-        var img_video_src;
-
+        var img_video_src = [];
+        var slicer = [];
+        var $img_video = $('.slide_contents li .img_video');
         $('.slide_contents li').each(function(i){
-          img_video_src += $('.slide_contents li').eq(i).find('.img_video').attr('src');
-          mainSlideArray.push(img_video_src);
+          img_video_src[i] += $('.slide_contents li').eq(i).find($img_video).attr('src');
+          slicer[i] = img_video_src[i].slice(9)
+        })
+        console.log(slicer);
+
+        //초기 랜덤값
+        var randomSlide = Math.floor(Math.random()*slicer.length);
+
+        //초기 회면표시 & list밝기
+        function slideMove(randomSlide,slideDisplayNu){
+          var contentsHTML = $('.mouseListener li:eq('+randomSlide+') a').html();
+          $('.mouseListener li:eq('+randomSlide+')').find('.brighter').css('opacity', '1');
+          $('.slideDisplay00 a').animate({'left':'-100%'},300);
+          $('.slideDisplay01 a').html(contentsHTML).css('left','100%').animate({'left':'0%'},300);
+        }
+        slideMove();
+
+        var idx = randomSlide;
+        $('.right_area').on('click',function(){
+          idx++;
+          slideMove(idx);
+
+
         })
 
+        //loading
         $(window).scroll(function(){
             var innerHeight = window.innerHeight;
             var sct = $(this).scrollTop();
             var totallheight = $('body.indexBody').height();
             console.log(sct);
             console.log(totallheight);
-            if ((totallheight-sct)==innerHeight) {
+            console.log(totallheight-sct);
+            console.log(innerHeight);
+            if ((totallheight-sct)<innerHeight) {
                 console.log('ㅇ');
                 // 인스타를부르자
-
             }
-
         })
 
-
-
     })
-
 </script>
 <body class="indexBody">
     <header>
@@ -60,14 +80,31 @@
                         </a>
                     </div>
                     <div class="share">
-                        <a href="">
+                        <a href="" class="share_letter">
                             <span>share</span>
                         </a>
+                        <ul class="social_media_share">
+                          <li class="share_facebook">
+                            <a href="">
+                              <span class="ir">share_facebook</span>
+                            </a>
+                          </li>
+                          <li class="share_twitter">
+                            <a href="">
+                              <span class="ir">share_twitter</span>
+                            </a>
+                          </li>
+                          <li class="share_google_plus">
+                            <a href="">
+                              <span class="ir">share_google_plus</span>
+                            </a>
+                          </li>
+                        </ul>
                     </div>
                     <div class="h1">
                         <h1 id="btsH00">
                             <a href="">
-                              <span>jaywalkers</span>
+                              <span>jaywalkers &hearts;</span>
                             </a>
                         </h1>
                     </div>
@@ -131,31 +168,40 @@
         <div class="slide_wrapper">
             <div class="main_slide">
               <div class="slide_contents">
-                  <div class="mouseListener">
-                      <ul>
-                          <li>
-                              <a href="">
-                                  <video autoplay loop height="100%">
-                                      <source src="../assets/video/video_shadow.webm" type="video/mp4"/>
-                                  </video>
-                              </a>
-                          </li>
-                          <li>
-                              <a href=""><img src="../assets/image/main_1.png" alt=""></a>
-                          </li>
-                          <li>
-                              <a href="">
-                                  <video autoplay loop height="100%">
-                                      <source src="../assets/video/video_staring.webm" type="video/mp4"/>
-                                  </video>
-                              </a>
-                          </li>
-                          <li>
-                              <a href=""><img src="../assets/image/main_2.png" alt=""></a>
-                          </li>
-                      </ul>
-                  </div>
-              </div>
+                <div class="slideDisplay00">
+                  <a href=""></a>
+                </div>
+                <div class="slideDisplay01">
+                  <a href=""></a>
+                </div>
+                <div class="mouseListener">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <video autoplay loop height="100%" class="brighter">
+                                    <source src="../assets/video/video_shadow.webm" class="img_video" type="video/mp4"/>
+                                </video>
+                            </a>
+                        </li>
+                        <li>
+                            <a href=""><img src="../assets/image/main_1.png" class="img_video brighter"  alt=""></a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <video autoplay loop height="100%" class="brighter">
+                                    <source src="../assets/video/video_staring.webm" class="img_video" type="video/mp4"/>
+                                </video>
+                            </a>
+                        </li>
+                        <li>
+                            <a href=""><img src="../assets/image/main_2.png" class="img_video brighter"  alt=""></a>
+                        </li>
+                        <li>
+                            <a href=""><img src="../assets/image/main_3.png" class="img_video brighter"  alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+              </div><!-- slide_contents -->
               <div class="title_bar">
                 <h2>
                   <a href="">

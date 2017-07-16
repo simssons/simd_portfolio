@@ -79,12 +79,64 @@ header {
   display: block;
   padding-right: 36px;
   line-height: 90px;
+  position: relative;
 }
 /* line 38, assets\less\gnb.less */
+.gnb-inner div.share ul {
+  height: 100%;
+  width: 100px;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+/* line 45, assets\less\gnb.less */
+.gnb-inner div.share ul .share_facebook {
+  background-image: url(../image/facebook-icon-white.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 50, assets\less\gnb.less */
+.gnb-inner div.share ul .share_twitter {
+  background-image: url(../image/twitter-icon-white.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 55, assets\less\gnb.less */
+.gnb-inner div.share ul .share_google_plus {
+  background-image: url(../image/g-plus-icon-white.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 60, assets\less\gnb.less */
+.gnb-inner div.share ul li {
+  height: 100%;
+  width: 26px;
+  float: left;
+}
+/* line 64, assets\less\gnb.less */
+.gnb-inner div.share ul li:hover {
+  opacity: 0.5;
+}
+/* line 67, assets\less\gnb.less */
+.gnb-inner div.share ul li a {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+/* line 74, assets\less\gnb.less */
+.gnb-inner div.share:hover .share_letter {
+  visibility: hidden;
+}
+/* line 77, assets\less\gnb.less */
+.gnb-inner div.share:hover .social_media_share {
+  visibility: visible;
+}
+/* line 81, assets\less\gnb.less */
 .gnb-inner div.h1 {
   text-align: center;
 }
-/* line 40, assets\less\gnb.less */
+/* line 83, assets\less\gnb.less */
 .gnb-inner div.h1 h1 {
   display: inline-block;
   width: auto;
@@ -92,7 +144,7 @@ header {
   font-size: 15px;
   font-weight: 900;
 }
-/* line 50, assets\less\gnb.less */
+/* line 93, assets\less\gnb.less */
 .menu-main-menu-container {
   display: none;
   width: 100%;
@@ -102,18 +154,18 @@ header {
   padding-top: 90px;
   z-index: 1;
 }
-/* line 58, assets\less\gnb.less */
+/* line 101, assets\less\gnb.less */
 .menu-main-menu-container div.menu-main-menu {
   height: 100%;
   width: 100%;
 }
-/* line 61, assets\less\gnb.less */
+/* line 104, assets\less\gnb.less */
 .menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul {
   font-size: 0;
   height: 100%;
   text-align: center;
 }
-/* line 65, assets\less\gnb.less */
+/* line 108, assets\less\gnb.less */
 .menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty {
   box-sizing: border-box;
   display: inline-block;
@@ -123,7 +175,7 @@ header {
   border-right: 0.5px rgba(255, 255, 255, 0.3) solid;
   border-top: 0.5px rgba(255, 255, 255, 0.3) solid;
 }
-/* line 73, assets\less\gnb.less */
+/* line 116, assets\less\gnb.less */
 .menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty > a {
   display: block;
   position: relative;
@@ -132,53 +184,53 @@ header {
   top: 48%;
   letter-spacing: 2px;
 }
-/* line 80, assets\less\gnb.less */
+/* line 123, assets\less\gnb.less */
 .menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty:hover {
   background-color: #FFF;
 }
-/* line 82, assets\less\gnb.less */
+/* line 125, assets\less\gnb.less */
 .menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty:hover > a {
   opacity: 0;
   pointer-events: none;
 }
-/* line 86, assets\less\gnb.less */
+/* line 129, assets\less\gnb.less */
 .menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty:hover ul.sub-menu {
   letter-spacing: 0.15em;
 }
-/* line 89, assets\less\gnb.less */
+/* line 132, assets\less\gnb.less */
 .menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty:hover ul.sub-menu li a {
   color: #BBB;
 }
-/* line 91, assets\less\gnb.less */
+/* line 134, assets\less\gnb.less */
 .menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty:hover ul.sub-menu li a:hover {
   transition: color 0.2s;
   color: #5b5b5b;
 }
-/* line 97, assets\less\gnb.less */
+/* line 140, assets\less\gnb.less */
 .menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul li.fifty:hover ul.sub-menu > li {
   font-weight: lighter;
   color: #222;
   transition: color 0.2s;
 }
-/* line 105, assets\less\gnb.less */
+/* line 148, assets\less\gnb.less */
 .menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul ul.sub-menu {
   position: absolute;
   top: 40%;
   width: 100%;
 }
-/* line 109, assets\less\gnb.less */
+/* line 152, assets\less\gnb.less */
 .menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul ul.sub-menu li:first-child {
   letter-spacing: 0.2em;
   color: transparent;
   font-size: 13px;
   margin-bottom: 20px;
 }
-/* line 115, assets\less\gnb.less */
+/* line 158, assets\less\gnb.less */
 .menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul ul.sub-menu li {
   width: 100%;
   padding: 2px;
 }
-/* line 118, assets\less\gnb.less */
+/* line 161, assets\less\gnb.less */
 .menu-main-menu-container div.menu-main-menu ul.menu-main-menu-ul ul.sub-menu li a {
   font-weight: lighter;
   letter-spacing: 0.15em;
@@ -229,13 +281,44 @@ section.indexSection {
   top: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../image/main_2.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
 }
-/* line 48, assets\less\index.less */
+/* line 46, assets\less\index.less */
+.main_slide .slide_contents .visualOn {
+  display: block !important;
+}
+/* line 49, assets\less\index.less */
+.main_slide .slide_contents .slideDisplay00,
+.main_slide .slide_contents .slideDisplay01 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 55, assets\less\index.less */
+.main_slide .slide_contents .slideDisplay00 a,
+.main_slide .slide_contents .slideDisplay01 a {
+  display: block;
+  border: 0px #F00 solid;
+  height: 100%;
+  width: 100%;
+}
+/* line 61, assets\less\index.less */
+.main_slide .slide_contents .slideDisplay00 img,
+.main_slide .slide_contents .slideDisplay01 img {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+/* line 67, assets\less\index.less */
+.main_slide .slide_contents .slideDisplay00 video,
+.main_slide .slide_contents .slideDisplay01 video {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+/* line 75, assets\less\index.less */
 .mouseListener {
   width: 100%;
   height: 50px;
@@ -244,11 +327,11 @@ section.indexSection {
   position: fixed;
   bottom: 140px;
 }
-/* line 55, assets\less\index.less */
+/* line 82, assets\less\index.less */
 .mouseListener:hover ul {
   transform: translateY(-51px);
 }
-/* line 59, assets\less\index.less */
+/* line 86, assets\less\index.less */
 .main_slide ul {
   width: 100%;
   position: relative;
@@ -259,20 +342,20 @@ section.indexSection {
   font-size: 0;
   transition: .5s ease;
 }
-/* line 70, assets\less\index.less */
+/* line 97, assets\less\index.less */
 .main_slide li {
   background-color: #FFF;
   cursor: pointer;
   display: inline-block;
 }
-/* line 77, assets\less\index.less */
+/* line 104, assets\less\index.less */
 .main_slide .slide_contents li > a {
   z-index: 2;
   display: inline-block;
   max-height: 50px;
   position: relative;
 }
-/* line 83, assets\less\index.less */
+/* line 110, assets\less\index.less */
 .main_slide .slide_contents li > a img {
   position: relative;
   height: 50px;
@@ -280,11 +363,11 @@ section.indexSection {
   opacity: .4;
   transition: .5s ease;
 }
-/* line 89, assets\less\index.less */
+/* line 116, assets\less\index.less */
 .main_slide .slide_contents li > a img:hover {
   opacity: 1;
 }
-/* line 93, assets\less\index.less */
+/* line 120, assets\less\index.less */
 .main_slide .slide_contents li > a video {
   position: relative;
   height: 50px;
@@ -293,11 +376,11 @@ section.indexSection {
   opacity: .4;
   transition: .5s ease;
 }
-/* line 100, assets\less\index.less */
+/* line 127, assets\less\index.less */
 .main_slide .slide_contents li > a video:hover {
   opacity: 1;
 }
-/* line 108, assets\less\index.less */
+/* line 135, assets\less\index.less */
 .title_bar {
   box-sizing: border-box;
   width: 100%;
@@ -306,7 +389,7 @@ section.indexSection {
   bottom: 50px;
   background-color: rgba(255, 255, 255, 0.92);
 }
-/* line 115, assets\less\index.less */
+/* line 142, assets\less\index.less */
 .title_bar h2 {
   line-height: 90px;
   letter-spacing: 0.2em;
@@ -314,16 +397,16 @@ section.indexSection {
   font-size: 15px;
   text-transform: uppercase;
 }
-/* line 122, assets\less\index.less */
+/* line 149, assets\less\index.less */
 .title_bar span {
   color: #0a0a0a;
 }
-/* line 125, assets\less\index.less */
+/* line 152, assets\less\index.less */
 .title_bar cite {
   color: #afafaf;
   font-style: normal;
 }
-/* line 131, assets\less\index.less */
+/* line 158, assets\less\index.less */
 .left_area {
   position: absolute;
   left: 0;
@@ -333,7 +416,7 @@ section.indexSection {
   height: 100%;
   cursor: w-resize;
 }
-/* line 140, assets\less\index.less */
+/* line 167, assets\less\index.less */
 .right_area {
   position: absolute;
   right: 0;
@@ -343,7 +426,7 @@ section.indexSection {
   height: 100%;
   cursor: w-resize;
 }
-/* line 149, assets\less\index.less */
+/* line 176, assets\less\index.less */
 .scroll_down_arrow_wrapper {
   position: relative;
   width: 100%;
@@ -352,7 +435,7 @@ section.indexSection {
   background-color: #FFF;
   z-index: 2;
 }
-/* line 156, assets\less\index.less */
+/* line 183, assets\less\index.less */
 .scroll_down_arrow_wrapper div {
   width: 80px;
   height: 55px;
@@ -366,7 +449,7 @@ section.indexSection {
   margin-left: -40px;
   opacity: 0.8;
 }
-/* line 178, assets\less\index.less */
+/* line 205, assets\less\index.less */
 .news_feed_wrapper {
   margin-top: -50px;
   padding: 75px 0 75px 0;
@@ -375,7 +458,7 @@ section.indexSection {
   z-index: 1;
   text-align: center;
 }
-/* line 186, assets\less\index.less */
+/* line 213, assets\less\index.less */
 .news_feed_wrapper h2 {
   margin-bottom: 70px;
   font-size: 12px;
@@ -383,14 +466,14 @@ section.indexSection {
   text-transform: uppercase;
   letter-spacing: 0.225em;
 }
-/* line 195, assets\less\index.less */
+/* line 222, assets\less\index.less */
 .news_feed_contents_wrapper {
   width: 1200px;
   margin: 0 auto;
   position: relative;
   height: 100%;
 }
-/* line 200, assets\less\index.less */
+/* line 227, assets\less\index.less */
 .news_feed_contents_wrapper .news_feed_vertical_line {
   position: absolute;
   top: 19px;
@@ -403,11 +486,11 @@ section.indexSection {
   bottom: 10px;
   z-index: 0;
 }
-/* line 214, assets\less\index.less */
+/* line 241, assets\less\index.less */
 .column_wrapper {
   height: 100%;
 }
-/* line 217, assets\less\index.less */
+/* line 244, assets\less\index.less */
 .column_wrapper .column_left {
   width: 600px;
   height: 100%;
@@ -415,7 +498,7 @@ section.indexSection {
   box-sizing: border-box;
   text-align: right;
 }
-/* line 224, assets\less\index.less */
+/* line 251, assets\less\index.less */
 .column_wrapper .column_right {
   width: 600px;
   height: 100%;
@@ -423,83 +506,83 @@ section.indexSection {
   box-sizing: border-box;
   text-align: left;
 }
-/* line 233, assets\less\index.less */
+/* line 260, assets\less\index.less */
 .column_news_box_left {
   padding-bottom: 50px;
   margin-bottom: 85px;
   margin-right: 60px;
 }
-/* line 238, assets\less\index.less */
+/* line 265, assets\less\index.less */
 .column_news_box_right {
   padding-bottom: 50px;
   margin-bottom: 85px;
   margin-left: 60px;
 }
-/* line 244, assets\less\index.less */
+/* line 271, assets\less\index.less */
 .column_left_image img {
   max-width: 540px;
   width: 95%;
 }
-/* line 250, assets\less\index.less */
+/* line 277, assets\less\index.less */
 .column_right_image img {
   max-width: 540px;
   width: 95%;
 }
-/* line 256, assets\less\index.less */
+/* line 283, assets\less\index.less */
 .column_left_text {
   margin-top: 25px;
   margin-left: 20px;
   letter-spacing: 0.125em;
 }
-/* line 260, assets\less\index.less */
+/* line 287, assets\less\index.less */
 .column_left_text .column_upper_text {
   color: #878787;
   font-size: 11px;
 }
-/* line 263, assets\less\index.less */
+/* line 290, assets\less\index.less */
 .column_left_text .column_upper_text a {
   text-transform: capitalize;
   color: #878787;
 }
-/* line 268, assets\less\index.less */
+/* line 295, assets\less\index.less */
 .column_left_text .column_hashtag {
   margin-top: 10px;
 }
-/* line 270, assets\less\index.less */
+/* line 297, assets\less\index.less */
 .column_left_text .column_hashtag p {
   text-transform: uppercase;
   font-size: 12px;
   color: #757575;
   line-height: 1.45em;
 }
-/* line 279, assets\less\index.less */
+/* line 306, assets\less\index.less */
 .column_right_text {
   margin-top: 25px;
   margin-right: 20px;
   letter-spacing: 0.125em;
 }
-/* line 283, assets\less\index.less */
+/* line 310, assets\less\index.less */
 .column_right_text .column_upper_text {
   color: #878787;
   font-size: 11px;
 }
-/* line 286, assets\less\index.less */
+/* line 313, assets\less\index.less */
 .column_right_text .column_upper_text a {
   text-transform: capitalize;
   color: #878787;
 }
-/* line 291, assets\less\index.less */
+/* line 318, assets\less\index.less */
 .column_right_text .column_hashtag {
   margin-top: 10px;
 }
-/* line 293, assets\less\index.less */
+/* line 320, assets\less\index.less */
 .column_right_text .column_hashtag p {
   text-transform: uppercase;
   font-size: 12px;
   color: #757575;
   line-height: 1.45em;
 }
-/* line 303, assets\less\index.less */
+/* line 330, assets\less\index.less */
 .load_more {
   width: 140px;
   height: 50px;
@@ -512,7 +595,7 @@ section.indexSection {
   overflow: hidden;
   box-sizing: border-box;
 }
-/* line 314, assets\less\index.less */
+/* line 341, assets\less\index.less */
 .load_more h3 {
   line-height: 50px;
   text-transform: uppercase;
