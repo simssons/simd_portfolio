@@ -37,19 +37,25 @@
         var randomSlide = Math.floor(Math.random()*slicer.length);
 
         //초기 회면표시 & list밝기
-        function slideMove(randomSlide,slideDisplayNu){
-          var contentsHTML = $('.mouseListener li:eq('+randomSlide+') a').html();
+        function slideMove(randomSlide){
+          var contentsHtml = $('.mouseListener li:eq('+randomSlide+') a').html();
+          var contentsHtmlNext = $('.mouseListener li:eq('+ (randomSlide+1) +') a').html();
+
           $('.mouseListener li:eq('+randomSlide+')').find('.brighter').css('opacity', '1');
-          $('.slideDisplay00 a').animate({'left':'-100%'},300);
-          $('.slideDisplay01 a').html(contentsHTML).css('left','100%').animate({'left':'0%'},300);
+
+          $('.slideDisplay00 a').html(contentsHtmlNext).css('left','0');
+          $('.slideDisplay01 a').html(contentsHtml).css('transform','translateX:500px');
+          console.log('ㅇ');
+
         }
-        slideMove();
+
+        slideMove(randomSlide);
 
         var idx = randomSlide;
         $('.right_area').on('click',function(){
+          slideMove(idx);
           idx++;
           slideMove(idx);
-
 
         })
 

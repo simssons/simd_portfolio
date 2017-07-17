@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="guide.css">
+
+    <script>
+
+
+        $(function(){
+
+            var url = location.href;
+            var urls = url.split("?");
+            urls = urls[1].split("=");
+            var sqe = Number(urls[1]);
+
+
+            $.get('data.json',function(c){
+                $('h2').text(c.list[sqe].name);
+                $('p').text(c.list[sqe].address);
+            })
+
+
+        })
+
+
+    </script>
+
+
+
+
+    <style>
+       body{
+           background-image: url(http://static.naver.net/newsstand/img/20121231/bg_bd.png);
+       }
+       header.layout{
+           border:1px #F00 solid;
+           height:56px;
+           background-image: url(http://static.naver.net/newsstand/img/20121231/bg_hd.png);
+           background-repeat:repeat-x;
+       }
+       header .newslogan{border:1px #F00 solid; width:100px;height:50px; float:left;}
+       header .site_option{border:1px #F00 solid; width:100px;height:50px; float:right;}
+       header .section_menu{border:1px #F00 solid; }
+
+       .wrapper{
+           width:936px;
+           height:540px;
+           margin:auto;
+           position:relative;
+       }
+       .controller-btn-group{
+           position:absolute;
+           width:100%;
+
+           top:50%;
+       }
+       .controller-btn-group button{
+           position:absolute;
+           top:-22px;
+       }
+       .controller-btn-group .icon-big-arrowL{
+           right:-22px;
+       }
+       .controller-btn-group .icon-big-arrowR{
+           left:-22px;
+       }
+       .news{
+           width:900px;
+           height:inherit;
+           border:1px #F00 solid;
+           background-image: url(http://static.naver.net/newsstand/img/20121231/bg_panel.png);
+           padding:0 18px;
+           background-repeat: no-repeat;
+           background-position: center 0;
+       }
+
+       .news header{
+           height:111px;
+           outline:1px #F00 solid;
+           margin-bottom:20px;
+       }
+       .news section{
+           height:380px;
+           outline:1px #F00 solid;
+       }
+
+       section.layout{
+           border:1px #F00 solid;
+           min-height:500px;
+       }
+       footer{
+           background: #000;
+           border:1px #F00 solid;
+           position:absolute;
+           width:100%;
+           bottom:0;
+           height:81px;
+       }
+
+
+       @media screen and (max-width:1000px) {
+           section .left,
+             section .right{display:block !important;}
+           .wrapper{
+               width:700px;
+           }
+           .news{
+               width:auto;
+           }
+       }
+
+       @media screen and (max-width:800px) {
+           .wrapper{
+               width:500px;
+           }
+           .news{
+               width:auto;
+           }
+           header{
+               outline:1px #00F solid;
+           }
+       }
+
+
+       @media print{
+
+           body{
+               background-image: none;
+           }
+           header.layout{
+               height:auto;
+
+               background-image: url(http://static.naver.net/newsstand/img/20121231/bg_hd.png);
+               background-repeat:repeat-x;
+               background:none;
+           }
+           header .newslogan{width:100px;height:50px; float:left;}
+           header .site_option{width:100px;height:50px; float:right;}
+           header .section_menu{}
+
+           .wrapper{
+               width:auto;
+               height:auto;
+               margin:auto;
+               position:relative;
+           }
+           .controller-btn-group{
+               position:absolute;
+               width:auto;
+               border:1px #F00 solid;
+               top:50%;
+           }
+           .controller-btn-group button{
+               position:absolute;
+               top:-22px;
+           }
+           .controller-btn-group .icon-big-arrowL{
+               right:-22px;
+           }
+           .controller-btn-group .icon-big-arrowR{
+               left:-22px;
+           }
+           .news{
+               width:auto;
+               height:inherit;
+               border:none;
+               background-image: url(http://static.naver.net/newsstand/img/20121231/bg_panel.png);
+               padding:0 18px;
+               background-repeat: no-repeat;
+               background-position: center 0;
+
+           }
+
+           .news header{
+               height:111px;
+               outline:none;
+               margin-bottom:20px;
+           }
+           .news section{
+               height:380px;
+               outline:none
+           }
+
+           section.layout{
+               border:none;
+               min-height:500px;
+           }
+           footer{
+               background: #000;
+               border:1px #F00 solid;
+               position:absolute;
+               width:100%;
+               bottom:0;
+               height:81px;
+           }
+
+
+       }
+
+       section>div{
+           display:table;
+            border-spacing: 10px;
+       }
+       section .left,
+       section .right{
+           border:1px #f00 solid;
+           min-height:100px;
+           display:table-cell;
+          border-spacing: 10px;
+       }
+
+       section .left{width:200px;}
+
+
+
+
+    </style>
+
+</head>
+
+<body id="">
+
+    <header class="layout">
+        <div class="newslogan">
+
+        </div>
+
+        <div class="site_option">
+
+        </div>
+
+        <div class="section_menu">
+             <div class="btn-group txt-c">
+                <button class="icon-mynews active">마이뉴스</button>
+                <button class="icon-allnews">전체언론사</button>
+            </div>
+        </div>
+
+    </header>
+
+    <section id="daily" class="layout">
+
+
+        <div class="wrapper">
+
+            <div class="controller-btn-group">
+                <button class="icon-big-arrowL">다음</button>
+                <button class="icon-big-arrowR">이전</button>
+            </div>
+
+            <!--컨텐츠-->
+            <div class="news">
+
+                <header>
+                   <h1>일간스포츠</h1>
+                </header>
+
+                <section>
+                  <div>
+                        <div class="left">hello world </div>
+                        <div class="right">
+                            <div>
+                            hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world hello world <br/> hello world
+                            </div>
+                            </div>
+                  </div>
+                </section>
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <footer>
+
+    </footer>
+
+
+</body>
+</html>

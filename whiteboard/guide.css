@@ -1,0 +1,93 @@
+
+
+        [class^="icon-"]{
+            background-image:url(http://static.naver.net/newsstand/img/20140716/sp_nwstd.png);
+            text-indent:-99999px;
+            display:inline-block;
+            vertical-align:top;
+
+        }
+
+        [class^="icon-"]::-moz-focus-inner {
+            padding:0;
+            border:0;
+        }
+
+        .icon-big-arrowR{
+            width:21px;
+            height:43px;
+            background-position:-19px -19px;
+        }
+        .icon-big-arrowR:hover{
+            background-position:-146px -19px;
+        }
+
+        .icon-big-arrowL{
+            width:21px;
+            height:43px;
+            background-position:-83px -19px;
+        }
+        .icon-big-arrowL:hover{
+            background-position:-210px -19px;
+        }
+        .btn-group{
+            font-size:0;
+        }
+
+        .icon-small-prev{
+            width:22px;
+            height:22px;
+            background-position: -435px -585px;
+        }
+         .icon-small-prev:hover{
+             background-position: -435px -585px;
+         }
+        .icon-small-next{
+            width:21px;
+            height:22px;
+            background-position: -461px -585px;
+        }
+        .icon-small-next:hover{
+            background-position: -461px -585px;
+        }
+
+        .icon-mynews{
+            width: 87px;
+            height: 29px;
+            background-position: -1px -116px;
+        }
+        .icon-allnews{
+            width: 86px;
+            height: 29px;
+            background-position: -88px -116px;
+        }
+
+        .icon-mynews.active{
+
+            background-position: -1px -150px;
+        }
+        .icon-allnews.active{
+
+            background-position: -88px -150px;
+        }
+
+
+        .category{
+            overflow:hidden;
+        }
+
+        .category li{
+            float:left;
+            font-size:0;
+        }
+
+        .category .icon-press{
+            width: 61px;
+            height: 13px;
+            background-position: -102px -257px;
+        }
+        .category .icon-alleconomy{
+            width: 67px;
+            height: 13px;
+            background-position: -92px -283px;
+        }

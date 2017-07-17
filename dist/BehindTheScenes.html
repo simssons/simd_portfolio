@@ -18,7 +18,9 @@
     //   event.preventDefault();
     // });
 
-    $(document).ready(function(){
+    var btsSpot = [];
+
+    $(window).load(function(){
 
         // 기본 height
         var windowInnerHeight = function(){
@@ -31,15 +33,23 @@
 
 
     //스크롤
-      var btsSpot = [];
 
-      $('.bts_body section').each(function(i){
-        btsSpot.push($(this).offset().top)
-        console.log(btsSpot);
-      })
+
+
 
       //스크롤 시 변화할 텍스트 복사해두기
-        $('body.bts_body .gnb-inner .h1').append('<h1 id="btsH01"><ul><li><a href="">intro</a></li><li><a href="">section1</a></li><li><a href="">section2</a></li><li><a href="">section3</a></li></ul></h1>')
+
+        var h1Holder = "";
+        h1Holder += '<h1 id="btsH01">';
+        h1Holder += '<ul>';
+        h1Holder += '<li><a href="javascript:void(0)">intro</a></li>';
+        h1Holder += '<li><a href="javascript:void(0)">section1</a></li>';
+        h1Holder += '<li><a href="javascript:void(0)">section2</a></li>';
+        h1Holder += '<li><a href="javascript:void(0)">section3</a></li>';
+        h1Holder += '</ul>';
+        h1Holder += '</h1>';
+
+        $('body.bts_body .gnb-inner .h1').append(h1Holder);
         var gnbH00 = $('body.bts_body .gnb-inner #btsH00').clone();
         var gnbH01 = $('body.bts_body .gnb-inner #btsH01').clone();
         $('body.bts_body .gnb-inner #btsH00').detach();
@@ -104,7 +114,7 @@ var twoToOne = 2;
 
         }
 
-        $(window).on('mousewheel DOMMouseScroll',function(e){
+        $(window).on('scroll DOMMouseScroll',function(e){
             scrollspy(e)
         })
 
@@ -113,14 +123,15 @@ var twoToOne = 2;
 
         //스크롤할 때마다 안달아 주면, intro눌러서 맨 위로 간뒤 remove()되면 걸렸던 이벤트가 풀림.
         //그러면 detach()를 쓰면 된다. 이벤트 여전히 남아있음.
-        $('body.bts_body #btsH01 li a').on('click', function(event){
-            event.preventDefault();
+        $('body.bts_body').on('click','#btsH01 li a', function(event){
             var idx = $(this).parent('li').index();
             console.log(idx);
             console.log('ㅇㅇ');
             $('html,body').stop().animate({
                 'scrollTop':btsSpot[idx]+1
-            },400)}
+            },400)
+
+            }
         )
 
         $('#downward_arrow').on('click',function(event){
@@ -157,6 +168,13 @@ var twoToOne = 2;
             var sct = $(this).scrollTop();
             $('#text_move').css('height','100%');
             textWheelF(sct,textHeight)
+        })
+    })
+
+    $(window).load(function(){
+        $('.bts_body section').each(function(i){
+          btsSpot.push($(this).offset().top)
+          console.log(btsSpot);
         })
     })
     </script>

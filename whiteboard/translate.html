@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vendor/jQuery/dist/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('.b').animate({'left':'-100%'},300, function(){})
+
+
+    })
+    </script>
+    <style>
+    body{padding: 200px;}
+    div{ border:1px #F00 solid; width: 500px; height: 500px; position: absolute;}
+    .a{background-color: #00F;}
+    .b{background-color: #F0F;}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="a"></div>
+    <div class="b"></div>
+
+</body>
+</html>
