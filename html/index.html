@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../vendor/jQuery/dist/jquery.min.js"></script>
     <script src="../assets/JavaScript/common.js"></script>
-    <title>Document</title>
+    <title>Sim's portfolio</title>
 </head>
 <script>
     $(function(){
@@ -35,28 +35,29 @@
 
         //초기 랜덤값
         var randomSlide = Math.floor(Math.random()*slicer.length);
+        var wth = $('.main_slide').width();
 
         //초기 회면표시 & list밝기
-        function slideMove(randomSlide){
+        function slideMove(){
+
           var contentsHtml = $('.mouseListener li:eq('+randomSlide+') a').html();
           var contentsHtmlNext = $('.mouseListener li:eq('+ (randomSlide+1) +') a').html();
-
           $('.mouseListener li:eq('+randomSlide+')').find('.brighter').css('opacity', '1');
 
-          $('.slideDisplay00 a').html(contentsHtmlNext).css('left','0');
-          $('.slideDisplay01 a').html(contentsHtml).css('transform','translateX:500px');
-          console.log('ㅇ');
+          $('div.slideDisplay00 a').html(contentsHtml).end().find('.indexBody .slideDisplay00 .brighter').css('left','0');
+          $('div.slideDisplay01 a').html(contentsHtmlNext).end().find('.indexBody .slideDisplay01 .brighter').css({
+            'left':'100%'
+          }).animate({'left':'0'})
+          // .animate({'left':'0'});
+          console.log(randomSlide);
 
         }
+        slideMove();
 
-        slideMove(randomSlide);
-
-        var idx = randomSlide;
         $('.right_area').on('click',function(){
-          slideMove(idx);
-          idx++;
-          slideMove(idx);
-
+          slideMove(randomSlide);
+          randomSlide++;
+          slideMove(randomSlide);
         })
 
         //loading
