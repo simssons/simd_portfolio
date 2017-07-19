@@ -34,31 +34,66 @@
         console.log(slicer);
 
         //초기 랜덤값
-        var randomSlide = Math.floor(Math.random()*slicer.length);
+        var randomIDX = Math.floor(Math.random()*slicer.length);
         var wth = $('.main_slide').width();
+        console.log(randomIDX);
 
-        //초기 회면표시 & list밝기
-        function slideMove(){
 
-          var contentsHtml = $('.mouseListener li:eq('+randomSlide+') a').html();
-          var contentsHtmlNext = $('.mouseListener li:eq('+ (randomSlide+1) +') a').html();
-          $('.mouseListener li:eq('+randomSlide+')').find('.brighter').css('opacity', '1');
+        //list밝기
+        $('.mouseListener li:eq('+randomIDX+') .brighter').css('opacity', '1');
 
-          $('div.slideDisplay00 a').html(contentsHtml).end().find('.indexBody .slideDisplay00 .brighter').css('left','0');
-          $('div.slideDisplay01 a').html(contentsHtmlNext).end().find('.indexBody .slideDisplay01 .brighter').css({
-            'left':'100%'
-          }).animate({'left':'0'})
-          // .animate({'left':'0'});
-          console.log(randomSlide);
+        //html 뿌려
+         var j = 0;
+        function mover (){
+            var listHtml00 = $('.mouseListener li:eq('+randomIDX+') a').html();
+                randomIDX++;
+            var listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html()
+            if (randomIDX == slicer.length ) {
+                randomIDX = 0;
+                listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html()
+            }
 
+            $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml00);
+                j++;
+                console.log(j);
+
+            $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml01)
+            $('.slide_contents div[class^="s"]:eq('+j+') .brighter')
+            .css('border','10px #F00 solid;')
+
+
+            // find(' .slide_contents div[class^="s"]:eq('+j+') .brighter')
+            // .css({
+            //     'left':'100%'
+            // }).animate({
+            //     'left':'0'
+            // })
+
+
+            if (j>1) {
+                j = 0;
+                // $('.slide_contents div[class^="s"]:eq('+j+')').html(listHtml01).end()
+                // .find('.indexBody .slideDisplay div[class^="s"]:eq('+j+') .brighter')
+                // .css('border','100px #f00 solid;')
+                // console.log(j);
+            }
+
+            console.log(j);
+            console.log('클릭됨');
         }
-        slideMove();
 
-        $('.right_area').on('click',function(){
-          slideMove(randomSlide);
-          randomSlide++;
-          slideMove(randomSlide);
+
+        $('.right_area').click(function(){
+            mover()
         })
+
+
+        //트리거
+        $('.right_area').trigger('click')
+
+
+
+
 
         //loading
         $(window).scroll(function(){
@@ -184,7 +219,7 @@
                     <ul>
                         <li>
                             <a href="">
-                                <video autoplay loop height="100%" class="brighter">
+                                <video autoplay loop height="100%" class="brighter" muted>
                                     <source src="../assets/video/video_shadow.webm" class="img_video" type="video/mp4"/>
                                 </video>
                             </a>
@@ -194,7 +229,7 @@
                         </li>
                         <li>
                             <a href="">
-                                <video autoplay loop height="100%" class="brighter">
+                                <video autoplay loop height="100%" class="brighter" muted>
                                     <source src="../assets/video/video_staring.webm" class="img_video" type="video/mp4"/>
                                 </video>
                             </a>
