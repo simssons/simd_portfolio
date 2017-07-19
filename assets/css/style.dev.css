@@ -599,7 +599,7 @@ section.indexSection {
   height: 50px;
   z-index: 1;
   opacity: .4;
-  transition: .5s ease;
+  transition: .3s;
 }
 /* line 121, assets\less\index.less */
 .main_slide .slide_contents li > a img:hover {
@@ -612,7 +612,7 @@ section.indexSection {
   z-index: 1;
   vertical-align: top;
   opacity: .4;
-  transition: .5s ease;
+  transition: .3s;
 }
 /* line 132, assets\less\index.less */
 .main_slide .slide_contents li > a video:hover {

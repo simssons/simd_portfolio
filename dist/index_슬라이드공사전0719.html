@@ -37,36 +37,46 @@
         var wth = $('.main_slide').width();
         console.log(randomIDX);
 
-        //list hover
-        // var listHover = function(){
-        //     $('.brighter').hover(function(){
-        //         $(this).css('opacity','1');
-        //     },function(){
-        //         $(this).css('opacity','.4');
-        //     })
+
+        // var big;
+        // if (x > 10) {
+        //     big = true;
         // }
-        // listHover();
+        // else {
+        //     big = false;
+        // }
+        //
+        //
+        // var big = (x > 10) ? true : false;
 
         //html 뿌려
         var j = 0;
         function mover (start,end){
             //HTML담기
             var listHtml00 = $('.mouseListener li:eq('+randomIDX+') a').html();
-                randomIDX++;
+                ($('.right_area').data('clicked')) ? randomIDX++ : randomIDX-- ;
             var listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html();
+
+            // randomIDX = slicer.length ?
             if (randomIDX == slicer.length ) {
                 randomIDX = 0;
                 var listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html();
+            }else if (randomIDX < 0 ) {
+                randomIDX = (slicer.length - 1);
+                var listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html();
             }
+
             //HTML넣기
             $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml00);
-                j++;
+            ($('.right_area').data('clicked')) ? j++ : j-- ;
             $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml01);
-            if (j>1) {
+            if (j > 1) {
                 j = 0;
                 $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml01);
-            };
-
+            }else if (j < 0) {
+                j = 1;
+                $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml01);
+            }
             //움직여
             $('.slide_contents div[class^="s"]:eq('+j+') .brighter').addClass('visualOn')
             .css({'left':start}).animate({'left':end},800);
@@ -85,12 +95,14 @@
             previousStatus();
             mover('100%','0');
             listBrighter();
+            $(this).data('clicked', true);
         });
 
         $('.left_area').click(function(){
             previousStatus();
             mover('-100%','0');
             listBrighter();
+            $(this).data('clicked', true);
         })
 
 

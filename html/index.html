@@ -37,10 +37,19 @@
         var wth = $('.main_slide').width();
         console.log(randomIDX);
 
+        //list hover
+        // var listHover = function(){
+        //     $('.brighter').hover(function(){
+        //         $(this).css('opacity','1');
+        //     },function(){
+        //         $(this).css('opacity','.4');
+        //     })
+        // }
+        // listHover();
 
         //html 뿌려
         var j = 0;
-        function mover (){
+        function mover (start,end){
             //HTML담기
             var listHtml00 = $('.mouseListener li:eq('+randomIDX+') a').html();
                 randomIDX++;
@@ -60,30 +69,36 @@
 
             //움직여
             $('.slide_contents div[class^="s"]:eq('+j+') .brighter').addClass('visualOn')
-            .css({
-                'left':'100%'
-            }).animate({
-                'left':'0'
-            },800);
+            .css({'left':start}).animate({'left':end},800);
+        }
+        // 해당버튼 opacity
 
-            // $('.mouseListener li:eq('+randomIDX+') .brighter').
-            // css('border', '1px #f00 solid').parents('li:eq('+randomIDX+')').siblings().css('border', '1');
-
-            $('.mouseListener ').hover(function(){
-                console.log('들어가');
-
-            }).trigger('mouseenter');
-
-                //   $( "p" ).click(function( event, a, b ) {
-                //     // When a normal click fires, a and b are undefined
-                //     // for a trigger like below a refers to "foo" and b refers to "bar"
-                //   })
-                //   .trigger( "click", [ "foo", "bar" ] )
+        function listBrighter(){
+            $('.mouseListener li:eq('+randomIDX+') .brighter').
+            css('opacity', '1')
+        }
+        function previousStatus(){
+            $('.mouseListener li:eq('+randomIDX+') .brighter').css('opacity', '')
         }
 
         $('.right_area').click(function(){
-            mover();
+            previousStatus();
+            mover('100%','0');
+            listBrighter();
+        });
+
+        $('.left_area').click(function(){
+            previousStatus();
+            mover('-100%','0');
+            listBrighter();
         })
+
+
+                        //   $( "p" ).click(function( event, a, b ) {
+                        //     // When a normal click fires, a and b are undefined
+                        //     // for a trigger like below a refers to "foo" and b refers to "bar"
+                        //   })
+                        //   .trigger( "click", [ "foo", "bar" ] )
 
 
         //트리거
