@@ -35,6 +35,7 @@ section.indexSection{
 
 .main_slide .slide_contents{
     position: relative;
+    z-index: 4;
     top: 0;
     width: 100%;
     height: 100%;
@@ -45,6 +46,7 @@ section.indexSection{
     // background-attachment: fixed;
     .visualOn{
       display: block !important;
+      z-index: 2;
     }
     .slideDisplay00, .slideDisplay01{
       position: absolute;
@@ -53,7 +55,7 @@ section.indexSection{
       width: 100%;
       height: 100%;
       a{
-        display: block;        
+        display: block;
         height: 100%;
         width: 100%;
         // position: absolute;
@@ -77,10 +79,11 @@ section.indexSection{
 .mouseListener{
     width: 100%;
     height: 50px;
-    margin-bottom:50px;
-    overflow:hidden;
     position: fixed;
+    z-index: 5;
+    margin-bottom:50px;
     bottom:140px;
+    overflow:hidden;
     &:hover ul{
         transform: translateY(-51px);
     }
@@ -139,6 +142,7 @@ section.indexSection{
     width: 100%;
     height: 90px;
     position:fixed;
+    z-index: 4;
     bottom:50px;
     background-color: rgba(255, 255, 255, 0.92);
   h2{
@@ -157,23 +161,20 @@ section.indexSection{
   }
 }
 
-.left_area{
+.left_area, .right_area{
     position: absolute;
-    left:0;
     top:0;
+    z-index: 10;
     background: transparent;
     width: 25%;
     height: 100%;
     cursor: w-resize;
 }
+.left_area{
+    left:0;
+}
 .right_area{
-  position: absolute;
   right:0;
-  top:0;
-  background: transparent;
-  width: 25%;
-  height: 100%;
-  cursor: w-resize;
 }
 .scroll_down_arrow_wrapper{
   position: relative;
@@ -181,7 +182,7 @@ section.indexSection{
   height: 55px;
   margin-top: -55px;
   background-color: #FFF;
-  z-index: 2;
+  z-index: 6;
   div{
     width: 80px;
     height: 55px;
@@ -210,7 +211,7 @@ section.indexSection{
   background-color: #FFF;
   // height: ~"calc(100% + 90px)";
   position: relative;
-  z-index: 1;
+  z-index: 5;
   text-align: center;
   h2{
       margin-bottom: 70px;

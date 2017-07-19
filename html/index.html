@@ -31,7 +31,6 @@
           img_video_src[i] += $('.slide_contents li').eq(i).find($img_video).attr('src');
           slicer[i] = img_video_src[i].slice(9)
         })
-        console.log(slicer);
 
         //초기 랜덤값
         var randomIDX = Math.floor(Math.random()*slicer.length);
@@ -39,61 +38,56 @@
         console.log(randomIDX);
 
 
-        //list밝기
-        $('.mouseListener li:eq('+randomIDX+') .brighter').css('opacity', '1');
-
         //html 뿌려
-         var j = 0;
+        var j = 0;
         function mover (){
+            //HTML담기
             var listHtml00 = $('.mouseListener li:eq('+randomIDX+') a').html();
                 randomIDX++;
-            var listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html()
+            var listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html();
             if (randomIDX == slicer.length ) {
                 randomIDX = 0;
-                listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html()
+                var listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html();
             }
-
+            //HTML넣기
             $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml00);
                 j++;
-                console.log(j);
-
-            $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml01)
-            $('.slide_contents div[class^="s"]:eq('+j+') .brighter')
-            .css('border','10px #F00 solid;')
-
-
-            // find(' .slide_contents div[class^="s"]:eq('+j+') .brighter')
-            // .css({
-            //     'left':'100%'
-            // }).animate({
-            //     'left':'0'
-            // })
-
-
+            $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml01);
             if (j>1) {
                 j = 0;
-                // $('.slide_contents div[class^="s"]:eq('+j+')').html(listHtml01).end()
-                // .find('.indexBody .slideDisplay div[class^="s"]:eq('+j+') .brighter')
-                // .css('border','100px #f00 solid;')
-                // console.log(j);
-            }
+                $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml01);
+            };
 
-            console.log(j);
-            console.log('클릭됨');
+            //움직여
+            $('.slide_contents div[class^="s"]:eq('+j+') .brighter').addClass('visualOn')
+            .css({
+                'left':'100%'
+            }).animate({
+                'left':'0'
+            },800);
+
+            // $('.mouseListener li:eq('+randomIDX+') .brighter').
+            // css('border', '1px #f00 solid').parents('li:eq('+randomIDX+')').siblings().css('border', '1');
+
+            $('.mouseListener ').hover(function(){
+                console.log('들어가');
+
+            }).trigger('mouseenter');
+
+                //   $( "p" ).click(function( event, a, b ) {
+                //     // When a normal click fires, a and b are undefined
+                //     // for a trigger like below a refers to "foo" and b refers to "bar"
+                //   })
+                //   .trigger( "click", [ "foo", "bar" ] )
         }
 
-
         $('.right_area').click(function(){
-            mover()
+            mover();
         })
 
 
         //트리거
-        $('.right_area').trigger('click')
-
-
-
-
+        $('.right_area').trigger('click');
 
         //loading
         $(window).scroll(function(){
