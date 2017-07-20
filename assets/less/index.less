@@ -11,6 +11,35 @@ html.indexHtml,body.indexBody{
   .on{
       display: block;
   }
+  #windowLoad{
+        width: 100%;
+        height: 100%;
+        background-color: #FFF;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: none;
+        opacity: 0;
+        transition: 1s;
+        h1{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            letter-spacing: 0.2em;
+            -webkit-transform: translate(-50%, -100%);
+            -ms-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+            font-size: 65px;
+            font-weight: 600;
+            white-space: nowrap;
+            width: 100%;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+  }
+
 }
 //공통js에서 써
 html.menuColor{
@@ -36,7 +65,7 @@ section.indexSection{
 .main_slide .slide_contents{
     position: relative;
     z-index: 4;
-    top: 0;
+    bottom: 55px;
     width: 100%;
     height: 100%;
     // background-image: url('../image/main_2.png');
@@ -50,10 +79,10 @@ section.indexSection{
     }
     .slideDisplay00, .slideDisplay01{
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 0;
-      width: 100%;
       height: 100%;
+      width: 100%;
       a{
         display: block;
         height: 100%;
@@ -63,15 +92,19 @@ section.indexSection{
         // left:0;
       }
       img{
-        width: 100%;
+        width: 105%;
         position: fixed;
         top:0;
         left:0;
+        right:0;
+        bottom:0;
       }
       video{
         position: fixed;
         top:0;
         left:0;
+        right:0;
+        bottom:0;
       }
     }
 }
