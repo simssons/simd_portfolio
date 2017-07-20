@@ -54,7 +54,15 @@
         function mover (start,end){
             //HTML담기
             var listHtml00 = $('.mouseListener li:eq('+randomIDX+') a').html();
-                ($('.right_area').data('clicked')) ? randomIDX++ : randomIDX-- ;
+            if ($('.right_area').data('clicked')) {
+                randomIDX++ ;
+                console.log('우');
+            }else if ($('.left_area').data('clicked')) {
+                randomIDXl-- ;
+                console.log('좌');
+            }
+
+
             var listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html();
 
             // randomIDX = slicer.length ?
