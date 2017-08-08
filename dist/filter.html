@@ -72,11 +72,11 @@
 
 
     //JSON
-      $.getJSON('../assets/javascript/datalist.json',function(fuck){
+      $.getJSON('../assets/javascript/datalist.json',function(event){
 
         //latest
             function sortingByDate(){
-              fuck.list.sort(function(a, b) {
+              event.list.sort(function(a, b) {
                 return (new Date(b.ctime)) - (new Date(a.ctime))
               })
             }
@@ -84,15 +84,15 @@
 
         //뿌리자.
             var htmlHolder = [];
-            var order = fuck.list.length-1;
+            var order = event.list.length-1;
             var filterClasses = '';
 
-            $.each(fuck.list,function(i,e){
+            $.each(event.list,function(i,e){
                 var jsonlist = '';
                 // var bi = ['photographyf','latestf','portraitsf','filmf'];
 
                 var jsonFilterValue ='';
-                jsonFilterValue = fuck.list[i].filterValue;
+                jsonFilterValue = event.list[i].filterValue;
 
                 var filterClassesLa = jsonFilterValue.match('latestf');
                 var filterClassesPh = jsonFilterValue.match('photographyf');
@@ -106,18 +106,18 @@
                 jsonlist += '<li class="'+filterClassesLa+" "+filterClassesPh+" "+filterClassesPo+" "+filterClassesFi+'">';
                 jsonlist += '<div class="filter_description">';
                 jsonlist += '<span>';
-                jsonlist += '<cite>'+ fuck.list[i].cite +'</cite>';
-                jsonlist += '<span>'+ fuck.list[i].description+'</span>';
+                jsonlist += '<cite>'+ event.list[i].cite +'</cite>';
+                jsonlist += '<span>'+ event.list[i].description+'</span>';
                 jsonlist += '</span>';
                 jsonlist += '</div>';
                 jsonlist += '<div class="filter_cover">';
                 jsonlist += '<a href="" class="filter_cover">';
-                if (fuck.list[i].type == 'video') {
+                if (event.list[i].type == 'video') {
                     jsonlist += '<video autoplay loop width="60%" height="100%" class="hover_vimg">';
-                    jsonlist += '<source src="'+fuck.list[i].themeURL+'" type="video/mp4"/>';
+                    jsonlist += '<source src="'+event.list[i].themeURL+'" type="video/mp4"/>';
                     jsonlist += '</video>';
-                }else if (fuck.list[i].type == 'img') {
-                    jsonlist += '<img src="'+ fuck.list[i].themeURL +'" alt="" class="hover_vimg">';
+                }else if (event.list[i].type == 'img') {
+                    jsonlist += '<img src="'+ event.list[i].themeURL +'" alt="" class="hover_vimg">';
                 }
                 jsonlist += '</a>';
                 jsonlist += '</div>';
@@ -125,7 +125,7 @@
                 htmlHolder.push(jsonlist);
             })
 
-            for (var i = 0; i < fuck.list.length; i++) {
+            for (var i = 0; i < event.list.length; i++) {
                 $('.filter_list li:first').after(htmlHolder[order - i]);
             }
 
