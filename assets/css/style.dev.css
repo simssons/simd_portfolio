@@ -709,7 +709,7 @@ section.indexSection {
   z-index: 6;
 }
 /* line 219, assets\less\index.less */
-.scroll_down_arrow_wrapper div {
+.scroll_down_arrow_wrapper a#scroll_down_arrow {
   width: 80px;
   height: 55px;
   background-image: url('../image/down_arrow.svg');

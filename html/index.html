@@ -23,11 +23,20 @@ $(window).load(function(){
             var innerHeight = window.innerHeight;
             $('.main_slide').height(innerHeight);
             }
-
         heightFunction();
-
         $(window).resize(function(){
             heightFunction();
+        })
+
+
+        $('#scroll_down_arrow').click(function(event){
+          event.preventDefault();
+          var news_feed_contents_wrapper_top = $('.news_feed_wrapper h2').offset().top - 90;
+          $('body.indexBody').animate({
+              'scrollTop':news_feed_contents_wrapper_top
+          },'slow')
+
+
         })
 
 
@@ -207,7 +216,7 @@ $(window).load(function(){
               <div class="right_area"></div>
             </div><!-- .main_slide -->
             <div class="scroll_down_arrow_wrapper">
-              <div></div>
+              <a href="" id="scroll_down_arrow"></a>
             </div>
         </div> <!-- slide_wrapper -->
         <!-- slide_wrapper -->
