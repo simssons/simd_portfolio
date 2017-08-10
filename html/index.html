@@ -11,13 +11,15 @@
 </head>
 <script>
 
-$(window).load(function(){
-    $('#windowLoad').css('opacity','0').hide();
-})
+    $(window).load(function(){
+        $('#windowLoad').css('opacity','0').hide();
+    })
+
 
 //  jQuery 1.4이후버전은 $(document).ready(function(){}) 대신 $(function(){})씀.
     $(function(){
         $('#windowLoad').show().css('opacity','1');
+
         //높이조정
         var heightFunction = function(){
             var innerHeight = window.innerHeight;
@@ -35,11 +37,10 @@ $(window).load(function(){
           $('body.indexBody').animate({
               'scrollTop':news_feed_contents_wrapper_top
           },'slow')
-
-
         })
 
 
+  //slide
         //slide setup
         var mainSlideArray = [];
         var img_video_src = [];
@@ -55,20 +56,21 @@ $(window).load(function(){
         var wth = $('.main_slide').width();
         var j = 0;
 
-        //html 뿌려
-
-
+        //html 복사
         function mover (start,end,side){
-            //HTML담기
+            //변수에 HTML담기
             var listHtml00 = $('.mouseListener li:eq('+randomIDX+') a').html();
+            //오른쪽클릭
             if (side==1) {
                 randomIDX++ ;
                 if (randomIDX == slicer.length ) { randomIDX = 0; }
             }else if (side==2) {
+              //왼쪽클릭
                 randomIDX-- ;
                 if (randomIDX < 0) { randomIDX = (slicer.length - 1);}
             }
             var listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html();
+
             //HTML넣기
             $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml00);
             if (side == 1) {
@@ -106,6 +108,8 @@ $(window).load(function(){
             mover('-100%','0',2);
             listBrighter();
         })
+
+        //a누를때
         function aTracking(start,end){
             var listHtml = $('.mouseListener li:eq('+randomIDX+') a').html();
             $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml);
@@ -130,19 +134,20 @@ $(window).load(function(){
     	//자동이동
     		var speed = 3000;
     		var call = function(){
-				$('.right_area').trigger('click')
+				  $('.right_area').trigger('click')
     		}
     		var slideInterval = setInterval(call,speed);
 
-      //hover시 움직이지마
 
+      //hover시 슬라이드이동 중지
         $('.slide_contents').mouseenter(function(){
-    		clearInterval(slideInterval);
-    	}).mouseleave(function(){
-    		slideInterval = setInterval(call,speed);
+    	  	clearInterval(slideInterval);
+    	  }).mouseleave(function(){
+    		  slideInterval = setInterval(call,speed);
         })
 
 
+      //페이지 추가로딩
         //loading
         $(window).scroll(function(){
             var innerHeight = window.innerHeight;
