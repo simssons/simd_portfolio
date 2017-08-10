@@ -1,6 +1,6 @@
 $(function(){
 
-
+  
     //menu관련
     var autoHeight = function(){
         $('.menu-main-menu-container .fifty').height(($('.menu-main-menu-container').height()-90)/2)
