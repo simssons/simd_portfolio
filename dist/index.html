@@ -6,24 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../vendor/jQuery/dist/jquery.min.js"></script>
-    <script src="../assets/JavaScript/common.js"></script>
+    <script src="../assets/javascript/common.js"></script>
     <title>Sim's portfolio</title>
 </head>
 <script>
-
-    $(window).load(function(){
-        $('#windowLoad').css('opacity','0').hide();
-    })
-
-
-//  jQuery 1.4이후버전은 $(document).ready(function(){}) 대신 $(function(){})씀.
     $(function(){
-        $('#windowLoad').show().css('opacity','1');
-
         //높이조정
         var heightFunction = function(){
-            var innerHeight = window.innerHeight;
-            $('.main_slide').height(innerHeight);
+                var innerHeight = window.innerHeight;
+                $('.main_slide').height(innerHeight);
             }
         heightFunction();
         $(window).resize(function(){
@@ -31,16 +22,6 @@
         })
 
 
-        $('#scroll_down_arrow').click(function(event){
-          event.preventDefault();
-          var news_feed_contents_wrapper_top = $('.news_feed_wrapper h2').offset().top - 90;
-          $('body.indexBody').animate({
-              'scrollTop':news_feed_contents_wrapper_top
-          },'slow')
-        })
-
-
-  //slide
         //slide setup
         var mainSlideArray = [];
         var img_video_src = [];
@@ -50,104 +31,35 @@
           img_video_src[i] += $('.slide_contents li').eq(i).find($img_video).attr('src');
           slicer[i] = img_video_src[i].slice(9)
         })
+        console.log(slicer);
 
         //초기 랜덤값
-        var randomIDX = Math.floor(Math.random()*slicer.length);
+        var randomSlide = Math.floor(Math.random()*slicer.length);
         var wth = $('.main_slide').width();
-        var j = 0;
 
-        //html 복사
-        function mover (start,end,side){
-            //변수에 HTML담기
-            var listHtml00 = $('.mouseListener li:eq('+randomIDX+') a').html();
-            //오른쪽클릭
-            if (side==1) {
-                randomIDX++ ;
-                if (randomIDX == slicer.length ) { randomIDX = 0; }
-            }else if (side==2) {
-              //왼쪽클릭
-                randomIDX-- ;
-                if (randomIDX < 0) { randomIDX = (slicer.length - 1);}
-            }
-            var listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html();
+        //초기 회면표시 & list밝기
+        function slideMove(){
 
-            //HTML넣기
-            $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml00);
-            if (side == 1) {
-                j++ ;
-                if (j > 1) { j = 0; }
-            }else if (side == 2){
-                j-- ;
-                if (j < 0) { j = 1; }
-            }
-            $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml01);
+          var contentsHtml = $('.mouseListener li:eq('+randomSlide+') a').html();
+          var contentsHtmlNext = $('.mouseListener li:eq('+ (randomSlide+1) +') a').html();
+          $('.mouseListener li:eq('+randomSlide+')').find('.brighter').css('opacity', '1');
 
-            //움직여
-            $('.slide_contents div[class^="s"]:eq('+j+') .brighter').addClass('visualOn')
-            .css({'left':start}).animate({'left':end},800);
+          $('div.slideDisplay00 a').html(contentsHtml).end().find('.indexBody .slideDisplay00 .brighter').css('left','0');
+          $('div.slideDisplay01 a').html(contentsHtmlNext).end().find('.indexBody .slideDisplay01 .brighter').css({
+            'left':'100%'
+          }).animate({'left':'0'})
+          // .animate({'left':'0'});
+          console.log(randomSlide);
+
         }
+        slideMove();
 
-        // 해당 list 밝게
-        function listBrighter(){
-            $('.mouseListener li:eq('+randomIDX+') .brighter').
-            css('opacity', '1')
-        }
-        //opacity 복구
-        function previousStatus(){
-            $('.mouseListener li:eq('+randomIDX+') .brighter').css('opacity', '')
-        }
-
-        $('.right_area').click(function(){
-            previousStatus();
-            mover('100%','0',1);
-            listBrighter();
-        }).trigger('click');
-
-        $('.left_area').click(function(){
-            previousStatus();
-            mover('-100%','0',2);
-            listBrighter();
+        $('.right_area').on('click',function(){
+          slideMove(randomSlide);
+          randomSlide++;
+          slideMove(randomSlide);
         })
 
-        //a누를때
-        function aTracking(start,end){
-            var listHtml = $('.mouseListener li:eq('+randomIDX+') a').html();
-            $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml);
-            $('.slide_contents div[class^="s"]:eq('+j+') .brighter').addClass('visualOn')
-            .css({'left':start}).animate({'left':end},800);
-        }
-
-        $('.mouseListener a').click(function(e){
-            e.preventDefault()
-            var liIdx = $(this).parent('li').index();
-            previousStatus();
-            if (liIdx > randomIDX) {
-                randomIDX = liIdx;
-                aTracking('100%','0',1);
-            }else if (liIdx < randomIDX) {
-                randomIDX = liIdx;
-                aTracking('-100%','0',2);
-            }
-            listBrighter();
-        })
-
-    	//자동이동
-    		var speed = 3000;
-    		var call = function(){
-				  $('.right_area').trigger('click')
-    		}
-    		var slideInterval = setInterval(call,speed);
-
-
-      //hover시 슬라이드이동 중지
-        $('.slide_contents').mouseenter(function(){
-    	  	clearInterval(slideInterval);
-    	  }).mouseleave(function(){
-    		  slideInterval = setInterval(call,speed);
-        })
-
-
-      //페이지 추가로딩
         //loading
         $(window).scroll(function(){
             var innerHeight = window.innerHeight;
@@ -166,9 +78,6 @@
     })
 </script>
 <body class="indexBody">
-    <div id="windowLoad">
-        <h1>jawalkers</h1>
-    </div>
     <header>
             <gnb>
                 <div class="gnb-inner">
@@ -261,48 +170,47 @@
             </gnb>
     </header>
 
-
     <section class="indexSection">
         <div class="slide_wrapper">
             <div class="main_slide">
               <div class="slide_contents">
                 <div class="slideDisplay00">
-                  <a href="#"></a>
+                  <a href=""></a>
                 </div>
                 <div class="slideDisplay01">
-                  <a href="#"></a>
+                  <a href=""></a>
                 </div>
                 <div class="mouseListener">
                     <ul>
                         <li>
-                            <a href="#">
-                                <video autoplay loop height="100%" class="brighter" muted>
+                            <a href="">
+                                <video autoplay loop height="100%" class="brighter">
                                     <source src="../assets/video/video_shadow.webm" class="img_video" type="video/mp4"/>
                                 </video>
                             </a>
                         </li>
                         <li>
-                            <a href="#"><img src="../assets/image/main_1.png" class="img_video brighter"  alt=""></a>
+                            <a href=""><img src="../assets/image/main_1.png" class="img_video brighter"  alt=""></a>
                         </li>
                         <li>
-                            <a href="#">
-                                <video autoplay loop height="100%" class="brighter" muted>
+                            <a href="">
+                                <video autoplay loop height="100%" class="brighter">
                                     <source src="../assets/video/video_staring.webm" class="img_video" type="video/mp4"/>
                                 </video>
                             </a>
                         </li>
                         <li>
-                            <a href="#"><img src="../assets/image/main_2.png" class="img_video brighter"  alt=""></a>
+                            <a href=""><img src="../assets/image/main_2.png" class="img_video brighter"  alt=""></a>
                         </li>
                         <li>
-                            <a href="#"><img src="../assets/image/main_3.png" class="img_video brighter"  alt=""></a>
+                            <a href=""><img src="../assets/image/main_3.png" class="img_video brighter"  alt=""></a>
                         </li>
                     </ul>
                 </div>
               </div><!-- slide_contents -->
               <div class="title_bar">
                 <h2>
-                  <a href="#">
+                  <a href="">
                     <span>PORTRAITS</span>
                     <cite>kendall jenner limited edition print</cite>
                   </a>
@@ -312,7 +220,7 @@
               <div class="right_area"></div>
             </div><!-- .main_slide -->
             <div class="scroll_down_arrow_wrapper">
-              <a href="" id="scroll_down_arrow"></a>
+              <div></div>
             </div>
         </div> <!-- slide_wrapper -->
         <!-- slide_wrapper -->
@@ -328,13 +236,13 @@
                             <li>
                                 <div class="column_news_box_left">
                                     <div class="column_left_image">
-                                        <a href="#">
+                                        <a href="">
                                             <img src="../assets/image/v1.png" alt="">
                                         </a>
                                     </div>
                                     <div class="column_left_text">
                                         <div class="column_upper_text">
-                                            <a href="#">
+                                            <a href="">
                                                 instagram
                                             </a>
                                             ,a month ago
@@ -352,13 +260,13 @@
                             <li>
                                 <div class="column_news_box_left">
                                     <div class="column_left_image">
-                                        <a href="#">
+                                        <a href="">
                                             <img src="../assets/image/h1.png" alt="">
                                         </a>
                                     </div>
                                     <div class="column_left_text">
                                         <div class="column_upper_text">
-                                            <a href="#">
+                                            <a href="">
                                                 instagram
                                             </a>
                                             ,a month ago
@@ -380,13 +288,13 @@
                             <li>
                                 <div class="column_news_box_right">
                                     <div class="column_right_image">
-                                        <a href="#">
+                                        <a href="">
                                             <img src="../assets/image/v2.png" alt="">
                                         </a>
                                     </div>
                                     <div class="column_right_text">
                                         <div class="column_upper_text">
-                                            <a href="#">
+                                            <a href="">
                                                 instagram
                                             </a>
                                             ,a month ago
@@ -404,13 +312,13 @@
                             <li>
                                 <div class="column_news_box_right">
                                     <div class="column_right_image">
-                                        <a href="#">
+                                        <a href="">
                                             <img src="../assets/image/h2.png" alt="">
                                         </a>
                                     </div>
                                     <div class="column_right_text">
                                         <div class="column_upper_text">
-                                            <a href="#">
+                                            <a href="">
                                                 instagram
                                             </a>
                                             ,a month ago
@@ -435,7 +343,7 @@
             <div class="clear"></div>
             <div class="load_more">
                 <h3>
-                    <a href="#">load more</a>
+                    <a href="">load more</a>
                 </h3>
             </div>
         </div>

@@ -11,35 +11,6 @@ html.indexHtml,body.indexBody{
   .on{
       display: block;
   }
-  #windowLoad{
-        width: 100%;
-        height: 100%;
-        background-color: #FFF;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-        display: none;
-        opacity: 0;
-        transition: 1s;
-        h1{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            letter-spacing: 0.2em;
-            -webkit-transform: translate(-50%, -100%);
-            -ms-transform: translate(-50%, -100%);
-            transform: translate(-50%, -100%);
-            font-size: 65px;
-            font-weight: 600;
-            white-space: nowrap;
-            width: 100%;
-            text-align: center;
-            text-transform: uppercase;
-        }
-
-  }
-
 }
 //공통js에서 써
 html.menuColor{
@@ -64,8 +35,7 @@ section.indexSection{
 
 .main_slide .slide_contents{
     position: relative;
-    z-index: 4;
-    bottom: 55px;
+    top: 0;
     width: 100%;
     height: 100%;
     // background-image: url('../image/main_2.png');
@@ -75,16 +45,16 @@ section.indexSection{
     // background-attachment: fixed;
     .visualOn{
       display: block !important;
-      z-index: 2;
     }
     .slideDisplay00, .slideDisplay01{
       position: absolute;
-      bottom: 0;
+      top: 0;
       left: 0;
-      height: 100%;
       width: 100%;
+      height: 100%;
       a{
         display: block;
+        border: 0px #F00 solid;
         height: 100%;
         width: 100%;
         // position: absolute;
@@ -92,19 +62,15 @@ section.indexSection{
         // left:0;
       }
       img{
-        width: 105%;
+        width: 100%;
         position: fixed;
         top:0;
         left:0;
-        right:0;
-        bottom:0;
       }
       video{
         position: fixed;
         top:0;
         left:0;
-        right:0;
-        bottom:0;
       }
     }
 }
@@ -112,11 +78,10 @@ section.indexSection{
 .mouseListener{
     width: 100%;
     height: 50px;
-    position: fixed;
-    z-index: 5;
     margin-bottom:50px;
-    bottom:140px;
     overflow:hidden;
+    position: fixed;
+    bottom:140px;
     &:hover ul{
         transform: translateY(-51px);
     }
@@ -150,7 +115,7 @@ section.indexSection{
     height: 50px;
     z-index: 1;
     opacity: .4;
-    transition: .3s;
+    transition: .5s ease;
     &:hover{
       opacity: 1;
     }
@@ -161,7 +126,7 @@ section.indexSection{
       z-index: 1;
       vertical-align: top;
       opacity: .4;
-      transition: .3s;
+      transition: .5s ease;
       &:hover{
         opacity: 1;
       }
@@ -175,7 +140,6 @@ section.indexSection{
     width: 100%;
     height: 90px;
     position:fixed;
-    z-index: 4;
     bottom:50px;
     background-color: rgba(255, 255, 255, 0.92);
   h2{
@@ -194,20 +158,23 @@ section.indexSection{
   }
 }
 
-.left_area, .right_area{
+.left_area{
     position: absolute;
+    left:0;
     top:0;
-    z-index: 10;
     background: transparent;
     width: 25%;
     height: 100%;
     cursor: w-resize;
 }
-.left_area{
-    left:0;
-}
 .right_area{
+  position: absolute;
   right:0;
+  top:0;
+  background: transparent;
+  width: 25%;
+  height: 100%;
+  cursor: w-resize;
 }
 .scroll_down_arrow_wrapper{
   position: relative;
@@ -215,8 +182,8 @@ section.indexSection{
   height: 55px;
   margin-top: -55px;
   background-color: #FFF;
-  z-index: 6;
-  a#scroll_down_arrow{
+  z-index: 2;
+  div{
     width: 80px;
     height: 55px;
     background-image: url('../image/down_arrow.svg');
@@ -244,7 +211,7 @@ section.indexSection{
   background-color: #FFF;
   // height: ~"calc(100% + 90px)";
   position: relative;
-  z-index: 5;
+  z-index: 1;
   text-align: center;
   h2{
       margin-bottom: 70px;
