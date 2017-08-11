@@ -31,34 +31,74 @@
           img_video_src[i] += $('.slide_contents li').eq(i).find($img_video).attr('src');
           slicer[i] = img_video_src[i].slice(9)
         })
-        console.log(slicer);
 
         //초기 랜덤값
-        var randomSlide = Math.floor(Math.random()*slicer.length);
-        var wth = $('.main_slide').width();
+        var randomIDX = Math.floor(Math.random()*slicer.length);
+        // var wth = $('.main_slide').width();
+        console.log(randomIDX);
 
-        //초기 회면표시 & list밝기
-        function slideMove(){
+        //list hover
+        // var listHover = function(){
+        //     $('.brighter').hover(function(){
+        //         $(this).css('opacity','1');
+        //     },function(){
+        //         $(this).css('opacity','.4');
+        //     })
+        // }
+        // listHover();
 
-          var contentsHtml = $('.mouseListener li:eq('+randomSlide+') a').html();
-          var contentsHtmlNext = $('.mouseListener li:eq('+ (randomSlide+1) +') a').html();
-          $('.mouseListener li:eq('+randomSlide+')').find('.brighter').css('opacity', '1');
+        //html 뿌려
+        var j = 0;
+        function mover (start,end){
+            //HTML담기
+            var listHtml00 = $('.mouseListener li:eq('+randomIDX+') a').html();
+                randomIDX++;
+            var listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html();
+            if (randomIDX == slicer.length ) {
+                randomIDX = 0;
+                var listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html();
+            }
+            //HTML넣기
+            $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml00);
+                j++;
+            $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml01);
+            if (j>1) {
+                j = 0;
+                $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml01);
+            };
 
-          $('div.slideDisplay00 a').html(contentsHtml).end().find('.indexBody .slideDisplay00 .brighter').css('left','0');
-          $('div.slideDisplay01 a').html(contentsHtmlNext).end().find('.indexBody .slideDisplay01 .brighter').css({
-            'left':'100%'
-          }).animate({'left':'0'})
-          // .animate({'left':'0'});
-          console.log(randomSlide);
-
+            //움직여
+            $('.slide_contents div[class^="s"]:eq('+j+') .brighter').addClass('visualOn')
+            .css({'left':start}).animate({'left':end},800);
         }
-        slideMove();
+        // 해당버튼 opacity
 
-        $('.right_area').on('click',function(){
-          slideMove(randomSlide);
-          randomSlide++;
-          slideMove(randomSlide);
+        function listBrighter(){
+            $('.mouseListener li:eq('+randomIDX+') .brighter').
+            css('opacity', '1')
+        }
+        function previousStatus(){
+            $('.mouseListener li:eq('+randomIDX+') .brighter').css('opacity', '')
+        }
+
+        $('.right_area').click(function(){
+            previousStatus();
+            mover('100%','0');
+            listBrighter();
+        });
+
+        $('.left_area').click(function(){
+            previousStatus();
+            mover('-100%','0');
+            listBrighter();
         })
+            //   $( "p" ).click(function( event, a, b ) {
+            //     // When a normal click fires, a and b are undefined
+            //     // for a trigger like below a refers to "foo" and b refers to "bar"
+            //   })
+            //   .trigger( "click", [ "foo", "bar" ] )
+
+        $('.right_area').trigger('click');
 
         //loading
         $(window).scroll(function(){
