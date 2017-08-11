@@ -10,12 +10,16 @@
     <title>Sim's portfolio</title>
 </head>
 <script>
+
     $(window).load(function(){
         $('#windowLoad').css('opacity','0').hide();
     })
+
+
 //  jQuery 1.4이후버전은 $(document).ready(function(){}) 대신 $(function(){})씀.
     $(function(){
         $('#windowLoad').show().css('opacity','1');
+
         //높이조정
         var heightFunction = function(){
             var innerHeight = window.innerHeight;
@@ -25,6 +29,8 @@
         $(window).resize(function(){
             heightFunction();
         })
+
+
         $('#scroll_down_arrow').click(function(event){
           event.preventDefault();
           var news_feed_contents_wrapper_top = $('.news_feed_wrapper h2').offset().top - 90;
@@ -32,6 +38,8 @@
               'scrollTop':news_feed_contents_wrapper_top
           },'slow')
         })
+
+
   //slide
         //slide setup
         var mainSlideArray = [];
@@ -42,10 +50,12 @@
           img_video_src[i] += $('.slide_contents li').eq(i).find($img_video).attr('src');
           slicer[i] = img_video_src[i].slice(9)
         })
+
         //초기 랜덤값
         var randomIDX = Math.floor(Math.random()*slicer.length);
         var wth = $('.main_slide').width();
         var j = 0;
+
         //html 복사
         function mover (start,end,side){
             //변수에 HTML담기
@@ -60,6 +70,7 @@
                 if (randomIDX < 0) { randomIDX = (slicer.length - 1);}
             }
             var listHtml01 = $('.mouseListener li:eq('+randomIDX+') a').html();
+
             //HTML넣기
             $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml00);
             if (side == 1) {
@@ -70,10 +81,12 @@
                 if (j < 0) { j = 1; }
             }
             $('.slide_contents div[class^="s"]:eq('+j+') a').html(listHtml01);
+
             //움직여
             $('.slide_contents div[class^="s"]:eq('+j+') .brighter').addClass('visualOn')
             .css({'left':start}).animate({'left':end},800);
         }
+
         // 해당 list 밝게
         function listBrighter(){
             $('.mouseListener li:eq('+randomIDX+') .brighter').
@@ -83,16 +96,19 @@
         function previousStatus(){
             $('.mouseListener li:eq('+randomIDX+') .brighter').css('opacity', '')
         }
+
         $('.right_area').click(function(){
             previousStatus();
             mover('100%','0',1);
             listBrighter();
         }).trigger('click');
+
         $('.left_area').click(function(){
             previousStatus();
             mover('-100%','0',2);
             listBrighter();
         })
+
         //a누를때
         function aTracking(start,end){
             var listHtml = $('.mouseListener li:eq('+randomIDX+') a').html();
@@ -100,6 +116,7 @@
             $('.slide_contents div[class^="s"]:eq('+j+') .brighter').addClass('visualOn')
             .css({'left':start}).animate({'left':end},800);
         }
+
         $('.mouseListener a').click(function(e){
             e.preventDefault()
             var liIdx = $(this).parent('li').index();
@@ -113,18 +130,23 @@
             }
             listBrighter();
         })
+
     	//자동이동
     		var speed = 3000;
     		var call = function(){
 				  $('.right_area').trigger('click')
     		}
     		var slideInterval = setInterval(call,speed);
+
+
       //hover시 슬라이드이동 중지
         $('.slide_contents').mouseenter(function(){
     	  	clearInterval(slideInterval);
     	  }).mouseleave(function(){
     		  slideInterval = setInterval(call,speed);
         })
+
+
       //페이지 추가로딩
         //loading
         $(window).scroll(function(){
@@ -146,7 +168,7 @@
     <div id="windowLoad">
         <h1>jawalkers</h1>
     </div>
-    
+
     include "gnb.html"
 
     <section class="indexSection">
