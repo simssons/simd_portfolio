@@ -484,12 +484,17 @@ body.indexBody {
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
 }
-/* line 9, assets\less\index.less */
+/* line 8, assets\less\index.less */
 html.indexHtml .on,
 body.indexBody .on {
   display: block;
 }
-/* line 12, assets\less\index.less */
+/* line 11, assets\less\index.less */
+html.indexHtml footer,
+body.indexBody footer {
+  z-index: 100;
+}
+/* line 15, assets\less\index.less */
 html.indexHtml #windowLoad,
 body.indexBody #windowLoad {
   width: 100%;
@@ -503,7 +508,7 @@ body.indexBody #windowLoad {
   opacity: 0;
   transition: 1s;
 }
-/* line 23, assets\less\index.less */
+/* line 26, assets\less\index.less */
 html.indexHtml #windowLoad h1,
 body.indexBody #windowLoad h1 {
   position: absolute;
@@ -520,21 +525,21 @@ body.indexBody #windowLoad h1 {
   text-align: center;
   text-transform: uppercase;
 }
-/* line 43, assets\less\index.less */
+/* line 46, assets\less\index.less */
 html.menuColor {
   color: #FFF;
 }
-/* line 46, assets\less\index.less */
+/* line 49, assets\less\index.less */
 section.indexSection {
   height: 100%;
   width: 100%;
 }
-/* line 51, assets\less\index.less */
+/* line 54, assets\less\index.less */
 .slide_wrapper {
   width: 100%;
   height: 100%;
 }
-/* line 55, assets\less\index.less */
+/* line 58, assets\less\index.less */
 .main_slide {
   position: relative;
   width: 100%;
@@ -542,7 +547,7 @@ section.indexSection {
   text-align: center;
   overflow: hidden;
 }
-/* line 63, assets\less\index.less */
+/* line 66, assets\less\index.less */
 .main_slide .slide_contents {
   position: relative;
   z-index: 4;
@@ -550,12 +555,12 @@ section.indexSection {
   width: 100%;
   height: 100%;
 }
-/* line 74, assets\less\index.less */
+/* line 77, assets\less\index.less */
 .main_slide .slide_contents .visualOn {
   display: block !important;
   z-index: 2;
 }
-/* line 78, assets\less\index.less */
+/* line 81, assets\less\index.less */
 .main_slide .slide_contents .slideDisplay00,
 .main_slide .slide_contents .slideDisplay01 {
   position: absolute;
@@ -564,14 +569,14 @@ section.indexSection {
   height: 100%;
   width: 100%;
 }
-/* line 84, assets\less\index.less */
+/* line 87, assets\less\index.less */
 .main_slide .slide_contents .slideDisplay00 a,
 .main_slide .slide_contents .slideDisplay01 a {
   display: block;
   height: 100%;
   width: 100%;
 }
-/* line 92, assets\less\index.less */
+/* line 95, assets\less\index.less */
 .main_slide .slide_contents .slideDisplay00 img,
 .main_slide .slide_contents .slideDisplay01 img {
   width: 105%;
@@ -581,7 +586,7 @@ section.indexSection {
   right: 0;
   bottom: 0;
 }
-/* line 100, assets\less\index.less */
+/* line 103, assets\less\index.less */
 .main_slide .slide_contents .slideDisplay00 video,
 .main_slide .slide_contents .slideDisplay01 video {
   position: fixed;
@@ -590,7 +595,7 @@ section.indexSection {
   right: 0;
   bottom: 0;
 }
-/* line 110, assets\less\index.less */
+/* line 113, assets\less\index.less */
 .mouseListener {
   width: 100%;
   height: 50px;
@@ -600,11 +605,11 @@ section.indexSection {
   bottom: 140px;
   overflow: hidden;
 }
-/* line 118, assets\less\index.less */
+/* line 121, assets\less\index.less */
 .mouseListener:hover ul {
   transform: translateY(-51px);
 }
-/* line 122, assets\less\index.less */
+/* line 125, assets\less\index.less */
 .main_slide ul {
   width: 100%;
   position: relative;
@@ -615,20 +620,20 @@ section.indexSection {
   font-size: 0;
   transition: .5s ease;
 }
-/* line 133, assets\less\index.less */
+/* line 136, assets\less\index.less */
 .main_slide li {
   background-color: #FFF;
   cursor: pointer;
   display: inline-block;
 }
-/* line 140, assets\less\index.less */
+/* line 143, assets\less\index.less */
 .main_slide .slide_contents li > a {
   z-index: 2;
   display: inline-block;
   max-height: 50px;
   position: relative;
 }
-/* line 146, assets\less\index.less */
+/* line 149, assets\less\index.less */
 .main_slide .slide_contents li > a img {
   position: relative;
   height: 50px;
@@ -636,11 +641,11 @@ section.indexSection {
   opacity: .4;
   transition: .3s;
 }
-/* line 152, assets\less\index.less */
+/* line 155, assets\less\index.less */
 .main_slide .slide_contents li > a img:hover {
   opacity: 1;
 }
-/* line 156, assets\less\index.less */
+/* line 159, assets\less\index.less */
 .main_slide .slide_contents li > a video {
   position: relative;
   height: 50px;
@@ -649,11 +654,11 @@ section.indexSection {
   opacity: .4;
   transition: .3s;
 }
-/* line 163, assets\less\index.less */
+/* line 166, assets\less\index.less */
 .main_slide .slide_contents li > a video:hover {
   opacity: 1;
 }
-/* line 171, assets\less\index.less */
+/* line 174, assets\less\index.less */
 .title_bar {
   box-sizing: border-box;
   width: 100%;
@@ -663,7 +668,7 @@ section.indexSection {
   bottom: 50px;
   background-color: rgba(255, 255, 255, 0.92);
 }
-/* line 179, assets\less\index.less */
+/* line 182, assets\less\index.less */
 .title_bar h2 {
   line-height: 90px;
   letter-spacing: 0.2em;
@@ -671,16 +676,16 @@ section.indexSection {
   font-size: 15px;
   text-transform: uppercase;
 }
-/* line 186, assets\less\index.less */
+/* line 189, assets\less\index.less */
 .title_bar span {
   color: #0a0a0a;
 }
-/* line 189, assets\less\index.less */
+/* line 192, assets\less\index.less */
 .title_bar cite {
   color: #afafaf;
   font-style: normal;
 }
-/* line 195, assets\less\index.less */
+/* line 198, assets\less\index.less */
 .left_area,
 .right_area {
   position: absolute;
@@ -691,15 +696,15 @@ section.indexSection {
   height: 100%;
   cursor: w-resize;
 }
-/* line 204, assets\less\index.less */
+/* line 207, assets\less\index.less */
 .left_area {
   left: 0;
 }
-/* line 207, assets\less\index.less */
+/* line 210, assets\less\index.less */
 .right_area {
   right: 0;
 }
-/* line 210, assets\less\index.less */
+/* line 213, assets\less\index.less */
 .scroll_down_arrow_wrapper {
   position: relative;
   width: 100%;
@@ -708,7 +713,7 @@ section.indexSection {
   background-color: #FFF;
   z-index: 6;
 }
-/* line 217, assets\less\index.less */
+/* line 220, assets\less\index.less */
 .scroll_down_arrow_wrapper a#scroll_down_arrow {
   width: 80px;
   height: 55px;
@@ -722,7 +727,7 @@ section.indexSection {
   margin-left: -40px;
   opacity: 0.8;
 }
-/* line 239, assets\less\index.less */
+/* line 242, assets\less\index.less */
 .news_feed_wrapper {
   margin-top: -50px;
   padding: 75px 0 75px 0;
@@ -731,22 +736,23 @@ section.indexSection {
   z-index: 5;
   text-align: center;
 }
-/* line 247, assets\less\index.less */
+/* line 250, assets\less\index.less */
 .news_feed_wrapper h2 {
+  margin-top: 30px;
   margin-bottom: 70px;
   font-size: 12px;
   color: #515151;
   text-transform: uppercase;
   letter-spacing: 0.225em;
 }
-/* line 256, assets\less\index.less */
+/* line 260, assets\less\index.less */
 .news_feed_contents_wrapper {
   width: 1200px;
   margin: 0 auto;
   position: relative;
   height: 100%;
 }
-/* line 261, assets\less\index.less */
+/* line 265, assets\less\index.less */
 .news_feed_contents_wrapper .news_feed_vertical_line {
   position: absolute;
   top: 19px;
@@ -759,11 +765,11 @@ section.indexSection {
   bottom: 10px;
   z-index: 0;
 }
-/* line 275, assets\less\index.less */
+/* line 279, assets\less\index.less */
 .column_wrapper {
   height: 100%;
 }
-/* line 278, assets\less\index.less */
+/* line 282, assets\less\index.less */
 .column_wrapper .column_left {
   width: 600px;
   height: 100%;
@@ -771,7 +777,7 @@ section.indexSection {
   box-sizing: border-box;
   text-align: right;
 }
-/* line 285, assets\less\index.less */
+/* line 289, assets\less\index.less */
 .column_wrapper .column_right {
   width: 600px;
   height: 100%;
@@ -779,83 +785,83 @@ section.indexSection {
   box-sizing: border-box;
   text-align: left;
 }
-/* line 294, assets\less\index.less */
+/* line 298, assets\less\index.less */
 .column_news_box_left {
   padding-bottom: 50px;
   margin-bottom: 85px;
   margin-right: 60px;
 }
-/* line 299, assets\less\index.less */
+/* line 303, assets\less\index.less */
 .column_news_box_right {
   padding-bottom: 50px;
   margin-bottom: 85px;
   margin-left: 60px;
 }
-/* line 305, assets\less\index.less */
+/* line 309, assets\less\index.less */
 .column_left_image img {
   max-width: 540px;
   width: 95%;
 }
-/* line 311, assets\less\index.less */
+/* line 315, assets\less\index.less */
 .column_right_image img {
   max-width: 540px;
   width: 95%;
 }
-/* line 317, assets\less\index.less */
+/* line 321, assets\less\index.less */
 .column_left_text {
   margin-top: 25px;
   margin-left: 20px;
   letter-spacing: 0.125em;
 }
-/* line 321, assets\less\index.less */
+/* line 325, assets\less\index.less */
 .column_left_text .column_upper_text {
   color: #878787;
   font-size: 11px;
 }
-/* line 324, assets\less\index.less */
+/* line 328, assets\less\index.less */
 .column_left_text .column_upper_text a {
   text-transform: capitalize;
   color: #878787;
 }
-/* line 329, assets\less\index.less */
+/* line 333, assets\less\index.less */
 .column_left_text .column_hashtag {
   margin-top: 10px;
 }
-/* line 331, assets\less\index.less */
+/* line 335, assets\less\index.less */
 .column_left_text .column_hashtag p {
   text-transform: uppercase;
   font-size: 12px;
   color: #757575;
   line-height: 1.45em;
 }
-/* line 340, assets\less\index.less */
+/* line 344, assets\less\index.less */
 .column_right_text {
   margin-top: 25px;
   margin-right: 20px;
   letter-spacing: 0.125em;
 }
-/* line 344, assets\less\index.less */
+/* line 348, assets\less\index.less */
 .column_right_text .column_upper_text {
   color: #878787;
   font-size: 11px;
 }
-/* line 347, assets\less\index.less */
+/* line 351, assets\less\index.less */
 .column_right_text .column_upper_text a {
   text-transform: capitalize;
   color: #878787;
 }
-/* line 352, assets\less\index.less */
+/* line 356, assets\less\index.less */
 .column_right_text .column_hashtag {
   margin-top: 10px;
 }
-/* line 354, assets\less\index.less */
+/* line 358, assets\less\index.less */
 .column_right_text .column_hashtag p {
   text-transform: uppercase;
   font-size: 12px;
   color: #757575;
   line-height: 1.45em;
 }
-/* line 364, assets\less\index.less */
+/* line 368, assets\less\index.less */
 .load_more {
   width: 140px;
   height: 50px;
@@ -868,7 +874,7 @@ section.indexSection {
   overflow: hidden;
   box-sizing: border-box;
 }
-/* line 375, assets\less\index.less */
+/* line 379, assets\less\index.less */
 .load_more h3 {
   line-height: 50px;
   text-transform: uppercase;

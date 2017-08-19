@@ -33,7 +33,7 @@
 
         $('#scroll_down_arrow').click(function(event){
           event.preventDefault();
-          var news_feed_contents_wrapper_top = $('.news_feed_wrapper h2').offset().top - 90;
+          var news_feed_contents_wrapper_top = $('.news_feed_wrapper h2').offset().top - 70;
           $('body.indexBody').animate({
               'scrollTop':news_feed_contents_wrapper_top
           },'slow')
@@ -147,7 +147,7 @@
         })
 
 
-      //페이지 추가로딩
+      //페이지 추가로딩 & gnb text color
         //loading
         $(window).scroll(function(){
             var innerHeight = window.innerHeight;
@@ -157,10 +157,26 @@
             console.log(totallheight);
             console.log(totallheight-sct);
             console.log(innerHeight);
-            if ((totallheight-sct)<innerHeight) {
-                console.log('ㅇ');
-                // 인스타를부르자
+            // if ((totallheight-sct)<innerHeight) {
+            //     console.log('ㅇ');
+            //     // 인스타를부르자
+            // }
+            if (innerHeight - 90 < sct) {
+              $('header a').css('color','#000');
+              $('#btsH00').css('visibility', 'hidden');
+              $('#scroll_down_arrow').css('visibility', 'hidden');
+              $('.gnb-inner div.share ul .share_facebook').css({
+                'background-image': 'url(../image/facebook-icon-black.svg)'
+              });
+            }else if (innerHeight > sct) {
+              $('header a').css('color','');
+              $('#btsH00').css('visibility', '');
+              $('#scroll_down_arrow').css('visibility', '');
+              $('.gnb-inner div.share ul .share_facebook').css({
+                'background-image': ''
+              });
             }
+
         })
     })
 </script>
