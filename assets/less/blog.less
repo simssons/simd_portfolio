@@ -1,14 +1,37 @@
 html.blogHtml,body.blogBody{
     height: auto;
+
 }
 body.blogBody{
-    .gnb-inner{background-color: #FFF;}
+    .on{
+      display: block;
+    }
+    header{
+      top:0;
+      background-color: #FFF;
+    }
     .gnb-inner div a {color:black;}
-    .on{display: block;}
+    .gnb-inner div.share ul {
+      .share_facebook{
+        background-image: url(../image/facebook-icon-black.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .share_twitter{
+        background-image: url(../image/twitter-icon-black.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .share_google_plus{
+        background-image: url(../image/g-plus-icon-black.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
     width: 100%;
 
     article.blog_article{
-        border: 1px #F00 solid;
+
         box-sizing: border-box;
         section{
             height: ~"calc( 100% - 110px)";

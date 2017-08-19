@@ -173,7 +173,7 @@
             <gnb>
                 <div class="gnb-inner">
                     <div class="menu">
-                        <a href="">
+                        <a href="#">
                             <span>menu</span>
                         </a>
                     </div>
@@ -183,17 +183,17 @@
                         </a>
                         <ul class="social_media_share">
                           <li class="share_facebook">
-                            <a href="">
+                            <a href="#">
                               <span class="ir">share_facebook</span>
                             </a>
                           </li>
                           <li class="share_twitter">
-                            <a href="">
+                            <a href="#">
                               <span class="ir">share_twitter</span>
                             </a>
                           </li>
                           <li class="share_google_plus">
-                            <a href="">
+                            <a href="#">
                               <span class="ir">share_google_plus</span>
                             </a>
                           </li>
@@ -212,14 +212,14 @@
                     <div class="menu-main-menu">
                         <ul class="menu-main-menu-ul">
                             <li class="fifty">
-                                <a href="">about</a>
+                                <a href="#">about</a>
                                 <ul class="sub-menu">
                                     <li>about</li>
                                     <li><a href="https://simssons.github.io/simd_portfolio/dist/biography.html">biography</a></li>
                                 </ul>
                             </li>
                             <li class="fifty">
-                                <a href="">photography</a>
+                                <a href="#">photography</a>
                                 <ul class="sub-menu">
                                     <li>photography</li>
                                     <li><a href="https://simssons.github.io/simd_portfolio/dist/portraits.html">portraits</a></li>
@@ -227,29 +227,29 @@
                                 </ul>
                             </li>
                             <li class="fifty">
-                                <a href="">film</a>
+                                <a href="#">film</a>
                                 <ul class="sub-menu">
                                     <li>film</li>
                                     <li><a href="https://simssons.github.io/simd_portfolio/dist/tape.html">tape</a></li>
-                                    <!-- <li><a href="">filter</a></li> -->
+                                    <!-- <li><a href="#">filter</a></li> -->
                                 </ul>
                             </li>
                             <li class="fifty">
-                                <a href="">behind the scenes</a>
+                                <a href="#">behind the scenes</a>
                                 <ul class="sub-menu">
                                     <li>backstory</li>
                                     <li><a href="https://simssons.github.io/simd_portfolio/dist/BehindTheScenes.html">behind the scenes</a></li>
                                 </ul>
                             </li>
                             <li class="fifty">
-                                <a href="">blog</a>
+                                <a href="#">blog</a>
                                 <ul class="sub-menu">
                                     <li>jay walkers' blog</li>
                                     <li><a href="https://simssons.github.io/simd_portfolio/dist/blogList.html">blog</a></li>
                                 </ul>
                             </li>
                             <li class="fifty">
-                                <a href="">contact</a>
+                                <a href="#">contact</a>
                                 <ul class="sub-menu">
                                     <li>contact me</li>
                                     <li><a href="https://simssons.github.io/simd_portfolio/dist/contact.html">contact</a></li>
@@ -441,5 +441,119 @@
         </div>
         <!-- news_feed_wrapper -->
     </section>
+
+      <script>
+        $(function(){
+
+              //백그라운드 포지션
+            $(document).on( "mousemove", function( event ) {
+                var x = event.pageX;
+                var y = event.pageY;
+                x *= -1;
+                y *= -1;
+                $('.footer_btn_bg').stop().css({
+                 'background-position-x': x,
+                 'background-position-y': y
+                });
+            })
+
+
+            var ulWidth = $('.footer_btn_bg ul').width();
+            $('.footer_btn_bg').css('width',ulWidth)
+
+            //hover&sprite
+
+            $('.footer_btn_bg li>div').hover(function(){
+                $(this).css('background-image', 'none');
+                $(this).siblings('.overlay').css('opacity', 1);
+                $('.bg_sprite').css('animation-name','runningSprite')
+
+            },function(){
+                $(this).css('background-image', '');
+                $(this).siblings('.overlay').css('opacity', '');
+            })
+
+        })
+      </script>
+          <footer>
+              <div class="footer_btn_holder">
+                  <div class="footer_btn_bg">
+                      <ul>
+                          <li>
+                              <div class="instagram">
+                                  <a href=""></a>
+                              </div>
+                              <div class="overlay">
+                                <div class="bg_sprite"></div>
+                                <div class="social_values">
+                                  <span>follow jay</span>
+                                </div>
+                              </div>
+                              <span class="spacer"></span>
+                          </li>
+                          <li>
+                              <div class="facebook">
+                                  <a href=""></a>
+                              </div>
+                              <div class="overlay">
+                                <div class="bg_sprite"></div>
+                                <div class="social_values">
+                                  <span>follow jay</span>
+                                </div>
+                              </div>
+                              <span class="spacer"></span>
+                          </li>
+                          <li>
+                              <div class="twitter">
+                                  <a href=""></a>
+                              </div>
+                              <div class="overlay">
+                                <div class="bg_sprite"></div>
+                                <div class="social_values">
+                                  <span>follow jay</span>
+                                </div>
+                              </div>
+                              <span class="spacer"></span>
+                          </li>
+                          <li>
+                              <div class="youtube">
+                                  <a href=""></a>
+                              </div>
+                              <div class="overlay">
+                                <div class="bg_sprite"></div>
+                                <div class="social_values">
+                                  <span>follow jay</span>
+                                </div>
+                              </div>
+                              <span class="spacer"></span>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="footer_bottom">
+                  <ul class="footer_links">
+                      <li>
+                          <a href="">&#169; jay walkers</a>
+                      </li>
+                      <li>
+                          <a href="">contact</a>
+                      </li>
+                      <li>
+                          <a href="">about</a>
+                      </li>
+                      <li>
+                          <a href="">blog</a>
+                      </li>
+                      <li>
+                          <a href="">terms &#38; conditions</a>
+                      </li>
+                      <li>
+                          <a href="">top</a>
+                      </li>
+                  </ul>
+              </div>
+          </footer>
+
+
 </body>
 </html>

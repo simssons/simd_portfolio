@@ -28,16 +28,20 @@ a {
 img {
   vertical-align: top;
 }
-/* line 6, assets\less\common.less */
+/* line 7, assets\less\common.less */
 .on {
   display: block;
 }
-/* line 7, assets\less\common.less */
+/* line 8, assets\less\common.less */
 .ir {
   font-size: 0;
   text-indent: -9999px;
   position: absolute;
   top: -9999px;
+}
+/* line 9, assets\less\common.less */
+.clear {
+  clear: both;
 }
 /* line 2, assets\less\gnb.less */
 header {
@@ -474,22 +478,18 @@ ul.footer_links li a {
     background-position-x: -2220px;
   }
 }
-/* line 2, assets\less\index.less */
-.clear {
-  clear: both;
-}
-/* line 7, assets\less\index.less */
+/* line 5, assets\less\index.less */
 html.indexHtml,
 body.indexBody {
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
 }
-/* line 11, assets\less\index.less */
+/* line 9, assets\less\index.less */
 html.indexHtml .on,
 body.indexBody .on {
   display: block;
 }
-/* line 14, assets\less\index.less */
+/* line 12, assets\less\index.less */
 html.indexHtml #windowLoad,
 body.indexBody #windowLoad {
   width: 100%;
@@ -503,7 +503,7 @@ body.indexBody #windowLoad {
   opacity: 0;
   transition: 1s;
 }
-/* line 25, assets\less\index.less */
+/* line 23, assets\less\index.less */
 html.indexHtml #windowLoad h1,
 body.indexBody #windowLoad h1 {
   position: absolute;
@@ -520,21 +520,21 @@ body.indexBody #windowLoad h1 {
   text-align: center;
   text-transform: uppercase;
 }
-/* line 45, assets\less\index.less */
+/* line 43, assets\less\index.less */
 html.menuColor {
   color: #FFF;
 }
-/* line 48, assets\less\index.less */
+/* line 46, assets\less\index.less */
 section.indexSection {
   height: 100%;
   width: 100%;
 }
-/* line 53, assets\less\index.less */
+/* line 51, assets\less\index.less */
 .slide_wrapper {
   width: 100%;
   height: 100%;
 }
-/* line 57, assets\less\index.less */
+/* line 55, assets\less\index.less */
 .main_slide {
   position: relative;
   width: 100%;
@@ -542,7 +542,7 @@ section.indexSection {
   text-align: center;
   overflow: hidden;
 }
-/* line 65, assets\less\index.less */
+/* line 63, assets\less\index.less */
 .main_slide .slide_contents {
   position: relative;
   z-index: 4;
@@ -550,12 +550,12 @@ section.indexSection {
   width: 100%;
   height: 100%;
 }
-/* line 76, assets\less\index.less */
+/* line 74, assets\less\index.less */
 .main_slide .slide_contents .visualOn {
   display: block !important;
   z-index: 2;
 }
-/* line 80, assets\less\index.less */
+/* line 78, assets\less\index.less */
 .main_slide .slide_contents .slideDisplay00,
 .main_slide .slide_contents .slideDisplay01 {
   position: absolute;
@@ -564,14 +564,14 @@ section.indexSection {
   height: 100%;
   width: 100%;
 }
-/* line 86, assets\less\index.less */
+/* line 84, assets\less\index.less */
 .main_slide .slide_contents .slideDisplay00 a,
 .main_slide .slide_contents .slideDisplay01 a {
   display: block;
   height: 100%;
   width: 100%;
 }
-/* line 94, assets\less\index.less */
+/* line 92, assets\less\index.less */
 .main_slide .slide_contents .slideDisplay00 img,
 .main_slide .slide_contents .slideDisplay01 img {
   width: 105%;
@@ -581,7 +581,7 @@ section.indexSection {
   right: 0;
   bottom: 0;
 }
-/* line 102, assets\less\index.less */
+/* line 100, assets\less\index.less */
 .main_slide .slide_contents .slideDisplay00 video,
 .main_slide .slide_contents .slideDisplay01 video {
   position: fixed;
@@ -590,7 +590,7 @@ section.indexSection {
   right: 0;
   bottom: 0;
 }
-/* line 112, assets\less\index.less */
+/* line 110, assets\less\index.less */
 .mouseListener {
   width: 100%;
   height: 50px;
@@ -600,11 +600,11 @@ section.indexSection {
   bottom: 140px;
   overflow: hidden;
 }
-/* line 120, assets\less\index.less */
+/* line 118, assets\less\index.less */
 .mouseListener:hover ul {
   transform: translateY(-51px);
 }
-/* line 124, assets\less\index.less */
+/* line 122, assets\less\index.less */
 .main_slide ul {
   width: 100%;
   position: relative;
@@ -615,20 +615,20 @@ section.indexSection {
   font-size: 0;
   transition: .5s ease;
 }
-/* line 135, assets\less\index.less */
+/* line 133, assets\less\index.less */
 .main_slide li {
   background-color: #FFF;
   cursor: pointer;
   display: inline-block;
 }
-/* line 142, assets\less\index.less */
+/* line 140, assets\less\index.less */
 .main_slide .slide_contents li > a {
   z-index: 2;
   display: inline-block;
   max-height: 50px;
   position: relative;
 }
-/* line 148, assets\less\index.less */
+/* line 146, assets\less\index.less */
 .main_slide .slide_contents li > a img {
   position: relative;
   height: 50px;
@@ -636,11 +636,11 @@ section.indexSection {
   opacity: .4;
   transition: .3s;
 }
-/* line 154, assets\less\index.less */
+/* line 152, assets\less\index.less */
 .main_slide .slide_contents li > a img:hover {
   opacity: 1;
 }
-/* line 158, assets\less\index.less */
+/* line 156, assets\less\index.less */
 .main_slide .slide_contents li > a video {
   position: relative;
   height: 50px;
@@ -649,11 +649,11 @@ section.indexSection {
   opacity: .4;
   transition: .3s;
 }
-/* line 165, assets\less\index.less */
+/* line 163, assets\less\index.less */
 .main_slide .slide_contents li > a video:hover {
   opacity: 1;
 }
-/* line 173, assets\less\index.less */
+/* line 171, assets\less\index.less */
 .title_bar {
   box-sizing: border-box;
   width: 100%;
@@ -663,7 +663,7 @@ section.indexSection {
   bottom: 50px;
   background-color: rgba(255, 255, 255, 0.92);
 }
-/* line 181, assets\less\index.less */
+/* line 179, assets\less\index.less */
 .title_bar h2 {
   line-height: 90px;
   letter-spacing: 0.2em;
@@ -671,16 +671,16 @@ section.indexSection {
   font-size: 15px;
   text-transform: uppercase;
 }
-/* line 188, assets\less\index.less */
+/* line 186, assets\less\index.less */
 .title_bar span {
   color: #0a0a0a;
 }
-/* line 191, assets\less\index.less */
+/* line 189, assets\less\index.less */
 .title_bar cite {
   color: #afafaf;
   font-style: normal;
 }
-/* line 197, assets\less\index.less */
+/* line 195, assets\less\index.less */
 .left_area,
 .right_area {
   position: absolute;
@@ -691,15 +691,15 @@ section.indexSection {
   height: 100%;
   cursor: w-resize;
 }
-/* line 206, assets\less\index.less */
+/* line 204, assets\less\index.less */
 .left_area {
   left: 0;
 }
-/* line 209, assets\less\index.less */
+/* line 207, assets\less\index.less */
 .right_area {
   right: 0;
 }
-/* line 212, assets\less\index.less */
+/* line 210, assets\less\index.less */
 .scroll_down_arrow_wrapper {
   position: relative;
   width: 100%;
@@ -708,7 +708,7 @@ section.indexSection {
   background-color: #FFF;
   z-index: 6;
 }
-/* line 219, assets\less\index.less */
+/* line 217, assets\less\index.less */
 .scroll_down_arrow_wrapper a#scroll_down_arrow {
   width: 80px;
   height: 55px;
@@ -722,7 +722,7 @@ section.indexSection {
   margin-left: -40px;
   opacity: 0.8;
 }
-/* line 241, assets\less\index.less */
+/* line 239, assets\less\index.less */
 .news_feed_wrapper {
   margin-top: -50px;
   padding: 75px 0 75px 0;
@@ -731,7 +731,7 @@ section.indexSection {
   z-index: 5;
   text-align: center;
 }
-/* line 249, assets\less\index.less */
+/* line 247, assets\less\index.less */
 .news_feed_wrapper h2 {
   margin-bottom: 70px;
   font-size: 12px;
@@ -739,14 +739,14 @@ section.indexSection {
   text-transform: uppercase;
   letter-spacing: 0.225em;
 }
-/* line 258, assets\less\index.less */
+/* line 256, assets\less\index.less */
 .news_feed_contents_wrapper {
   width: 1200px;
   margin: 0 auto;
   position: relative;
   height: 100%;
 }
-/* line 263, assets\less\index.less */
+/* line 261, assets\less\index.less */
 .news_feed_contents_wrapper .news_feed_vertical_line {
   position: absolute;
   top: 19px;
@@ -759,11 +759,11 @@ section.indexSection {
   bottom: 10px;
   z-index: 0;
 }
-/* line 277, assets\less\index.less */
+/* line 275, assets\less\index.less */
 .column_wrapper {
   height: 100%;
 }
-/* line 280, assets\less\index.less */
+/* line 278, assets\less\index.less */
 .column_wrapper .column_left {
   width: 600px;
   height: 100%;
@@ -771,7 +771,7 @@ section.indexSection {
   box-sizing: border-box;
   text-align: right;
 }
-/* line 287, assets\less\index.less */
+/* line 285, assets\less\index.less */
 .column_wrapper .column_right {
   width: 600px;
   height: 100%;
@@ -779,83 +779,83 @@ section.indexSection {
   box-sizing: border-box;
   text-align: left;
 }
-/* line 296, assets\less\index.less */
+/* line 294, assets\less\index.less */
 .column_news_box_left {
   padding-bottom: 50px;
   margin-bottom: 85px;
   margin-right: 60px;
 }
-/* line 301, assets\less\index.less */
+/* line 299, assets\less\index.less */
 .column_news_box_right {
   padding-bottom: 50px;
   margin-bottom: 85px;
   margin-left: 60px;
 }
-/* line 307, assets\less\index.less */
+/* line 305, assets\less\index.less */
 .column_left_image img {
   max-width: 540px;
   width: 95%;
 }
-/* line 313, assets\less\index.less */
+/* line 311, assets\less\index.less */
 .column_right_image img {
   max-width: 540px;
   width: 95%;
 }
-/* line 319, assets\less\index.less */
+/* line 317, assets\less\index.less */
 .column_left_text {
   margin-top: 25px;
   margin-left: 20px;
   letter-spacing: 0.125em;
 }
-/* line 323, assets\less\index.less */
+/* line 321, assets\less\index.less */
 .column_left_text .column_upper_text {
   color: #878787;
   font-size: 11px;
 }
-/* line 326, assets\less\index.less */
+/* line 324, assets\less\index.less */
 .column_left_text .column_upper_text a {
   text-transform: capitalize;
   color: #878787;
 }
-/* line 331, assets\less\index.less */
+/* line 329, assets\less\index.less */
 .column_left_text .column_hashtag {
   margin-top: 10px;
 }
-/* line 333, assets\less\index.less */
+/* line 331, assets\less\index.less */
 .column_left_text .column_hashtag p {
   text-transform: uppercase;
   font-size: 12px;
   color: #757575;
   line-height: 1.45em;
 }
-/* line 342, assets\less\index.less */
+/* line 340, assets\less\index.less */
 .column_right_text {
   margin-top: 25px;
   margin-right: 20px;
   letter-spacing: 0.125em;
 }
-/* line 346, assets\less\index.less */
+/* line 344, assets\less\index.less */
 .column_right_text .column_upper_text {
   color: #878787;
   font-size: 11px;
 }
-/* line 349, assets\less\index.less */
+/* line 347, assets\less\index.less */
 .column_right_text .column_upper_text a {
   text-transform: capitalize;
   color: #878787;
 }
-/* line 354, assets\less\index.less */
+/* line 352, assets\less\index.less */
 .column_right_text .column_hashtag {
   margin-top: 10px;
 }
-/* line 356, assets\less\index.less */
+/* line 354, assets\less\index.less */
 .column_right_text .column_hashtag p {
   text-transform: uppercase;
   font-size: 12px;
   color: #757575;
   line-height: 1.45em;
 }
-/* line 366, assets\less\index.less */
+/* line 364, assets\less\index.less */
 .load_more {
   width: 140px;
   height: 50px;
@@ -868,7 +868,7 @@ section.indexSection {
   overflow: hidden;
   box-sizing: border-box;
 }
-/* line 377, assets\less\index.less */
+/* line 375, assets\less\index.less */
 .load_more h3 {
   line-height: 50px;
   text-transform: uppercase;
@@ -883,41 +883,73 @@ body.bioBody {
 html.bioHtml header,
 body.bioBody header {
   top: 0;
+  background-color: #FFF;
 }
-/* line 12, assets\less\biography.less */
+/* line 13, assets\less\biography.less */
+html.bioHtml .gnb-inner div.share ul .share_facebook,
+body.bioBody .gnb-inner div.share ul .share_facebook {
+  background-image: url(../image/facebook-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 18, assets\less\biography.less */
+html.bioHtml .gnb-inner div.share ul .share_twitter,
+body.bioBody .gnb-inner div.share ul .share_twitter {
+  background-image: url(../image/twitter-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 23, assets\less\biography.less */
+html.bioHtml .gnb-inner div.share ul .share_google_plus,
+body.bioBody .gnb-inner div.share ul .share_google_plus {
+  background-image: url(../image/g-plus-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 30, assets\less\biography.less */
+html.bioHtml .gnb-inner a,
+body.bioBody .gnb-inner a {
+  color: #000;
+}
+/* line 33, assets\less\biography.less */
+html.bioHtml h1,
+body.bioBody h1 {
+  margin: 0 auto;
+}
+/* line 38, assets\less\biography.less */
 .on {
   display: block;
 }
-/* line 13, assets\less\biography.less */
+/* line 39, assets\less\biography.less */
 section.bio {
   height: 100%;
 }
-/* line 17, assets\less\biography.less */
+/* line 43, assets\less\biography.less */
 div.bio_wrapper {
   height: 100%;
   width: 100%;
 }
-/* line 22, assets\less\biography.less */
+/* line 48, assets\less\biography.less */
 div.bio_slide {
   margin-top: 110px;
   width: 100%;
   height: 70%;
   overflow: hidden;
 }
-/* line 27, assets\less\biography.less */
+/* line 53, assets\less\biography.less */
 div.bio_slide ul {
   width: 100%;
   height: 100%;
   position: relative;
   text-align: center;
 }
-/* line 32, assets\less\biography.less */
+/* line 58, assets\less\biography.less */
 div.bio_slide ul li {
   display: inline-block;
   width: 25%;
   height: 100%;
 }
-/* line 36, assets\less\biography.less */
+/* line 62, assets\less\biography.less */
 div.bio_slide ul li a {
   width: 100%;
   height: 100%;
@@ -925,18 +957,18 @@ div.bio_slide ul li a {
   position: relative;
   left: 0;
 }
-/* line 42, assets\less\biography.less */
+/* line 68, assets\less\biography.less */
 div.bio_slide ul li a img {
   width: 100%;
   height: 100%;
 }
-/* line 50, assets\less\biography.less */
+/* line 76, assets\less\biography.less */
 .ab_left {
   position: absolute;
   left: -22%;
   text-align: right;
 }
-/* line 54, assets\less\biography.less */
+/* line 80, assets\less\biography.less */
 .ab_left .ab_left_before {
   height: 100%;
   width: 100%;
@@ -945,11 +977,11 @@ div.bio_slide ul li a img {
   z-index: 2;
   cursor: e-resize;
 }
-/* line 61, assets\less\biography.less */
+/* line 87, assets\less\biography.less */
 .ab_left .ab_left_before:hover + div {
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 65, assets\less\biography.less */
+/* line 91, assets\less\biography.less */
 .ab_left .ab_left_after {
   position: absolute;
   width: 100%;
@@ -962,13 +994,13 @@ div.bio_slide ul li a img {
   z-index: 1;
   background: rgba(255, 255, 255, 0.5);
 }
-/* line 79, assets\less\biography.less */
+/* line 105, assets\less\biography.less */
 .ab_right {
   position: absolute;
   right: -22%;
   text-align: left;
 }
-/* line 83, assets\less\biography.less */
+/* line 109, assets\less\biography.less */
 .ab_right .ab_right_before {
   height: 100%;
   width: 100%;
@@ -976,11 +1008,11 @@ div.bio_slide ul li a img {
   left: -88%;
   cursor: e-resize;
 }
-/* line 89, assets\less\biography.less */
+/* line 115, assets\less\biography.less */
 .ab_right .ab_right_before:hover + div {
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 93, assets\less\biography.less */
+/* line 119, assets\less\biography.less */
 .ab_right .ab_right_after {
   position: absolute;
   width: 100%;
@@ -993,7 +1025,7 @@ div.bio_slide ul li a img {
   z-index: 1;
   background: rgba(255, 255, 255, 0.5);
 }
-/* line 108, assets\less\biography.less */
+/* line 134, assets\less\biography.less */
 #bidPopUpLayer {
   position: fixed;
   z-index: 100;
@@ -1003,7 +1035,7 @@ div.bio_slide ul li a img {
   width: 100%;
   display: none;
 }
-/* line 117, assets\less\biography.less */
+/* line 143, assets\less\biography.less */
 #bidPopUpLayer:before {
   content: "";
   display: block;
@@ -1014,45 +1046,45 @@ div.bio_slide ul li a img {
   z-index: -1;
   background-color: #161616;
 }
-/* line 127, assets\less\biography.less */
+/* line 153, assets\less\biography.less */
 #bidPopUpLayer .bio_popup_pic_wrapper {
   display: inline-block;
   position: relative;
   max-width: 70%;
   margin: 0 auto;
 }
-/* line 132, assets\less\biography.less */
+/* line 158, assets\less\biography.less */
 #bidPopUpLayer .bio_popup_pic_wrapper a {
   width: auto;
   cursor: default;
 }
-/* line 136, assets\less\biography.less */
+/* line 162, assets\less\biography.less */
 #bidPopUpLayer .bio_popup_pic_wrapper img {
   height: auto;
   width: auto;
   max-width: 100%;
 }
-/* line 147, assets\less\biography.less */
+/* line 173, assets\less\biography.less */
 .bio_article {
   padding-top: 65px;
   height: 100%;
   display: block;
   margin-bottom: 65px;
 }
-/* line 152, assets\less\biography.less */
+/* line 178, assets\less\biography.less */
 .bio_article h2 {
   text-align: center;
   margin: 8px auto 64.8px auto;
   max-width: 85%;
 }
-/* line 156, assets\less\biography.less */
+/* line 182, assets\less\biography.less */
 .bio_article h2 span {
   font-size: 12px;
   letter-spacing: 0.225em;
   color: #515151;
   text-transform: uppercase;
 }
-/* line 163, assets\less\biography.less */
+/* line 189, assets\less\biography.less */
 .bio_article p {
   margin-bottom: 20px;
   text-align: left;
@@ -1061,12 +1093,12 @@ div.bio_slide ul li a img {
   line-height: 1.45em;
   color: #666666;
 }
-/* line 174, assets\less\biography.less */
+/* line 200, assets\less\biography.less */
 .bio_article_text {
   width: 750px;
   margin: 0 auto;
 }
-/* line 189, assets\less\biography.less */
+/* line 215, assets\less\biography.less */
 .tilter {
   display: block;
   position: relative;
@@ -1078,11 +1110,11 @@ div.bio_slide ul li a img {
   flex: none;
   perspective: 1000px;
 }
-/* line 201, assets\less\biography.less */
+/* line 227, assets\less\biography.less */
 .tilter * {
   pointer-events: none;
 }
-/* line 205, assets\less\biography.less */
+/* line 231, assets\less\biography.less */
 .tilter:hover,
 .tilter:focus {
   color: #fff;
@@ -1094,7 +1126,7 @@ div.bio_slide ul li a img {
 .tilter__caption {
 	will-change: transform;
 }*/
-/* line 218, assets\less\biography.less */
+/* line 244, assets\less\biography.less */
 .tilter__figure,
 .tilter__image {
   margin: 0;
@@ -1102,16 +1134,16 @@ div.bio_slide ul li a img {
   height: 100%;
   display: block;
 }
-/* line 226, assets\less\biography.less */
+/* line 252, assets\less\biography.less */
 .tilter__figure > * {
   transform: translateZ(0px);
   /* Force correct stacking order */
 }
-/* line 229, assets\less\biography.less */
+/* line 255, assets\less\biography.less */
 .tilter__figure {
   position: relative;
 }
-/* line 232, assets\less\biography.less */
+/* line 258, assets\less\biography.less */
 .tilter__figure::before {
   content: '';
   position: absolute;
@@ -1121,7 +1153,7 @@ div.bio_slide ul li a img {
   left: 5%;
   box-shadow: 0 30px 20px rgba(35, 32, 39, 0.5);
 }
-/* line 242, assets\less\biography.less */
+/* line 268, assets\less\biography.less */
 .tilter__deco {
   position: absolute;
   top: 0;
@@ -1130,11 +1162,11 @@ div.bio_slide ul li a img {
   height: 100%;
   overflow: hidden;
 }
-/* line 251, assets\less\biography.less */
+/* line 277, assets\less\biography.less */
 .tilter__deco--overlay {
   background-image: linear-gradient(45deg, rgba(226, 60, 99, 0.4), rgba(145, 58, 252, 0.4), rgba(16, 11, 192, 0.4));
 }
-/* line 255, assets\less\biography.less */
+/* line 281, assets\less\biography.less */
 .tilter__deco--shine div {
   position: absolute;
   width: 200%;
@@ -1143,13 +1175,13 @@ div.bio_slide ul li a img {
   left: -50%;
   background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0.25) 50%, transparent 100%);
 }
-/* line 264, assets\less\biography.less */
+/* line 290, assets\less\biography.less */
 .tilter__deco--lines {
   fill: none;
   stroke: #fff;
   stroke-width: 1.5px;
 }
-/* line 270, assets\less\biography.less */
+/* line 296, assets\less\biography.less */
 .tilter__caption {
   position: absolute;
   bottom: 0;
@@ -1158,7 +1190,7 @@ div.bio_slide ul li a img {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 278, assets\less\biography.less */
+/* line 304, assets\less\biography.less */
 .tilter__title {
   margin: 0;
   font-weight: normal;
@@ -1167,7 +1199,7 @@ div.bio_slide ul li a img {
   letter-spacing: .15em;
   line-height: 1;
 }
-/* line 287, assets\less\biography.less */
+/* line 313, assets\less\biography.less */
 .tilter__description {
   margin: 1em 0 0 0;
   font-size: 0.85vw;
@@ -1175,7 +1207,7 @@ div.bio_slide ul li a img {
 }
 /* Individual styles */
 /* Example 1 (Default) */
-/* line 296, assets\less\biography.less */
+/* line 322, assets\less\biography.less */
 .tilter--1 .tilter__figure::before {
   box-shadow: 0 30px 20px rgba(0, 0, 0, 0.5);
 }
@@ -1198,22 +1230,40 @@ body.portrait_body {
 body.portrait_body .gnb-inner div a {
   color: black;
 }
-/* line 17, assets\less\portraits.less */
+/* line 16, assets\less\portraits.less */
+body.portrait_body .gnb-inner div.share ul .share_facebook {
+  background-image: url(../image/facebook-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 21, assets\less\portraits.less */
+body.portrait_body .gnb-inner div.share ul .share_twitter {
+  background-image: url(../image/twitter-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 26, assets\less\portraits.less */
+body.portrait_body .gnb-inner div.share ul .share_google_plus {
+  background-image: url(../image/g-plus-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 34, assets\less\portraits.less */
 .portrait_section {
   overflow-x: scroll;
   width: 100%;
   position: relative;
 }
-/* line 22, assets\less\portraits.less */
+/* line 39, assets\less\portraits.less */
 .portrait_wrapper {
   height: 100%;
 }
-/* line 25, assets\less\portraits.less */
+/* line 42, assets\less\portraits.less */
 .portrait_gallery {
   height: 100%;
   position: relative;
 }
-/* line 29, assets\less\portraits.less */
+/* line 46, assets\less\portraits.less */
 .portrait_gallery div.portrait_description {
   position: absolute;
   bottom: 110px;
@@ -1221,7 +1271,7 @@ body.portrait_body .gnb-inner div a {
   padding: 0 90px 0 50px;
   max-width: 700px;
 }
-/* line 36, assets\less\portraits.less */
+/* line 53, assets\less\portraits.less */
 .portrait_gallery div.portrait_description h2 span {
   font-size: 13px;
   letter-spacing: 0.225em;
@@ -1229,7 +1279,7 @@ body.portrait_body .gnb-inner div a {
   font-weight: normal;
   text-transform: uppercase;
 }
-/* line 44, assets\less\portraits.less */
+/* line 61, assets\less\portraits.less */
 .portrait_gallery div.portrait_description p {
   white-space: normal;
   font-size: 13px;
@@ -1238,21 +1288,21 @@ body.portrait_body .gnb-inner div a {
   margin-top: 60px;
   line-height: 1.7em;
 }
-/* line 57, assets\less\portraits.less */
+/* line 74, assets\less\portraits.less */
 ul.portrait_list {
   height: 100%;
   font-size: 0;
 }
-/* line 60, assets\less\portraits.less */
+/* line 77, assets\less\portraits.less */
 ul.portrait_list li {
   background-color: #FFF;
 }
-/* line 61, assets\less\portraits.less */
+/* line 78, assets\less\portraits.less */
 ul.portrait_list > li:first-child {
   padding: 110px 0 110px 10px;
   box-sizing: border-box;
 }
-/* line 65, assets\less\portraits.less */
+/* line 82, assets\less\portraits.less */
 ul.portrait_list > li {
   padding: 110px 0;
   position: absolute;
@@ -1262,15 +1312,15 @@ ul.portrait_list > li {
   width: 60%;
   height: 100%;
 }
-/* line 73, assets\less\portraits.less */
+/* line 90, assets\less\portraits.less */
 ul.portrait_list > li img {
   height: 100%;
 }
-/* line 76, assets\less\portraits.less */
+/* line 93, assets\less\portraits.less */
 ul.portrait_list > li div {
   margin-top: 10px;
 }
-/* line 80, assets\less\portraits.less */
+/* line 97, assets\less\portraits.less */
 ul.portrait_list > li cite {
   margin-top: 10px;
   font-style: normal;
@@ -1279,12 +1329,12 @@ ul.portrait_list > li cite {
   letter-spacing: 0.125em;
   text-transform: capitalize;
 }
-/* line 89, assets\less\portraits.less */
+/* line 106, assets\less\portraits.less */
 ul.portrait_list li.second_last_pt {
   background-color: #f7f7f9;
   width: 33%;
 }
-/* line 92, assets\less\portraits.less */
+/* line 109, assets\less\portraits.less */
 ul.portrait_list li.second_last_pt div.next_up {
   display: block;
   line-height: 12px;
@@ -1293,7 +1343,7 @@ ul.portrait_list li.second_last_pt div.next_up {
   padding: 0 90px;
   margin-top: 220px;
 }
-/* line 99, assets\less\portraits.less */
+/* line 116, assets\less\portraits.less */
 ul.portrait_list li.second_last_pt div.next_up span,
 ul.portrait_list li.second_last_pt div.next_up a {
   font-size: 10px;
@@ -1303,19 +1353,19 @@ ul.portrait_list li.second_last_pt div.next_up a {
   display: block;
   margin-top: 5px;
 }
-/* line 108, assets\less\portraits.less */
+/* line 125, assets\less\portraits.less */
 ul.portrait_list li.second_last_pt li {
   margin: 0;
   font-size: 15px;
   line-height: 1.5em;
   background-color: #f7f7f9;
 }
-/* line 116, assets\less\portraits.less */
+/* line 133, assets\less\portraits.less */
 ul.portrait_list li.last_pt {
   background-color: rgba(156, 156, 156, 0.65);
   width: 33%;
 }
-/* line 123, assets\less\portraits.less */
+/* line 140, assets\less\portraits.less */
 .portrait_gallery_thumbnails {
   opacity: 0;
   width: 100%;
@@ -1326,31 +1376,31 @@ ul.portrait_list li.last_pt {
   text-align: center;
   transition: 1s ease;
 }
-/* line 132, assets\less\portraits.less */
+/* line 149, assets\less\portraits.less */
 .portrait_gallery_thumbnails:hover {
   opacity: 1;
   bottom: 4px;
 }
-/* line 136, assets\less\portraits.less */
+/* line 153, assets\less\portraits.less */
 .portrait_gallery_thumbnails ul {
   font-size: 0;
   margin-top: 100px;
 }
-/* line 139, assets\less\portraits.less */
+/* line 156, assets\less\portraits.less */
 .portrait_gallery_thumbnails ul li {
   display: inline-block;
   height: 50px;
   width: auto;
 }
-/* line 143, assets\less\portraits.less */
+/* line 160, assets\less\portraits.less */
 .portrait_gallery_thumbnails ul li a {
   position: relative;
 }
-/* line 148, assets\less\portraits.less */
+/* line 165, assets\less\portraits.less */
 .portrait_gallery_thumbnails ul li a img {
   height: 100%;
 }
-/* line 164, assets\less\portraits.less */
+/* line 181, assets\less\portraits.less */
 .portrait_gallery_thumbnails #test {
   display: inline-block;
   height: 100%;
@@ -1372,18 +1422,36 @@ body.filter_body .gnb-inner div a {
 body.filter_body .on {
   display: block;
 }
-/* line 8, assets\less\filter.less */
+/* line 7, assets\less\filter.less */
+body.filter_body .gnb-inner div.share ul .share_facebook {
+  background-image: url(../image/facebook-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 12, assets\less\filter.less */
+body.filter_body .gnb-inner div.share ul .share_twitter {
+  background-image: url(../image/twitter-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 17, assets\less\filter.less */
+body.filter_body .gnb-inner div.share ul .share_google_plus {
+  background-image: url(../image/g-plus-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 25, assets\less\filter.less */
 div.filter_wrapper {
   padding-top: 90px;
   box-sizing: border-box;
   width: 100%;
 }
-/* line 14, assets\less\filter.less */
+/* line 31, assets\less\filter.less */
 ul.filter_list {
   width: 100%;
   font-size: 0;
 }
-/* line 17, assets\less\filter.less */
+/* line 34, assets\less\filter.less */
 ul.filter_list li {
   box-sizing: border-box;
   display: inline-block;
@@ -1391,7 +1459,7 @@ ul.filter_list li {
   padding-bottom: 25%;
   position: relative;
 }
-/* line 26, assets\less\filter.less */
+/* line 43, assets\less\filter.less */
 div.filter_select {
   width: 100%;
   height: 100%;
@@ -1403,7 +1471,7 @@ div.filter_select {
   background-position: -200px center;
   cursor: all-scroll;
 }
-/* line 36, assets\less\filter.less */
+/* line 53, assets\less\filter.less */
 div.filter_select div.filter_sr {
   display: inline-block;
   width: 100%;
@@ -1416,7 +1484,7 @@ div.filter_select div.filter_sr {
   background-position: 50% 50%;
   transition: .001s;
 }
-/* line 48, assets\less\filter.less */
+/* line 65, assets\less\filter.less */
 div.filter_select .filter_fixed {
   display: inline-block;
   width: 100%;
@@ -1430,7 +1498,7 @@ div.filter_select .filter_fixed {
   background-size: cover;
   background-position: 50% 100%;
 }
-/* line 61, assets\less\filter.less */
+/* line 78, assets\less\filter.less */
 div.filter_select .filter_click {
   display: block;
   position: absolute;
@@ -1438,7 +1506,7 @@ div.filter_select .filter_click {
   width: 100%;
   height: 100%;
 }
-/* line 67, assets\less\filter.less */
+/* line 84, assets\less\filter.less */
 div.filter_select .filter_click a#filter_trigger {
   display: inline-block;
   width: 60%;
@@ -1447,14 +1515,14 @@ div.filter_select .filter_click a#filter_trigger {
   border-radius: 50%;
   margin-top: 19.5%;
 }
-/* line 78, assets\less\filter.less */
+/* line 95, assets\less\filter.less */
 .filter_description {
   position: absolute;
   z-index: 15;
   top: 46%;
   width: 100%;
 }
-/* line 83, assets\less\filter.less */
+/* line 100, assets\less\filter.less */
 .filter_description cite,
 .filter_description span {
   text-align: center;
@@ -1468,12 +1536,12 @@ div.filter_select .filter_click a#filter_trigger {
   opacity: 0;
   transition: 1s ease;
 }
-/* line 95, assets\less\filter.less */
+/* line 112, assets\less\filter.less */
 .filter_description span {
   margin-top: 10px;
   font-size: 13px !important;
 }
-/* line 101, assets\less\filter.less */
+/* line 118, assets\less\filter.less */
 .filter_cover {
   width: 100%;
   height: 100%;
@@ -1484,7 +1552,7 @@ div.filter_select .filter_click a#filter_trigger {
   opacity: 1;
   transition: 1s ease;
 }
-/* line 110, assets\less\filter.less */
+/* line 127, assets\less\filter.less */
 .filter_cover .filter_a {
   display: block;
   position: absolute;
@@ -1493,14 +1561,14 @@ div.filter_select .filter_click a#filter_trigger {
   width: 100%;
   height: 100%;
 }
-/* line 118, assets\less\filter.less */
+/* line 135, assets\less\filter.less */
 .filter_cover img {
   max-height: 55%;
   opacity: 1;
   transition: 1s ease;
   margin-top: 22.5%;
 }
-/* line 124, assets\less\filter.less */
+/* line 141, assets\less\filter.less */
 .filter_cover video {
   opacity: 1;
   transition: 1s ease;
@@ -1523,12 +1591,33 @@ body.tape_body .on {
   display: block;
 }
 /* line 9, assets\less\tape.less */
+html.tapeHtml .gnb-inner div.share ul .share_facebook,
+body.tape_body .gnb-inner div.share ul .share_facebook {
+  background-image: url(../image/facebook-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 14, assets\less\tape.less */
+html.tapeHtml .gnb-inner div.share ul .share_twitter,
+body.tape_body .gnb-inner div.share ul .share_twitter {
+  background-image: url(../image/twitter-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 19, assets\less\tape.less */
+html.tapeHtml .gnb-inner div.share ul .share_google_plus,
+body.tape_body .gnb-inner div.share ul .share_google_plus {
+  background-image: url(../image/g-plus-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 26, assets\less\tape.less */
 div.tape_wapper {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
 }
-/* line 13, assets\less\tape.less */
+/* line 30, assets\less\tape.less */
 div.tape_wapper section {
   box-sizing: border-box;
   width: 100%;
@@ -1538,23 +1627,23 @@ div.tape_wapper section {
   overflow-x: hidden;
   overflow-y: hidden;
 }
-/* line 24, assets\less\tape.less */
+/* line 41, assets\less\tape.less */
 .scroll_listener {
   width: 100%;
   height: 100%;
 }
-/* line 28, assets\less\tape.less */
+/* line 45, assets\less\tape.less */
 .scroll_listener .film_wrapper {
   padding-top: 90px;
 }
-/* line 30, assets\less\tape.less */
+/* line 47, assets\less\tape.less */
 .scroll_listener .film_wrapper ul.film_container {
   position: absolute;
   top: 35%;
   left: 0;
   font-size: 0;
 }
-/* line 35, assets\less\tape.less */
+/* line 52, assets\less\tape.less */
 .scroll_listener .film_wrapper ul.film_container li {
   overflow: hidden;
   height: 33vh;
@@ -1562,12 +1651,12 @@ div.tape_wapper section {
   display: inline-block;
   position: relative;
 }
-/* line 41, assets\less\tape.less */
+/* line 58, assets\less\tape.less */
 .scroll_listener .film_wrapper ul.film_container li img {
   height: 100%;
   transition: 0.5s;
 }
-/* line 45, assets\less\tape.less */
+/* line 62, assets\less\tape.less */
 .scroll_listener .film_wrapper ul.film_container li .film_description {
   position: absolute;
   top: 45%;
@@ -1575,11 +1664,11 @@ div.tape_wapper section {
   left: 0;
   margin: 0 auto;
 }
-/* line 51, assets\less\tape.less */
+/* line 68, assets\less\tape.less */
 .scroll_listener .film_wrapper ul.film_container li .film_description h2 {
   text-align: center;
 }
-/* line 53, assets\less\tape.less */
+/* line 70, assets\less\tape.less */
 .scroll_listener .film_wrapper ul.film_container li .film_description h2 span {
   display: block;
   font-weight: 200;
@@ -1591,11 +1680,11 @@ div.tape_wapper section {
   opacity: 0;
   transition: 0.5s;
 }
-/* line 64, assets\less\tape.less */
+/* line 81, assets\less\tape.less */
 .scroll_listener .film_wrapper ul.film_container li .film_description h2 span + span {
   font-size: 13px;
 }
-/* line 69, assets\less\tape.less */
+/* line 86, assets\less\tape.less */
 .scroll_listener .film_wrapper ul.film_container li .film_opa {
   position: absolute;
   z-index: 1;
@@ -1607,14 +1696,14 @@ div.tape_wapper section {
   opacity: 0;
   transition: 0.5s ease;
 }
-/* line 80, assets\less\tape.less */
+/* line 97, assets\less\tape.less */
 .scroll_listener .film_wrapper ul.film_container li .aClick {
   display: block;
   height: 100%;
   width: 100%;
   position: absolute;
 }
-/* line 91, assets\less\tape.less */
+/* line 108, assets\less\tape.less */
 .TapeFilmPopUp {
   position: fixed;
   z-index: 100;
@@ -1624,7 +1713,7 @@ div.tape_wapper section {
   width: 100%;
   box-sizing: border-box;
 }
-/* line 99, assets\less\tape.less */
+/* line 116, assets\less\tape.less */
 .TapeFilmPopUp:before {
   content: "";
   width: 100%;
@@ -1636,7 +1725,7 @@ div.tape_wapper section {
   background-color: #FFF;
   opacity: .7;
 }
-/* line 111, assets\less\tape.less */
+/* line 128, assets\less\tape.less */
 .TapeFilmPopUp .TapeIframeWrapper {
   width: 50%;
   height: 28vw;
@@ -1645,16 +1734,16 @@ div.tape_wapper section {
   position: relative;
   z-index: 15;
 }
-/* line 118, assets\less\tape.less */
+/* line 135, assets\less\tape.less */
 .TapeFilmPopUp .TapeIframeWrapper iframe {
   width: 100%;
   height: 100%;
 }
-/* line 123, assets\less\tape.less */
+/* line 140, assets\less\tape.less */
 .TapeFilmPopUp .TapeIframeWrapper .TapeFilmInfo {
   margin-top: 15px;
 }
-/* line 125, assets\less\tape.less */
+/* line 142, assets\less\tape.less */
 .TapeFilmPopUp .TapeIframeWrapper .TapeFilmInfo cite,
 .TapeFilmPopUp .TapeIframeWrapper .TapeFilmInfo span {
   width: 100%;
@@ -1668,7 +1757,7 @@ div.tape_wapper section {
   text-align: left;
   font-style: normal;
 }
-/* line 137, assets\less\tape.less */
+/* line 154, assets\less\tape.less */
 .TapeFilmPopUp .TapeIframeWrapper .TapeFilmInfo span {
   margin-left: 5px;
 }
@@ -2169,34 +2258,52 @@ html.blogHtml,
 body.blogBody {
   height: auto;
 }
-/* line 4, assets\less\blog.less */
+/* line 5, assets\less\blog.less */
 body.blogBody {
   width: 100%;
 }
-/* line 5, assets\less\blog.less */
-body.blogBody .gnb-inner {
-  background-color: #FFF;
-}
 /* line 6, assets\less\blog.less */
-body.blogBody .gnb-inner div a {
-  color: black;
-}
-/* line 7, assets\less\blog.less */
 body.blogBody .on {
   display: block;
 }
-/* line 10, assets\less\blog.less */
-body.blogBody article.blog_article {
-  border: 1px #F00 solid;
-  box-sizing: border-box;
+/* line 9, assets\less\blog.less */
+body.blogBody header {
+  top: 0;
+  background-color: #FFF;
 }
 /* line 13, assets\less\blog.less */
+body.blogBody .gnb-inner div a {
+  color: black;
+}
+/* line 15, assets\less\blog.less */
+body.blogBody .gnb-inner div.share ul .share_facebook {
+  background-image: url(../image/facebook-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 20, assets\less\blog.less */
+body.blogBody .gnb-inner div.share ul .share_twitter {
+  background-image: url(../image/twitter-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 25, assets\less\blog.less */
+body.blogBody .gnb-inner div.share ul .share_google_plus {
+  background-image: url(../image/g-plus-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 33, assets\less\blog.less */
+body.blogBody article.blog_article {
+  box-sizing: border-box;
+}
+/* line 36, assets\less\blog.less */
 body.blogBody article.blog_article section {
   height: calc( 100% - 110px);
   padding-bottom: 80px;
   box-sizing: border-box;
 }
-/* line 20, assets\less\blog.less */
+/* line 43, assets\less\blog.less */
 body.blogBody .contents_wrapper {
   max-width: 1280px;
   margin: 110px auto 0;
@@ -2204,25 +2311,25 @@ body.blogBody .contents_wrapper {
   height: calc( 100% - 80px);
   overflow: hidden;
 }
-/* line 26, assets\less\blog.less */
+/* line 49, assets\less\blog.less */
 body.blogBody .contents_wrapper .blog_left {
   width: 50%;
   height: 100%;
   float: left;
 }
-/* line 30, assets\less\blog.less */
+/* line 53, assets\less\blog.less */
 body.blogBody .contents_wrapper .blog_left .text_contents {
   height: 100%;
   padding: 50px 60px 0 50px;
   margin-bottom: 50px;
   overflow: hidden;
 }
-/* line 37, assets\less\blog.less */
+/* line 60, assets\less\blog.less */
 body.blogBody .contents_wrapper .blog_left .text_contents h2 {
   text-align: center;
   margin-bottom: 80px;
 }
-/* line 41, assets\less\blog.less */
+/* line 64, assets\less\blog.less */
 body.blogBody .contents_wrapper .blog_left .text_contents p {
   margin: 15px 0;
   font-weight: 200;
@@ -2233,7 +2340,7 @@ body.blogBody .contents_wrapper .blog_left .text_contents p {
   color: #515151;
   text-align: left;
 }
-/* line 51, assets\less\blog.less */
+/* line 74, assets\less\blog.less */
 body.blogBody .contents_wrapper .blog_left .text_contents #text_move {
   width: 100%;
   height: 100%;
@@ -2241,120 +2348,120 @@ body.blogBody .contents_wrapper .blog_left .text_contents #text_move {
   padding-right: 30%;
   overflow-y: scroll;
 }
-/* line 60, assets\less\blog.less */
+/* line 83, assets\less\blog.less */
 body.blogBody .contents_wrapper .blog_right {
   width: 50%;
   height: 100%;
   float: right;
 }
-/* line 70, assets\less\blog.less */
+/* line 93, assets\less\blog.less */
 body.blogBody .blog_page_button {
   margin-top: 60px;
   text-align: center;
 }
-/* line 73, assets\less\blog.less */
+/* line 96, assets\less\blog.less */
 body.blogBody .blog_page_button a {
   height: 30px;
   width: 20px;
   display: inline-block;
   margin: 0 10px;
 }
-/* line 79, assets\less\blog.less */
+/* line 102, assets\less\blog.less */
 body.blogBody .blog_page_button a.left_chevron {
   background-image: url(../image/left-chevron.svg);
   background-repeat: no-repeat;
   background-size: contain;
 }
-/* line 84, assets\less\blog.less */
+/* line 107, assets\less\blog.less */
 body.blogBody .blog_page_button a.down_chevron {
   background-image: url(../image/down-arrow.svg);
   background-repeat: no-repeat;
   background-size: contain;
 }
-/* line 89, assets\less\blog.less */
+/* line 112, assets\less\blog.less */
 body.blogBody .blog_page_button a.up_chevron {
   background-image: url(../image/up-arrow.svg);
   background-repeat: no-repeat;
   background-size: contain;
 }
-/* line 94, assets\less\blog.less */
+/* line 117, assets\less\blog.less */
 body.blogBody .blog_page_button a.right_chevron {
   background-image: url(../image/right-chevron.svg);
   background-repeat: no-repeat;
   background-size: contain;
 }
-/* line 103, assets\less\blog.less */
+/* line 126, assets\less\blog.less */
 body.blogBody article.blog_comments section {
   padding-top: 110px;
 }
-/* line 107, assets\less\blog.less */
+/* line 130, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper {
   width: 1280px;
   margin: 0 auto;
 }
-/* line 111, assets\less\blog.less */
+/* line 134, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list {
   margin: 65px 290px 200px;
 }
-/* line 114, assets\less\blog.less */
+/* line 137, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list h2 {
   margin-top: 70px;
 }
-/* line 116, assets\less\blog.less */
+/* line 139, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list h2 span {
   font-size: 25px;
   text-transform: uppercase;
   letter-spacing: .1em;
 }
-/* line 122, assets\less\blog.less */
+/* line 145, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list ol {
   margin-top: 50px;
 }
-/* line 124, assets\less\blog.less */
+/* line 147, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list ol li {
   margin-top: 30px;
 }
-/* line 126, assets\less\blog.less */
+/* line 149, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list ol li .writer_info {
   font-size: 18px;
   margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: .08em;
 }
-/* line 132, assets\less\blog.less */
+/* line 155, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list ol li .date_info_control {
   color: #515151;
   font-size: 12px;
   text-transform: uppercase;
 }
-/* line 137, assets\less\blog.less */
+/* line 160, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list ol li .comment_content {
   margin-top: 45px;
 }
-/* line 139, assets\less\blog.less */
+/* line 162, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list ol li .comment_content p {
   padding-bottom: 22px;
   border-bottom: 1px #515151 solid;
 }
-/* line 144, assets\less\blog.less */
+/* line 167, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list ol li .scd_comment {
   margin-left: 60px;
 }
-/* line 150, assets\less\blog.less */
+/* line 173, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list .blog_post_reply {
   padding: 80px 0 50px;
 }
-/* line 152, assets\less\blog.less */
+/* line 175, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list .blog_post_reply i {
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: .08em;
 }
-/* line 159, assets\less\blog.less */
+/* line 182, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list form.blog_form fieldset {
   border-style: none;
 }
-/* line 162, assets\less\blog.less */
+/* line 185, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list form.blog_form fieldset p input[type="text"] {
   width: 45%;
   height: 40px;
@@ -2362,7 +2469,7 @@ body.blogBody article.blog_comments .comments_wrapper .comments_list form.blog_f
   margin-right: 30px;
   border-bottom: 1px #515151 solid;
 }
-/* line 169, assets\less\blog.less */
+/* line 192, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list form.blog_form fieldset p input[type="email"] {
   width: 45%;
   height: 40px;
@@ -2370,7 +2477,7 @@ body.blogBody article.blog_comments .comments_wrapper .comments_list form.blog_f
   border-style: none;
   border-bottom: 1px #515151 solid;
 }
-/* line 178, assets\less\blog.less */
+/* line 201, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list form.blog_form fieldset textarea {
   width: 100%;
   display: block;
@@ -2378,7 +2485,7 @@ body.blogBody article.blog_comments .comments_wrapper .comments_list form.blog_f
   border-bottom: 1px #515151 solid;
   margin-top: 10px;
 }
-/* line 185, assets\less\blog.less */
+/* line 208, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list form.blog_form fieldset input[type="button"] {
   width: 20%;
   height: 40px;
@@ -2390,7 +2497,7 @@ body.blogBody article.blog_comments .comments_wrapper .comments_list form.blog_f
   float: right;
   cursor: pointer;
 }
-/* line 196, assets\less\blog.less */
+/* line 219, assets\less\blog.less */
 body.blogBody article.blog_comments .comments_wrapper .comments_list form.blog_form fieldset input[value="SEND MESSAGE"] {
   width: 40%;
   height: 40px;
@@ -2408,19 +2515,50 @@ body.contactBody {
   height: 100%;
 }
 /* line 3, assets\less\contact.less */
+html.contactHtml header,
+body.contactBody header {
+  background-color: #FFF;
+}
+/* line 6, assets\less\contact.less */
+html.contactHtml .gnb-inner a,
+body.contactBody .gnb-inner a {
+  color: #000;
+}
+/* line 10, assets\less\contact.less */
+html.contactHtml .gnb-inner div.share ul .share_facebook,
+body.contactBody .gnb-inner div.share ul .share_facebook {
+  background-image: url(../image/facebook-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 15, assets\less\contact.less */
+html.contactHtml .gnb-inner div.share ul .share_twitter,
+body.contactBody .gnb-inner div.share ul .share_twitter {
+  background-image: url(../image/twitter-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 20, assets\less\contact.less */
+html.contactHtml .gnb-inner div.share ul .share_google_plus,
+body.contactBody .gnb-inner div.share ul .share_google_plus {
+  background-image: url(../image/g-plus-icon-black.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* line 26, assets\less\contact.less */
 html.contactHtml section,
 body.contactBody section {
   height: calc(100% - 90px);
   padding-top: 90px;
 }
-/* line 8, assets\less\contact.less */
+/* line 31, assets\less\contact.less */
 html.contactHtml .contactWrapper,
 body.contactBody .contactWrapper {
   width: 1280px;
   height: 100%;
   margin: 0 auto;
 }
-/* line 12, assets\less\contact.less */
+/* line 35, assets\less\contact.less */
 html.contactHtml .contactWrapper .leftContactInfo,
 body.contactBody .contactWrapper .leftContactInfo {
   width: 50%;
@@ -2429,46 +2567,46 @@ body.contactBody .contactWrapper .leftContactInfo {
   float: left;
   box-sizing: border-box;
 }
-/* line 19, assets\less\contact.less */
+/* line 42, assets\less\contact.less */
 html.contactHtml .contactWrapper .leftContactInfo form.blog_form fieldset,
 body.contactBody .contactWrapper .leftContactInfo form.blog_form fieldset {
   border-style: none;
 }
-/* line 21, assets\less\contact.less */
+/* line 44, assets\less\contact.less */
 html.contactHtml .contactWrapper .leftContactInfo form.blog_form fieldset .settingInput,
 body.contactBody .contactWrapper .leftContactInfo form.blog_form fieldset .settingInput {
   border-style: none;
   border-bottom: 1px #515151 solid;
 }
-/* line 26, assets\less\contact.less */
+/* line 49, assets\less\contact.less */
 html.contactHtml .contactWrapper .leftContactInfo form.blog_form fieldset p input[type="text"],
 body.contactBody .contactWrapper .leftContactInfo form.blog_form fieldset p input[type="text"] {
   width: 45%;
   height: 40px;
   margin-right: 30px;
 }
-/* line 31, assets\less\contact.less */
+/* line 54, assets\less\contact.less */
 html.contactHtml .contactWrapper .leftContactInfo form.blog_form fieldset p input[type="email"],
 body.contactBody .contactWrapper .leftContactInfo form.blog_form fieldset p input[type="email"] {
   width: 45%;
   height: 40px;
   float: right;
 }
-/* line 37, assets\less\contact.less */
+/* line 60, assets\less\contact.less */
 html.contactHtml .contactWrapper .leftContactInfo form.blog_form fieldset input[placeholder="Subject"],
 body.contactBody .contactWrapper .leftContactInfo form.blog_form fieldset input[placeholder="Subject"] {
   width: 100%;
   height: 40px;
   margin-right: 30px;
 }
-/* line 42, assets\less\contact.less */
+/* line 65, assets\less\contact.less */
 html.contactHtml .contactWrapper .leftContactInfo form.blog_form fieldset textarea,
 body.contactBody .contactWrapper .leftContactInfo form.blog_form fieldset textarea {
   width: 100%;
   display: block;
   margin-top: 10px;
 }
-/* line 47, assets\less\contact.less */
+/* line 70, assets\less\contact.less */
 html.contactHtml .contactWrapper .leftContactInfo form.blog_form fieldset input[type="button"],
 body.contactBody .contactWrapper .leftContactInfo form.blog_form fieldset input[type="button"] {
   width: 20%;
@@ -2481,7 +2619,7 @@ body.contactBody .contactWrapper .leftContactInfo form.blog_form fieldset input[
   float: right;
   cursor: pointer;
 }
-/* line 58, assets\less\contact.less */
+/* line 81, assets\less\contact.less */
 html.contactHtml .contactWrapper .leftContactInfo form.blog_form fieldset input[value="SUBMIT"],
 body.contactBody .contactWrapper .leftContactInfo form.blog_form fieldset input[value="SUBMIT"] {
   width: 40%;
@@ -2494,38 +2632,38 @@ body.contactBody .contactWrapper .leftContactInfo form.blog_form fieldset input[
   float: left;
   cursor: pointer;
 }
-/* line 72, assets\less\contact.less */
+/* line 95, assets\less\contact.less */
 html.contactHtml .contactWrapper .leftContactInfo .contact_text .contact_HT,
 body.contactBody .contactWrapper .leftContactInfo .contact_text .contact_HT {
   text-align: center;
   margin: 100px 0 80px;
 }
-/* line 75, assets\less\contact.less */
+/* line 98, assets\less\contact.less */
 html.contactHtml .contactWrapper .leftContactInfo .contact_text .contact_HT h2,
 body.contactBody .contactWrapper .leftContactInfo .contact_text .contact_HT h2 {
   text-transform: uppercase;
   letter-spacing: .15em;
   font-weight: bolder;
 }
-/* line 81, assets\less\contact.less */
+/* line 104, assets\less\contact.less */
 html.contactHtml .contactWrapper .leftContactInfo .contact_text .contact_info,
 body.contactBody .contactWrapper .leftContactInfo .contact_text .contact_info {
   text-align: center;
   margin-bottom: 100px;
 }
-/* line 84, assets\less\contact.less */
+/* line 107, assets\less\contact.less */
 html.contactHtml .contactWrapper .leftContactInfo .contact_text .contact_info li,
 body.contactBody .contactWrapper .leftContactInfo .contact_text .contact_info li {
   margin-bottom: 10px;
 }
-/* line 86, assets\less\contact.less */
+/* line 109, assets\less\contact.less */
 html.contactHtml .contactWrapper .leftContactInfo .contact_text .contact_info li a,
 body.contactBody .contactWrapper .leftContactInfo .contact_text .contact_info li a {
   color: #515151;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
-/* line 97, assets\less\contact.less */
+/* line 120, assets\less\contact.less */
 html.contactHtml .contactWrapper .rightContactInfo,
 body.contactBody .contactWrapper .rightContactInfo {
   width: 50%;
@@ -2534,7 +2672,7 @@ body.contactBody .contactWrapper .rightContactInfo {
   float: right;
   box-sizing: border-box;
 }
-/* line 103, assets\less\contact.less */
+/* line 126, assets\less\contact.less */
 html.contactHtml .contactWrapper .rightContactInfo .map_wrapper,
 body.contactBody .contactWrapper .rightContactInfo .map_wrapper {
   height: 100%;
@@ -2542,7 +2680,7 @@ body.contactBody .contactWrapper .rightContactInfo .map_wrapper {
   padding: 50px 0;
   box-sizing: border-box;
 }
-/* line 108, assets\less\contact.less */
+/* line 131, assets\less\contact.less */
 html.contactHtml .contactWrapper .rightContactInfo .map_wrapper #map,
 body.contactBody .contactWrapper .rightContactInfo .map_wrapper #map {
   width: 100%;
