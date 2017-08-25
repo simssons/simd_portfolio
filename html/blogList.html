@@ -7,52 +7,48 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../vendor/jQuery/dist/jquery.min.js"></script>
     <script src="../assets/javascript/common.js"></script>
-    <title>Blog List</title> 
+    <title>Blog List</title>
 </head>
 <script>
 
 $(function(){
 
-    //높이
-    // var bioInnerHeight;
-    // var resizeBio = function(){
-    //   bioInnerHeight = $('.bioBody').height();
-    // }
-    // resizeBio();
-    // $(window).resize(function(){
-    //   resizeBio();
-    // })
-
     var windowInnerHeight = function(){
          $('section.blog_list_sction00').css('height',window.innerHeight)
     }
-    windowInnerHeight()
+    windowInnerHeight();
     $(window).resize(function(){ windowInnerHeight();})
+    $(window).scroll(function(){
+
+        var innerHeight = window.innerHeight;
+        var sct = $(this).scrollTop();
+
+        if (innerHeight - 90 < sct) {
+          $('header .gnb-inner a').css('color','#000');
+          $('#btsH00').css('visibility', 'hidden');
+          $('#scroll_down_arrow').css('visibility', 'hidden');
+          $('.gnb-inner div.share ul .share_facebook').css({
+            'background-image': 'url(../assets/image/facebook-icon-black.svg)'
+          });
+          $('.gnb-inner div.share ul .share_twitter').css({
+            'background-image': 'url(../assets/image/twitter-icon-black.svg)'
+          });
+          $('.gnb-inner div.share ul .share_google_plus').css({
+            'background-image': 'url(../assets/image/g-plus-icon-black.svg)'
+          });
+        }else if (innerHeight > sct) {
+          $('header a').css('color','');
+          $('#btsH00').css('visibility', '');
+          $('#scroll_down_arrow').css('visibility', '');
+          $('.gnb-inner div.share ul li').each(function(){
+            $(this).css('background-image', '');
+          })
+
+        }
+
+    })
 
 
-
-    //
-    //
-    // $(window).on('scroll',function(){
-    //   var sct = $(this).scrollTop();
-    //   console.log(aa);
-    //
-    //   var aa = 45
-    //   aa += sct
-    //   $('li').css({
-    //     'transform':'rotate('+aa+'deg)',
-    //     'left':sct,
-    //     'top':function(){
-    //
-    //       if(sct  < 500){
-    //         return sct /2
-    //       }else if(sct > 500){
-    //         return -(sct /2 )
-    //       }
-    //
-    //     }
-    //   })
-    // })
 
 })
 

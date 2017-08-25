@@ -47,7 +47,7 @@
         var slicer = [];
         var $img_video = $('.slide_contents li .img_video');
         $('.slide_contents li').each(function(i){
-          img_video_src[i] += $('.slide_contents li').eq(i).find($img_video).attr('src');
+          img_video_src[i] += $(this).find($img_video).attr('src');
           slicer[i] = img_video_src[i].slice(9)
         })
 
@@ -148,7 +148,6 @@
 
 
       //페이지 추가로딩 & gnb text color
-        //loading
         $(window).scroll(function(){
             var innerHeight = window.innerHeight;
             var sct = $(this).scrollTop();
@@ -162,22 +161,28 @@
             //     // 인스타를부르자
             // }
             if (innerHeight - 90 < sct) {
-              $('header a').css('color','#000');
-              $('#btsH00').css('visibility', 'hidden');
-              $('#scroll_down_arrow').css('visibility', 'hidden');
+              $('header .gnb-inner a').css('color','#000');
+              $('#btsH00').css('display', 'none');
+              $('#scroll_down_arrow').css('display', 'none');
               $('.gnb-inner div.share ul .share_facebook').css({
-                'background-image': 'url(../image/facebook-icon-black.svg)'
+                'background-image': 'url(../assets/image/facebook-icon-black.svg)'
+              });
+              $('.gnb-inner div.share ul .share_twitter').css({
+                'background-image': 'url(../assets/image/twitter-icon-black.svg)'
+              });
+              $('.gnb-inner div.share ul .share_google_plus').css({
+                'background-image': 'url(../assets/image/g-plus-icon-black.svg)'
               });
             }else if (innerHeight > sct) {
               $('header a').css('color','');
-              $('#btsH00').css('visibility', '');
-              $('#scroll_down_arrow').css('visibility', '');
-              $('.gnb-inner div.share ul .share_facebook').css({
-                'background-image': ''
-              });
+              $('#btsH00').css('display', '');
+              $('#scroll_down_arrow').css('display', '');
+              $('.gnb-inner div.share ul li').each(function(){
+                $(this).css('background-image', '');
+              })
             }
-
         })
+
     })
 </script>
 <body class="indexBody">
