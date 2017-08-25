@@ -24,6 +24,15 @@ $(function(){
             if ($('html').has('.menuColor')) {
                 $aColor.css('color','');
                 console.log('흰');
+                $('.gnb-inner div.share ul .share_facebook').css({
+                  'background-image': 'url(../assets/image/facebook-icon-black.svg)'
+                });
+                $('.gnb-inner div.share ul .share_twitter').css({
+                  'background-image': 'url(../assets/image/twitter-icon-black.svg)'
+                });
+                $('.gnb-inner div.share ul .share_google_plus').css({
+                  'background-image': 'url(../assets/image/g-plus-icon-black.svg)'
+                });
             }else {
                 $aColor.css('color','black');
                 console.log('검');
