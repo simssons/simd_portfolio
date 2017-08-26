@@ -1377,36 +1377,35 @@ ul.portrait_list li.last_pt {
   width: 100%;
   position: fixed;
   bottom: -50px;
-  border: 1px #F00 solid;
   height: 150px;
   text-align: center;
   transition: 1s ease;
 }
-/* line 149, assets\less\portraits.less */
+/* line 148, assets\less\portraits.less */
 .portrait_gallery_thumbnails:hover {
   opacity: 1;
   bottom: 4px;
 }
-/* line 153, assets\less\portraits.less */
+/* line 152, assets\less\portraits.less */
 .portrait_gallery_thumbnails ul {
   font-size: 0;
   margin-top: 100px;
 }
-/* line 156, assets\less\portraits.less */
+/* line 155, assets\less\portraits.less */
 .portrait_gallery_thumbnails ul li {
   display: inline-block;
   height: 50px;
   width: auto;
 }
-/* line 160, assets\less\portraits.less */
+/* line 159, assets\less\portraits.less */
 .portrait_gallery_thumbnails ul li a {
   position: relative;
 }
-/* line 165, assets\less\portraits.less */
+/* line 164, assets\less\portraits.less */
 .portrait_gallery_thumbnails ul li a img {
   height: 100%;
 }
-/* line 181, assets\less\portraits.less */
+/* line 180, assets\less\portraits.less */
 .portrait_gallery_thumbnails #test {
   display: inline-block;
   height: 100%;

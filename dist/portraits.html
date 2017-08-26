@@ -6,39 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../vendor/jQuery/dist/jquery.min.js"></script>
+    <script src="../assets/javascript/common.js"></script>
     <title>Portraits</title>
-    <style>
-        .on{display: block;}
-    </style>  
     <script>
+
     $(function(){
-        var autoHeight = function(){
-            $('.menu-main-menu-container .fifty').height(($('.menu-main-menu-container').height()-90)/2)
 
+      // 가로정렬
+
+      var horizontalLayout = function(){
+        var listWidth = 0;
+        $('.portrait_list > li').each(function(){
+          $(this).css('left', listWidth);
+          listWidth += $(this).width();
+        })
+      }
+      horizontalLayout();
+      $(window).resize(function(){
+        horizontalLayout();
+      })
+
+      // 가로스크롤
+      $('.portrait_section').on('wheel',function(event){
+          event.preventDefault();
+        var portraitsWheelEvent = event.originalEvent.wheelDelta;
+        if (portraitsWheelEvent > 0) {
+            $(this).stop().animate({scrollLeft:'-=800px'})
+        }else{
+            $(this).stop().animate({scrollLeft:'+=800px'})
         }
-        $(window).resize(function(){
-            autoHeight();
-                console.log($('.menu-main-menu-container').height());
-        })
+      })
 
-        $('.menu a').click(function(event){
-            event.preventDefault();
-            console.log('ss');
-
-            var menuToggle = $('.menu-main-menu-container')
-
-            if (menuToggle.is('.on')) {
-                menuToggle.removeClass('on')
-                $(this).text('menu')
-                $('.gnb-inner div a').css('color','black')
-            }else{
-                menuToggle.addClass('on')
-                $(this).text('back')
-                $('.gnb-inner div a').css('color','white')
-            }
-            autoHeight();
-        })
     })
+
+
     </script>
 </head>
 <body class="portrait_body">
@@ -149,25 +150,25 @@
                         </p>
                       </div>
                     </li>
-                    <li style="left:60%">
+                    <li>
                         <a href=""><img src="../assets/image/bio1.png" alt=""></a>
                         <div>
                             <cite>angelina jolie. los angeles. american voggue. 2010</cite>
                         </div>
                     </li>
-                    <li style="left:120%">
+                    <li>
                         <a href=""><img src="../assets/image/bio2.png" alt=""></a>
                         <div>
                             <cite>angelina jolie. los angeles. american voggue. 2010</cite>
                         </div>
                     </li>
-                    <li style="left:180%">
+                    <li>
                         <a href=""><img src="../assets/image/bio3.png" alt=""></a>
                         <div>
                             <cite>angelina jolie. los angeles. american voggue. 2010</cite>
                         </div>
                     </li>
-                    <li class="second_last_pt" style="left:240%">
+                    <li class="second_last_pt">
                         <div class="next_up">
                             <h3><a href="">next</a></h3>
                             <span><a href="">next art work</a></span>
@@ -200,7 +201,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="last_pt" style="left:273%"></li>
+                    <li class="last_pt"></li>
                 </ul>
             </div>
             <!-- portrait_gallery -->
@@ -221,7 +222,7 @@
                         <a href=""><img src="../assets/image/bio4.png" alt=""></a>
                     </li>
                     <li>
-                        <a href=""><img src="../assets/image/bio5.png" alt=""></a>
+                        <a href=""><img src="../assets/image/bio0.png" alt=""></a>
                     </li>
                     <li>
                         <a href=""><img src="../assets/image/bio4.png" alt=""></a>
@@ -248,7 +249,7 @@
                         <a href=""><img src="../assets/image/bio4.png" alt=""></a>
                     </li>
                     <li>
-                        <a href=""><img src="../assets/image/bio5.png" alt=""></a>
+                        <a href=""><img src="../assets/image/bio0.png" alt=""></a>
                     </li>
                     <li>
                         <a href=""><img src="../assets/image/bio4.png" alt=""></a>
