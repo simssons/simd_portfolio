@@ -55,6 +55,17 @@ module.exports = function(grunt) {
           }
       }
     },
+    postcss: {
+            options: {
+                map: true,
+                processors: [
+                    require('autoprefixer') ({browsers: ['last 5 versions','IE 7-9','Firefox > 3.0', 'Opera > 10']})
+                ]
+            },
+            dist: {
+                src: ['assets/css/*.css'],
+            }
+    },
 
 
   });
@@ -64,6 +75,7 @@ module.exports = function(grunt) {
  grunt.loadNpmTasks('grunt-contrib-less');
  grunt.loadNpmTasks('grunt-contrib-watch');
  grunt.loadNpmTasks('grunt-includes');
+ grunt.loadNpmTasks('grunt-postcss');
 
   // Default task(s).
   grunt.registerTask('default', ['serve']);
