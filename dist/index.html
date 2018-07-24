@@ -188,7 +188,6 @@
           console.log('glgl');
           $.ajax({
       			url:"data.html",
-      			// method: 'POST',
       			dataType: "html",
       			// data : { JSON_DATA : JSON.stringify(paramObj, null ,2) },
       			// beforeSend: function(){
@@ -197,7 +196,7 @@
       		}).done(function(data){
             var tags = "";
 
-            $(".column_wrapper").html(data);
+            $(".column_wrapper").innerHtml(data);
 
 
 
