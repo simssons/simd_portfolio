@@ -188,14 +188,16 @@
           console.log('glgl');
           $.ajax({
       			url:"data.html",
-      			method: 'POST',
-      			dataType: "text",
-      			data : { JSON_DATA : JSON.stringify(paramObj, null ,2) },
-      			beforeSend: function(){
-      				// fnLoading_Show(loadingKey);
-      			}
-      		}).done(function(data){
-            $(".column_wrapper").html(data);
+      			// method: 'GET',
+      			dataType: "html",
+      			// data : { JSON_DATA : JSON.stringify(paramObj, null ,2) },
+      			// beforeSend: function(){
+            //
+      			// }
+      		}).done(function(){
+            var tags = "";
+
+            $(".column_wrapper").html(url);
 
 
 
