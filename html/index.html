@@ -10,7 +10,7 @@
     <title>Sim's portfolio</title>
 </head>
 <script>
-console.log("폐기")
+
     $(window).load(function(){
         $('#windowLoad').css('opacity','0').hide();
     })
@@ -181,6 +181,30 @@ console.log("폐기")
                 $(this).css('background-image', '');
               })
             }
+        })
+
+
+        var loadAsync = function(){
+          console.log('glgl');
+          $.ajax({
+      			url:data.html,
+      			method: 'POST',
+      			dataType: "text",
+      			data : { JSON_DATA : JSON.stringify(paramObj, null ,2) },
+      			beforeSend: function(){
+      				// fnLoading_Show(loadingKey);
+      			}
+      		}).done(function(data){
+            $(".column_wrapper").html(data);
+
+
+
+      		});
+        }
+
+        $("#loadMore").on("click",function(e){
+          e.preventDefault();
+          loadAsync();
         })
 
     })
@@ -364,7 +388,7 @@ console.log("폐기")
             <div class="clear"></div>
             <div class="load_more">
                 <h3>
-                    <a href="">load more</a>
+                    <a href="" id="loadMore">load more</a>
                 </h3>
             </div>
         </div>
