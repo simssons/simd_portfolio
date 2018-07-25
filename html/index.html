@@ -185,11 +185,12 @@
 
         var showndata = 2;
         var loadAsync = function(){
+          var parsed = "";
           console.log('glgl');
           $.ajax({
       			url:"../assets/javascript/mainlist.json",
       			dataType: "JSON",
-      			data : JSON,
+      			data : parsed = JSON,
             // 넘겨줄값
             // data : JSON.parse(this),
       			beforeSend: function(){
