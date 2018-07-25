@@ -190,9 +190,9 @@
       			url:"../assets/javascript/mainlist.json",
       			dataType: "json",
       			// data : { JSON_DATA : JSON.stringify() },
-      			// beforeSend: function(){
-            //
-      			// }
+      			beforeSend: function(){
+              console.log('달게받아라')
+      			}
       		}).done(function(data){
             console.log("왔다");
             var newContent = "";
