@@ -221,20 +221,22 @@
                 htmlHolder.push(newContent);
             }
 
-          for (var i = 0; i < showndata; i++) {
-            if($('.column_left').height() <= $('.column_right').height() ){
-              console.log('왼쪽에붙이기')
-              lrt = 'left';
-              $('.column_left > ul > li').after(newContent[order - i]);
-            }else{
-              lrt = 'right';
-              $('.column_right > ul > li').after(newContent[order - i]);
+            for (var i = 0; i < showndata; i++) {
+              if($('.column_left').height() <= $('.column_right').height() ){
+                console.log('왼쪽에붙이기')
+                lrt = 'left';
+                $('.column_left > ul > li').after(newContent[order - i]);
+              }else{
+                lrt = 'right';
+                $('.column_right > ul > li').after(newContent[order - i]);
+              }
+
             }
 
-          }
 
-
-      		});
+      		}).fail(function(){
+            console.log("실패");
+          });
         }
 
         $("#loadMore").on("click",function(e){
