@@ -195,14 +195,41 @@
       			// }
       		}).done(function(data){
             var newContent = "";
+            var htmlHolder = [];
+            var order = data.list.length-1;
+            var lrt = "";
 
-            for (var i = 0; i < showndata; i++) {
-              if($('.column_left').height() <= $('.column_right').height() ){
-                console.log('왼쪽')
+            for (var i = 0; i < data.list.length; i++) {
 
-              }else{}
-
+                newContent += '<li>';
+                newContent += '<div class="column_news_box_' + lrt + '">';
+                newContent += '<a href="">';
+                newContent += '<img src="' + data.list[i].imgURL + '" alt="">';
+                newContent += '</a>';
+                newContent += '</div>';
+                newContent += '<div class="column_' + lrt + '_text">';
+                newContent += '<div class="column_upper_text">';
+                newContent += '<a href="">' + data.list[i].SNS + '</a>' + data.list[i].uploadDate;
+                newContent += '</div>';
+                newContent += '<div class="column_hashtag">';
+                newContent += '<p>' + data.list[i].description + '</P>';
+                newContent += '</div>';
+                newContent += '</div>';
+                newContent += '</div>';
+                newContent += '</li>';
+                htmlHolder.push(newContent);
             }
+
+          for (var i = 0; i < showndata; i++) {
+            if($('.column_left').height() <= $('.column_right').height() ){
+              lrt = 'left';
+              $('.column_left > ul > li').after(newContent[order - i]);
+            }else{
+              lrt = 'right';
+              $('.column_right > ul > li').after(newContent[order - i]);
+            }
+
+          }
 
 
       		});
