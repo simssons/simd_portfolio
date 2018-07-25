@@ -183,21 +183,26 @@
             }
         })
 
-
+        var showndata = 2;
         var loadAsync = function(){
           console.log('glgl');
           $.ajax({
-      			url:"data.html",
-      			dataType: "html",
-      			// data : { JSON_DATA : JSON.stringify(paramObj, null ,2) },
+      			url:"../assets/javascript/mainlist.json",
+      			dataType: "json",
+      			// data : { JSON_DATA : JSON.stringify() },
       			// beforeSend: function(){
             //
       			// }
       		}).done(function(data){
-            var tags = "";
+            var newContent = "";
 
-            $(".column_wrapper").append(data);
+            for (var i = 0; i < showndata; i++) {
+              if($('.column_left').height() =< $('.column_right').height() ){
+                console.log('왼쪽')
 
+              }else{}
+
+            }
 
 
       		});
@@ -291,7 +296,7 @@
                                             <a href="">
                                                 instagram
                                             </a>
-                                            ,a month ago
+                                            ,just now
                                         </div>
                                         <div class="column_hashtag">
                                             <p>
@@ -315,7 +320,7 @@
                                             <a href="">
                                                 instagram
                                             </a>
-                                            ,a month ago
+                                            ,a day ago
                                         </div>
                                         <div class="column_hashtag">
                                             <p>
@@ -343,7 +348,7 @@
                                             <a href="">
                                                 instagram
                                             </a>
-                                            ,a month ago
+                                            ,3 hours ago
                                         </div>
                                         <div class="column_hashtag">
                                             <p>
