@@ -190,7 +190,7 @@
           $.ajax({
       			url:"../assets/javascript/mainlist.json",
       			dataType: "JSON",
-      			data : parsed = JSON,
+      			data : parsed = JSON.parse(),
             // 넘겨줄값
             // data : JSON.parse(this),
       			beforeSend: function(){
