@@ -235,7 +235,8 @@
             }
 
 
-      		}).fail(function(){
+      		}).fail(function(data){
+            console.log(data);
             console.log("실패");
           });
         }
