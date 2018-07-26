@@ -189,10 +189,11 @@
           console.log('glgl');
           $.ajax({
       			url:"../assets/javascript/mainlist.json",
+            type: 'POST',
       			dataType: "JSON",
       			// data : response,
             // 넘겨줄값
-            data : "responseJSON",
+            data : this.responseFields.json.parse(),
       			beforeSend: function(){
               console.log(this.responseFields.json)
       			}
