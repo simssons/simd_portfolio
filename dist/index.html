@@ -192,9 +192,9 @@
       			dataType: "JSON",
       			// data : response,
             // 넘겨줄값
-            data : JSON.parse(responseText),
+            data : JSON.parse(this),
       			beforeSend: function(){
-              console.log('달게받아라')
+              console.log(this)
       			}
       		}).done(function(data){
             console.log("왔다");
