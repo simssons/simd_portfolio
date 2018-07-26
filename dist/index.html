@@ -191,10 +191,11 @@
       			url:"../assets/javascript/mainlist.json",
             type: 'POST',
       			dataType: "JSON",
-      			// data : response,
+      			data : responseJSON,
             // 넘겨줄값
-            data : this.responseFields.json.parse(),
+            // data : this.responseFields.json.parse(),
       			beforeSend: function(){
+              console.log(this)
               console.log(this.responseFields.json)
       			}
       		}).done(function(data){
