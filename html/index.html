@@ -192,9 +192,9 @@
       			dataType: "JSON",
       			// data : response,
             // 넘겨줄값
-            // data : JSON.parse(this.responseText),
+            data : "responseJSON",
       			beforeSend: function(){
-              console.log(this)
+              console.log(this.responseFields.json)
       			}
       		}).done(function(data){
             console.log("왔다");
