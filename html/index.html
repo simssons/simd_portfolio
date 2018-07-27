@@ -199,27 +199,31 @@
               console.log(this)
       			}
       		}).done(function(data){
-            for (var i = 0; i < data.list.length; i++) {
-                var newContent = "";
-                newContent += '<li>';
-                newContent += '<div class="column_news_box">';
-                newContent += '<div class="column_image">';
-                newContent += '<a href="">';
-                newContent += '<img src="' + data.list[i].imgURL + '" alt="">';
-                newContent += '</a>';
-                newContent += '</div>';
-                newContent += '<div class="column_text">';
-                newContent += '<div class="column_upper_text">';
-                newContent += '<a href="">' + data.list[i].SNS + '</a>' + data.list[i].uploadDate;
-                newContent += '</div>';
-                newContent += '<div class="column_hashtag">';
-                newContent += '<p>' + data.list[i].description + '</P>';
-                newContent += '</div>';
-                newContent += '</div>';
-                newContent += '</div>';
-                newContent += '</li>';
-                htmlHolder.push(newContent);
+            console.log(htmlHolder);
+            if ( htmlHolder.length === 0) {
+              for (var i = 0; i < data.list.length; i++) {
+                  var newContent = "";
+                  newContent += '<li>';
+                  newContent += '<div class="column_news_box">';
+                  newContent += '<div class="column_image">';
+                  newContent += '<a href="">';
+                  newContent += '<img src="' + data.list[i].imgURL + '" alt="">';
+                  newContent += '</a>';
+                  newContent += '</div>';
+                  newContent += '<div class="column_text">';
+                  newContent += '<div class="column_upper_text">';
+                  newContent += '<a href="">' + data.list[i].SNS + '</a>' + data.list[i].uploadDate;
+                  newContent += '</div>';
+                  newContent += '<div class="column_hashtag">';
+                  newContent += '<p>' + data.list[i].description + '</P>';
+                  newContent += '</div>';
+                  newContent += '</div>';
+                  newContent += '</div>';
+                  newContent += '</li>';
+                  htmlHolder.push(newContent);
+              }
             }
+
             console.log(htmlHolder);
 
             for (var i = 0; i < showndata; i++) {
