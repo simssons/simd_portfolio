@@ -196,11 +196,11 @@
             type: 'GET',
       			dataType: "json",
       			beforeSend: function(){
-              console.log(this)
+              console.log(this);
       			}
       		}).done(function(data){
             console.log(htmlHolder);
-            if ( htmlHolder.length === 0) {
+            if ( htmlHolder.length === 0 ) {
               for (var i = 0; i < data.list.length; i++) {
                   var newContent = "";
                   newContent += '<li>';
@@ -222,7 +222,9 @@
                   newContent += '</li>';
                   htmlHolder.push(newContent);
               }
-            }
+
+
+            }//if
 
             console.log(htmlHolder);
 
@@ -239,12 +241,11 @@
 
             htmlHolder = htmlHolder.slice(showndata);
             console.log(htmlHolder);
-            if(htmlHolder.length === 0){
-              console.log('길이0됨');
-              console.log(JSON.stringify(data));
-              return JSON.stringify(data);
 
+            if(htmlHolder.length === 0){
+              htmlHolder = null;
             }
+            
       		}).fail(function(){
             console.log("let's call it a day");
           })
