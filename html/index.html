@@ -181,7 +181,9 @@
                 $(this).css('background-image', '');
               })
             }
-        })
+        });
+
+
 
         var showndata = 2;
         var loadAsync = function(){
@@ -189,37 +191,39 @@
           console.log('glgl');
           $.ajax({
       			url:"../assets/javascript/mainlist.json",
-            type: 'POST',
+            // 리퀘스트를 요하는 페이지 - 부를페이지
+            type: 'GET',
       			dataType: "JSON",
-      			data : responseJSON,
-            // 넘겨줄값
+            // 서버의 응답이 JSON일거다.
+      			// data : responseJSON,
+            // 서버로 보낼 데이터
             // data : this.responseFields.json.parse(),
       			beforeSend: function(){
               console.log(this)
               console.log(this.responseFields.json)
       			}
-      		}).done(function(data){
+      		}).done(function(event){
             console.log("왔다");
-            console.log(data)
+            console.log(event)
             var newContent = "";
             var htmlHolder = [];
-            var order = data.list.length-1;
+            var order = event.list.length-1;
             var lrt = "";
 
-            for (var i = 0; i < data.list.length; i++) {
+            for (var i = 0; i < event.list.length; i++) {
 
                 newContent += '<li>';
                 newContent += '<div class="column_news_box_' + lrt + '">';
                 newContent += '<a href="">';
-                newContent += '<img src="' + data.list[i].imgURL + '" alt="">';
+                newContent += '<img src="' + event.list[i].imgURL + '" alt="">';
                 newContent += '</a>';
                 newContent += '</div>';
                 newContent += '<div class="column_' + lrt + '_text">';
                 newContent += '<div class="column_upper_text">';
-                newContent += '<a href="">' + data.list[i].SNS + '</a>' + data.list[i].uploadDate;
+                newContent += '<a href="">' + event.list[i].SNS + '</a>' + event.list[i].uploadDate;
                 newContent += '</div>';
                 newContent += '<div class="column_hashtag">';
-                newContent += '<p>' + data.list[i].description + '</P>';
+                newContent += '<p>' + event.list[i].description + '</P>';
                 newContent += '</div>';
                 newContent += '</div>';
                 newContent += '</div>';
