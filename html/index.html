@@ -251,6 +251,13 @@
         var loadAsync = function(){
           console.log("loadAsync시작")
 
+
+
+        }
+
+        $("#loadMore").on("click",function(e){
+          e.preventDefault();
+          // loadAsync();
           $.getJSON('../assets/javascript/mainlist.json', function(data){
 
             console.log("왔다");
@@ -295,12 +302,6 @@
 
             }
           })
-
-        }
-
-        $("#loadMore").on("click",function(e){
-          e.preventDefault();
-          loadAsync();
         })
 
     })
