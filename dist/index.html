@@ -231,9 +231,10 @@
             for (var i = 0; i < showndata; i++) {
               if($('.column_left').height() <= $('.column_right').height() ){
                 console.log('왼쪽에붙이기');
-                console.log('newContent');
+                console.log(newContent);
                 lrt = 'left';
                 $('.column_left > ul > li:last-child').after(newContent[order - i]);
+                console.log(newContent);
               }else{
                 lrt = 'right';
                 $('.column_right > ul > li').after(newContent[order - i]);
