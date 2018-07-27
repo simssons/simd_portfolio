@@ -240,9 +240,15 @@
             htmlHolder = htmlHolder.slice(showndata);
             console.log(htmlHolder);
             if(htmlHolder.length === 0){
+              console.log('길이0됨');
+              console.log(JSON.stringify(data));
               JSON.stringify(data);
+              console.log(data.stringify());
+              data.stringify();
             }
-      		})
+      		}).fail(function(){
+
+          })
         }
 
         $("#loadMore").on("click",function(e){
