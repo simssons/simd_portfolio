@@ -193,11 +193,7 @@
       			url:"../assets/javascript/mainlist.json",
             // 리퀘스트를 요하는 페이지 - 부를페이지
             type: 'GET',
-      			// dataType: "json",
-            // contentType: 'application/json; charset=utf-8',
-            // 서버의 응답이 JSON or 텍스트 일거다.
-            // 서버로 보낼 데이터
-            // data : this.responseFields.json.parse(),
+      			dataType: "json",
       			beforeSend: function(){
               console.log(this)
       			}
@@ -230,12 +226,14 @@
                 newContent += '</li>';
                 htmlHolder.push(newContent);
             }
+            console.log(htmlHolder)
 
             for (var i = 0; i < showndata; i++) {
               if($('.column_left').height() <= $('.column_right').height() ){
-                console.log('왼쪽에붙이기')
+                console.log('왼쪽에붙이기');
+                console.log('newContent');
                 lrt = 'left';
-                $('.column_left > ul > li').after(newContent[order - i]);
+                $('.column_left > ul > li:last-child').after(newContent[order - i]);
               }else{
                 lrt = 'right';
                 $('.column_right > ul > li').after(newContent[order - i]);
