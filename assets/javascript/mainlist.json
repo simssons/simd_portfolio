@@ -2,11 +2,6 @@
   "list":[
     {
       "SNS":"instagram",
-      "uploadDate":",a month ago",
-      "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />Morbi faucibus tristique porttitor.",
-      "imgURL":"../assets/image/pf1.png"
-    },{
-      "SNS":"instagram",
       "uploadDate":",JUNE 12",
       "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br /> Morbi faucibus tristique porttitor.",
       "imgURL":"../assets/image/pf3.png"
