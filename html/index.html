@@ -208,13 +208,16 @@
 
             for (var i = 0; i < data.list.length; i++) {
 
+              if($('.column_left').height() <= $('.column_right').height() ){
                 newContent += '<li>';
-                newContent += '<div class="column_news_box_' + lrt + '">';
+                newContent += '<div class="column_news_box_left">';
+                newContent += '<div class="column_left_image">';
                 newContent += '<a href="">';
                 newContent += '<img src="' + data.list[i].imgURL + '" alt="">';
                 newContent += '</a>';
                 newContent += '</div>';
-                newContent += '<div class="column_' + lrt + '_text">';
+                newContent += '</div>';
+                newContent += '<div class="column_left_text">';
                 newContent += '<div class="column_upper_text">';
                 newContent += '<a href="">' + data.list[i].SNS + '</a>' + data.list[i].uploadDate;
                 newContent += '</div>';
@@ -225,18 +228,38 @@
                 newContent += '</div>';
                 newContent += '</li>';
                 htmlHolder.push(newContent);
+              }else{
+                newContent += '<li>';
+                newContent += '<div class="column_news_box_right">';
+                newContent += '<div class="column_right_image">';
+                newContent += '<a href="">';
+                newContent += '<img src="' + data.list[i].imgURL + '" alt="">';
+                newContent += '</a>';
+                newContent += '</div>';
+                newContent += '</div>';
+                newContent += '<div class="column_right_text">';
+                newContent += '<div class="column_upper_text">';
+                newContent += '<a href="">' + data.list[i].SNS + '</a>' + data.list[i].uploadDate;
+                newContent += '</div>';
+                newContent += '<div class="column_hashtag">';
+                newContent += '<p>' + data.list[i].description + '</P>';
+                newContent += '</div>';
+                newContent += '</div>';
+                newContent += '</div>';
+                newContent += '</li>';
+                htmlHolder.push(newContent);
+              }
             }
             console.log(htmlHolder)
 
             for (var i = 0; i < showndata; i++) {
               if($('.column_left').height() <= $('.column_right').height() ){
                 console.log('왼쪽에붙이기');
-                console.log(newContent);
-                lrt = 'left';
+                
                 $('.column_left > ul > li:last-child').after(newContent[order - i]);
-                console.log(newContent);
+
               }else{
-                lrt = 'right';
+                console.log('오른쪽');                
                 $('.column_right > ul > li').after(newContent[order - i]);
               }
 
