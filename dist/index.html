@@ -156,10 +156,10 @@
             console.log(totallheight);
             console.log(totallheight-sct);
             console.log(innerHeight);
-            // if ((totallheight-sct)<innerHeight) {
-            //     console.log('ㅇ');
-            //     // 인스타를부르자
-            // }
+            if ((totallheight-sct)<innerHeight) {
+                console.log('돼라ajax');
+                loadAsync();
+            }
             if (innerHeight - 90 < sct) {
               $('header .gnb-inner a').css('color','#000');
               $('#btsH00').css('display', 'none');
@@ -222,14 +222,10 @@
                   newContent += '</li>';
                   htmlHolder.push(newContent);
               }
-
-
-            }//if
-
+            }
             console.log(htmlHolder);
 
             for (var i = 0; i < showndata; i++) {
-
               if($('.column_left').height() <= $('.column_right').height() ){
                 console.log('왼쪽');
                 $('.column_left > ul > li:last-child').after(htmlHolder[i]);
