@@ -208,7 +208,7 @@
 
             for (var i = 0; i < data.list.length; i++) {
                 newContent += '<li>';
-                newContent += '<div class="column_news_box_left">';
+                newContent += '<div class="column_news_box">';
                 newContent += '<div class="column_image">';
                 newContent += '<a href="">';
                 newContent += '<img src="' + data.list[i].imgURL + '" alt="">';
@@ -231,9 +231,6 @@
             for (var i = 0; i < showndata; i++) {
               if($('.column_left').height() <= $('.column_right').height() ){
                 console.log('왼쪽');
-                console.log($('.column_left > ul > li:last-child').clone());
-
-
                 $('.column_left > ul > li:last-child').after(htmlHolder[order - i]);
 
               }else{
@@ -322,7 +319,7 @@
                     <div class="column_left">
                         <ul>
                             <li>
-                                <div class="column_news_box_left">
+                                <div class="column_news_box">
                                     <div class="column_image">
                                         <a href="">
                                             <img src="../assets/image/v1.png" alt="">
@@ -346,7 +343,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="column_news_box_left">
+                                <div class="column_news_box">
                                     <div class="column_image">
                                         <a href="">
                                             <img src="../assets/image/h1.png" alt="">
@@ -374,7 +371,7 @@
                     <div class="column_right">
                         <ul>
                             <li>
-                                <div class="column_news_box_right">
+                                <div class="column_news_box">
                                     <div class="column_image">
                                         <a href="">
                                             <img src="../assets/image/v2.png" alt="">
@@ -398,7 +395,7 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="column_news_box_right">
+                                <div class="column_news_box">
                                     <div class="column_image">
                                         <a href="">
                                             <img src="../assets/image/h2.png" alt="">
