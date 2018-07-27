@@ -791,77 +791,72 @@ section.indexSection {
   margin-bottom: 85px;
   margin-right: 60px;
 }
-/* line 303, assets\less\index.less */
+/* line 302, assets\less\index.less */
+.column_news_box_left .column_text {
+  margin-top: 25px;
+  margin-left: 20px;
+  letter-spacing: 0.125em;
+}
+/* line 306, assets\less\index.less */
+.column_news_box_left .column_text .column_upper_text {
+  color: #878787;
+  font-size: 11px;
+}
+/* line 309, assets\less\index.less */
+.column_news_box_left .column_text .column_upper_text a {
+  text-transform: capitalize;
+  color: #878787;
+}
+/* line 314, assets\less\index.less */
+.column_news_box_left .column_text .column_hashtag {
+  margin-top: 10px;
+}
+/* line 316, assets\less\index.less */
+.column_news_box_left .column_text .column_hashtag p {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #757575;
+  line-height: 1.45em;
+}
+/* line 325, assets\less\index.less */
 .column_news_box_right {
   padding-bottom: 50px;
   margin-bottom: 85px;
   margin-left: 60px;
 }
-/* line 309, assets\less\index.less */
-.column_left_image img {
-  max-width: 540px;
-  width: 95%;
-}
-/* line 315, assets\less\index.less */
-.column_right_image img {
-  max-width: 540px;
-  width: 95%;
-}
-/* line 321, assets\less\index.less */
-.column_left_text {
-  margin-top: 25px;
-  margin-left: 20px;
-  letter-spacing: 0.125em;
-}
-/* line 325, assets\less\index.less */
-.column_left_text .column_upper_text {
-  color: #878787;
-  font-size: 11px;
-}
-/* line 328, assets\less\index.less */
-.column_left_text .column_upper_text a {
-  text-transform: capitalize;
-  color: #878787;
-}
-/* line 333, assets\less\index.less */
-.column_left_text .column_hashtag {
-  margin-top: 10px;
-}
-/* line 335, assets\less\index.less */
-.column_left_text .column_hashtag p {
-  text-transform: uppercase;
-  font-size: 12px;
-  color: #757575;
-  line-height: 1.45em;
-}
-/* line 344, assets\less\index.less */
-.column_right_text {
+/* line 329, assets\less\index.less */
+.column_news_box_right .column_text {
   margin-top: 25px;
   margin-right: 20px;
   letter-spacing: 0.125em;
 }
-/* line 348, assets\less\index.less */
-.column_right_text .column_upper_text {
+/* line 333, assets\less\index.less */
+.column_news_box_right .column_text .column_upper_text {
   color: #878787;
   font-size: 11px;
 }
-/* line 351, assets\less\index.less */
-.column_right_text .column_upper_text a {
+/* line 336, assets\less\index.less */
+.column_news_box_right .column_text .column_upper_text a {
   text-transform: capitalize;
   color: #878787;
 }
-/* line 356, assets\less\index.less */
-.column_right_text .column_hashtag {
+/* line 341, assets\less\index.less */
+.column_news_box_right .column_text .column_hashtag {
   margin-top: 10px;
 }
-/* line 358, assets\less\index.less */
-.column_right_text .column_hashtag p {
+/* line 343, assets\less\index.less */
+.column_news_box_right .column_text .column_hashtag p {
   text-transform: uppercase;
   font-size: 12px;
   color: #757575;
   line-height: 1.45em;
 }
-/* line 368, assets\less\index.less */
+/* line 354, assets\less\index.less */
+.column_image img {
+  max-width: 540px;
+  width: 95%;
+}
+/* line 360, assets\less\index.less */
 .load_more {
   width: 140px;
   height: 50px;
@@ -874,13 +869,13 @@ section.indexSection {
   overflow: hidden;
   box-sizing: border-box;
 }
-/* line 379, assets\less\index.less */
+/* line 371, assets\less\index.less */
 .load_more h3 {
   line-height: 50px;
   text-transform: uppercase;
   font-size: 12px;
 }
-/* line 383, assets\less\index.less */
+/* line 375, assets\less\index.less */
 .load_more h3 a {
   display: block;
 }

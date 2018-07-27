@@ -207,35 +207,14 @@
             var lrt = "";
 
             for (var i = 0; i < data.list.length; i++) {
-
-              if($('.column_left').height() <= $('.column_right').height() ){
                 newContent += '<li>';
                 newContent += '<div class="column_news_box_left">';
-                newContent += '<div class="column_left_image">';
+                newContent += '<div class="column_image">';
                 newContent += '<a href="">';
                 newContent += '<img src="' + data.list[i].imgURL + '" alt="">';
                 newContent += '</a>';
                 newContent += '</div>';
-                newContent += '<div class="column_left_text">';
-                newContent += '<div class="column_upper_text">';
-                newContent += '<a href="">' + data.list[i].SNS + '</a>' + data.list[i].uploadDate;
-                newContent += '</div>';
-                newContent += '<div class="column_hashtag">';
-                newContent += '<p>' + data.list[i].description + '</P>';
-                newContent += '</div>';
-                newContent += '</div>';
-                newContent += '</div>';
-                newContent += '</li>';
-                htmlHolder.push(newContent);
-              }else{
-                newContent += '<li>';
-                newContent += '<div class="column_news_box_right">';
-                newContent += '<div class="column_right_image">';
-                newContent += '<a href="">';
-                newContent += '<img src="' + data.list[i].imgURL + '" alt="">';
-                newContent += '</a>';
-                newContent += '</div>';                
-                newContent += '<div class="column_right_text">';
+                newContent += '<div class="column_text">';
                 newContent += '<div class="column_upper_text">';
                 newContent += '<a href="">' + data.list[i].SNS + '</a>' + data.list[i].uploadDate;
                 newContent += '</div>';
@@ -252,7 +231,7 @@
 
             for (var i = 0; i < showndata; i++) {
               if($('.column_left').height() <= $('.column_right').height() ){
-                console.log('왼쪽에붙이기');
+                console.log('왼쪽');
 
                 $('.column_left > ul > li:last-child').after(htmlHolder[order - i]);
 
@@ -262,12 +241,7 @@
               }
 
             }
-
-
-      		}).fail(function(data){
-            console.log(data);
-            console.log("실패");
-          });
+      		})
         }
 
         $("#loadMore").on("click",function(e){
@@ -439,12 +413,12 @@
                         <ul>
                             <li>
                                 <div class="column_news_box_left">
-                                    <div class="column_left_image">
+                                    <div class="column_image">
                                         <a href="">
                                             <img src="../assets/image/v1.png" alt="">
                                         </a>
                                     </div>
-                                    <div class="column_left_text">
+                                    <div class="column_text">
                                         <div class="column_upper_text">
                                             <a href="">
                                                 instagram
@@ -463,12 +437,12 @@
                             </li>
                             <li>
                                 <div class="column_news_box_left">
-                                    <div class="column_left_image">
+                                    <div class="column_image">
                                         <a href="">
                                             <img src="../assets/image/h1.png" alt="">
                                         </a>
                                     </div>
-                                    <div class="column_left_text">
+                                    <div class="column_text">
                                         <div class="column_upper_text">
                                             <a href="">
                                                 instagram
@@ -491,12 +465,12 @@
                         <ul>
                             <li>
                                 <div class="column_news_box_right">
-                                    <div class="column_right_image">
+                                    <div class="column_image">
                                         <a href="">
                                             <img src="../assets/image/v2.png" alt="">
                                         </a>
                                     </div>
-                                    <div class="column_right_text">
+                                    <div class="column_text">
                                         <div class="column_upper_text">
                                             <a href="">
                                                 instagram
@@ -515,12 +489,12 @@
                             </li>
                             <li>
                                 <div class="column_news_box_right">
-                                    <div class="column_right_image">
+                                    <div class="column_image">
                                         <a href="">
                                             <img src="../assets/image/h2.png" alt="">
                                         </a>
                                     </div>
-                                    <div class="column_right_text">
+                                    <div class="column_text">
                                         <div class="column_upper_text">
                                             <a href="">
                                                 instagram
