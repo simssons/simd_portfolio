@@ -198,15 +198,14 @@
               console.log(this)
       			}
       		}).done(function(data){
-            console.log("왔다");
-            console.log(data);
 
-            var newContent = "";
+
             var htmlHolder = [];
             var order = data.list.length-1;
             var lrt = "";
 
             for (var i = 0; i < data.list.length; i++) {
+                var newContent = "";
                 newContent += '<li>';
                 newContent += '<div class="column_news_box">';
                 newContent += '<div class="column_image">';
