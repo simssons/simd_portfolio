@@ -247,6 +247,7 @@
               htmlHolder += 'Sorry, I don'+"'"+'t have anything left to show you';
               htmlHolder += '</div>';
               $('.load_more').after(htmlHolder);
+              htmlHolder = null;
             }
       		}).fail(function(){
             console.log("let's call it a day");
