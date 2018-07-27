@@ -184,98 +184,42 @@
         })
 
         var showndata = 2;
-        // var loadAsync = function(){
-        //   var parsed = "";
-        //   console.log('glgl');
-        //   $.ajax({
-      	// 		url:"../assets/javascript/mainlist.json",
-        //     type: 'POST',
-      	// 		dataType: "JSON",
-      	// 		data : responseJSON,
-        //     // 넘겨줄값
-        //     // data : this.responseFields.json.parse(),
-      	// 		beforeSend: function(){
-        //       console.log(this)
-        //       console.log(this.responseFields.json)
-      	// 		}
-      	// 	}).done(function(data){
-        //     console.log("왔다");
-        //     console.log(data)
-        //     var newContent = "";
-        //     var htmlHolder = [];
-        //     var order = data.list.length-1;
-        //     var lrt = "";
-        //
-        //     for (var i = 0; i < data.list.length; i++) {
-        //
-        //         newContent += '<li>';
-        //         newContent += '<div class="column_news_box_' + lrt + '">';
-        //         newContent += '<a href="">';
-        //         newContent += '<img src="' + data.list[i].imgURL + '" alt="">';
-        //         newContent += '</a>';
-        //         newContent += '</div>';
-        //         newContent += '<div class="column_' + lrt + '_text">';
-        //         newContent += '<div class="column_upper_text">';
-        //         newContent += '<a href="">' + data.list[i].SNS + '</a>' + data.list[i].uploadDate;
-        //         newContent += '</div>';
-        //         newContent += '<div class="column_hashtag">';
-        //         newContent += '<p>' + data.list[i].description + '</P>';
-        //         newContent += '</div>';
-        //         newContent += '</div>';
-        //         newContent += '</div>';
-        //         newContent += '</li>';
-        //         htmlHolder.push(newContent);
-        //     }
-        //
-        //     for (var i = 0; i < showndata; i++) {
-        //       if($('.column_left').height() <= $('.column_right').height() ){
-        //         console.log('왼쪽에붙이기')
-        //         lrt = 'left';
-        //         $('.column_left > ul > li').after(newContent[order - i]);
-        //       }else{
-        //         lrt = 'right';
-        //         $('.column_right > ul > li').after(newContent[order - i]);
-        //       }
-        //
-        //     }
-        //
-        //
-      	// 	}).fail(function(data){
-        //     console.log(data);
-        //     console.log("실패");
-        //   });
-        // }
-
-
-
         var loadAsync = function(){
-          console.log("loadAsync시작")
-
-          $.getJSON('../assets/javascript/mainlist.json', function(event){
-
+          var parsed = "";
+          console.log('glgl');
+          $.ajax({
+      			url:"../assets/javascript/mainlist.json",
+            type: 'POST',
+      			dataType: "JSON",
+      			data : responseJSON,
+            // 넘겨줄값
+            // data : this.responseFields.json.parse(),
+      			beforeSend: function(){
+              console.log(this)
+              console.log(this.responseFields.json)
+      			}
+      		}).done(function(data){
             console.log("왔다");
-            console.log('glgl');
-            console.log(event)
-            var parsed = "";
+            console.log(data)
             var newContent = "";
             var htmlHolder = [];
-            var order = event.list.length-1;
+            var order = data.list.length-1;
             var lrt = "";
 
-            for (var i = 0; i < event.list.length; i++) {
+            for (var i = 0; i < data.list.length; i++) {
 
                 newContent += '<li>';
                 newContent += '<div class="column_news_box_' + lrt + '">';
                 newContent += '<a href="">';
-                newContent += '<img src="' + event.list[i].imgURL + '" alt="">';
+                newContent += '<img src="' + data.list[i].imgURL + '" alt="">';
                 newContent += '</a>';
                 newContent += '</div>';
                 newContent += '<div class="column_' + lrt + '_text">';
                 newContent += '<div class="column_upper_text">';
-                newContent += '<a href="">' + event.list[i].SNS + '</a>' + event.list[i].uploadDate;
+                newContent += '<a href="">' + data.list[i].SNS + '</a>' + data.list[i].uploadDate;
                 newContent += '</div>';
                 newContent += '<div class="column_hashtag">';
-                newContent += '<p>' + event.list[i].description + '</P>';
+                newContent += '<p>' + data.list[i].description + '</P>';
                 newContent += '</div>';
                 newContent += '</div>';
                 newContent += '</div>';
@@ -294,8 +238,12 @@
               }
 
             }
-          })
 
+
+      		}).fail(function(data){
+            console.log(data);
+            console.log("실패");
+          });
         }
 
         $("#loadMore").on("click",function(e){
