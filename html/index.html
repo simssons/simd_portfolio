@@ -156,8 +156,7 @@
             console.log(totallheight);
             console.log(totallheight-sct);
             console.log(innerHeight);
-            if ((totallheight-sct) < innerHeight + 150) {
-                console.log('돼라ajax');
+            if ((totallheight-sct) < innerHeight + 250) {                
                 loadAsync();
             }
             if (innerHeight - 90 < sct) {
@@ -239,7 +238,7 @@
             console.log(htmlHolder);
 
             if(htmlHolder.length === 0){
-              htmlHolder += '<div style="margin-top:15px;">';
+              htmlHolder += '<div style="margin-top:100px;">';
               htmlHolder += 'Sorry, I don'+"'"+'t have anything left to show you';
               htmlHolder += '</div>';
               $('.load_more').after(htmlHolder);
