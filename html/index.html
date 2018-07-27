@@ -228,12 +228,12 @@
               if($('.column_left').height() <= $('.column_right').height() ){
                 console.log('왼쪽');
                 $('.column_left > ul > li:last-child').after(htmlHolder[i]);
-                htmlHolder.slice( i , i+1);
+                htmlHolder.slice(1);
                 console.log(htmlHolder);
               }else{
                 console.log('오른쪽');
                 $('.column_right > ul > li:last-child').after(htmlHolder[i]);
-                htmlHolder.slice( i , i+1);
+                htmlHolder.slice(1);
                 console.log(htmlHolder);
               }
 
