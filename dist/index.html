@@ -243,9 +243,11 @@
             console.log(htmlHolder);
 
             if(htmlHolder.length === 0){
-              htmlHolder = undefined; 
+              htmlHolder += '<div style="margin-top:15px;">';
+              htmlHolder += 'Sorry, I don'+"'"+'t have anything left to show you';
+              htmlHolder += '</div>';
+              $('.load_more').after(htmlHolder);
             }
-
       		}).fail(function(){
             console.log("let's call it a day");
           })
