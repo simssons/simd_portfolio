@@ -230,11 +230,11 @@
             for (var i = 0; i < showndata; i++) {
               if($('.column_left').height() <= $('.column_right').height() ){
                 console.log('왼쪽');
-                $('.column_left > ul > li:last-child').after(htmlHolder[order - i]);
+                $('.column_left > ul > li:last-child').after(htmlHolder[i]);
 
               }else{
                 console.log('오른쪽');
-                $('.column_right > ul > li').after(htmlHolder[order - i]);
+                $('.column_right > ul > li').after(htmlHolder[i]);
               }
 
             }
