@@ -231,6 +231,8 @@
             for (var i = 0; i < showndata; i++) {
               if($('.column_left').height() <= $('.column_right').height() ){
                 console.log('왼쪽');
+                console.log($('.column_left > ul > li:last-child').clone());
+
 
                 $('.column_left > ul > li:last-child').after(htmlHolder[order - i]);
 
