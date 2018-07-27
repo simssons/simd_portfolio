@@ -186,6 +186,7 @@
 
 
         var showndata = 2;
+        var htmlHolder = [];
         var loadAsync = function(){
           var parsed = "";
           console.log('glgl');
@@ -198,8 +199,7 @@
               console.log(this)
       			}
       		}).done(function(data){
-
-            var htmlHolder = [];
+                        
             for (var i = 0; i < data.list.length; i++) {
                 var newContent = "";
                 newContent += '<li>';
