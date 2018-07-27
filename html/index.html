@@ -190,10 +190,10 @@
           var parsed = "";
           console.log('glgl');
           $.ajax({
-      			url:"../assets/javascript/mainlist.json",
+      			url:"../assets/javascript/mainlist.jsp",
             // 리퀘스트를 요하는 페이지 - 부를페이지
             type: 'GET',
-      			dataType: "text",
+      			dataType: "json",
             // 서버의 응답이 JSON or 텍스트 일거다.
       			// data : responseJSON,
             // 서버로 보낼 데이터
@@ -201,31 +201,29 @@
       			beforeSend: function(){
               console.log(this)
       			}
-      		}).done(function(event){
+      		}).done(function(data){
             console.log("왔다");
-            console.log(event);
-            var jayson = JSON.parse(event);
-            console.log(jayson);
+            console.log(data);
 
             var newContent = "";
             var htmlHolder = [];
-            var order = jayson.list.length-1;
+            var order = data.list.length-1;
             var lrt = "";
 
-            for (var i = 0; i < jayson.list.length; i++) {
+            for (var i = 0; i < data.list.length; i++) {
 
                 newContent += '<li>';
                 newContent += '<div class="column_news_box_' + lrt + '">';
                 newContent += '<a href="">';
-                newContent += '<img src="' + jayson.list[i].imgURL + '" alt="">';
+                newContent += '<img src="' + data.list[i].imgURL + '" alt="">';
                 newContent += '</a>';
                 newContent += '</div>';
                 newContent += '<div class="column_' + lrt + '_text">';
                 newContent += '<div class="column_upper_text">';
-                newContent += '<a href="">' + jayson.list[i].SNS + '</a>' + jayson.list[i].uploadDate;
+                newContent += '<a href="">' + data.list[i].SNS + '</a>' + data.list[i].uploadDate;
                 newContent += '</div>';
                 newContent += '<div class="column_hashtag">';
-                newContent += '<p>' + jayson.list[i].description + '</P>';
+                newContent += '<p>' + data.list[i].description + '</P>';
                 newContent += '</div>';
                 newContent += '</div>';
                 newContent += '</div>';
@@ -246,8 +244,8 @@
             }
 
 
-      		}).fail(function(event){
-            console.log(event);
+      		}).fail(function(data){
+            console.log(data);
             console.log("실패");
           });
         }
